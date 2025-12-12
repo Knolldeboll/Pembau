@@ -1,0 +1,81 @@
+/*.scale-wrapper {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.page {
+  width: 1728px;
+  height: 9039px;
+  transform-origin: top left;
+  position: absolute; 
+}
+
+
+.test {
+  background-color: black;
+  width: 200px;
+  height: 50px;
+  color: white;
+  text-align: center;
+}
+
+*/
+
+/* Head */
+
+
+.head-instance {
+  /* Head */
+
+position: fixed;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 95.59%;
+height: 20vh;
+background-color: black;
+
+}
+
+.logo-head-instance {
+
+  /*TODO: Copy position etc from Figma CSS*/
+
+  /* Logo head */
+
+  /* TODO: Adjust width/height to be responsive, not fixed*/
+
+position: absolute;
+
+height: 50%;
+left: 2%;
+top: 15%;
+
+
+}
+
+.body-instance {
+  position: absolute;
+  width: 100vw;
+  height: 1100vh;
+  background-color: cadetblue;
+}
+
+
+.bodyframe1-instance {
+position: absolute; /* wird aus dem Dokumentenfluss enfernt, d.h. muss nicht unbedingt an ein voriges element folgen! */
+width: 100%;
+top:1%; /* Hier kann man aus dem Figma-CSS die Position in px übernehmen bzw in % auf die gesamtlänge/breite umgerechnet übernehmen */  
+background-color: papayawhip;
+display: inline-block;
+transform: rotate(12deg);
+
+}
+
+
+html, body {
+  margin: 0px;
+  padding: 0px;
+}
