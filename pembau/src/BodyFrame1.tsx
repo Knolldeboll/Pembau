@@ -30,6 +30,10 @@ const BodyFrame1 = () => {
 
   // TODO: Da auch alles mögliche andere definieren, z.B. TiltDegree, PositionX, PositionY, etc.
   // - aber erstmal nur das Bild an sich.
+
+  // TODO: ggf. die Einzelnen Ecken Extrahieren, dann Später als Objekte in die Params Passen!
+  // So kann von Zentral aus gesteuert werden, welche Bodyframes welche Ecken haben!
+
   return (
     <div className="bodyframe1-instance">
       <img
@@ -52,15 +56,20 @@ const BodyFrame1 = () => {
             position: "absolute",
             width: "10%",
             aspectRatio: "1",
-            backgroundColor: "cadetblue",
-            top: "0",
-            left: "0",
+
+            top: "-1px",
+            left: "-1px",
             zIndex: "10",
           }}
           onClick={(e) => {
             toggleCornerCollapse("topLeft");
           }}
-        ></div>
+        >
+          <svg viewBox="0 0 100 100">
+            <path d="M0 0 L100 0 L0 100 L0 0" fill="cadetblue" />
+            <path d="M100 100 L0 100 L100 0 L100 100" fill="black" />
+          </svg>
+        </div>
       )}
 
       {/*"BottomLeftCorner"*/}
@@ -73,8 +82,8 @@ const BodyFrame1 = () => {
             width: "15%",
             aspectRatio: "1",
             backgroundColor: "cadetblue",
-            bottom: "0",
-            left: "0",
+            bottom: "-1px",
+            left: "-1px",
             zIndex: "10",
           }}
           onClick={(e) => {
