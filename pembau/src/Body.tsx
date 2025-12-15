@@ -3,7 +3,6 @@ import BodyFrame1 from "./BodyFrame1";
 const Body = () => {
   return (
     <div className="body-instance">
-      {" "}
       <BodyFrame1></BodyFrame1>
     </div>
   );

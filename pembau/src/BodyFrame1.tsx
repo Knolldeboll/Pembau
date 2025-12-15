@@ -36,6 +36,7 @@ const BodyFrame1 = () => {
 
   return (
     <div className="bodyframe1-instance">
+      {/*Main Image*/}
       <img
         src={testimage}
         style={{
@@ -49,28 +50,29 @@ const BodyFrame1 = () => {
 
       {/*"UpperLeftCorner"*/}
 
-      {cornerCollapsedState.topLeft && (
-        <div
-          className="leftuppercorner"
-          style={{
-            position: "absolute",
-            width: "10%",
-            aspectRatio: "1",
+      <div
+        className="leftuppercorner"
+        style={{
+          position: "absolute",
+          width: "10%",
+          aspectRatio: "1",
 
-            top: "-1px",
-            left: "-1px",
-            zIndex: "10",
-          }}
-          onClick={(e) => {
-            toggleCornerCollapse("topLeft");
-          }}
-        >
+          top: "-1px",
+          left: "-1px",
+          zIndex: "10",
+        }}
+        onClick={(e) => {
+          toggleCornerCollapse("topLeft");
+        }}
+      >
+        {/*Gehen Klicks durch das SVG durch?!*/}
+        {cornerCollapsedState.topLeft && (
           <svg viewBox="0 0 100 100">
             <path d="M0 0 L100 0 L0 100 L0 0" fill="cadetblue" />
             <path d="M100 100 L0 100 L100 0 L100 100" fill="black" />
           </svg>
-        </div>
-      )}
+        )}
+      </div>
 
       {/*"BottomLeftCorner"*/}
 
