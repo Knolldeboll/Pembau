@@ -1,5 +1,30 @@
+import { useState } from "react";
 import testimage from "./assets/testimage.png";
+
+type Corner = "topLeft" | "bottomLeft" | "topRight" | "bottomRight";
+
 const BodyFrame1 = () => {
+  // State mit Info über den Collapsed-Zustand der Ecken.
+
+  // Typing: hier im State ist was vom Typ Record<Corner, boolean> drinnen.
+  // Die Festlegung dieses Typs hier gewährt Sicherheit, dass später nur auf korrekte, im Typ "Corner" definierte
+  // Indizes zum Zugriff verwendet werden können!
+
+  const [cornerCollapsedState, setCornerCollapsedState] = useState<
+    Record<Corner, boolean>
+  >({
+    topLeft: true,
+    bottomLeft: true,
+    topRight: true,
+    bottomRight: true,
+  });
+
+  const toggleCornerCollapse = (corner: Corner) => {
+    setCornerCollapsedState((prevState) => ({
+      ...prevState,
+      [corner]: !prevState[corner],
+    }));
+  };
   // TODO: Image Source muss als Property hier reinkommen, damit man später einfach nen
   // Ordner mit Bildern haben kann und dann pro Bild in der Body-Component einen Bodyframe erzeugen kann!
 
@@ -17,36 +42,48 @@ const BodyFrame1 = () => {
         }}
         alt="Bild hier"
       ></img>
-      <div
-        className="leftuppercorner"
-        style={{
-          position: "absolute",
-          width: "10%",
-          aspectRatio: "1",
-          backgroundColor: "grey",
-          top: "0",
-          left: "0",
-          zIndex: "10",
-        }}
-      >
-        {" "}
-        LeftUpperCorner
-      </div>
 
-      <div
-        className="leftlowercorner"
-        style={{
-          position: "absolute",
-          width: "10%",
-          aspectRatio: "1",
-          backgroundColor: "grey",
-          bottom: "0",
-          left: "0",
-          zIndex: "10",
-        }}
-      >
-        LeftLowerCorner
-      </div>
+      {/*"UpperLeftCorner"*/}
+
+      {cornerCollapsedState.topLeft && (
+        <div
+          className="leftuppercorner"
+          style={{
+            position: "absolute",
+            width: "10%",
+            aspectRatio: "1",
+            backgroundColor: "cadetblue",
+            top: "0",
+            left: "0",
+            zIndex: "10",
+          }}
+          onClick={(e) => {
+            toggleCornerCollapse("topLeft");
+          }}
+        ></div>
+      )}
+
+      {/*"BottomLeftCorner"*/}
+
+      {cornerCollapsedState.bottomLeft && (
+        <div
+          className="leftlowercorner"
+          style={{
+            position: "absolute",
+            width: "15%",
+            aspectRatio: "1",
+            backgroundColor: "cadetblue",
+            bottom: "0",
+            left: "0",
+            zIndex: "10",
+          }}
+          onClick={(e) => {
+            toggleCornerCollapse("bottomLeft");
+          }}
+        >
+          BLC
+        </div>
+      )}
     </div>
   );
 
