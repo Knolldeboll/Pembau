@@ -87,4 +87,5 @@ transform: rotate(12deg);
 html, body {
   margin: 0px;
   padding: 0px;
+  overflow-x: hidden;
 }
