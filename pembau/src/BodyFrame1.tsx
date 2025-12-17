@@ -47,6 +47,14 @@ const BodyFrame1 = ({ activeCorners = {} }: BodyFrameProps) => {
     }));
   };
 
+  const resetCorners = () => {
+    setCornerCollapsedState({
+      topLeft: true,
+      bottomLeft: true,
+      topRight: true,
+      bottomRight: true,
+    });
+  };
   // Corners sind hier immer divs mit SVGs drinnen.
   // Divs zum Anklicken und SVGs zur Anzeige, die je nach State auch nicht gerendert werden können!
   // Wenn man komplett die divs ausschalten würde, dann könnte man nicht mehr zurückklicken!
@@ -63,6 +71,9 @@ const BodyFrame1 = ({ activeCorners = {} }: BodyFrameProps) => {
           display: "block",
         }}
         alt="Bild hier"
+        onClick={(e) => {
+          resetCorners();
+        }}
       ></img>
 
       {/*"UpperLeftCorner"*/}
@@ -72,8 +83,8 @@ const BodyFrame1 = ({ activeCorners = {} }: BodyFrameProps) => {
             position: "absolute",
             width: "10%",
             aspectRatio: "1/1",
-            top: "-0.25px",
-            left: "-0.25px",
+            top: "-1px",
+            left: "-1px",
 
             zIndex: 10,
           }}
@@ -105,8 +116,8 @@ const BodyFrame1 = ({ activeCorners = {} }: BodyFrameProps) => {
             position: "absolute",
             width: "15%",
             aspectRatio: "1",
-            bottom: "-0.25px",
-            left: "-0.25px",
+            bottom: "-1px",
+            left: "-1px",
             zIndex: 10,
           }}
           onClick={(e) => {
@@ -138,8 +149,8 @@ const BodyFrame1 = ({ activeCorners = {} }: BodyFrameProps) => {
             position: "absolute",
             width: "10%",
             aspectRatio: "1",
-            bottom: "-0.25px",
-            right: "-0.25px",
+            bottom: "-1px",
+            right: "-1px",
             zIndex: 10,
           }}
           onClick={(e) => {
@@ -170,8 +181,8 @@ const BodyFrame1 = ({ activeCorners = {} }: BodyFrameProps) => {
             position: "absolute",
             width: "15%",
             aspectRatio: "1",
-            top: "-0.25px",
-            right: "-0.25px",
+            top: "-1px",
+            right: "-1px",
             zIndex: 10,
           }}
           onClick={(e) => {
