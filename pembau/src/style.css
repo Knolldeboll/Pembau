@@ -74,6 +74,15 @@ transform: rotate(12deg);
 
 }
 
+/* War nur zum Testen ob man auch Rotaten kann um den Corner-Winkel zu ändern
+.leftuppercorner {
+  transform: rotate(10dg);
+}
+
+.leftbottomcorner{
+  transform: rotate(());
+}*/
+
 
 html, body {
   margin: 0px;

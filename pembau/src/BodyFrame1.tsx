@@ -10,6 +10,11 @@ const BodyFrame1 = () => {
   // Die Festlegung dieses Typs hier gewährt Sicherheit, dass später nur auf korrekte, im Typ "Corner" definierte
   // Indizes zum Zugriff verwendet werden können!
 
+  // TODO: Props anlegen, die steuern, welche Ecken gerendert werden.
+  // TODO: Type für die Props anlegen, siehe GPT-Vorschlag mit ts.Partial
+  // TODO: Erweiterte Props für die Ecken, mit "Percentage" für die Größe der Ecke und ggf. später "Angle" für Winkel der Faltung
+  // Auch mit "Color" für die BG-Color der Ecken-Rückseite.
+
   const [cornerCollapsedState, setCornerCollapsedState] = useState<
     Record<Corner, boolean>
   >({
@@ -34,6 +39,9 @@ const BodyFrame1 = () => {
   // TODO: ggf. die Einzelnen Ecken Extrahieren, dann Später als Objekte in die Params Passen!
   // So kann von Zentral aus gesteuert werden, welche Bodyframes welche Ecken haben!
 
+  // Corners sind hier immer divs mit SVGs drinnen.
+  // Divs zum Anklicken und SVGs zur Anzeige, die je nach State auch nicht gerendert werden können!
+  // Wenn man komplett die divs ausschalten würde, dann könnte man nicht mehr zurückklicken!
   return (
     <div className="bodyframe1-instance">
       {/*Main Image*/}
@@ -51,23 +59,29 @@ const BodyFrame1 = () => {
       {/*"UpperLeftCorner"*/}
 
       <div
-        className="leftuppercorner"
         style={{
           position: "absolute",
           width: "10%",
-          aspectRatio: "1",
+          aspectRatio: "1/1",
+          top: "-0.25px",
+          left: "-0.25px",
 
-          top: "-1px",
-          left: "-1px",
-          zIndex: "10",
+          zIndex: 10,
         }}
         onClick={(e) => {
           toggleCornerCollapse("topLeft");
         }}
       >
-        {/*Gehen Klicks durch das SVG durch?!*/}
         {cornerCollapsedState.topLeft && (
-          <svg viewBox="0 0 100 100">
+          <svg
+            style={{
+              position: "absolute",
+              top: "0px",
+              left: "0px",
+              transform: "rotate(0deg)",
+            }}
+            viewBox="0 0 100 100"
+          >
             <path d="M0 0 L100 0 L0 100 L0 0" fill="cadetblue" />
             <path d="M100 100 L0 100 L100 0 L100 100" fill="black" />
           </svg>
@@ -75,43 +89,96 @@ const BodyFrame1 = () => {
       </div>
 
       {/*"BottomLeftCorner"*/}
+      <div
+        style={{
+          position: "absolute",
+          width: "15%",
+          aspectRatio: "1",
+          bottom: "-0.25px",
+          left: "-0.25px",
+          zIndex: 10,
+        }}
+        onClick={(e) => {
+          toggleCornerCollapse("bottomLeft");
+        }}
+      >
+        {cornerCollapsedState.bottomLeft && (
+          <svg
+            style={{
+              position: "absolute",
+              bottom: "0px",
+              left: "0px",
+              transform: "rotate(270deg)",
+            }}
+            viewBox="0 0 100 100"
+          >
+            <path d="M0 0 L100 0 L0 100 L0 0" fill="cadetblue" />
+            <path d="M100 100 L0 100 L100 0 L100 100" fill="black" />
+          </svg>
+        )}
+      </div>
 
-      {cornerCollapsedState.bottomLeft && (
-        <div
-          className="leftlowercorner"
-          style={{
-            position: "absolute",
-            width: "15%",
-            aspectRatio: "1",
-            backgroundColor: "cadetblue",
-            bottom: "-1px",
-            left: "-1px",
-            zIndex: "10",
-          }}
-          onClick={(e) => {
-            toggleCornerCollapse("bottomLeft");
-          }}
-        >
-          BLC
-        </div>
-      )}
+      {/*"BottomRightCorner"*/}
+      <div
+        style={{
+          position: "absolute",
+          width: "10%",
+          aspectRatio: "1",
+          bottom: "-0.25px",
+          right: "-0.25px",
+          zIndex: 10,
+        }}
+        onClick={(e) => {
+          toggleCornerCollapse("bottomRight");
+        }}
+      >
+        {cornerCollapsedState.bottomRight && (
+          <svg
+            style={{
+              position: "absolute",
+              bottom: "0px",
+              right: "0px",
+              transform: "rotate(180deg)",
+            }}
+            viewBox="0 0 100 100"
+          >
+            <path d="M0 0 L100 0 L0 100 L0 0" fill="cadetblue" />
+            <path d="M100 100 L0 100 L100 0 L100 100" fill="black" />
+          </svg>
+        )}
+      </div>
+
+      {/*"TopRightCorner"*/}
+      <div
+        style={{
+          position: "absolute",
+          width: "15%",
+          aspectRatio: "1",
+          top: "-0.25px",
+          right: "-0.25px",
+          zIndex: 10,
+        }}
+        onClick={(e) => {
+          toggleCornerCollapse("topRight");
+        }}
+      >
+        {cornerCollapsedState.topRight && (
+          <svg
+            style={{
+              position: "absolute",
+              top: "0px",
+              right: "0px",
+              transform: "rotate(90deg)",
+            }}
+            viewBox="0 0 100 100"
+          >
+            <path d="M0 0 L100 0 L0 100 L0 0" fill="cadetblue" />
+            <path d="M100 100 L0 100 L100 0 L100 100" fill="black" />
+          </svg>
+        )}
+      </div>
     </div>
   );
-
-  // Wie machen wir die Bilder mit den Ecken?!?
-  // Zum Glück gibts insgesamt nur 4 bzw. 5 Ecken derselben Form und Position! Die kann man wiederverwenden.
-
-  // Also auf jeden Fall so:
-  // Returnt wird das Bild, und state-conditional eben auch die Ecken.
-  // Die Ecken an sich werden mit SVGS gemacht, da wir die genauen Paths von Figma kopieren können.
-  //
-  // Anzeige also immer: Bild + ggf. eingeklappte Eck-SVGs.
-
-  // Wenn eingeklappt, werden tatsächlich zwei Formen angezeigt:
-  // Einmal die eingeklappte Ecke an sich, die hat dann die Farbe der "Rückseite" des Fotos, die pro Bodyframe
-  // verschieden ist.
-  // Dann noch einmal dieselbe Form, die an der Knickkante gespiegelt ist, und die Hintergrundfarbe besitzt!
-  //
 
   // Am Besten so:
   // Div für alles.
