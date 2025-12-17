@@ -1,15 +1,31 @@
 import { useState } from "react";
 import testimage from "./assets/testimage.png";
 
+// Typing: hier im State ist was vom Typ Record<Corner, boolean> drinnen.
+// Die Festlegung dieses Typs hier gewährt Sicherheit, dass später nur auf korrekte, im Typ "Corner" definierte
+// Indizes zum Zugriff verwendet werden können!
+
 type Corner = "topLeft" | "bottomLeft" | "topRight" | "bottomRight";
 
-const BodyFrame1 = () => {
-  // State mit Info über den Collapsed-Zustand der Ecken.
+// Partial: Ne Auswahl an Sachen.
+// In diesem Fall ein/mehrere Records vom Typ Corner,bool.
 
-  // Typing: hier im State ist was vom Typ Record<Corner, boolean> drinnen.
-  // Die Festlegung dieses Typs hier gewährt Sicherheit, dass später nur auf korrekte, im Typ "Corner" definierte
-  // Indizes zum Zugriff verwendet werden können!
+// Props für den BodyFrame. Aktuell steuern die die aktiven Corners
+type BodyFrameProps = {
+  activeCorners?: Partial<Record<Corner, boolean>>;
+};
 
+// Hier default Props = leeres Objekt.
+// Wenn keine Props reinkommen, kein Problem! (anscheinend)
+// Dann kommt bei Zugriff drauf zumindest kein Error, sondern undefined.
+// undefined kann als false gewertet werden, was bei uns passt!
+
+// TODO: Image Source muss als Property hier reinkommen, damit man später einfach nen
+// Ordner mit Bildern haben kann und dann pro Bild in der Body-Component einen Bodyframe erzeugen kann!
+// TODO: Da auch alles mögliche andere definieren, z.B. TiltDegree, PositionX, PositionY, etc.
+// - aber erstmal nur das Bild an sich.
+
+const BodyFrame1 = ({ activeCorners = {} }: BodyFrameProps) => {
   // TODO: Props anlegen, die steuern, welche Ecken gerendert werden.
   // TODO: Type für die Props anlegen, siehe GPT-Vorschlag mit ts.Partial
   // TODO: Erweiterte Props für die Ecken, mit "Percentage" für die Größe der Ecke und ggf. später "Angle" für Winkel der Faltung
@@ -30,18 +46,11 @@ const BodyFrame1 = () => {
       [corner]: !prevState[corner],
     }));
   };
-  // TODO: Image Source muss als Property hier reinkommen, damit man später einfach nen
-  // Ordner mit Bildern haben kann und dann pro Bild in der Body-Component einen Bodyframe erzeugen kann!
-
-  // TODO: Da auch alles mögliche andere definieren, z.B. TiltDegree, PositionX, PositionY, etc.
-  // - aber erstmal nur das Bild an sich.
-
-  // TODO: ggf. die Einzelnen Ecken Extrahieren, dann Später als Objekte in die Params Passen!
-  // So kann von Zentral aus gesteuert werden, welche Bodyframes welche Ecken haben!
 
   // Corners sind hier immer divs mit SVGs drinnen.
   // Divs zum Anklicken und SVGs zur Anzeige, die je nach State auch nicht gerendert werden können!
   // Wenn man komplett die divs ausschalten würde, dann könnte man nicht mehr zurückklicken!
+
   return (
     <div className="bodyframe1-instance">
       {/*Main Image*/}
@@ -57,126 +66,134 @@ const BodyFrame1 = () => {
       ></img>
 
       {/*"UpperLeftCorner"*/}
+      {activeCorners.topLeft && (
+        <div
+          style={{
+            position: "absolute",
+            width: "10%",
+            aspectRatio: "1/1",
+            top: "-0.25px",
+            left: "-0.25px",
 
-      <div
-        style={{
-          position: "absolute",
-          width: "10%",
-          aspectRatio: "1/1",
-          top: "-0.25px",
-          left: "-0.25px",
-
-          zIndex: 10,
-        }}
-        onClick={(e) => {
-          toggleCornerCollapse("topLeft");
-        }}
-      >
-        {cornerCollapsedState.topLeft && (
-          <svg
-            style={{
-              position: "absolute",
-              top: "0px",
-              left: "0px",
-              transform: "rotate(0deg)",
-            }}
-            viewBox="0 0 100 100"
-          >
-            <path d="M0 0 L100 0 L0 100 L0 0" fill="cadetblue" />
-            <path d="M100 100 L0 100 L100 0 L100 100" fill="black" />
-          </svg>
-        )}
-      </div>
+            zIndex: 10,
+          }}
+          onClick={(e) => {
+            toggleCornerCollapse("topLeft");
+          }}
+        >
+          {cornerCollapsedState.topLeft && (
+            <svg
+              style={{
+                position: "absolute",
+                top: "0px",
+                left: "0px",
+                transform: "rotate(0deg)",
+              }}
+              viewBox="0 0 100 100"
+            >
+              <path d="M0 0 L100 0 L0 100 L0 0" fill="cadetblue" />
+              <path d="M100 100 L0 100 L100 0 L100 100" fill="black" />
+            </svg>
+          )}
+        </div>
+      )}
 
       {/*"BottomLeftCorner"*/}
-      <div
-        style={{
-          position: "absolute",
-          width: "15%",
-          aspectRatio: "1",
-          bottom: "-0.25px",
-          left: "-0.25px",
-          zIndex: 10,
-        }}
-        onClick={(e) => {
-          toggleCornerCollapse("bottomLeft");
-        }}
-      >
-        {cornerCollapsedState.bottomLeft && (
-          <svg
-            style={{
-              position: "absolute",
-              bottom: "0px",
-              left: "0px",
-              transform: "rotate(270deg)",
-            }}
-            viewBox="0 0 100 100"
-          >
-            <path d="M0 0 L100 0 L0 100 L0 0" fill="cadetblue" />
-            <path d="M100 100 L0 100 L100 0 L100 100" fill="black" />
-          </svg>
-        )}
-      </div>
+      {activeCorners.bottomLeft && (
+        <div
+          style={{
+            position: "absolute",
+            width: "15%",
+            aspectRatio: "1",
+            bottom: "-0.25px",
+            left: "-0.25px",
+            zIndex: 10,
+          }}
+          onClick={(e) => {
+            toggleCornerCollapse("bottomLeft");
+          }}
+        >
+          {cornerCollapsedState.bottomLeft && (
+            <svg
+              style={{
+                position: "absolute",
+                bottom: "0px",
+                left: "0px",
+                transform: "rotate(270deg)",
+              }}
+              viewBox="0 0 100 100"
+            >
+              <path d="M0 0 L100 0 L0 100 L0 0" fill="cadetblue" />
+              <path d="M100 100 L0 100 L100 0 L100 100" fill="black" />
+            </svg>
+          )}
+        </div>
+      )}
 
       {/*"BottomRightCorner"*/}
-      <div
-        style={{
-          position: "absolute",
-          width: "10%",
-          aspectRatio: "1",
-          bottom: "-0.25px",
-          right: "-0.25px",
-          zIndex: 10,
-        }}
-        onClick={(e) => {
-          toggleCornerCollapse("bottomRight");
-        }}
-      >
-        {cornerCollapsedState.bottomRight && (
-          <svg
-            style={{
-              position: "absolute",
-              bottom: "0px",
-              right: "0px",
-              transform: "rotate(180deg)",
-            }}
-            viewBox="0 0 100 100"
-          >
-            <path d="M0 0 L100 0 L0 100 L0 0" fill="cadetblue" />
-            <path d="M100 100 L0 100 L100 0 L100 100" fill="black" />
-          </svg>
-        )}
-      </div>
+
+      {activeCorners.bottomRight && (
+        <div
+          style={{
+            position: "absolute",
+            width: "10%",
+            aspectRatio: "1",
+            bottom: "-0.25px",
+            right: "-0.25px",
+            zIndex: 10,
+          }}
+          onClick={(e) => {
+            toggleCornerCollapse("bottomRight");
+          }}
+        >
+          {cornerCollapsedState.bottomRight && (
+            <svg
+              style={{
+                position: "absolute",
+                bottom: "0px",
+                right: "0px",
+                transform: "rotate(180deg)",
+              }}
+              viewBox="0 0 100 100"
+            >
+              <path d="M0 0 L100 0 L0 100 L0 0" fill="cadetblue" />
+              <path d="M100 100 L0 100 L100 0 L100 100" fill="black" />
+            </svg>
+          )}
+        </div>
+      )}
 
       {/*"TopRightCorner"*/}
-      <div
-        style={{
-          position: "absolute",
-          width: "15%",
-          aspectRatio: "1",
-          top: "-0.25px",
-          right: "-0.25px",
-          zIndex: 10,
-        }}
-        onClick={(e) => {
-          toggleCornerCollapse("topRight");
-        }}
-      >
-        {cornerCollapsedState.topRight && (
-          <svg
-            style={{
-              position: "absolute",
-              top: "0px",
-              right: "0px",
-              transform: "rotate(90deg)",
-            }}
-            viewBox="0 0 100 100"
-          >
-            <path d="M0 0 L100 0 L0 100 L0 0" fill="cadetblue" />
-            <path d="M100 100 L0 100 L100 0 L100 100" fill="black" />
-          </svg>
-        )}
-      </div>
+      {activeCorners.topRight && (
+        <div
+          style={{
+            position: "absolute",
+            width: "15%",
+            aspectRatio: "1",
+            top: "-0.25px",
+            right: "-0.25px",
+            zIndex: 10,
+          }}
+          onClick={(e) => {
+            toggleCornerCollapse("topRight");
+          }}
+        >
+          {cornerCollapsedState.topRight && (
+            <svg
+              style={{
+                position: "absolute",
+                top: "0px",
+                right: "0px",
+                transform: "rotate(90deg)",
+              }}
+              viewBox="0 0 100 100"
+            >
+              <path d="M0 0 L100 0 L0 100 L0 0" fill="cadetblue" />
+              <path d="M100 100 L0 100 L100 0 L100 100" fill="black" />
+            </svg>
+          )}
+        </div>
+      )}
     </div>
   );
 
