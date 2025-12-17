@@ -60,7 +60,7 @@ const BodyFrame1 = ({ activeCorners = {} }: BodyFrameProps) => {
   // Wenn man komplett die divs ausschalten würde, dann könnte man nicht mehr zurückklicken!
 
   return (
-    <div className="bodyframe1-instance">
+    <div>
       {/*Main Image*/}
       <img
         src={testimage}

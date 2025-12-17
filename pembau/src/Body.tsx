@@ -3,9 +3,17 @@ import BodyFrame1 from "./BodyFrame1";
 const Body = () => {
   return (
     <div className="body-instance">
-      <BodyFrame1
-        activeCorners={{ topLeft: true, bottomLeft: true }}
-      ></BodyFrame1>
+      <div id="nicetry">
+        <BodyFrame1
+          activeCorners={{ topLeft: true, bottomLeft: true }}
+        ></BodyFrame1>
+      </div>
+
+      <div id="aussicht">
+        <BodyFrame1
+          activeCorners={{ topLeft: true, bottomLeft: true }}
+        ></BodyFrame1>
+      </div>
     </div>
   );
 

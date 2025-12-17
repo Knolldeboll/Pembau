@@ -59,19 +59,38 @@ top: 15%;
 .body-instance {
   position: absolute;
   width: 100vw;
-  height: 1100vh;
+  
+  /*wie kam die height zustande?  so: 
+  sichtbarer Frame ist ca von 0 bis 900 px. (entspricht 100vh)
+  LandingPage ist gesamt 9039 lang. 
+  Es müsssen also 10 so frames/viewports platz haben! daher 1000vh
+    */
+  height: 1000vh; 
   background-color: cadetblue;
 }
 
+/*FIGMA-DATA: 
+Die Landing Page ist 9039 lang -> alles an y-Coords muss /9039 gerechnet werden, um die % zu berechnen.
+Der Body hat schon dem der Länge der Figma-Landingpage entsprechenden Länge, also kann mit % darin gearbeitet werden.
+*/
 
-.bodyframe1-instance {
-position: absolute; /* wird aus dem Dokumentenfluss enfernt, d.h. muss nicht unbedingt an ein voriges element folgen! */
+
+#nicetry {
+position: absolute; /* wird aus dem Dokumentenfluss enfernt, d.h. muss nicht unbedingt an ein voriges Element folgen! */
 width: 100%;
 top:1%; /* Hier kann man aus dem Figma-CSS die Position in px übernehmen bzw in % auf die gesamtlänge/breite umgerechnet übernehmen */  
-background-color: papayawhip;
+
 display: inline-block;
 transform: rotate(12deg);
 
+}
+
+#aussicht {
+position: absolute; /* wird aus dem Dokumentenfluss enfernt, d.h. muss nicht unbedingt an ein voriges Element folgen! */
+width: 100%;
+top:22%; 
+display: inline-block;
+transform: rotate(-12deg);
 }
 
 /* War nur zum Testen ob man auch Rotaten kann um den Corner-Winkel zu ändern
