@@ -56,18 +56,49 @@ top: 15%;
 
 }
 
-.body-instance {
-  position: absolute;
-  width: 100vw;
-  
-  /*wie kam die height zustande?  so: 
+
+  /* body-instance: wie kam die height zustande?  so: 
   sichtbarer Frame ist ca von 0 bis 900 px. (entspricht 100vh)
   LandingPage ist gesamt 9039 lang. 
   Es müsssen also 10 so frames/viewports platz haben! daher 1000vh
     */
+
+
+    /*
+.body-instance {
+  position: absolute;
+  width: 100vw;
+  
+
   height: 1000vh; 
-  background-color: cadetblue;
+  background-color: #f5f5f5;
 }
+
+*/
+
+
+/* Neue Variante vom Bodyframe: direkt CSS für das ganze Teil 
+von Figma kopiert! 
+Hat in Figma keine CSS-Relevanten Parents, eig. genau wie hier!
+ausser ggf. root. 
+
+Ist noch nicht responsive, ggf. muss pixelumrechnung passieren.
+*/
+
+/* LANDINGPAGE/HOME */
+
+.body-instance{
+
+  position: relative;
+width: 100vw;
+height: 1000vh;
+
+background: #FFFFFF;
+}
+
+
+
+
 
 /*FIGMA-DATA: 
 Die Landing Page ist 9039 lang -> alles an y-Coords muss /9039 gerechnet werden, um die % zu berechnen.
@@ -84,6 +115,23 @@ display: inline-block;
 transform: rotate(12deg);
 
 }
+
+/*
+#pngimagetest {
+
+
+
+position: absolute;
+width: 2299.44px;
+height: 1719.71px;
+left: -506px;
+top: -16px;
+
+transform: rotate(1.44deg);
+
+}
+
+*/
 
 #aussicht {
 position: absolute; /* wird aus dem Dokumentenfluss enfernt, d.h. muss nicht unbedingt an ein voriges Element folgen! */

@@ -1,19 +1,38 @@
 import BodyFrame1 from "./BodyFrame1";
+import BodyFrame2 from "./BodyFrame2";
+import BodyFrame3 from "./BodyFrame3";
 
 const Body = () => {
   return (
     <div className="body-instance">
+      {/*
       <div id="nicetry">
         <BodyFrame1
           activeCorners={{ topLeft: true, bottomLeft: true }}
+          cornerColor="#3d3636ff"
+        ></BodyFrame1>
+      </div>
+*/}
+      <div id="pngimagetest">
+        <BodyFrame3></BodyFrame3>
+      </div>
+
+      {/*
+      <div id="test">
+        <BodyFrame2></BodyFrame2>
+      </div>
+
+      */}
+
+      {/** 
+      <div id="aussicht">
+        <BodyFrame1
+          activeCorners={{ topLeft: true, bottomRight: true }}
+          cornerColor="#000000ff"
         ></BodyFrame1>
       </div>
 
-      <div id="aussicht">
-        <BodyFrame1
-          activeCorners={{ topLeft: true, bottomLeft: true }}
-        ></BodyFrame1>
-      </div>
+      */}
     </div>
   );
 

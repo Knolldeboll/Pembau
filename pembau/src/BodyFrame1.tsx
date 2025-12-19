@@ -1,5 +1,5 @@
 import { useState } from "react";
-import testimage from "./assets/testimage.png";
+import testimage from "./assets/bg-1.jpg";
 
 // Typing: hier im State ist was vom Typ Record<Corner, boolean> drinnen.
 // Die Festlegung dieses Typs hier gewährt Sicherheit, dass später nur auf korrekte, im Typ "Corner" definierte
@@ -13,6 +13,7 @@ type Corner = "topLeft" | "bottomLeft" | "topRight" | "bottomRight";
 // Props für den BodyFrame. Aktuell steuern die die aktiven Corners
 type BodyFrameProps = {
   activeCorners?: Partial<Record<Corner, boolean>>;
+  cornerColor: string;
 };
 
 // Hier default Props = leeres Objekt.
@@ -25,7 +26,10 @@ type BodyFrameProps = {
 // TODO: Da auch alles mögliche andere definieren, z.B. TiltDegree, PositionX, PositionY, etc.
 // - aber erstmal nur das Bild an sich.
 
-const BodyFrame1 = ({ activeCorners = {} }: BodyFrameProps) => {
+const BodyFrame1 = ({
+  activeCorners = {},
+  cornerColor = "#000000",
+}: BodyFrameProps) => {
   // TODO: Props anlegen, die steuern, welche Ecken gerendert werden.
   // TODO: Type für die Props anlegen, siehe GPT-Vorschlag mit ts.Partial
   // TODO: Erweiterte Props für die Ecken, mit "Percentage" für die Größe der Ecke und ggf. später "Angle" für Winkel der Faltung
@@ -102,8 +106,8 @@ const BodyFrame1 = ({ activeCorners = {} }: BodyFrameProps) => {
               }}
               viewBox="0 0 100 100"
             >
-              <path d="M0 0 L100 0 L0 100 L0 0" fill="cadetblue" />
-              <path d="M100 100 L0 100 L100 0 L100 100" fill="black" />
+              <path d="M0 0 L100 0 L0 100 L0 0" fill="#f5f5f5" />
+              <path d="M100 100 L0 100 L100 0 L100 100" fill={cornerColor} />
             </svg>
           )}
         </div>
@@ -134,8 +138,8 @@ const BodyFrame1 = ({ activeCorners = {} }: BodyFrameProps) => {
               }}
               viewBox="0 0 100 100"
             >
-              <path d="M0 0 L100 0 L0 100 L0 0" fill="cadetblue" />
-              <path d="M100 100 L0 100 L100 0 L100 100" fill="black" />
+              <path d="M0 0 L100 0 L0 100 L0 0" fill="#f5f5f5" />
+              <path d="M100 100 L0 100 L100 0 L100 100" fill={cornerColor} />
             </svg>
           )}
         </div>
@@ -167,8 +171,8 @@ const BodyFrame1 = ({ activeCorners = {} }: BodyFrameProps) => {
               }}
               viewBox="0 0 100 100"
             >
-              <path d="M0 0 L100 0 L0 100 L0 0" fill="cadetblue" />
-              <path d="M100 100 L0 100 L100 0 L100 100" fill="black" />
+              <path d="M0 0 L100 0 L0 100 L0 0" fill="#f5f5f5" />
+              <path d="M100 100 L0 100 L100 0 L100 100" fill={cornerColor} />
             </svg>
           )}
         </div>
@@ -199,8 +203,8 @@ const BodyFrame1 = ({ activeCorners = {} }: BodyFrameProps) => {
               }}
               viewBox="0 0 100 100"
             >
-              <path d="M0 0 L100 0 L0 100 L0 0" fill="cadetblue" />
-              <path d="M100 100 L0 100 L100 0 L100 100" fill="black" />
+              <path d="M0 0 L100 0 L0 100 L0 0" fill="#f5f5f5" />
+              <path d="M100 100 L0 100 L100 0 L100 100" fill={cornerColor} />
             </svg>
           )}
         </div>
