@@ -1,6 +1,6 @@
 import BodyFrame1 from "./BodyFrame1";
 import BodyFrame2 from "./BodyFrame2";
-import BodyFrame3 from "./BodyFrame3";
+import NiceTry from "./NiceTry/NiceTry";
 
 const Body = () => {
   return (
@@ -13,8 +13,8 @@ const Body = () => {
         ></BodyFrame1>
       </div>
 */}
-      <div id="pngimagetest">
-        <BodyFrame3></BodyFrame3>
+      <div id="nicetry">
+        <NiceTry></NiceTry>
       </div>
 
       {/*

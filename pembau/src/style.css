@@ -112,7 +112,7 @@ width: 100%;
 top:1%; /* Hier kann man aus dem Figma-CSS die Position in px übernehmen bzw in % auf die gesamtlänge/breite umgerechnet übernehmen */  
 
 display: inline-block;
-transform: rotate(12deg);
+/*transform: rotate(12deg);*/
 
 }
 
