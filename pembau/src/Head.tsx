@@ -1,14 +1,10 @@
-import React from "react";
+//import React from "react";
 //import { BurgerIcon } from "./BurgerIcon";
 //import { LogoIcon } from "./LogoIcon";
 import "./style.css";
 import { LogoHead } from "./LogoHead";
-import { Burger } from "./Burger";
-import { TextHome } from "./TextHome";
-
-interface Props {
-  className?: string;
-}
+//import { Burger } from "./Burger";
+//import { TextHome } from "./TextHome";
 
 export const Head = () => {
   // Vielleicht macht es Sinn, so einfache Formen wie der Banner-Background durch normale HTML-Elemente zu machen statt durch

@@ -14,9 +14,6 @@ import { TeilSein } from "./TeilSein";
 
 */
 
-import React, { useEffect } from "react";
-import { Head } from "./Head";
-
 import { LandingPageHome } from "./LandingPageHome";
 
 export const App = () => {

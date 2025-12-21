@@ -75,7 +75,7 @@ const BodyFrame1 = ({
           display: "block",
         }}
         alt="Bild hier"
-        onClick={(e) => {
+        onClick={() => {
           resetCorners();
         }}
       ></img>
@@ -92,7 +92,7 @@ const BodyFrame1 = ({
 
             zIndex: 10,
           }}
-          onClick={(e) => {
+          onClick={() => {
             toggleCornerCollapse("topLeft");
           }}
         >
@@ -124,7 +124,7 @@ const BodyFrame1 = ({
             left: "-1px",
             zIndex: 10,
           }}
-          onClick={(e) => {
+          onClick={() => {
             toggleCornerCollapse("bottomLeft");
           }}
         >
@@ -157,7 +157,7 @@ const BodyFrame1 = ({
             right: "-1px",
             zIndex: 10,
           }}
-          onClick={(e) => {
+          onClick={() => {
             toggleCornerCollapse("bottomRight");
           }}
         >
@@ -189,7 +189,7 @@ const BodyFrame1 = ({
             right: "-1px",
             zIndex: 10,
           }}
-          onClick={(e) => {
+          onClick={() => {
             toggleCornerCollapse("topRight");
           }}
         >

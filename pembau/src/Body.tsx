@@ -1,5 +1,3 @@
-import BodyFrame1 from "./BodyFrame1";
-import BodyFrame2 from "./BodyFrame2";
 import NiceTry from "./NiceTry/NiceTry";
 
 const Body = () => {

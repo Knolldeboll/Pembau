@@ -1,21 +1,22 @@
-import { useState } from "react";
-import testimage from "./assets/aussicht.png";
+//import { useState } from "react";
 
 // Typing: hier im State ist was vom Typ Record<Corner, boolean> drinnen.
 // Die Festlegung dieses Typs hier gewährt Sicherheit, dass später nur auf korrekte, im Typ "Corner" definierte
 // Indizes zum Zugriff verwendet werden können!
 
-type Corner = "topLeft" | "bottomLeft" | "topRight" | "bottomRight";
+//type Corner = "topLeft" | "bottomLeft" | "topRight" | "bottomRight";
 
 // Partial: Ne Auswahl an Sachen.
 // In diesem Fall ein/mehrere Records vom Typ Corner,bool.
 
 // Props für den BodyFrame. Aktuell steuern die die aktiven Corners
+
+/*
 type BodyFrameProps = {
   activeCorners?: Partial<Record<Corner, boolean>>;
   cornerColor: string;
 };
-
+*/
 // Hier default Props = leeres Objekt.
 // Wenn keine Props reinkommen, kein Problem! (anscheinend)
 // Dann kommt bei Zugriff drauf zumindest kein Error, sondern undefined.
@@ -32,6 +33,7 @@ const BodyFrame2 = () => {
   // TODO: Erweiterte Props für die Ecken, mit "Percentage" für die Größe der Ecke und ggf. später "Angle" für Winkel der Faltung
   // Auch mit "Color" für die BG-Color der Ecken-Rückseite.
 
+  /*
   const [cornerCollapsedState, setCornerCollapsedState] = useState<
     Record<Corner, boolean>
   >({
@@ -41,14 +43,18 @@ const BodyFrame2 = () => {
     bottomRight: true,
   });
 
-  const toggleCornerCollapse = (corner: Corner) => {
+
+  */
+
+  /*
+  const _toggleCornerCollapse = (corner: Corner) => {
     setCornerCollapsedState((prevState) => ({
       ...prevState,
       [corner]: !prevState[corner],
     }));
   };
 
-  const resetCorners = () => {
+  const _resetCorners = () => {
     setCornerCollapsedState({
       topLeft: true,
       bottomLeft: true,
@@ -56,6 +62,9 @@ const BodyFrame2 = () => {
       bottomRight: true,
     });
   };
+
+
+  */
   // Corners sind hier immer divs mit SVGs drinnen.
   // Divs zum Anklicken und SVGs zur Anzeige, die je nach State auch nicht gerendert werden können!
   // Wenn man komplett die divs ausschalten würde, dann könnte man nicht mehr zurückklicken!

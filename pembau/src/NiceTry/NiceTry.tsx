@@ -87,8 +87,6 @@ const NiceTry = () => {
     }
   };
 
-  const [testState, setTestState] = useState(true);
-
   // Wandelt die Corner-States in nen Key-String mit 3 Bits um.
   const getStateKey = () =>
     [
