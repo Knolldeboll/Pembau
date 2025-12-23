@@ -1,4 +1,5 @@
 import NiceTry from "./NiceTry/NiceTry";
+import NiceTryVector from "./NiceTry/NiceTryVector";
 
 const Body = () => {
   return (
@@ -11,8 +12,8 @@ const Body = () => {
         ></BodyFrame1>
       </div>
 */}
-      <div id="nicetry">
-        <NiceTry></NiceTry>
+      <div id="nicetryvector">
+        <NiceTryVector></NiceTryVector>
       </div>
 
       {/*

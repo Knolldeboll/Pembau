@@ -160,6 +160,7 @@ const NiceTry = () => {
           right: "4%",
           width: "20%",
           aspectRatio: "1/1.3",
+          backgroundColor: "#3b333342",
           transform: "rotate(-5deg)",
           zIndex: "15",
         }}
@@ -177,6 +178,7 @@ const NiceTry = () => {
           right: "2%",
           width: "37%",
           height: "50%",
+          backgroundColor: "#3b333342",
           transform: "rotate(-4deg)",
           zIndex: "15",
         }}
@@ -194,6 +196,7 @@ const NiceTry = () => {
           left: "2%",
           width: "55%",
           height: "73%",
+          backgroundColor: "#3b333342",
           transform: "rotate(-2.5deg)",
           zIndex: "15",
         }}
