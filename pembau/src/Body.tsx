@@ -1,3 +1,4 @@
+import MehrErfahrenButton from "./Components/MehrErfahrenButton";
 import NiceTry from "./NiceTry/NiceTry";
 import NiceTryJPG from "./NiceTry/NiceTryJPG";
 import NiceTryVector from "./NiceTry/NiceTryVector";
@@ -39,7 +40,11 @@ const Body = () => {
 
       }}>
         <NiceTryJPG></NiceTryJPG>
+
+
       </div>
+
+      <MehrErfahrenButton></MehrErfahrenButton>
       {/*
       <div id="test">
         <BodyFrame2></BodyFrame2>
