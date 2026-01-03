@@ -1,5 +1,6 @@
 import NiceTry from "./NiceTry/NiceTry";
 import NiceTryVector from "./NiceTry/NiceTryVector";
+import SVGTest from "./SVGTest";
 
 const Body = () => {
   return (

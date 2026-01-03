@@ -61,14 +61,14 @@ const NiceTryVector = () => {
   // Wenn man komplett die divs ausschalten würde, dann könnte man nicht mehr zurückklicken!
 
   return (
-    <div>
+    <>
       {/*Main Image*/}
       <img
         src={testimage}
         style={{
           zIndex: "1",
-          width: "100%",
-          height: "auto",
+          width: "2191.67px",
+          height: "1573.38px",
           display: "block",
         }}
         alt="Bild hier"
@@ -145,11 +145,13 @@ const NiceTryVector = () => {
       <div
         style={{
           position: "absolute",
-          width: "10%",
-          aspectRatio: "1",
-          bottom: "-1px",
-          right: "-1px",
-          zIndex: 10,
+          /* br */
+          height: "901.24px",
+          width: "874.93px",
+          left: "60.37%",
+          right: "1.62%",
+          top: "44.41%",
+          bottom: "3.18%",
         }}
         onClick={() => {
           toggleCornerCollapse("bottomRight");
@@ -157,16 +159,20 @@ const NiceTryVector = () => {
       >
         {cornerCollapsedState.bottomRight && (
           <svg
-            style={{
-              position: "absolute",
-              bottom: "0px",
-              right: "0px",
-              transform: "rotate(180deg)",
-            }}
-            viewBox="0 0 100 100"
+            width="100%"
+            height="100%"
+            viewBox="0 0 846 902"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <path d="M0 0 L100 0 L0 100 L0 0" fill="#f5f5f5" />
-            <path d="M100 100 L0 100 L100 0 L100 100" fill={cornerColor} />
+            <path
+              d="M845.942 30.2442V853.244L39.9417 901.244L845.942 30.2442Z"
+              fill="#D9D9D9"
+            />
+            <path
+              d="M40.5423 900.766L874.014 0L0 38.0409L40.5423 900.766Z"
+              fill="#1A1A1A"
+            />
           </svg>
         )}
       </div>
@@ -201,7 +207,7 @@ const NiceTryVector = () => {
           </svg>
         )}
       </div>
-    </div>
+    </>
   );
 
   // Am Besten so:
