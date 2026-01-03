@@ -29,13 +29,13 @@
 .head-instance {
   /* Head */
 
-position: fixed;
-left: 0%;
-right: 0%;
-top: 0%;
-bottom: 95.59%;
-height: 20vh;
-background-color: black;
+  position: fixed;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 95.59%;
+  height: 20vh;
+  background-color: black;
 
 }
 
@@ -47,24 +47,24 @@ background-color: black;
 
   /* TODO: Adjust width/height to be responsive, not fixed*/
 
-position: absolute;
+  position: absolute;
 
-height: 50%;
-left: 2%;
-top: 15%;
+  height: 50%;
+  left: 2%;
+  top: 15%;
 
 
 }
 
 
-  /* body-instance: wie kam die height zustande?  so: 
+/* body-instance: wie kam die height zustande?  so: 
   sichtbarer Frame ist ca von 0 bis 900 px. (entspricht 100vh)
   LandingPage ist gesamt 9039 lang. 
   Es müsssen also 10 so frames/viewports platz haben! daher 1000vh
     */
 
 
-    /*
+/*
 .body-instance {
   position: absolute;
   width: 100vw;
@@ -87,13 +87,13 @@ Ist noch nicht responsive, ggf. muss pixelumrechnung passieren.
 
 /* LANDINGPAGE/HOME */
 
-.body-instance{
+.body-instance {
 
   position: relative;
-width: 100vw;
-height: 9039px;
+  width: 100vw;
+  height: 9039px;
 
-background: #FFFFFF;
+  background: #FFFFFF;
 }
 
 
@@ -107,12 +107,14 @@ Der Body hat schon dem der Länge der Figma-Landingpage entsprechenden Länge, a
 
 
 #nicetry {
-position: absolute; /* wird aus dem Dokumentenfluss enfernt, d.h. muss nicht unbedingt an ein voriges Element folgen! */
-width: 100%;
-top:1%; /* Hier kann man aus dem Figma-CSS die Position in px übernehmen bzw in % auf die gesamtlänge/breite umgerechnet übernehmen */  
+  position: absolute;
+  /* wird aus dem Dokumentenfluss enfernt, d.h. muss nicht unbedingt an ein voriges Element folgen! */
+  width: 100%;
+  top: 1%;
+  /* Hier kann man aus dem Figma-CSS die Position in px übernehmen bzw in % auf die gesamtlänge/breite umgerechnet übernehmen */
 
-display: inline-block;
-/*transform: rotate(12deg);*/
+  display: inline-block;
+  /*transform: rotate(12deg);*/
 
 }
 
@@ -120,19 +122,20 @@ display: inline-block;
 #nicetryvector {
 
 
- /* nice_try */
+  /* nice_try */
 
-position: absolute;
-height:1719.71px;
-left: -29.28%;
-right: -3.79%;
-top: -0.18%;
-bottom: 81.15%;
+  position: absolute;
+  height: 1719.71px;
+  left: -29.28%;
+  right: -3.79%;
+  top: -0.18%;
+  bottom: 81.15%;
 
 
-transform: rotate(1.44deg);
+  transform: rotate(1.44deg);
 
 }
+
 /*
 #pngimagetest {
 
@@ -151,11 +154,12 @@ transform: rotate(1.44deg);
 */
 
 #aussicht {
-position: absolute; /* wird aus dem Dokumentenfluss enfernt, d.h. muss nicht unbedingt an ein voriges Element folgen! */
-width: 100%;
-top:22%; 
-display: inline-block;
-transform: rotate(-12deg);
+  position: absolute;
+  /* wird aus dem Dokumentenfluss enfernt, d.h. muss nicht unbedingt an ein voriges Element folgen! */
+  width: 100%;
+  top: 22%;
+  display: inline-block;
+  transform: rotate(-12deg);
 }
 
 /* War nur zum Testen ob man auch Rotaten kann um den Corner-Winkel zu ändern
@@ -168,7 +172,8 @@ transform: rotate(-12deg);
 }*/
 
 
-html, body {
+html,
+body {
   margin: 0px;
   padding: 0px;
   overflow-x: hidden;

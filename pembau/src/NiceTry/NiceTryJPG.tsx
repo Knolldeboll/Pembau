@@ -9,7 +9,7 @@ import img from "./NiceTry.jpg";
 // Hier speziell werden max. 2 JPGs gespeichert, damit die Seite schneller ist!
 // Mit 8 Bildern pro Frame ist das schon ganz schön langsam
 // -- ALLERDINGS unnötig extralangsam, wenn man den Bums als PNG exportiert haha! Da haben die Files auhc 10 MB teils xD
-// JPG export auf mid-Quali ist viel besser!
+// JPG export auf mid-Quali ist viel
 // 
 //
 
@@ -85,10 +85,11 @@ const NiceTryJPG = () => {
       <img
         src={currentImgSrc}
         style={{
+
+          pointerEvents: "auto",
           width: "100%",
           height: "auto",
-          display: "block",
-          pointerEvents: "auto",
+
         }}
         onClick={() => {
           console.log("img glicked");

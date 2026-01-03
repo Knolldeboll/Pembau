@@ -19,8 +19,25 @@ const Body = () => {
       <div id="nicetryvector">
         <NiceTryVector></NiceTryVector>
       </div>
+
+        left: "-29.28 %",
+        right: "-3.79 %",
+        top: "-0.18 %",
+        bottom: "81.15 %",
+
+        VVVVVVVVVVVVVV
 */}
-      <div id="nicetryjpg">
+      <div id="nicetryjpg" style={{
+        position: "absolute",
+        width: "150%",
+        height: "auto",
+        top: "-0.18%",
+        left: "-29%",
+
+
+        transform: "rotate(1.44deg)"
+
+      }}>
         <NiceTryJPG></NiceTryJPG>
       </div>
       {/*
