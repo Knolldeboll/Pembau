@@ -1,4 +1,5 @@
 import NiceTry from "./NiceTry/NiceTry";
+import NiceTryJPG from "./NiceTry/NiceTryJPG";
 import NiceTryVector from "./NiceTry/NiceTryVector";
 import SVGTest from "./SVGTest";
 
@@ -13,10 +14,15 @@ const Body = () => {
         ></BodyFrame1>
       </div>
 */}
+
+      {/*
       <div id="nicetryvector">
         <NiceTryVector></NiceTryVector>
       </div>
-
+*/}
+      <div id="nicetryjpg">
+        <NiceTryJPG></NiceTryJPG>
+      </div>
       {/*
       <div id="test">
         <BodyFrame2></BodyFrame2>

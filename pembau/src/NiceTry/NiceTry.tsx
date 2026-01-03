@@ -48,6 +48,9 @@ import img from "./nicetry.png";
 type Corner = "topLeft" | "bottomLeft" | "topRight" | "bottomRight";
 
 const NiceTry = () => {
+
+
+
   const [cornerCollapsedState, setCornerCollapsedState] = useState<
     Record<Corner, boolean>
   >({
@@ -133,6 +136,9 @@ const NiceTry = () => {
   // Fürzelkacke hihi :)
   // Das Conditional Rendering basiert auf Kombinationi von States:
   // z.B. {topLeft && bottomLeft && <img src={nicetry-topleft-bottomleft}}
+
+  const [collapsed, setCollapsed] = useState(true);
+
   return (
     <div>
       <img
