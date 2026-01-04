@@ -44,6 +44,12 @@ const Body = () => {
 
       </div>
 
+      <div style={{
+
+        position: "absolute",
+        width: "20%",
+        height: "auto",
+      }}></div>
       <MehrErfahrenButton></MehrErfahrenButton>
       {/*
       <div id="test">

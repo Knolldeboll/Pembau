@@ -9,17 +9,25 @@ const MehrErfahrenButton = () => {
         <div style={{
             position: "absolute",
             display: "inline-block",
-            width: "10%",
+            width: "20%",
             height: "auto",
             top: "5%"
 
-        }}>
+        }}
 
-            <svg style={{ position: "absolute", top: "0%", left: "0%" }} viewBox="0 0 252 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+            onClick={() => { console.log("ass") }}>
+
+            <svg viewBox="0 0 252 73" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M251.54 72.6994L229.576 0L0 0L0 72.6994L251.54 72.6994Z" fill="#1A1A1A" />
-                Mehr erfahren
+                <text x="50%"
+                    y="50%"
+                    dominantBaseline="middle"
+                    textAnchor="middle"
+                    fill="white"
+                    fontSize="19"
+                    fontFamily="DM Sans, sans-serif"
+                    fontWeight="700">MEHR_ERFAHREN</text>
             </svg>
-            <div color="#ffffff">Mehr erfahren</div>
         </div>
 
     )
