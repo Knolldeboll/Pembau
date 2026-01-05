@@ -87,11 +87,13 @@ Ist noch nicht responsive, ggf. muss pixelumrechnung passieren.
 
 /* LANDINGPAGE/HOME */
 
+/*WHEN  did we put height in pix??*/
 .body-instance {
 
   position: relative;
   width: 100vw;
-  height: 9039px;
+
+  height: 1000vh;
 
   background: #FFFFFF;
 }

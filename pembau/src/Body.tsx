@@ -3,6 +3,7 @@ import NiceTry from "./NiceTry/NiceTry";
 import NiceTryJPG from "./NiceTry/NiceTryJPG";
 import NiceTryVector from "./NiceTry/NiceTryVector";
 import SVGTest from "./SVGTest";
+import TextFrameAussicht from "./TextFrameAussicht";
 
 const Body = () => {
   return (
@@ -40,17 +41,19 @@ const Body = () => {
 
       }}>
         <NiceTryJPG></NiceTryJPG>
-
-
       </div>
 
       <div style={{
-
         position: "absolute",
-        width: "20%",
+        width: "79%",
         height: "auto",
-      }}></div>
-      <MehrErfahrenButton></MehrErfahrenButton>
+        left: "11.69%",
+        top: "10.57%"
+      }}>
+        <TextFrameAussicht></TextFrameAussicht>
+      </div>
+
+
       {/*
       <div id="test">
         <BodyFrame2></BodyFrame2>
