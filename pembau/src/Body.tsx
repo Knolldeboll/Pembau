@@ -7,48 +7,36 @@ import TextFrameAussicht from "./TextFrameAussicht";
 
 const Body = () => {
   return (
-    <div className="body-instance">
-      {/*
-      <div id="nicetry">
-        <BodyFrame1
-          activeCorners={{ topLeft: true, bottomLeft: true }}
-          cornerColor="#3d3636ff"
-        ></BodyFrame1>
-      </div>
-*/}
+    <div className="body-instance"
+      style={{
 
-      {/*
-      <div id="nicetryvector">
-        <NiceTryVector></NiceTryVector>
-      </div>
+        display: "flex",
+        flexDirection: "column",
+        background: "#FFFFFF"
+      }}>
 
-        left: "-29.28 %",
-        right: "-3.79 %",
-        top: "-0.18 %",
-        bottom: "81.15 %",
+      {/* früher war die hor. verschiebung und der rotate über position absolute und dann top gemacht. 
+      besser aber für alles nur translate verwenden, um den normalen dokumentenflow zu erhalten und vertikale
+      positionierung dann über gap machen. */}
 
-        VVVVVVVVVVVVVV
-*/}
       <div id="nicetryjpg" style={{
-        position: "absolute",
-        width: "150%",
-        height: "auto",
-        top: "-0.18%",
-        left: "-29%",
-
-
-        transform: "rotate(1.44deg)"
+        width: "150vw",
+        transform: "translateX(-29%) rotate(1.44deg)"
 
       }}>
         <NiceTryJPG></NiceTryJPG>
       </div>
 
-      <div style={{
+      {/**alter css von aussicht 
+       * 
         position: "absolute",
         width: "79%",
         height: "auto",
         left: "11.69%",
         top: "10.57%"
+      */}
+      <div style={{
+        width: "79vw"
       }}>
         <TextFrameAussicht></TextFrameAussicht>
       </div>

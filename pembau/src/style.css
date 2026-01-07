@@ -77,26 +77,10 @@
 */
 
 
-/* Neue Variante vom Bodyframe: direkt CSS für das ganze Teil 
-von Figma kopiert! 
-Hat in Figma keine CSS-Relevanten Parents, eig. genau wie hier!
-ausser ggf. root. 
-
-Ist noch nicht responsive, ggf. muss pixelumrechnung passieren.
-*/
+/*Wir machen nun so: bodyframe hat nix Höhe und gggf. auch keine Breite, 
+die Höhe wird von den Responsiven Elementen vorgegeben, die dann übereinandergestapelt ssind
 
 /* LANDINGPAGE/HOME */
-
-/*WHEN  did we put height in pix??*/
-.body-instance {
-
-  position: relative;
-  width: 100vw;
-
-  height: 1000vh;
-
-  background: #FFFFFF;
-}
 
 
 

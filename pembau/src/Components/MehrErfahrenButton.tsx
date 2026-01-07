@@ -6,12 +6,17 @@ const MehrErfahrenButton = () => {
 
     return (
 
+
+        // altes css mit absolute:
+        /*   position: "absolute", 
+        top: "5%"
+        */
         <div style={{
-            position: "absolute",
+
             display: "inline-block",
-            width: "20%",
+            width: "25%",
             height: "auto",
-            top: "5%"
+
 
         }}
 
