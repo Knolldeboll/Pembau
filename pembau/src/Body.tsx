@@ -1,11 +1,21 @@
 import MehrErfahrenButton from "./Components/MehrErfahrenButton";
-import NiceTry from "./NiceTry/NiceTry";
+
+import imgTrBl from "./NiceTryTrBljpg.jpg";
+import NiceTryImg from "./NiceTry/NiceTry.jpg"
+import NiceTryCollapsedImg from "./NiceTry/NiceTryTrBljpg.jpg"
+
 import NiceTryJPG from "./NiceTry/NiceTryJPG";
+import ImageFrameJPG from "./Components/ImageFrameJPG";
 import NiceTryVector from "./NiceTry/NiceTryVector";
 import SVGTest from "./SVGTest";
 import TextFrameAussicht from "./TextFrameAussicht";
 
 const Body = () => {
+
+
+
+
+
   return (
     <div className="body-instance"
       style={{
@@ -28,53 +38,28 @@ const Body = () => {
               - horizontal translateX
               - vertikal mit margin */}
 
+
       <div id="nicetryjpg" style={{
         width: "150vw",
         transform: "translateX(-29%) rotate(1.44deg)",
 
 
       }}>
-        <NiceTryJPG></NiceTryJPG>
+        <ImageFrameJPG collapsedImg={NiceTryCollapsedImg} uncollapsedImg={NiceTryImg}></ImageFrameJPG>
       </div>
-
-      {/**alter css von aussicht 
-       * 
-        position: "absolute",
-        width: "79%",
-        height: "auto",
-        left: "11.69%",
-        top: "10.57%"
-      */}
+}
       <div id="textframeaussicht" style={{
-        width: "100vw",
+        width: "80vw",
+        marginLeft: "auto",
+        marginRight: "auto",
         backgroundColor: "#ccccccff",
+        marginTop: "-5vw",
 
       }}>
         <TextFrameAussicht></TextFrameAussicht>
       </div>
 
-      <div style={{
-        width: "79vw",
-        backgroundColor: "#ccccccff"
-      }}>
-        <TextFrameAussicht></TextFrameAussicht>
-      </div>
-      {/*
-      <div id="test">
-        <BodyFrame2></BodyFrame2>
-      </div>
 
-      */}
-
-      {/** 
-      <div id="aussicht">
-        <BodyFrame1
-          activeCorners={{ topLeft: true, bottomRight: true }}
-          cornerColor="#000000ff"
-        ></BodyFrame1>
-      </div>
-
-      */}
     </div>
   );
 
