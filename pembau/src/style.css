@@ -145,14 +145,6 @@ transform: rotate(1.44deg);
 
 */
 
-#aussicht {
-  position: absolute;
-  /* wird aus dem Dokumentenfluss enfernt, d.h. muss nicht unbedingt an ein voriges Element folgen! */
-  width: 100%;
-  top: 22%;
-  display: inline-block;
-  transform: rotate(-12deg);
-}
 
 /* War nur zum Testen ob man auch Rotaten kann um den Corner-Winkel zu ändern
 .leftuppercorner {

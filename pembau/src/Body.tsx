@@ -1,13 +1,14 @@
-import MehrErfahrenButton from "./Components/MehrErfahrenButton";
 
-import imgTrBl from "./NiceTryTrBljpg.jpg";
+
+//Images
 import NiceTryImg from "./NiceTry/NiceTry.jpg"
 import NiceTryCollapsedImg from "./NiceTry/NiceTryTrBljpg.jpg"
+import AussichtImg from "./assets/Aussicht.jpg";
+import AussichtCollapsedImg from "./assets/AussichtBrTl.jpg";
 
-import NiceTryJPG from "./NiceTry/NiceTryJPG";
+// Components
 import ImageFrameJPG from "./Components/ImageFrameJPG";
-import NiceTryVector from "./NiceTry/NiceTryVector";
-import SVGTest from "./SVGTest";
+import MehrErfahrenButton from "./Components/MehrErfahrenButton";
 import TextFrameAussicht from "./TextFrameAussicht";
 
 const Body = () => {
@@ -23,7 +24,8 @@ const Body = () => {
         display: "flex",
         flexDirection: "column",
         background: "#FFFFFF",
-        gap: "5vw"
+        gap: "2vw",
+        overflow: "hidden",
       }}>
 
       {/* früher war die hor. verschiebung und der rotate über position absolute und dann top gemacht. 
@@ -42,8 +44,6 @@ const Body = () => {
       <div id="nicetryjpg" style={{
         width: "150vw",
         transform: "translateX(-29%) rotate(1.44deg)",
-
-
       }}>
         <ImageFrameJPG collapsedImg={NiceTryCollapsedImg} uncollapsedImg={NiceTryImg}></ImageFrameJPG>
       </div>
@@ -54,10 +54,21 @@ const Body = () => {
         marginRight: "auto",
         backgroundColor: "#ccccccff",
         marginTop: "-5vw",
-
+        zIndex: "2",
       }}>
         <TextFrameAussicht></TextFrameAussicht>
       </div>
+
+
+      <div id="aussicht" style={{
+        width: "120vw",
+        marginTop: "-4vw",
+        transform: "translateX(-9%)rotate(3deg)",
+        zIndex: "1",
+      }}>
+        <ImageFrameJPG collapsedImg={AussichtCollapsedImg} uncollapsedImg={AussichtImg}></ImageFrameJPG>
+      </div>
+
 
 
     </div>
