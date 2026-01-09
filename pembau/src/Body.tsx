@@ -47,7 +47,7 @@ const Body = () => {
       }}>
         <ImageFrameJPG collapsedImg={NiceTryCollapsedImg} uncollapsedImg={NiceTryImg}></ImageFrameJPG>
       </div>
-}
+
       <div id="textframeaussicht" style={{
         width: "80vw",
         marginLeft: "auto",
