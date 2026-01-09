@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 import imgTrBl from "./NiceTryTrBljpg.jpg";
@@ -53,6 +53,12 @@ interface ImageFrameJPGProps {
 const ImageFrameJPG = ({ uncollapsedImg, collapsedImg }: ImageFrameJPGProps) => {
 
 
+
+    useEffect(() => {
+        new Image().src = uncollapsedImg;
+        new Image().src = collapsedImg;
+        console.log("Images preloaded: ", uncollapsedImg, collapsedImg)
+    }, [])
 
     const [collapsed, setCollapsed] = useState(true);
 

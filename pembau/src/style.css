@@ -31,35 +31,16 @@ html {
 }
 
 
-.head-instance {
+.head {
   /* Head */
 
-  position: fixed;
-  left: 0%;
-  right: 0%;
-  top: 0%;
-  bottom: 95.59%;
-  height: 20vh;
+
+  width: 100vw;
+  height: 14vw;
   background-color: black;
 
 }
 
-.logo-head-instance {
-
-  /*TODO: Copy position etc from Figma CSS*/
-
-  /* Logo head */
-
-  /* TODO: Adjust width/height to be responsive, not fixed*/
-
-  position: absolute;
-
-  height: 50%;
-  left: 2%;
-  top: 15%;
-
-
-}
 
 
 .headline {

@@ -10,6 +10,7 @@ import AussichtCollapsedImg from "./assets/AussichtBrTl.jpg";
 import ImageFrameJPG from "./Components/ImageFrameJPG";
 import MehrErfahrenButton from "./Components/MehrErfahrenButton";
 import TextFrameAussicht from "./TextFrameAussicht";
+import { Head } from "./Head";
 
 const Body = () => {
 
@@ -27,6 +28,19 @@ const Body = () => {
         gap: "2vw",
         overflow: "hidden",
       }}>
+
+
+      <div id="headmenu" style={{
+        position: "fixed",
+        width: "100vw",
+        height: "12vw",
+        top: "0%",
+        left: "0%",
+        zIndex: "3",
+        backgroundColor: "#000000"
+      }}>
+        <Head></Head>
+      </div>
 
       {/* früher war die hor. verschiebung und der rotate über position absolute und dann top gemacht. 
       besser aber für alles nur translate verwenden, um den normalen dokumentenflow zu erhalten und vertikale
