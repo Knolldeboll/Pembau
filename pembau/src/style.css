@@ -26,6 +26,11 @@
 /* Head */
 
 
+html {
+  font-size: 16px;
+}
+
+
 .head-instance {
   /* Head */
 
@@ -57,25 +62,26 @@
 }
 
 
-/* body-instance: wie kam die height zustande?  so: 
-  sichtbarer Frame ist ca von 0 bis 900 px. (entspricht 100vh)
-  LandingPage ist gesamt 9039 lang. 
-  Es müsssen also 10 so frames/viewports platz haben! daher 1000vh
-    */
-
-
-/*
-.body-instance {
-  position: absolute;
-  width: 100vw;
-  
-
-  height: 1000vh; 
-  background-color: #f5f5f5;
+.headline {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 700;
+  font-size: 4vw;
+  color: #FF6400;
 }
 
-*/
+.headline .span {
+  font-family: "Noto Serif";
+  font-weight: 700;
+  font-style: italic;
 
+}
+
+.paragraph {
+  font-family: "DM Sans";
+  font-weight: 400;
+  font-size: 2.5vw;
+
+}
 
 /*Wir machen nun so: bodyframe hat nix Höhe und gggf. auch keine Breite, 
 die Höhe wird von den Responsiven Elementen vorgegeben, die dann übereinandergestapelt ssind
