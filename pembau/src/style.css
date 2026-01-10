@@ -57,6 +57,14 @@ html {
 
 }
 
+.icon-hover {
+  fill: #FF6400;
+}
+
+.icon {
+  fill: #ffffff;
+}
+
 .paragraph {
   font-family: "DM Sans";
   font-weight: 400;
