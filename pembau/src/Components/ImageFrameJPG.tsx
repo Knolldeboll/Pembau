@@ -54,6 +54,7 @@ const ImageFrameJPG = ({ uncollapsedImg, collapsedImg }: ImageFrameJPGProps) => 
 
 
 
+    // Preload images
     useEffect(() => {
         new Image().src = uncollapsedImg;
         new Image().src = collapsedImg;
@@ -93,7 +94,8 @@ const ImageFrameJPG = ({ uncollapsedImg, collapsedImg }: ImageFrameJPGProps) => 
 
 
     return (
-        <div onClick={toggleAllCorners}>
+        <div onClick={toggleAllCorners}
+            style={{ zIndex: "2" }}>
             <img
                 src={currentImgSrc}
                 style={{
@@ -101,6 +103,7 @@ const ImageFrameJPG = ({ uncollapsedImg, collapsedImg }: ImageFrameJPGProps) => 
                     pointerEvents: "auto",
                     width: "100%",
                     height: "auto",
+                    zIndex: "2",
 
                 }}
                 onClick={() => {

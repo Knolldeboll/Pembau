@@ -5,12 +5,16 @@ import NiceTryImg from "./NiceTry/NiceTry.jpg"
 import NiceTryCollapsedImg from "./NiceTry/NiceTryTrBljpg.jpg"
 import AussichtImg from "./assets/Aussicht.jpg";
 import AussichtCollapsedImg from "./assets/AussichtBrTl.jpg";
+import GestaltenImg from "./assets/Gestalten.jpg";
+import GestaltenCollapsedImg from "./assets/GestaltenBrTl.jpg";
+
 
 // Components
 import ImageFrameJPG from "./Components/ImageFrameJPG";
 import MehrErfahrenButton from "./Components/MehrErfahrenButton";
 import TextFrameAussicht from "./TextFrameAussicht";
 import { Head } from "./Head";
+import TextFrameGestalten from "./TextFrameGestalten";
 
 const Body = () => {
 
@@ -83,6 +87,33 @@ const Body = () => {
         <ImageFrameJPG collapsedImg={AussichtCollapsedImg} uncollapsedImg={AussichtImg}></ImageFrameJPG>
       </div>
 
+
+      <div id="gestalten" style={{
+        display: "flex",
+        flexDirection: "row",
+        marginTop: "-6vw",
+        width: "100vw",
+
+      }}>
+
+        <div style={{
+
+
+          width: "60%",
+          zIndex: "1",
+          transform: "translateX(20%)"
+        }}>
+
+          <TextFrameGestalten></TextFrameGestalten>
+
+        </div>
+
+        <div style={{ transform: "scale(120%)" }} >
+          <ImageFrameJPG collapsedImg={GestaltenCollapsedImg} uncollapsedImg={GestaltenImg}></ImageFrameJPG>
+
+        </div>
+
+      </div>
 
 
     </div>

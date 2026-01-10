@@ -7,7 +7,7 @@ const MehrErfahrenButton = () => {
     // das svg gibt nur die linien innerhalb an.
 
 
-    const [isHovered, setIsHovered] = useState(true);
+    const [isHovered, setIsHovered] = useState(false);
 
     return (
 
