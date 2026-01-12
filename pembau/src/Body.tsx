@@ -5,8 +5,8 @@ import NiceTryImg from "./NiceTry/NiceTry.jpg"
 import NiceTryCollapsedImg from "./NiceTry/NiceTryTrBljpg.jpg"
 import AussichtImg from "./assets/Aussicht.jpg";
 import AussichtCollapsedImg from "./assets/AussichtBrTl.jpg";
-import GestaltenImg from "./assets/Gestalten.jpg";
-import GestaltenCollapsedImg from "./assets/GestaltenBrTl.jpg";
+import GestaltenImg from "./assets/Gestalten.webp";
+import GestaltenCollapsedImg from "./assets/GestaltenBrTl.webp";
 
 
 // Components
@@ -98,16 +98,22 @@ const Body = () => {
         <div style={{
 
 
-          width: "60%",
+          width: "50%",
           zIndex: "1",
-          transform: "translateX(20%)"
+
         }}>
 
           <TextFrameGestalten></TextFrameGestalten>
 
         </div>
 
-        <div style={{ transform: "scale(120%)" }} >
+        <div style={{
+          width: "50%",
+          zIndex: "2",
+
+
+          transform: "translateY(3vw) scale(150%)"
+        }} >
           <ImageFrameJPG collapsedImg={GestaltenCollapsedImg} uncollapsedImg={GestaltenImg}></ImageFrameJPG>
 
         </div>
