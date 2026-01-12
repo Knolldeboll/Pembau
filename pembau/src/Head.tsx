@@ -2,7 +2,6 @@
 //import { BurgerIcon } from "./BurgerIcon";
 //import { LogoIcon } from "./LogoIcon";
 import "./style.css";
-import { LogoHead } from "./LogoHead";
 import { useState } from "react";
 //import { Burger } from "./Burger";
 //import { TextHome } from "./TextHome";

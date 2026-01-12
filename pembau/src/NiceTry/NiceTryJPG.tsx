@@ -42,7 +42,7 @@ import img from "./NiceTry.jpg";
 // TODO: Corner an das aktuelle Bild anpassen.
 // Sind nämlich nicht immer alle Ecken drin und damit im type nötig!
 // O
-type Corner = "topLeft" | "bottomLeft" | "topRight" | "bottomRight";
+//type Corner = "topLeft" | "bottomLeft" | "topRight" | "bottomRight";
 
 const NiceTryJPG = () => {
 

@@ -137,7 +137,7 @@ const NiceTry = () => {
   // Das Conditional Rendering basiert auf Kombinationi von States:
   // z.B. {topLeft && bottomLeft && <img src={nicetry-topleft-bottomleft}}
 
-  const [collapsed, setCollapsed] = useState(true);
+  // const [collapsed, setCollapsed] = useState(true);
 
   return (
     <div>

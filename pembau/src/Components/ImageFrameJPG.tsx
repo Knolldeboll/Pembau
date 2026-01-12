@@ -1,9 +1,5 @@
 import { useEffect, useState } from "react";
 
-
-import imgTrBl from "./NiceTryTrBljpg.jpg";
-import img from "./NiceTry.jpg";
-
 // NiceTryJPG: Bodyframe- Variante, wo alles einfach nur als PNG gecopied wurde
 // und per CSS richtig platziert wird.
 // Hier speziell werden max. 2 JPGs gespeichert, damit die Seite schneller ist!

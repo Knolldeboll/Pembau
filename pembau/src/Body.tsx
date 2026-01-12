@@ -11,7 +11,6 @@ import GestaltenCollapsedImg from "./assets/GestaltenBrTl.jpg";
 
 // Components
 import ImageFrameJPG from "./Components/ImageFrameJPG";
-import MehrErfahrenButton from "./Components/MehrErfahrenButton";
 import TextFrameAussicht from "./TextFrameAussicht";
 import { Head } from "./Head";
 import TextFrameGestalten from "./TextFrameGestalten";
