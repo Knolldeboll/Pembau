@@ -112,7 +112,7 @@ const Body = () => {
           zIndex: "2",
 
 
-          transform: "translateY(3vw) scale(150%)"
+          transform: "translateX(-3vw) translateY(11vw) scale(170%) rotate(-10deg)"
         }} >
           <ImageFrameJPG collapsedImg={GestaltenCollapsedImg} uncollapsedImg={GestaltenImg}></ImageFrameJPG>
 
@@ -120,6 +120,7 @@ const Body = () => {
 
       </div>
 
+      <div id="placeholder" style={{ width: "100vw", height: "100vw" }}></div>
 
     </div>
   );

@@ -57,6 +57,8 @@ const ImageFrameJPG = ({ uncollapsedImg, collapsedImg }: ImageFrameJPGProps) => 
         console.log("Images preloaded: ", uncollapsedImg, collapsedImg)
     }, [])
 
+
+
     const [collapsed, setCollapsed] = useState(true);
 
 
@@ -65,18 +67,13 @@ const ImageFrameJPG = ({ uncollapsedImg, collapsedImg }: ImageFrameJPGProps) => 
     const toggleAllCorners = () => {
 
         setCollapsed(!collapsed);
-        console.log("toggleallcorneres: is", collapsed)
+
     };
 
 
-    const checkCorners = () => {
-        if (collapsed) return uncollapsedImg;
-        if (!collapsed) return collapsedImg;
-    }
 
     // Hier kommt der Image-Source-String entsprechend der States rein.
-    const currentImgSrc = checkCorners();
-
+    const currentImgSrc = collapsed ? collapsedImg : uncollapsedImg;
 
 
     // TODO: Divs zum Anklicken wieder einfügen!
