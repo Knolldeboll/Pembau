@@ -20,13 +20,9 @@ const MehrErfahrenButton = () => {
 
 
 
-        <div style={{
-
-
+        <div className="mehrerfahrenbuttoninternalwrapper" style={{
             width: "25vw",
             height: "auto",
-
-
         }}
 
             onMouseEnter={() => setIsHovered(true)

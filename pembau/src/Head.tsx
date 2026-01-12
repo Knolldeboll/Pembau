@@ -6,7 +6,13 @@ import { useState } from "react";
 //import { Burger } from "./Burger";
 //import { TextHome } from "./TextHome";
 
-export const Head = () => {
+interface HeadProps {
+
+  currentPage: string,
+}
+
+
+export const Head = ({ currentPage }: HeadProps) => {
   // Vielleicht macht es Sinn, so einfache Formen wie der Banner-Background durch normale HTML-Elemente zu machen statt durch
   // svgs, da die iwie unflexibler sind!
 
@@ -14,10 +20,8 @@ export const Head = () => {
 
   const [isHovered, setIsHovered] = useState(false);
 
+
   return (
-
-
-
 
     <div id="logodiv" style={{
       display: "flex", flexDirection: "row", width: "17vw", height: "auto",
@@ -39,7 +43,7 @@ export const Head = () => {
       </svg>
 
 
-      <p className="headline" style={{ color: "#ffffff", fontSize: "2vw", transform: " translateX(5%) translateY(90%)" }}>_HOME</p>
+      <p className="headline" style={{ color: "#ffffff", fontSize: "2vw", transform: " translateX(5%) translateY(90%)" }}>{currentPage}</p>
 
     </div>
 

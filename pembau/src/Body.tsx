@@ -42,7 +42,7 @@ const Body = () => {
         zIndex: "3",
         backgroundColor: "#000000"
       }}>
-        <Head></Head>
+        <Head currentPage="_HOME"></Head>
       </div>
 
       {/* früher war die hor. verschiebung und der rotate über position absolute und dann top gemacht. 
@@ -69,7 +69,6 @@ const Body = () => {
         width: "80vw",
         marginLeft: "auto",
         marginRight: "auto",
-        backgroundColor: "#ccccccff",
         marginTop: "-5vw",
         zIndex: "2",
       }}>

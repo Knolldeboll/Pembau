@@ -19,7 +19,7 @@ const TextButton = ({ text, onClick }: TextButtonProps) => {
 
     return (
 
-        <div style={{
+        <div className="textbuttoninternalwrapper" style={{
             width: "25vw",
             height: "auto",
         }}
