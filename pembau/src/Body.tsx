@@ -9,7 +9,8 @@ import GestaltenImg from "./assets/Gestalten.webp";
 import GestaltenCollapsedImg from "./assets/GestaltenBrTl.webp";
 import KPKPCollapsedImage from "./assets/KPKPBl.webp";
 import KPKPImg from "./assets/KPKP.webp";
-
+import MithelfenImg from "./assets/Mithelfen.webp";
+import MithelfenCollapsedImage from "./assets/MithelfenBr.webp";
 
 // Components
 import ImageFrameJPG from "./Components/ImageFrameJPG";
@@ -17,6 +18,7 @@ import TextFrameAussicht from "./TextFrameAussicht";
 import { Head } from "./Head";
 import TextFrameGestalten from "./TextFrameGestalten";
 import KeinProgrammFrame from "./KeinProgrammFrame";
+import MithelfenFrame from "./MithelfenFrame";
 
 const Body = () => {
 
@@ -112,8 +114,12 @@ const Body = () => {
         </div>
       </div>
 
-      <div id="keinprogramm" style={{ width: "100vw", height: "100vw", marginTop: "30vw" }}>
+      <div id="keinprogramm" style={{ width: "100vw", height: "80vw", marginTop: "30vw" }}>
         <KeinProgrammFrame uncollapsedImg={KPKPImg} collapsedImg={KPKPCollapsedImage} ></KeinProgrammFrame>
+      </div>
+
+      <div id="mithelfen " style={{ width: "100vw", height: "100vw" }}>
+        <MithelfenFrame uncollapsedImg={MithelfenImg} collapsedImg={MithelfenCollapsedImage}></MithelfenFrame>
       </div>
 
     </div>
