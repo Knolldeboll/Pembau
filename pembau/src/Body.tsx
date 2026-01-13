@@ -7,6 +7,8 @@ import AussichtImg from "./assets/Aussicht.jpg";
 import AussichtCollapsedImg from "./assets/AussichtBrTl.jpg";
 import GestaltenImg from "./assets/Gestalten.webp";
 import GestaltenCollapsedImg from "./assets/GestaltenBrTl.webp";
+import KPKPCollapsedImage from "./assets/KPKPBl.webp";
+import KPKPImg from "./assets/KPKP.webp";
 
 
 // Components
@@ -14,6 +16,7 @@ import ImageFrameJPG from "./Components/ImageFrameJPG";
 import TextFrameAussicht from "./TextFrameAussicht";
 import { Head } from "./Head";
 import TextFrameGestalten from "./TextFrameGestalten";
+import KeinProgrammFrame from "./KeinProgrammFrame";
 
 const Body = () => {
 
@@ -93,33 +96,25 @@ const Body = () => {
         width: "100vw",
 
       }}>
-
         <div style={{
-
-
           width: "50%",
           zIndex: "1",
-
         }}>
 
           <TextFrameGestalten></TextFrameGestalten>
-
         </div>
-
         <div style={{
           width: "50%",
           zIndex: "2",
-
-
           transform: "translateX(-3vw) translateY(11vw) scale(170%) rotate(-10deg)"
         }} >
           <ImageFrameJPG collapsedImg={GestaltenCollapsedImg} uncollapsedImg={GestaltenImg}></ImageFrameJPG>
-
         </div>
-
       </div>
 
-      <div id="placeholder" style={{ width: "100vw", height: "100vw" }}></div>
+      <div id="keinprogramm" style={{ width: "100vw", height: "100vw", marginTop: "30vw" }}>
+        <KeinProgrammFrame uncollapsedImg={KPKPImg} collapsedImg={KPKPCollapsedImage} ></KeinProgrammFrame>
+      </div>
 
     </div>
   );
