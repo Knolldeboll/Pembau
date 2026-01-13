@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-//import TextButton from "./Components/TextButton";
+import TextButton from "./Components/TextButton";
 
 // TODO: Hier noch die Buttons einfügen! 
 // Die sind einfach TextButtons, müssen aber gescheid positioniert werden und sind auch nur 
@@ -51,6 +51,7 @@ const KeinProgrammFrame = ({ uncollapsedImg, collapsedImg }: ImageFrameJPGProps)
     return (
         <div onClick={toggleAllCorners}
             style={{ zIndex: "2" }}>
+
             <img
                 src={currentImgSrc}
                 style={{
@@ -68,11 +69,15 @@ const KeinProgrammFrame = ({ uncollapsedImg, collapsedImg }: ImageFrameJPGProps)
             ></img>
 
 
-            {/* 
-            {!collapsed && <TextButton text="MEHR_ERFAHREN" onClick={() => { console.log("Mehrerfahren-pembauaktuell todo") }}></TextButton>}
+            <div id="kpkpbuttoncontainer" style={{
+                display: "flex", width: "fit-content", flexDirection: "column", gap: "27vw",
+                transform: "scale(65%) rotate(-4deg) translateY(-67vw) translateX(45vw) "
+            }}>
+                {!collapsed && <TextButton text="MEHR_ERFAHREN" onClick={() => { console.log("Mehrerfahren-pembauaktuell todo") }}></TextButton>}
 
-            {!collapsed && <TextButton text="MEHR_ERFAHREN" onClick={() => { console.log("Mehrerfahren-pembauBALD todo") }}></TextButton>}
-*/}
+                {!collapsed && <TextButton text="MEHR_ERFAHREN" onClick={() => { console.log("Mehrerfahren-pembauBALD todo") }}></TextButton>}
+            </div>
+
 
 
         </div>
