@@ -1,10 +1,10 @@
 
 
 //Images
-import NiceTryImg from "./NiceTry/NiceTry.jpg"
-import NiceTryCollapsedImg from "./NiceTry/NiceTryTrBljpg.jpg"
-import AussichtImg from "./assets/Aussicht.jpg";
-import AussichtCollapsedImg from "./assets/AussichtBrTl.jpg";
+import NiceTryImg from "./assets/NiceTry.webp"
+import NiceTryCollapsedImg from "./assets/NiceTryTrBljpg.webp"
+import AussichtImg from "./assets/Aussicht.webp";
+import AussichtCollapsedImg from "./assets/AussichtBrTl.webp";
 import GestaltenImg from "./assets/Gestalten.webp";
 import GestaltenCollapsedImg from "./assets/GestaltenBrTl.webp";
 import KPKPCollapsedImage from "./assets/KPKPBl.webp";
