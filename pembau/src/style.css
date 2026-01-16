@@ -42,6 +42,9 @@ html {
 }
 
 
+.textframe {
+  transform: translateX(10vw);
+}
 
 .headline {
   font-family: "DM Sans", sans-serif;

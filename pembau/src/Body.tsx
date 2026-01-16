@@ -19,6 +19,8 @@ import { Head } from "./Head";
 import TextFrameGestalten from "./TextFrameGestalten";
 import KeinProgrammFrame from "./KeinProgrammFrame";
 import MithelfenFrame from "./MithelfenFrame";
+import TextFrameEndeLP from "./TextFrameEndeLP";
+import TextButton from "./Components/TextButton";
 
 const Body = () => {
 
@@ -70,10 +72,8 @@ const Body = () => {
         <ImageFrameJPG collapsedImg={NiceTryCollapsedImg} uncollapsedImg={NiceTryImg}></ImageFrameJPG>
       </div>
 
-      <div id="textframeaussicht" style={{
+      <div className="textframe" id="textframeaussicht" style={{
         width: "80vw",
-        marginLeft: "auto",
-        marginRight: "auto",
         marginTop: "-5vw",
         zIndex: "2",
       }}>
@@ -98,7 +98,8 @@ const Body = () => {
         width: "100vw",
 
       }}>
-        <div style={{
+        <div className="textframe" style={{
+
           width: "50%",
           zIndex: "1",
         }}>
@@ -108,18 +109,30 @@ const Body = () => {
         <div style={{
           width: "50%",
           zIndex: "2",
-          transform: "translateX(-3vw) translateY(11vw) scale(170%) rotate(-10deg)"
+          transform: " translateY(11vw) scale(170%) rotate(-10deg)"
         }} >
           <ImageFrameJPG collapsedImg={GestaltenCollapsedImg} uncollapsedImg={GestaltenImg}></ImageFrameJPG>
         </div>
       </div>
 
-      <div id="keinprogramm" style={{ width: "100vw", height: "80vw", marginTop: "30vw" }}>
+      <div id="keinprogramm" style={{ width: "120vw", height: "70vw", marginTop: "30vw", transform: "translateX(-15vw)" }}>
         <KeinProgrammFrame uncollapsedImg={KPKPImg} collapsedImg={KPKPCollapsedImage} ></KeinProgrammFrame>
       </div>
 
-      <div id="mithelfen " style={{ width: "100vw", height: "100vw" }}>
+      <div id="mithelfen" style={{ width: "100vw", height: "70vw", transform: "rotate(-4deg)" }}>
         <MithelfenFrame uncollapsedImg={MithelfenImg} collapsedImg={MithelfenCollapsedImage}></MithelfenFrame>
+      </div>
+
+      <div className="textframe" id="ende" style={{
+        width: "75vw", height: "20vw", transform: "rotate(4deg) translateX(13vw)"
+      }}>
+        <TextFrameEndeLP></TextFrameEndeLP>
+      </div>
+
+      <div id="endbuttons" style={{ display: "flex", flexDirection: "column", gap: "1vw", marginTop: "15vw", width: "40vw", height: "30vw", transform: "translateX(10vw)" }} >
+        <TextButton text="ABOUT" onClick={() => { console.log("TODO: About ocnlick") }}></TextButton>
+        <TextButton text="INSTAGRAM" onClick={() => { console.log("TODO: Isnta ocnlick") }}></TextButton>
+        <TextButton text="ZURÜCK_ZUM_ANFANG" onClick={() => { console.log("TODO: Zurück ocnlick") }}></TextButton>
       </div>
 
     </div>

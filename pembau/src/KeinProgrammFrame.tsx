@@ -70,8 +70,8 @@ const KeinProgrammFrame = ({ uncollapsedImg, collapsedImg }: ImageFrameJPGProps)
 
 
             <div id="kpkpbuttoncontainer" style={{
-                display: "flex", width: "fit-content", flexDirection: "column", gap: "27vw",
-                transform: "scale(65%) rotate(-4deg) translateY(-67vw) translateX(45vw) "
+                display: "flex", width: "fit-content", flexDirection: "column", gap: "29vw",
+                transform: "translateY(-51vw) translateX(33vw) scale(75%) rotate(-4deg)  "
             }}>
                 {!collapsed && <TextButton text="MEHR_ERFAHREN" onClick={() => { console.log("Mehrerfahren-pembauaktuell todo") }}></TextButton>}
 
