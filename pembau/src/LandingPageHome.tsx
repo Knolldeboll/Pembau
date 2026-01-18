@@ -1,9 +1,9 @@
-import Body from "./Body";
+import LandingPage from "./LandingPage";
 
 export const LandingPageHome = () => {
   return (
     <>
-      <Body></Body>
+      <LandingPage></LandingPage>
 
       {/* 
       <Head></Head>*/}

@@ -22,7 +22,7 @@ import MithelfenFrame from "./MithelfenFrame";
 import TextFrameEndeLP from "./TextFrameEndeLP";
 import TextButton from "./Components/TextButton";
 
-const Body = () => {
+const LandingPage = () => {
 
 
 
@@ -147,4 +147,4 @@ const Body = () => {
 
   // Alternativ: Irgendwie ne Mask drüberlegen, die bei zugefalteter Ecke
 };
-export default Body;
+export default LandingPage;
