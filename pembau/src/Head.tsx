@@ -24,7 +24,7 @@ export const Head = ({ currentPage }: HeadProps) => {
   return (
 
     <div id="logodiv" style={{
-      display: "flex", flexDirection: "row", width: "17vw", height: "auto",
+      display: "flex", flexDirection: "row", width: "15vw", height: "auto",
       transform: "translateX(15%) translateY(15%)"
 
     }}
@@ -43,7 +43,7 @@ export const Head = ({ currentPage }: HeadProps) => {
       </svg>
 
 
-      <p className="headline" style={{ color: "#ffffff", fontSize: "2vw", transform: " translateX(5%) translateY(90%)" }}>{currentPage}</p>
+      <p className="headline" style={{ color: "#ffffff", fontSize: "2vw", transform: " translateX(0.6vw) translateY(2.7vw)" }}>{currentPage}</p>
 
     </div>
 

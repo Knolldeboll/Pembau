@@ -21,6 +21,7 @@ import KeinProgrammFrame from "./KeinProgrammFrame";
 import MithelfenFrame from "./MithelfenFrame";
 import TextFrameEndeLP from "./TextFrameEndeLP";
 import TextButton from "./Components/TextButton";
+import Foot from "./Foot";
 
 const LandingPage = () => {
 
@@ -43,7 +44,7 @@ const LandingPage = () => {
       <div id="headmenu" style={{
         position: "fixed",
         width: "100vw",
-        height: "12vw",
+        height: "10vw",
         top: "0%",
         left: "0%",
         zIndex: "3",
@@ -119,20 +120,24 @@ const LandingPage = () => {
         <KeinProgrammFrame uncollapsedImg={KPKPImg} collapsedImg={KPKPCollapsedImage} ></KeinProgrammFrame>
       </div>
 
-      <div id="mithelfen" style={{ width: "100vw", height: "70vw", transform: "rotate(-4deg)" }}>
+      <div id="mithelfen" style={{ width: "140vw", height: "70vw", marginTop: "13vw", transform: "rotate(-4deg) translateX(-10vw)" }}>
         <MithelfenFrame uncollapsedImg={MithelfenImg} collapsedImg={MithelfenCollapsedImage}></MithelfenFrame>
       </div>
 
       <div className="textframe" id="ende" style={{
-        width: "75vw", height: "20vw", transform: "rotate(4deg) translateX(13vw)"
+        width: "75vw", height: "20vw", marginTop: "30vw", transform: "rotate(4deg) "
       }}>
         <TextFrameEndeLP></TextFrameEndeLP>
       </div>
 
-      <div id="endbuttons" style={{ display: "flex", flexDirection: "column", gap: "1vw", marginTop: "15vw", width: "40vw", height: "30vw", transform: "translateX(10vw)" }} >
+      <div id="endbuttons" style={{ display: "flex", flexDirection: "column", gap: "1vw", marginTop: "10vw", width: "40vw", height: "30vw", transform: "translateX(10vw)" }} >
         <TextButton text="ABOUT" onClick={() => { console.log("TODO: About ocnlick") }}></TextButton>
         <TextButton text="INSTAGRAM" onClick={() => { console.log("TODO: Isnta ocnlick") }}></TextButton>
         <TextButton text="ZURÜCK_ZUM_ANFANG" onClick={() => { console.log("TODO: Zurück ocnlick") }}></TextButton>
+      </div>
+
+      <div id="foot">
+        <Foot></Foot>
       </div>
 
     </div>

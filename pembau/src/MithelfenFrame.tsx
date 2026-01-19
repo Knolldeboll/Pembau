@@ -70,8 +70,8 @@ const MithelfenFrame = ({ uncollapsedImg, collapsedImg }: ImageFrameJPGProps) =>
 
 
             <div id="kpkpbuttoncontainer" style={{
-                display: "flex", width: "fit-content", flexDirection: "column", gap: "17vw",
-                transform: " translateY(-65vw) translateX(40vw) rotate(8deg)  scale(55%)"
+                display: "flex", width: "fit-content", flexDirection: "column", gap: "15vw",
+                transform: " translateY(-79vw) translateX(61vw) rotate(8deg)  scale(80%)"
             }}>
                 {!collapsed && <TextButton text="TEIL_SEIN" onClick={() => { console.log("Mehrerfahren-pembauaktuell todo") }}></TextButton>}
 
