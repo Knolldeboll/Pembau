@@ -80,8 +80,6 @@ const MithelfenFrame = ({ uncollapsedImg, collapsedImg }: ImageFrameJPGProps) =>
                 {!collapsed && <TextButton text="NEWS_LETTER" onClick={() => { console.log("Mehrerfahren-pembauBALD todo") }}></TextButton>}
             </div>
 
-
-
         </div>
     );
 

@@ -75,6 +75,14 @@ html {
 
 }
 
+.foot-text {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.2vw;
+  line-height: 1.3vw;
+}
+
 /*Wir machen nun so: bodyframe hat nix Höhe und gggf. auch keine Breite, 
 die Höhe wird von den Responsiven Elementen vorgegeben, die dann übereinandergestapelt ssind
 
