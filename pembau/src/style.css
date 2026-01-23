@@ -78,6 +78,7 @@ html {
 .paragraph-white-line {
   font-family: "DM Sans";
   width: fit-content;
+  height: fit-content;
   color: #ffffff;
   font-weight: 400;
   font-size: 1.2vw;
