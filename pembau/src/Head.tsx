@@ -15,7 +15,7 @@ interface HeadProps {
 export const Head = ({ currentPage }: HeadProps) => {
 
 
-  const [isHovered, setIsHovered] = useState(false);
+
 
 
   return (
@@ -25,12 +25,10 @@ export const Head = ({ currentPage }: HeadProps) => {
       transform: "translateX(15%) translateY(15%)"
 
     }}
-      onMouseEnter={() => setIsHovered(true)
-      }
-      onMouseLeave={() => setIsHovered(false)}
+
     >
       {/* SVG for HOME Page */}
-      <svg className={isHovered ? "icon-hover" : "icon"} viewBox="0 0 97 87" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg className="icon" viewBox="0 0 97 87" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M6.92857 18.5328V5.71563H23.0365V11.5473L6.92857 18.5328ZM29.9641 0H0V40.4144H6.92857V24.4794L29.9651 15.415V0H29.9641Z" />
         <path d="M40.1866 18.5908V5.94662H55.6016V11.1423L40.1866 18.5898V18.5908ZM61.3752 0H34.2979V40.4144H61.3752V34.4678H40.1866V24.4794L61.3752 15.299V0Z" />
         <path d="M97 0H65.072V40.3564H70.9896V5.83164H78.0777V40.3564H83.8772L83.8192 5.83164H91.0244L91.0834 40.3564H97V0Z" />

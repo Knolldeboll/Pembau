@@ -60,7 +60,7 @@ html {
 
 }
 
-.icon-hover {
+.icon:hover {
   fill: #FF6400;
 }
 
@@ -85,14 +85,8 @@ html {
   text-decoration-line: underline;
 }
 
-.paragraph-white-line-hover {
-  font-family: "DM Sans";
-  width: fit-content;
-  height: fit-content;
+.paragraph-white-line:hover {
   color: #FF6400;
-  font-weight: 400;
-  font-size: 1.2vw;
-  text-decoration-line: underline;
 }
 
 .foot-text {

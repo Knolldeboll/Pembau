@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 
 interface FootLinkParams {
 
@@ -9,14 +9,10 @@ interface FootLinkParams {
 
 const FootLink = ({ text, onClick }: FootLinkParams) => {
 
-    const [isHovered, setIsHovered] = useState(false);
 
     return (
 
-        <p className={isHovered ? "paragraph-white-line-hover" : "paragraph-white-line "}
-            onMouseEnter={() => setIsHovered(true)
-            }
-            onMouseLeave={() => setIsHovered(false)}
+        <p className="paragraph-white-line"
             onClick={onClick}>{text}</p>
     )
 

@@ -15,7 +15,7 @@ const TextButton = ({ text, onClick }: TextButtonProps) => {
 
 
 
-    const [isHovered, setIsHovered] = useState(false);
+
 
     return (
 
@@ -23,15 +23,11 @@ const TextButton = ({ text, onClick }: TextButtonProps) => {
             width: "25vw",
             height: "auto",
         }}
-
-            onMouseEnter={() => setIsHovered(true)
-            }
-            onMouseLeave={() => setIsHovered(false)}
             onClick={onClick}>
 
             <svg viewBox="0 0 252 73" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M251.54 72.6994L229.576 0L0 0L0 72.6994L251.54 72.6994Z" fill="#1A1A1A" />
-                <text className={isHovered ? "icon-hover" : "icon"}
+                <text className="icon"
                     x="50%"
                     y="50%"
                     dominantBaseline="middle"
