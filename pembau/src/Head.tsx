@@ -13,10 +13,7 @@ interface HeadProps {
 
 
 export const Head = ({ currentPage }: HeadProps) => {
-  // Vielleicht macht es Sinn, so einfache Formen wie der Banner-Background durch normale HTML-Elemente zu machen statt durch
-  // svgs, da die iwie unflexibler sind!
 
-  // Nur So Shit wie Logos etc. als pngs.
 
   const [isHovered, setIsHovered] = useState(false);
 

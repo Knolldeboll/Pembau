@@ -1,3 +1,5 @@
+import FootLink from "./FootLink";
+
 const Foot = () => {
 
 
@@ -38,16 +40,17 @@ const Foot = () => {
 
             <div style={{ width: "45%", height: "100%" }}>
 
-                <div id="links" style={{ display: "grid", width: "fit-content", gridTemplateColumns: "8vw 8vw 8vw", gridTemplateRows: "1.5vw 1.5vw ", gap: "2vw", marginLeft: "10%", marginTop: "2.8%" }}>
+                <div id="links" style={{ display: "grid", width: "fit-content", gridTemplateColumns: "8vw 8vw ", gridTemplateRows: "1vw 1vw 1vw", gap: "1.5vw", marginLeft: "10%", marginTop: "1%" }}>
 
 
 
-                    <p className="paragraph-white-line ">IMPRESSUM</p>
-                    <p className="paragraph-white-line ">KONTAKT</p>
-                    <p className="paragraph-white-line ">NEWSLETTER</p>
-                    <p className="paragraph-white-line ">URHEBERRECHT</p>
-                    <p className="paragraph-white-line ">HAFTUNG</p>
-                    <p className="paragraph-white-line ">AGBS</p>
+
+                    <FootLink text="IMPRESSUM" onClick={() => console.log("implement")}></FootLink>
+                    <FootLink text="KONTAKT" onClick={() => console.log("implement")}></FootLink>
+                    <FootLink text="NEWSLETTER" onClick={() => console.log("implement")}></FootLink>
+                    <FootLink text="URHEBERRECHT" onClick={() => console.log("implement")}></FootLink>
+                    <FootLink text="HAFTUNG" onClick={() => console.log("implement")}></FootLink>
+                    <FootLink text="AGBS" onClick={() => console.log("implement")}></FootLink>
 
 
 
