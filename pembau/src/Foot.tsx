@@ -7,7 +7,7 @@ const Foot = () => {
         <div style={{ display: "flex", flexDirection: "row", width: "100vw", height: "10vw", backgroundColor: "black", fill: "white" }}>
             <div id="sprechblase" style={{ width: "10%", height: "auto", marginLeft: "2%", marginBlock: "auto" }}>
                 <svg viewBox="0 0 186 137" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M143.728 4.53274L179.845 132.504H4.50272V4.50391L143.728 4.53274Z" stroke="white" stroke-width="9.00542" stroke-miterlimit="10" />
+                    <path d="M143.728 4.53274L179.845 132.504H4.50272V4.50391L143.728 4.53274Z" stroke="white" strokeWidth="9.00542" strokeMiterlimit="10" />
                 </svg>
             </div>
 
@@ -15,7 +15,7 @@ const Foot = () => {
                 <p className="foot-text" >PLATTFORM FÜR KUNST, KULTUR UND GESELLSCHAFT.</p>
             </div>
 
-            <div id="socialmedia" style={{ display: "flex", flexDirection: "row", scale: "0.7", gap: "2.5vw", width: "20%", height: "auto", marginLeft: "1%", transform: "translateY(1vw)" }}>
+            <div id="socialmedia" style={{ display: "flex", flexDirection: "row", scale: "0.7", gap: "2.5vw", width: "20%", height: "auto", marginLeft: "1%" }}>
 
                 <svg viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M6.47574 0.518077C10.376 -0.192367 26.5208 -0.111314 30.6928 0.394103C34.5693 0.866143 37.1679 3.99877 37.597 7.79416C38.1739 12.9342 38.0834 24.5063 37.6161 29.7464C37.2203 34.195 34.7552 37.0845 30.2065 37.5947C25.0665 38.1716 13.4944 38.081 8.25424 37.6137C3.80562 37.218 0.91616 34.7529 0.405975 30.2041C-0.104209 25.6554 -0.1805 11.9758 0.448886 7.3555C0.873246 4.22764 3.3002 1.09024 6.48051 0.513305L6.47574 0.518077ZM7.42459 3.37893C4.74016 3.92249 3.54338 6.2207 3.26206 8.75255C2.75664 13.3013 2.75187 24.7066 3.26206 29.2601C3.69119 33.1079 5.48398 34.4334 9.20308 34.7624C14.0332 35.1916 24.5134 35.2726 29.2481 34.7434C31.6417 34.4764 33.2438 33.785 34.1401 31.5011C35.2559 28.6641 35.0318 9.69663 34.1401 6.47818C33.6109 4.56618 31.6274 3.48859 29.7297 3.25972C26.0869 2.82106 10.7003 2.71616 7.41983 3.37893H7.42459Z" fill="white" />
@@ -36,13 +36,24 @@ const Foot = () => {
 
             </div>
 
-            <div id="links" style={{ display: "grid", gridTemplateColumns: "3vw 3vw 3vw", gridTemplateRows: "2vw 2vw ", gap: "1vw", width: "45%", height: "auto", backgroundColor: "#978282ff", marginLeft: "0%" }}>
-                <p className="paragraph">furz</p>
-                <p className="paragraph">furz</p>
-                <p className="paragraph">furz</p>
-                <p className="paragraph">furz</p>
-                <p className="paragraph">furz</p>
-                <p className="paragraph">furz</p>
+            <div style={{ width: "45%", height: "100%" }}>
+
+                <div id="links" style={{ display: "grid", width: "fit-content", gridTemplateColumns: "8vw 8vw 8vw", gridTemplateRows: "1.5vw 1.5vw ", gap: "2vw", marginLeft: "10%", marginTop: "2.8%" }}>
+
+
+
+                    <p className="paragraph-white-line ">IMPRESSUM</p>
+                    <p className="paragraph-white-line ">KONTAKT</p>
+                    <p className="paragraph-white-line ">NEWSLETTER</p>
+                    <p className="paragraph-white-line ">URHEBERRECHT</p>
+                    <p className="paragraph-white-line ">HAFTUNG</p>
+                    <p className="paragraph-white-line ">AGBS</p>
+
+
+
+
+                </div>
+
 
             </div>
 
