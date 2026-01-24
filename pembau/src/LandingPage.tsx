@@ -1,6 +1,6 @@
 
 
-//Images
+//Images, alle hier importen für Übersicht!
 import NiceTryImg from "./assets/NiceTry.webp"
 import NiceTryCollapsedImg from "./assets/NiceTryTrBljpg.webp"
 import AussichtImg from "./assets/Aussicht.webp";
@@ -23,6 +23,7 @@ import TextFrameEndeLP from "./TextFrameEndeLP";
 import TextButton from "./Components/TextButton";
 import Foot from "./Foot";
 import { useMainStore } from "./stores/MainStore";
+import Menu from "./Menu";
 
 const LandingPage = () => {
 
@@ -54,11 +55,27 @@ const LandingPage = () => {
         height: "10vw",
         top: "0%",
         left: "0%",
-        zIndex: "3",
+        zIndex: "4",
         backgroundColor: "#000000"
       }}>
         <Head currentPage="_HOME"></Head>
       </div>
+
+
+
+      {menuOpen && <div id="sidemenu" style={{
+        position: "fixed",
+        width: "35vw",
+        height: "100vh",
+        top: "5%",
+        right: "-5%",
+        zIndex: "3",
+        backgroundColor: "#ffffff",
+        transform: "rotate(-5deg)"
+      }} >
+        <Menu></Menu>
+
+      </div>}
 
       {/* früher war die hor. verschiebung und der rotate über position absolute und dann top gemacht. 
       besser aber für alles nur translate verwenden, um den normalen dokumentenflow zu erhalten und vertikale
@@ -76,6 +93,7 @@ const LandingPage = () => {
       <div id="nicetryjpg" style={{
         width: "150vw",
         transform: "translateX(-29%) rotate(1.44deg)",
+        zIndex: "2"
       }}>
         <ImageFrameJPG collapsedImg={NiceTryCollapsedImg} uncollapsedImg={NiceTryImg}></ImageFrameJPG>
       </div>
@@ -83,7 +101,7 @@ const LandingPage = () => {
       <div className="textframe" id="textframeaussicht" style={{
         width: "80vw",
         marginTop: "-5vw",
-        zIndex: "2",
+        zIndex: "1",
       }}>
         <TextFrameAussicht></TextFrameAussicht>
       </div>
@@ -91,9 +109,9 @@ const LandingPage = () => {
 
       <div id="aussicht" style={{
         width: "120vw",
-        marginTop: "-4vw",
+        marginTop: "0vw",
         transform: "translateX(-9%)rotate(3deg)",
-        zIndex: "1",
+        zIndex: "2",
       }}>
         <ImageFrameJPG collapsedImg={AussichtCollapsedImg} uncollapsedImg={AussichtImg}></ImageFrameJPG>
       </div>
@@ -107,7 +125,6 @@ const LandingPage = () => {
 
       }}>
         <div className="textframe" style={{
-
           width: "50%",
           zIndex: "1",
         }}>

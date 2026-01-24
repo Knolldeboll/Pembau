@@ -68,11 +68,32 @@ html {
   fill: #ffffff;
 }
 
+.blackicon {
+  fill: "#000000";
+}
+
+.blackicon:hover {
+  fill: #FF6400;
+}
+
 .paragraph {
   font-family: "DM Sans";
   font-weight: 400;
   font-size: 2.2vw;
 
+}
+
+.h4 {
+  font-family: "DM Sans";
+  font-weight: 700;
+  text-decoration: wavy;
+  font-size: 2.2vw;
+  color: black;
+}
+
+.hoverable:hover {
+  color: #FF6400;
+  fill: #FF6400;
 }
 
 .paragraph-white-line {
