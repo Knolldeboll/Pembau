@@ -22,11 +22,18 @@ import MithelfenFrame from "./MithelfenFrame";
 import TextFrameEndeLP from "./TextFrameEndeLP";
 import TextButton from "./Components/TextButton";
 import Foot from "./Foot";
+import { useMainStore } from "./stores/MainStore";
 
 const LandingPage = () => {
 
 
 
+
+
+  const menuOpen = useMainStore((state) => state.menuOpen);
+
+  // nur zum testen, remove
+  menuOpen ? console.log("menu opened") : console.log("menu closed")
 
 
   return (
