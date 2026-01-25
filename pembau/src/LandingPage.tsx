@@ -22,8 +22,7 @@ import MithelfenFrame from "./MithelfenFrame";
 import TextFrameEndeLP from "./TextFrameEndeLP";
 import TextButton from "./Components/TextButton";
 import Foot from "./Foot";
-import { useMainStore } from "./stores/MainStore";
-import Menu from "./Menu";
+
 
 const LandingPage = () => {
 
@@ -31,14 +30,9 @@ const LandingPage = () => {
 
 
 
-  const menuOpen = useMainStore((state) => state.menuOpen);
-
-  // nur zum testen, remove
-  menuOpen ? console.log("menu opened") : console.log("menu closed")
-
 
   return (
-    <div className="body-instance"
+    <div className="lp-body-instance"
       style={{
 
         display: "flex",
@@ -48,34 +42,6 @@ const LandingPage = () => {
         overflow: "hidden",
       }}>
 
-
-      <div id="headmenu" style={{
-        position: "fixed",
-        width: "100vw",
-        height: "10vw",
-        top: "0%",
-        left: "0%",
-        zIndex: "4",
-        backgroundColor: "#000000"
-      }}>
-        <Head currentPage="_HOME"></Head>
-      </div>
-
-
-
-      {menuOpen && <div id="sidemenu" style={{
-        position: "fixed",
-        width: "35vw",
-        height: "100vh",
-        top: "5%",
-        right: "-5%",
-        zIndex: "3",
-        backgroundColor: "#ffffff",
-        transform: "rotate(-5deg)"
-      }} >
-        <Menu></Menu>
-
-      </div>}
 
       {/* früher war die hor. verschiebung und der rotate über position absolute und dann top gemacht. 
       besser aber für alles nur translate verwenden, um den normalen dokumentenflow zu erhalten und vertikale

@@ -55,9 +55,9 @@ export const Head = ({ currentPage }: HeadProps) => {
 
       </div>
 
-      <div id="burger" style={{ width: "10vw", height: "auto", marginRight: "1.5%", marginTop: "1.5%" }}>
+      <div id="burger" style={{ width: "7vw", height: "auto", marginRight: "3.5vw", marginTop: "2.7vw" }}>
 
-        <svg className="icon" onClick={toggleMenuOpen} width="69" height="39" viewBox="0 0 69 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className="icon" onClick={toggleMenuOpen} viewBox="0 0 69 39" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M0 39L2.09669 33H69V39H0Z" />
           <path d="M4 28L6.09677 22H69V28H4Z" />
           <path d="M8 17L10.1057 11H69V17H8Z" />

@@ -1,28 +1,3 @@
-/*.scale-wrapper {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  position: relative;
-}
-
-.page {
-  width: 1728px;
-  height: 9039px;
-  transform-origin: top left;
-  position: absolute; 
-}
-
-
-.test {
-  background-color: black;
-  width: 200px;
-  height: 50px;
-  color: white;
-  text-align: center;
-}
-
-*/
-
 /* Head */
 
 
@@ -163,32 +138,6 @@ Der Body hat schon dem der Länge der Figma-Landingpage entsprechenden Länge, a
 
 }
 
-/*
-#pngimagetest {
-
-
-
-position: absolute;
-width: 2299.44px;
-height: 1719.71px;
-left: -506px;
-top: -16px;
-
-transform: rotate(1.44deg);
-
-}
-
-*/
-
-
-/* War nur zum Testen ob man auch Rotaten kann um den Corner-Winkel zu ändern
-.leftuppercorner {
-  transform: rotate(10dg);
-}
-
-.leftbottomcorner{
-  transform: rotate(());
-}*/
 
 
 html,
