@@ -14,21 +14,16 @@ import MithelfenCollapsedImage from "./assets/MithelfenBr.webp";
 
 // Components
 import ImageFrameJPG from "./Components/ImageFrameJPG";
-import TextFrameAussicht from "./TextFrameAussicht";
-import { Head } from "./Head";
-import TextFrameGestalten from "./TextFrameGestalten";
-import KeinProgrammFrame from "./KeinProgrammFrame";
-import MithelfenFrame from "./MithelfenFrame";
-import TextFrameEndeLP from "./TextFrameEndeLP";
+import TextFrameAussicht from "./Customframes/TextFrameAussicht";
+import TextFrameGestalten from "./Customframes/TextFrameGestalten";
+import KeinProgrammFrame from "./Customframes/KeinProgrammFrame";
+import MithelfenFrame from "./Customframes/MithelfenFrame";
+import TextFrameEndeLP from "./Customframes/TextFrameEndeLP";
 import TextButton from "./Components/TextButton";
-import Foot from "./Foot";
+import Foot from "./menu/Foot";
 
 
 const LandingPage = () => {
-
-
-
-
 
 
   return (

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import TextButton from "./Components/TextButton";
+import TextButton from "../Components/TextButton";
 
 // TODO: Hier noch die Buttons einfügen! 
 // Die sind einfach TextButtons, müssen aber gescheid positioniert werden und sind auch nur 
@@ -18,7 +18,7 @@ interface ImageFrameJPGProps {
  * @param collapsedImg Pfad zum uncollapseden Image
  * @returns 
  */
-const KeinProgrammFrame = ({ uncollapsedImg, collapsedImg }: ImageFrameJPGProps) => {
+const MithelfenFrame = ({ uncollapsedImg, collapsedImg }: ImageFrameJPGProps) => {
 
 
 
@@ -70,15 +70,15 @@ const KeinProgrammFrame = ({ uncollapsedImg, collapsedImg }: ImageFrameJPGProps)
 
 
             <div id="kpkpbuttoncontainer" style={{
-                display: "flex", width: "fit-content", flexDirection: "column", gap: "29vw",
-                transform: "translateY(-51vw) translateX(33vw) scale(75%) rotate(-4deg)  "
+                display: "flex", width: "fit-content", flexDirection: "column", gap: "15vw",
+                transform: " translateY(-79vw) translateX(61vw) rotate(8deg)  scale(80%)"
             }}>
-                {!collapsed && <TextButton text="MEHR_ERFAHREN" onClick={() => { console.log("Mehrerfahren-pembauaktuell todo") }}></TextButton>}
+                {!collapsed && <TextButton text="TEIL_SEIN" onClick={() => { console.log("Mehrerfahren-pembauaktuell todo") }}></TextButton>}
 
-                {!collapsed && <TextButton text="MEHR_ERFAHREN" onClick={() => { console.log("Mehrerfahren-pembauBALD todo") }}></TextButton>}
+                {!collapsed && <TextButton text="CROWD_FUNDING" onClick={() => { console.log("Mehrerfahren-pembauBALD todo") }}></TextButton>}
+
+                {!collapsed && <TextButton text="NEWS_LETTER" onClick={() => { console.log("Mehrerfahren-pembauBALD todo") }}></TextButton>}
             </div>
-
-
 
         </div>
     );
@@ -96,4 +96,4 @@ const KeinProgrammFrame = ({ uncollapsedImg, collapsedImg }: ImageFrameJPGProps)
     //
 };
 
-export default KeinProgrammFrame;
+export default MithelfenFrame;

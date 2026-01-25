@@ -1,4 +1,4 @@
-import TextButton from "./Components/TextButton";
+import TextButton from "../Components/TextButton";
 
 
 const TextFrameGestalten = () => {

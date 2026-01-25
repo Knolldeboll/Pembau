@@ -1,8 +1,8 @@
 //import React from "react";
 //import { BurgerIcon } from "./BurgerIcon";
 //import { LogoIcon } from "./LogoIcon";
-import { useMainStore } from "./stores/MainStore";
-import "./style.css";
+import { useMainStore } from "../stores/MainStore";
+import "../style.css";
 //import { Burger } from "./Burger";
 //import { TextHome } from "./TextHome";
 

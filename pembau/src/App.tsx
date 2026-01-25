@@ -14,9 +14,10 @@ import { TeilSein } from "./TeilSein";
 
 */
 
-import { Head } from "./Head";
+import { BrowserRouter, Route, Routes } from "react-router";
+import { Head } from "./menu/Head";
 import LandingPage from "./LandingPage";
-import Menu from "./Menu";
+import Menu from "./menu/Menu";
 import { useMainStore } from "./stores/MainStore";
 
 
@@ -34,41 +35,53 @@ export const App = () => {
 
   return <>
 
-    <div id="headmenu" style={{
-      position: "fixed",
-      width: "100vw",
-      height: "10vw",
-      top: "0%",
-      left: "0%",
-      zIndex: "4",
-      backgroundColor: "#000000"
-    }}>
-      <Head currentPage="_HOME"></Head>
-    </div>
+    <BrowserRouter>
 
 
 
-    {menuOpen && <div id="sidemenu" style={{
-      position: "fixed",
-      width: "35vw",
-      height: "100vh",
-      top: "5%",
-      right: "-5%",
-      zIndex: "3",
-      backgroundColor: "#ffffff",
-      transform: "rotate(-5deg)"
-    }} >
-      <Menu></Menu>
-
-
-    </div>}
-
-
-    {/**TODO: Routing hierrum */}
-    <LandingPage></LandingPage>;
+      <div id="headmenu" style={{
+        position: "fixed",
+        width: "100vw",
+        height: "10vw",
+        top: "0%",
+        left: "0%",
+        zIndex: "4",
+        backgroundColor: "#000000"
+      }}>
+        <Head currentPage="_HOME"></Head>
+      </div>
 
 
 
+      {menuOpen && <div id="sidemenu" style={{
+        position: "fixed",
+        width: "35vw",
+        height: "100vh",
+        top: "5%",
+        right: "-5%",
+        zIndex: "3",
+        backgroundColor: "#ffffff",
+        transform: "rotate(-5deg)"
+      }} >
+        <Menu></Menu>
+
+
+      </div>}
+
+
+      {/**TODO: Routing hierrum */}
+
+      <Routes>
+
+        <Route path="/Pembau/" element={<LandingPage></LandingPage>} />
+        <Route path="/" element={<LandingPage></LandingPage>} />
+
+      </Routes>
+
+
+
+
+    </BrowserRouter>
   </>
 
 
