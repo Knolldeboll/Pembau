@@ -21,10 +21,12 @@ import MithelfenFrame from "./Customframes/MithelfenFrame";
 import TextFrameEndeLP from "./Customframes/TextFrameEndeLP";
 import TextButton from "./Components/TextButton";
 import Foot from "./menu/Foot";
+import { useNavigate } from "react-router";
 
 
 const LandingPage = () => {
 
+  const navigate = useNavigate();
 
   return (
     <div className="lp-body-instance"
@@ -116,7 +118,7 @@ const LandingPage = () => {
       </div>
 
       <div id="endbuttons" style={{ display: "flex", flexDirection: "column", gap: "1vw", marginTop: "10vw", width: "40vw", height: "30vw", transform: "translateX(10vw)" }} >
-        <TextButton text="ABOUT" onClick={() => { console.log("TODO: About ocnlick") }}></TextButton>
+        <TextButton text="ABOUT" onClick={() => { navigate("/About") }}></TextButton>
         <TextButton text="INSTAGRAM" onClick={() => { console.log("TODO: Isnta ocnlick") }}></TextButton>
         <TextButton text="ZURÜCK_ZUM_ANFANG" onClick={() => { console.log("TODO: Zurück ocnlick") }}></TextButton>
       </div>

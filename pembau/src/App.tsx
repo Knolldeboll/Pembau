@@ -19,6 +19,7 @@ import { Head } from "./menu/Head";
 import LandingPage from "./LandingPage";
 import Menu from "./menu/Menu";
 import { useMainStore } from "./stores/MainStore";
+import About from "./About";
 
 
 
@@ -74,7 +75,7 @@ export const App = () => {
       <Routes>
 
         <Route path="/Pembau/" element={<LandingPage></LandingPage>} />
-        <Route path="/" element={<LandingPage></LandingPage>} />
+        <Route path="/About/" element={<About></About>} />
 
       </Routes>
 
