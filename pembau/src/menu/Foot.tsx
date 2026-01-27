@@ -1,8 +1,9 @@
 import FootLink from "./FootLink";
+//import { useNavigate } from "react-router";
 
 const Foot = () => {
 
-
+    //const navigate = useNavigate();
 
     return (
 
