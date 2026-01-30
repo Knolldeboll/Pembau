@@ -1,10 +1,9 @@
-import { Link, useNavigate } from "react-router";
+import { Link } from "react-router";
 
 // TODO: Durch React-router-links austauschen wenn Links da. 
 
 const Menu = () => {
 
-    const navigate = useNavigate();
     return (
 
         <div style={{ display: "flex", flexDirection: "column", gap: "10%", marginTop: "30%", marginLeft: "10%" }}>

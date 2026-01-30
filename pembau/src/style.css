@@ -58,6 +58,18 @@ html {
 
 }
 
+a {
+  text-decoration-line: none;
+}
+
+.h1serif {
+  font-family: "Noto Serif";
+  font-weight: 700;
+  font-style: italic;
+  font-size: 2.5vw;
+  color: #FF6400;
+
+}
 
 .h2 {
   font-family: "DM Sans";
@@ -71,6 +83,13 @@ html {
   font-weight: 700;
   font-size: 2.2vw;
   color: black;
+}
+
+.dmsans700orange {
+  font-family: "DM Sans";
+  font-weight: 700;
+  font-size: 2.5vw;
+  color: #FF6400;
 }
 
 .m10t {
