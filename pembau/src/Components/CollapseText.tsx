@@ -1,26 +1,58 @@
-import React from "react";
-import { ReactNode } from "react";
+import { useEffect, useState } from "react";
+import Markdown from "react-markdown";
+
 
 interface CollapseTextProps {
 
-    children: ReactNode
+    alwaysSrc: string,
+    expandSrc: string,
 }
 
-export const CollapseText = ({ children }: CollapseTextProps) => {
+export const CollapseText = ({ alwaysSrc, expandSrc }: CollapseTextProps) => {
 
 
-    React.Children.forEach(children, (child) => {
+    const [alwaysMd, setAlwaysMd] = useState("");
+    const [expandMd, setExpandMd] = useState("");
 
-        // if (child?.type?)
-    })
+    const [isCollapsed, setCollapsed] = useState(true);
+
+    // md aus Datei fetchen, vor Render
+    useEffect(() => {
+        fetch(alwaysSrc)
+            .then((r) => r.text())
+            .then(setAlwaysMd).catch(() => console.log("Failed to load md"));;
+    }, [alwaysSrc]);
+
+    useEffect(() => {
+        fetch(expandSrc)
+            .then((r) => r.text())
+            .then(setExpandMd).catch(() => console.log("Failed to load md"));
+    }, [expandSrc])
+
+
+    // md im render in reactMd shit packen
 
     return (<div className="collapsetextwrapper" >
-        {children}
+        <Markdown >
+            {alwaysMd}
+        </Markdown>
+
+        {!isCollapsed &&
+            <Markdown>
+                {expandMd}
+            </Markdown>}
+
+        <p className="underline" onClick={() => setCollapsed(!isCollapsed)}>
+            {isCollapsed ? "Mehr Lesen" : "Weniger Lesen"}
+        </p>
+
     </div>);
 
 }
 
 
+
+/*
 export const Always = ({ children }: any) => {
 
     return <>{children}</>;
@@ -36,4 +68,4 @@ export const Expand = ({ children }: any) => {
 Expand.displayName = "Expand";
 
 
-
+*/

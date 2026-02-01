@@ -24,6 +24,8 @@ import About from "./About";
 
 
 
+// TODO: Footmenu hier auch?
+
 export const App = () => {
 
 
@@ -75,7 +77,7 @@ export const App = () => {
       <Routes>
 
         <Route path="/Pembau/" element={<LandingPage></LandingPage>} />
-        <Route path="/About/" element={<About></About>} />
+        <Route path="/Pembau/About/" element={<About></About>} />
 
       </Routes>
 
