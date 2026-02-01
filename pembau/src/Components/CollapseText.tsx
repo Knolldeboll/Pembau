@@ -1,3 +1,4 @@
+import React from "react";
 import { ReactNode } from "react";
 
 interface CollapseTextProps {
@@ -8,6 +9,10 @@ interface CollapseTextProps {
 export const CollapseText = ({ children }: CollapseTextProps) => {
 
 
+    React.Children.forEach(children, (child) => {
+
+        // if (child?.type?)
+    })
 
     return (<div className="collapsetextwrapper" >
         {children}
