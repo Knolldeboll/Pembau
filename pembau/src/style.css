@@ -101,6 +101,16 @@ a {
   fill: #FF6400;
 }
 
+.collapsetextwrapper {
+
+  display: flex;
+  width: 40vw;
+  margin-left: 10vw;
+  flex-direction: column;
+  background-color: #a8a8a8;
+
+}
+
 .paragraph-white-line {
   font-family: "DM Sans";
   width: fit-content;

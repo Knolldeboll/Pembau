@@ -10,6 +10,8 @@ import StartImg from "./assets/about/neu für start.webp"
 import StartCollapsedImg from "./assets/about/neu für start br.webp";
 import ImageFrameJPG from "./Components/ImageFrameJPG";
 import Foot from "./menu/Foot";
+import TextFrameGeschichte from "./Customframes/TextFrameGeschichte";
+import CollapseText from "./Components/CollapseText";
 
 const About = () => {
 
@@ -54,13 +56,18 @@ const About = () => {
 
             <div id="geschichte" style={{
                 display: "flex",
+                flex: "none",
                 flexDirection: "row",
-                marginTop: "5vw"
+                marginTop: "5vw",
+                zIndex: "2"
             }}>
 
-                <ImageFrameJPG collapsedImg={GeschichteCollapsedImg} uncollapsedImg={GeschichteImg}></ImageFrameJPG>
-                <p className="h1serif" style={{ transform: " translateX(-33vw) translateY(0vw) rotate(20deg)", minWidth: "35vw", height: "fit-content" }}>Vom<span className="dmsans700orange">_BAUERNHOF<br />_ZUR </span>_Kulturplattform</p>
+                <div id="geschichteimgwrapper" style={{ display: "flex", flex: "none", width: "60vw", flexDirection: "row", transform: "translateX(-3vw)" }}>
+                    <ImageFrameJPG collapsedImg={GeschichteCollapsedImg} uncollapsedImg={GeschichteImg}></ImageFrameJPG>
+                    <p className="h1serif" style={{ position: "absolute", left: "50%", transform: "translateY(1vw)", rotate: "20deg", minWidth: "35vw", height: "fit-content", zIndex: "0" }}>Vom<span className="dmsans700orange">_BAUERNHOF<br />_ZUR </span>_Kulturplattform</p>
+                </div>
 
+                <CollapseText><p>Furzenkacken</p> </CollapseText>
 
             </div>
 
@@ -68,7 +75,7 @@ const About = () => {
             <div id="foot">
                 <Foot></Foot>
             </div>
-        </div>
+        </div >
     )
 
 }
