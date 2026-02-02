@@ -63,19 +63,35 @@ const About = () => {
 
             <div id="geschichte" style={{
                 display: "flex",
+
                 flex: "none",
                 flexDirection: "row",
                 marginTop: "5vw",
                 zIndex: "2"
             }}>
 
-                <div id="geschichteimgwrapper" style={{ display: "flex", flex: "none", width: "65vw", flexDirection: "row", transform: "translateX(-3vw)" }}>
+                <div id="geschichteimgwrapper" style={{ position: "relative", width: "65vw", transform: "translateX(-3vw)", zIndex: "1" }}>
                     <ImageFrameJPG collapsedImg={GeschichteCollapsedImg} uncollapsedImg={GeschichteImg}></ImageFrameJPG>
-                    <p className="h1serif" style={{ position: "absolute", left: "50%", transform: "translateY(1vw)", rotate: "20deg", minWidth: "35vw", height: "fit-content", zIndex: "0" }}>Vom<span className="dmsans700orange">_BAUERNHOF<br />_ZUR </span>_Kulturplattform</p>
+                    <p className="h1serif" style={{ display: "block", position: "absolute", top: "-1%", left: "48%", rotate: "20deg", width: "35vw", height: "fit-content", zIndex: "0" }}>Vom<span className="dmsans700orange">_BAUERNHOF<br />_ZUR </span>_Kulturplattform</p>
                 </div>
                 <CollapseText alwaysSrc="/Pembau/content/aboutGeschichteAlways.md" expandSrc="/Pembau/content/aboutGeschichteExpand.md" ></CollapseText>
             </div>
 
+
+            {/*Ab hier die Bilder mit Collapsetext nebenan    transform: "translateX(25vw )translateY(-70vw) rotate(20deg)", transform: "translateX(25vw )translateY(-70vw) rotate(20deg)",*/}
+            <div id="kultursommer">
+
+
+            </div>
+
+            <div id="helpinghands">
+
+            </div>
+
+
+            <div id="containercity"></div>
+
+            <div id="permabau"></div>
 
             <div id="foot">
                 <Foot></Foot>
