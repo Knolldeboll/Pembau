@@ -1,0 +1,4 @@
+## Container_City for the City
+
+Ab Mai 2025 entsteht am Pembau die Container City. Ein dauerhaft nutzbarer Kulturraum, der Platz für kreative Arbeit, Austausch und neue Projekte schafft. In ausgebauten Containern bieten wir Raum für Künstler*innen, Kulturschaffende und Vereine, die hier produzieren, planen und wirken können. 
+Damit ist ein zentraler Baustein der Plattform Pembau. Sie macht es möglich, dass Menschen nicht nur temporär im Rahmen von Veranstaltungen, sondern auch kontinuierlich am Pembau arbeiten und ihre Projekte realisieren können. Die Räume werden zur Untermiete vergeben und bieten damit eine stabile Infrastruktur für künstlerisches und kulturelles Schaffen in Innsbruck – direkt am Fuße des Viller Bergs.

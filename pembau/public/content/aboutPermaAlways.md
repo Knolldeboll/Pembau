@@ -1,0 +1,3 @@
+## Perma_am_Pembau
+
+Der Perma_kulturgarten am Pembau: ein lebendiger, nachhaltiger Ort voller Vielfalt. Hier wächst nicht nur Gemüse, sondern auch Gemeinschaft, Wissen und Kreativität. Wir machen aus ungenutzter Fläche fruchtbaren Boden. Unser Garten lädt zum Verweilen ein – zum Seele baumeln lassen, Hände dreckig machen und den Kreislauf der Natur hautnah erleben. Ob Beete anlegen, Teiche ausheben, Regenwasser nutzen oder neue Anbaumethoden ausprobieren – hier gibt es immer etwas zu tun und zu entdecken. Der Garten ist offen für alle, die mitgestalten möchten: Ganz ohne Vorkenntnisse, dafür mit viel Freude am Tun, entsteht ein Ort zum Mitmachen, Lernen und Verweilen – für grüne Daumen und alle, die es noch werden wollen.
