@@ -4,12 +4,13 @@ import Markdown from "react-markdown";
 
 interface CollapseTextProps {
 
-    marginTopProp: string;
+    marginTopProp?: string;
+    textColor?: string;
     alwaysSrc: string,
     expandSrc: string,
 }
 
-export const CollapseText = ({ alwaysSrc, expandSrc, marginTopProp }: CollapseTextProps) => {
+export const CollapseText = ({ alwaysSrc, expandSrc, marginTopProp, textColor }: CollapseTextProps) => {
 
 
     const [alwaysMd, setAlwaysMd] = useState("");

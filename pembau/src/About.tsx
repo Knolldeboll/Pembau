@@ -16,6 +16,7 @@ import HelpingHandsCollapsedImg from "./assets/about/helpinghandstrbl.webp";
 import ContainerImg from "./assets/about/container.webp";
 import ContainerCollapsedImg from "./assets/about/containerbltr.webp";
 import PermaImg from "./assets/about/perma.webp";
+import VisionImg from "./assets/about/vision.webp";
 import PermaCollapsedImg from "./assets/about/permatrbl.webp";
 //import TeamImg from "./assets/about/team.webp";
 //import TeamCollapsedImg from "./assets/about/teambrtl.webp";
@@ -89,12 +90,24 @@ const About = () => {
                 <CollapseText marginTopProp="15vw" alwaysSrc="/Pembau/content/aboutGeschichteAlways.md" expandSrc="/Pembau/content/aboutGeschichteExpand.md" ></CollapseText>
             </div>
 
-            <div id="grundstück" style={{ width: "100vw", height: "50vw", backgroundColor: "rgba(170, 131, 131, 0.36)", color: "#000000" }}>
-                GRUNDSTÜCK PLACEHOLDER
+            <div id="grundstück" style={{ position: "relative", backgroundColor: "rgba(170, 131, 131, 0.36)", color: "#000000" }}>
+                <img
+                    src={VisionImg}
+                    style={{
 
+                        width: "100%",
+                        height: "auto",
+                        zIndex: "2",
+
+                    }}
+                ></img>
+
+                <div id="gscollapsecontainer" style={{ position: "absolute", color: "white" }}></div>
+                <CollapseText marginTopProp="0vw" textColor="#ffffff" alwaysSrc="/Pembau/content/aboutGrundstuckAlways.md" expandSrc="/Pembau/content/aboutGrundstuckExpand.md"></CollapseText>
             </div>
 
-            <div id="aktuelles" style={{ width: "100vw", height: "50vw", backgroundColor: "rgba(170, 131, 131, 0.36)", color: "#000000" }}>
+
+            <div id="aktuelles" style={{ width: "100vw", height: "50vw", backgroundColor: "rgba(180, 25, 25, 0.36)", color: "#000000" }}>
                 Aktuelles PLACEHOLDER
 
             </div>
