@@ -5,12 +5,14 @@ import Markdown from "react-markdown";
 interface CollapseTextProps {
 
     marginTopProp?: string;
+    rotate?: string;
     textColor?: string;
+    width: string;
     alwaysSrc: string,
     expandSrc: string,
 }
 
-export const CollapseText = ({ alwaysSrc, expandSrc, marginTopProp, textColor }: CollapseTextProps) => {
+export const CollapseText = ({ alwaysSrc, expandSrc, marginTopProp, textColor, width, rotate }: CollapseTextProps) => {
 
 
     const [alwaysMd, setAlwaysMd] = useState("");
@@ -34,7 +36,7 @@ export const CollapseText = ({ alwaysSrc, expandSrc, marginTopProp, textColor }:
 
     // md im render in reactMd shit packen
 
-    return (<div className="collapsetextwrapper" style={{ marginTop: marginTopProp }} >
+    return (<div className="collapsetextwrapper" style={{ marginTop: marginTopProp, width: width, color: textColor, rotate: rotate }} >
 
         <Markdown >
             {alwaysMd}

@@ -87,7 +87,7 @@ const About = () => {
                     <ImageFrameJPG collapsedImg={GeschichteCollapsedImg} uncollapsedImg={GeschichteImg}></ImageFrameJPG>
                     <p className="h1serif" style={{ display: "block", position: "absolute", top: "-1%", left: "48%", rotate: "20deg", width: "35vw", height: "fit-content", zIndex: "0" }}>Vom<span className="dmsans700orange">_BAUERNHOF<br />_ZUR </span>_Kulturplattform</p>
                 </div>
-                <CollapseText marginTopProp="15vw" alwaysSrc="/Pembau/content/aboutGeschichteAlways.md" expandSrc="/Pembau/content/aboutGeschichteExpand.md" ></CollapseText>
+                <CollapseText marginTopProp="15vw" width="55vw" alwaysSrc="/Pembau/content/aboutGeschichteAlways.md" expandSrc="/Pembau/content/aboutGeschichteExpand.md" ></CollapseText>
             </div>
 
             <div id="grundstück" style={{ position: "relative", backgroundColor: "rgba(170, 131, 131, 0.36)", color: "#000000" }}>
@@ -102,8 +102,12 @@ const About = () => {
                     }}
                 ></img>
 
-                <div id="gscollapsecontainer" style={{ position: "absolute", color: "white" }}></div>
-                <CollapseText marginTopProp="0vw" textColor="#ffffff" alwaysSrc="/Pembau/content/aboutGrundstuckAlways.md" expandSrc="/Pembau/content/aboutGrundstuckExpand.md"></CollapseText>
+                <div id="gscollapsecontainer" style={{ position: "absolute", top: "15%", left: "30%" }}>
+
+                    <CollapseText marginTopProp="0vw" rotate="-4deg" width="33vw" textColor="#ffffff" alwaysSrc="/Pembau/content/aboutGrundstuckAlways.md" expandSrc="/Pembau/content/aboutGrundstuckExpand.md"></CollapseText>
+
+
+                </div>
             </div>
 
 
@@ -124,7 +128,7 @@ const About = () => {
                 <div id="kulturimgwrapper" style={{ position: "relative", width: "65vw", transform: "translateX(-3vw)", zIndex: "1" }}>
                     <ImageFrameJPG collapsedImg={KulturCollapsedImg} uncollapsedImg={KulturImg}></ImageFrameJPG>
                 </div>
-                <CollapseText marginTopProp="0vw" alwaysSrc="/Pembau/content/aboutKulturAlways.md" expandSrc="/Pembau/content/aboutKulturExpand.md" ></CollapseText>
+                <CollapseText marginTopProp="0vw" width="55vw" alwaysSrc="/Pembau/content/aboutKulturAlways.md" expandSrc="/Pembau/content/aboutKulturExpand.md" ></CollapseText>
 
             </div>
 
@@ -138,7 +142,7 @@ const About = () => {
                 <div id="helpingimgwrapper" style={{ position: "relative", width: "65vw", transform: "translateX(-3vw)", zIndex: "1" }}>
                     <ImageFrameJPG collapsedImg={HelpingHandsCollapsedImg} uncollapsedImg={HelpingHandsImg}></ImageFrameJPG>
                 </div>
-                <CollapseText marginTopProp="14vw" alwaysSrc="/Pembau/content/aboutHelpingAlways.md" expandSrc="/Pembau/content/aboutHelpingExpand.md" ></CollapseText>
+                <CollapseText marginTopProp="14vw" width="55vw" alwaysSrc="/Pembau/content/aboutHelpingAlways.md" expandSrc="/Pembau/content/aboutHelpingExpand.md" ></CollapseText>
 
             </div>
 
@@ -152,7 +156,7 @@ const About = () => {
                 <div id="containercitywrapper" style={{ position: "relative", width: "65vw", transform: "translateX(-3vw)", zIndex: "1" }}>
                     <ImageFrameJPG collapsedImg={ContainerCollapsedImg} uncollapsedImg={ContainerImg}></ImageFrameJPG>
                 </div>
-                <CollapseText marginTopProp="0vw" alwaysSrc="/Pembau/content/aboutContainerAlways.md" expandSrc="/Pembau/content/aboutContainerExpand.md" ></CollapseText>
+                <CollapseText marginTopProp="0vw" width="55vw" alwaysSrc="/Pembau/content/aboutContainerAlways.md" expandSrc="/Pembau/content/aboutContainerExpand.md" ></CollapseText>
 
             </div>
 
@@ -167,7 +171,7 @@ const About = () => {
                 <div id="permaimgwrapper" style={{ position: "relative", width: "65vw", transform: "translateX(-3vw)", zIndex: "1" }}>
                     <ImageFrameJPG collapsedImg={PermaCollapsedImg} uncollapsedImg={PermaImg}></ImageFrameJPG>
                 </div>
-                <CollapseText marginTopProp="14vw" alwaysSrc="/Pembau/content/aboutPermaAlways.md" expandSrc="/Pembau/content/aboutPermaExpand.md" ></CollapseText>
+                <CollapseText marginTopProp="14vw" width="55vw" alwaysSrc="/Pembau/content/aboutPermaAlways.md" expandSrc="/Pembau/content/aboutPermaExpand.md" ></CollapseText>
 
             </div>
 

@@ -104,7 +104,7 @@ a {
 .collapsetextwrapper {
 
   display: flex;
-  width: 55vw;
+  flex: none;
   height: fit-content;
 
   flex-direction: column;
@@ -124,9 +124,10 @@ a {
   font-weight: 400;
   font-size: 1.15vw;
   margin-block: 0.5vw;
-  color: #000000;
+
 
 }
+
 
 .underline {
   text-decoration-line: underline;
