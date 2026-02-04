@@ -18,8 +18,9 @@ import ContainerCollapsedImg from "./assets/about/containerbltr.webp";
 import PermaImg from "./assets/about/perma.webp";
 import VisionImg from "./assets/about/vision.webp";
 import PermaCollapsedImg from "./assets/about/permatrbl.webp";
-//import TeamImg from "./assets/about/team.webp";
-//import TeamCollapsedImg from "./assets/about/teambrtl.webp";
+import TeamImg from "./assets/about/team.webp";
+import TeamCollapsedImg from "./assets/about/teambrtl.webp";
+import TeamDream from "./assets/about/teamdream.webp";
 
 
 import Foot from "./menu/Foot";
@@ -31,6 +32,8 @@ import Foot from "./menu/Foot";
 
 
 import { CollapseText } from "./Components/CollapseText";
+import TextFrameAktuell from "./Customframes/TextFrameAktuell";
+import TextButton from "./Components/TextButton";
 //import TextFrameGeschichte from "./Customframes/TextFrameGeschichte";
 
 const About = () => {
@@ -105,14 +108,24 @@ const About = () => {
                 <div id="gscollapsecontainer" style={{ position: "absolute", top: "15%", left: "30%" }}>
 
                     <CollapseText marginTopProp="0vw" rotate="-4deg" width="33vw" textColor="#ffffff" alwaysSrc="/Pembau/content/aboutGrundstuckAlways.md" expandSrc="/Pembau/content/aboutGrundstuckExpand.md"></CollapseText>
-
-
                 </div>
             </div>
 
 
-            <div id="aktuelles" style={{ width: "100vw", height: "50vw", backgroundColor: "rgba(180, 25, 25, 0.36)", color: "#000000" }}>
-                Aktuelles PLACEHOLDER
+
+
+            <div id="aktuelles" style={{ width: "80vw", marginLeft: "5vw", height: "30vw", color: "#000000" }}>
+                <TextFrameAktuell></TextFrameAktuell>
+
+            </div>
+
+
+            <div id="slideshow" style={{ width: "100vw", height: "40vw", backgroundColor: "#3c8f3c" }}>
+                PLACEHOLDER SLIDESHOW
+            </div>
+
+            <div className="aktuell" style={{ width: "65vw", marginLeft: "10vw" }}>
+                <p>Alles was bisher schon am Pembau entsteht, entstanden ist und entstehen soll, dass erfährst du hier!</p>
 
             </div>
 
@@ -175,6 +188,57 @@ const About = () => {
 
             </div>
 
+            <div id="neuerungen" style={{ width: "100vw", height: "40vw", backgroundColor: "rgba(59, 131, 131, 0.2)", textAlign: "center" }}>
+                neuerungen text und buttons placeholder
+            </div>
+
+            <div id="team" style={{
+                width: "95vw",
+                transform: "translateX(5%) rotate(0deg)",
+                zIndex: "2"
+            }}>
+                <ImageFrameJPG collapsedImg={TeamCollapsedImg} uncollapsedImg={TeamImg}></ImageFrameJPG>
+
+            </div>
+
+            <div id="teamdream" style={{
+                position: "relative",
+                width: "95vw",
+                transform: "translateX(5%) rotate(0deg)",
+                zIndex: "2"
+            }} >
+                <img
+                    src={TeamDream}
+                    style={{
+
+                        width: "100%",
+                        height: "auto",
+                        zIndex: "2",
+
+                    }}
+                ></img>
+
+                <div className="aktuell" style={{ position: "absolute", top: "3%", left: "37%", width: "45%" }}>
+
+                    <h2 style={{ marginBottom: "10%" }}>Ohne Team </h2>
+                    <p  >
+                        Mehr als 100 Vereinsmitglieder im Verein Frühschicht aus den vielfältigsten Lebensrealitäten sind heute schon ehrenamtlich tätig, um mit dem Pembau einen neuen Ort für Innsbruck zu erschaffen.
+                        <br></br> <br></br>
+                        Unser Projekt richtet sich an Menschen aller Art und jeden Alters, die Neues lernen wollen, kreative Ideen entwickeln, Wachstum erleben, nach einem Ausgleich suchen oder ihre Erfahrungen teilen möchten.
+                        <br></br> <br></br>
+                        Der Verein und das Projekt leben von einer bunten Mischung an Menschen mit verschiedenen Denkweisen, Talenten und Kompetenzen. Der Austausch und das gegenseitige Verständnis fördern eine lebendige Gemeinschaft.
+                        Wir glauben, jede Perspektive ist wertvoll und bereichert unser gemeinsames Wirken – und wir freuen uns deswegen über alle, die sich einbringen möchten!
+
+                    </p>
+                    <div style={{ width: "50%", marginTop: "10%" }}>
+                        <TextButton text="TEIL_SEIN" width="20vw" onClick={() => console.log("implement teil sein")}></TextButton>
+                    </div>
+
+
+                </div>
+
+
+            </div>
 
             <div id="foot">
                 <Foot></Foot>

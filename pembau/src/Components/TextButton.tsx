@@ -3,10 +3,11 @@
 interface TextButtonProps {
 
     text: string;
+    width?: string;
     onClick: (() => void);
 }
 
-const TextButton = ({ text, onClick }: TextButtonProps) => {
+const TextButton = ({ text, onClick, width }: TextButtonProps) => {
 
 
     // So wies jetzt ist sind die echten maße des svg durch das div vorgegeben!
@@ -19,7 +20,7 @@ const TextButton = ({ text, onClick }: TextButtonProps) => {
     return (
 
         <div className="textbuttoninternalwrapper" style={{
-            width: "25vw",
+            width: width ? width : "25vw",
             height: "auto",
         }}
             onClick={onClick}>
