@@ -31,15 +31,30 @@ export const CollapseImageFrame = ({ image }: CollapseImageFrameProps) => {
     // z.B. bei 1:1.5 also 1* a und 1.5 * b oder so verwenden! 
 
 
-    const aspectRatio = image.width / image.height;
+
+    const ar1 = image.width / image.height
+    const ar2 = image.height / image.width
+
+
+    const dx = (topRightTop / 100) * image.width;
+    const dy = (topRightRight / 100) * image.height;
+
+    const angleRad = Math.atan2(dy, dx);
+    const angleDeg = angleRad * (180 / Math.PI);
 
     // denn 20% auf der kurzen seite sind ggf. weniger als 20% auf der anderen seite, auch wenns gleich aussieht.
 
-    let angle = (Math.atan(topRightRight / topRightTop) * (180 / Math.PI));
+    // ggf. umtauschen probieren! vielleicht falscher winkel eingesetellt vorhin aus versehen
+    let angle = 180 - 2 * ((Math.atan(topRightRight * image.height / topRightTop * image.width) * (180 / Math.PI)));
 
+    let counterAngle = 180 - 2 * angleDeg;
     console.log(image)
     console.log("image hat width udn height nun:", image.width, image.height);
-    console.log("angle" + angle);
+
+    console.log("angle", counterAngle);
+
+
+    console.log("ar1:", ar1, "ar2", ar2);
 
 
     // pos relative, damit die ecken Absolute platziert werden können!
@@ -53,7 +68,7 @@ export const CollapseImageFrame = ({ image }: CollapseImageFrameProps) => {
 
 
         {/** jetzt Kommen noch SVG-Ecken */}
-        <svg style={{ position: "absolute", width: topRightTop + "%", height: topRightRight + "%", top: "0", right: "0", scale: "-1 1", rotate: `-${37}deg`, fill: "#386638" }} viewBox="0 0 100 100" preserveAspectRatio="none">
+        <svg className="toprightcorner" style={{ position: "absolute", width: topRightTop + "%", height: topRightRight + "%", top: "0", right: "0", scale: "-1 1", rotate: `-${counterAngle}deg`, fill: "#386638" }} viewBox="0 0 100 100" preserveAspectRatio="none">
             <polygon points="0,0 100,0 100,100"></polygon>
         </svg>
 
@@ -62,3 +77,6 @@ export const CollapseImageFrame = ({ image }: CollapseImageFrameProps) => {
     </div >);
 }
 
+const getFoldTransform = () => {
+
+}
