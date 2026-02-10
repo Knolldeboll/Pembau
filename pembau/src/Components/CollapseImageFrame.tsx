@@ -1,6 +1,8 @@
+import { ImageData } from "../types/ImageData";
+
 interface CollapseImageFrameProps {
 
-    image: string;
+    image: ImageData;
 
 }
 
@@ -28,10 +30,15 @@ export const CollapseImageFrame = ({ image }: CollapseImageFrameProps) => {
     // TODO: Aspect Ratio mit einfließen lassen! Anfangs war das 1:1, das hat sich rausgekürzt.
     // z.B. bei 1:1.5 also 1* a und 1.5 * b oder so verwenden! 
 
+
+    const aspectRatio = image.width / image.height;
+
     // denn 20% auf der kurzen seite sind ggf. weniger als 20% auf der anderen seite, auch wenns gleich aussieht.
 
     let angle = (Math.atan(topRightRight / topRightTop) * (180 / Math.PI));
 
+    console.log(image)
+    console.log("image hat width udn height nun:", image.width, image.height);
     console.log("angle" + angle);
 
 
@@ -40,7 +47,7 @@ export const CollapseImageFrame = ({ image }: CollapseImageFrameProps) => {
     // TODO: Bei polygon noch mit ´´ Arbeiten, damit man die Werte von oben einbinden kann!
     return (<div className="collapseimageframe" style={{ position: "relative", width: "100%", height: "100%" }}>
 
-        <img src={image} style={{ width: "100%", height: "100%", clipPath: `polygon(${100 - topRightTop}% 0%, 100% ${topRightRight}%, 100% 100%, 0% 100%, 0% 0%)` }}>
+        <img src={image.url} style={{ width: "100%", height: "100%", clipPath: `polygon(${100 - topRightTop}% 0%, 100% ${topRightRight}%, 100% 100%, 0% 100%, 0% 0%)` }}>
 
         </img>
 

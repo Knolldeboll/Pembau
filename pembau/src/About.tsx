@@ -22,6 +22,7 @@ import TeamImg from "./assets/about/team.webp";
 import TeamCollapsedImg from "./assets/about/teambrtl.webp";
 import TeamDream from "./assets/about/teamdream.webp";
 
+import images from "./assets/about/images.json";
 import TestRectImg from "./assets/bg-2.jpg";
 
 
@@ -36,11 +37,12 @@ import Foot from "./menu/Foot";
 import { CollapseText } from "./Components/CollapseText";
 import TextFrameAktuell from "./Customframes/TextFrameAktuell";
 import TextButton from "./Components/TextButton";
-import { CollapseImageFrame } from "./Components/CollapseIamgeFrame";
+import { CollapseImageFrame } from "./Components/CollapseImageFrame";
 //import TextFrameGeschichte from "./Customframes/TextFrameGeschichte";
 
 const About = () => {
 
+    console.log("testrectimg:", TestRectImg)
 
     return (
 
@@ -242,7 +244,7 @@ const About = () => {
 
 
                 <div style={{ width: "80vw" }}>
-                    <CollapseImageFrame image={TestRectImg}>
+                    <CollapseImageFrame image={images.example}>
                     </CollapseImageFrame>
                 </div>
 
