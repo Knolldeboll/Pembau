@@ -60,7 +60,6 @@ export const CollapseImageFrame = ({ image, folds }: CollapseImageFrameProps) =>
 
     // ggf. umtauschen probieren! vielleicht falscher winkel eingesetellt vorhin aus versehen
     let angle = 180 - 2 * ((Math.atan(topRightRight * image.height / topRightTop * image.width) * (180 / Math.PI)));
-
     let counterAngle = 180 - 2 * angleDeg;
     //console.log(image)
     // console.log("image hat width udn height nun:", image.width, image.height);
@@ -81,6 +80,9 @@ export const CollapseImageFrame = ({ image, folds }: CollapseImageFrameProps) =>
 
     let polygonString = ``;
     if (folds) polygonString = generatePolyonString(folds);
+
+    let kak = <></>
+    if (folds) kak = generateFoldTriangles(folds);
 
     // console.log("polystring", polygonString)
 
@@ -117,7 +119,26 @@ const generatePolyonString = (folds: Partial<Record<Corner, CornerData>>) => {
     // TODO: Polygonstring zusammenbauen, je nach vorhandenheit der Folds
 }
 
-const getFoldTransform = (folds: Partial<Record<Corner, CornerData>>) => {
+
+const generateFoldTriangles = (folds: Partial<Record<Corner, CornerData>>) => {
+
+    // TODO: Calculate angles here and apply them in fart. 
+
+    let corners = Object.keys(folds) as Array<Corner>;
+    // todo: partial unwrappen?
+    console.log("corners at triangle gen:", corners)
+
+    //For each key/fold, calculate Angle
+
+
+    return <>
+
+    </ >
+}
+
+
+// TODO: irgendwie pro Ecke anwendbar machen, sodass in generateFoldTriangles ne Map verwendet werden kann. 
+const getFoldTransform = (corner: Corner) => {
 
     // TODO: je nach vorhandenen Folds die winkel berechnen. 
     // Rückgabewert ist entweder einfach ne liste, oder so ein partial mit shit drinnen.
