@@ -245,7 +245,13 @@ const About = () => {
 
 
                 <div style={{ width: "80vw" }}>
-                    <CollapseImageFrame image={images.example} folds={{ "bottomLeft": { "horPercent": 20, "vertPercent": 10 }, "bottomRight": { "horPercent": 10, "vertPercent": 15 } }}>
+                    <CollapseImageFrame image={images.example}
+                        folds={{
+                            topLeft: { horPercent: 20, vertPercent: 10 },
+                            topRight: { horPercent: 20, vertPercent: 10 },
+                            bottomLeft: { horPercent: 10, vertPercent: 10 },
+                            bottomRight: { horPercent: 10, vertPercent: 10 }
+                        }}>
                     </CollapseImageFrame>
                 </div>
 
