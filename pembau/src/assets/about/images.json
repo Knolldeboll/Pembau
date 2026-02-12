@@ -3,5 +3,18 @@
         "url": "/Pembau/src/assets/bg-2.jpg",
         "width": 2433,
         "height": 3575
+    },
+
+    "example2" : {
+        "url": "/Pembau/src/assets/test2.png",
+        "width": 897,
+        "height": 1118
+    },
+
+    "example3": {
+        "url": "/Pembau/src/assets/bg-1.jpg",
+        "width": 3575,
+        "height": 2433
+
     }
 }
