@@ -38,6 +38,7 @@ import { CollapseText } from "./Components/CollapseText";
 import TextFrameAktuell from "./Customframes/TextFrameAktuell";
 import TextButton from "./Components/TextButton";
 import { CollapseImageFrame } from "./Components/CollapseImageFrame";
+import BodyFrame1 from "./alter shit/BodyFrame1";
 //import TextFrameGeschichte from "./Customframes/TextFrameGeschichte";
 
 const About = () => {
@@ -244,9 +245,12 @@ const About = () => {
 
 
                 <div style={{ width: "80vw" }}>
-                    <CollapseImageFrame image={images.example}>
+                    <CollapseImageFrame image={images.example} folds={{ "bottomLeft": { "horPercent": 20, "vertPercent": 10 }, "bottomRight": { "horPercent": 10, "vertPercent": 15 } }}>
                     </CollapseImageFrame>
                 </div>
+
+
+
 
 
 

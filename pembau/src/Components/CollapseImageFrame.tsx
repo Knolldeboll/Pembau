@@ -1,16 +1,30 @@
 import { ImageData } from "../types/ImageData";
 
+type Corner = "topLeft" | "topRight" | "bottomRight" | "bottomLeft";
+
+type CornerData = {
+    horPercent: number,
+    vertPercent: number,
+}
 interface CollapseImageFrameProps {
 
     image: ImageData;
 
+    // partial: 0-alle elemente aus ner Auswahl.
+    // die Auswahl ist hier die Kombinationsmöglichkeiten aus Strings im Typ "Corner" und zugehöriger Data
+    folds?: Partial<Record<Corner, CornerData>>;
+
 }
 
-export const CollapseImageFrame = ({ image }: CollapseImageFrameProps) => {
+// TODO: einzelner State für alle Collapse oder nicht. 
+// Dann muss man nicht so dumm alles machen. 
+
+export const CollapseImageFrame = ({ image, folds }: CollapseImageFrameProps) => {
 
 
 
-
+    //Existenz von Folds prüfen: wenn nicht da, dann undefined. Dann auch kein dreieck oder Mask rendern!
+    console.log("Collapse Folds: ", folds?.topLeft)
 
 
     // TODO: irgendwo das Aspect Ratio herbekommen.
@@ -60,6 +74,14 @@ export const CollapseImageFrame = ({ image }: CollapseImageFrameProps) => {
     // pos relative, damit die ecken Absolute platziert werden können!
 
     // TODO: Bei polygon noch mit ´´ Arbeiten, damit man die Werte von oben einbinden kann!
+
+    // TODO: Polygon basiert auf gegebenen Folds! ggf. sollte das Polygon vor dem Mount berechnet werden! 
+    // Die Fold-Punkte in "polygon"-Werte umrechnen also! 
+    // ggf. kann man alle MÖGLICHEN folds aus dem Partial durchgehen, und pro fold in den polygonstring 2 punkte (wenn vorhanden) einfügen, ansonsten die Ecke! 
+
+    let polygonString = ``;
+    if (folds) polygonString = generatePolyonString(folds);
+
     return (<div className="collapseimageframe" style={{ position: "relative", width: "100%", height: "100%" }}>
 
         <img src={image.url} style={{ width: "100%", height: "100%", clipPath: `polygon(${100 - topRightTop}% 0%, 100% ${topRightRight}%, 100% 100%, 0% 100%, 0% 0%)` }}>
@@ -68,7 +90,7 @@ export const CollapseImageFrame = ({ image }: CollapseImageFrameProps) => {
 
 
         {/** jetzt Kommen noch SVG-Ecken */}
-        <svg className="toprightcorner" style={{ position: "absolute", width: topRightTop + "%", height: topRightRight + "%", top: "0", right: "0", scale: "-1 1", rotate: `-${counterAngle}deg`, fill: "#386638" }} viewBox="0 0 100 100" preserveAspectRatio="none">
+        <svg className="toprightcorner" style={{ position: "absolute", width: topRightTop + "%", height: topRightRight + "%", top: "0", right: "0", scale: "-1 1", rotate: `-${counterAngle}deg`, transformOrigin: "center", fill: "#386638" }} viewBox="0 0 100 100" preserveAspectRatio="none">
             <polygon points="0,0 100,0 100,100"></polygon>
         </svg>
 
@@ -77,6 +99,15 @@ export const CollapseImageFrame = ({ image }: CollapseImageFrameProps) => {
     </div >);
 }
 
+const generatePolyonString = (folds: Partial<Record<Corner, CornerData>>) => {
+
+
+    return "poop";
+    // TODO: Polygonstring zusammenbauen, je nach vorhandenheit der Folds
+}
+
 const getFoldTransform = () => {
 
+    // TODO: je nach vorhandenen Folds die winkel berechnen. 
+    // Rückgabewert ist entweder einfach ne liste, oder so ein partial mit shit drinnen.
 }
