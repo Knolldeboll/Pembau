@@ -420,6 +420,7 @@ const About = () => {
               bottomLeft: { horPercent: 50, vertPercent: 25 },
               bottomRight: { horPercent: 25, vertPercent: 55 },
             }}
+            rotation={10}
           ></CollapseImageFrame>
         </div>
       </div>
