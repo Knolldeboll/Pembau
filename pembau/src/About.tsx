@@ -33,6 +33,7 @@ import TextFrameAktuell from "./Customframes/TextFrameAktuell";
 import TextButton from "./Components/TextButton";
 import { CollapseImageFrame } from "./Components/CollapseImageFrame";
 import BodyFrame1 from "./alter shit/BodyFrame1";
+import { Carousel } from "./Components/Carousel";
 //import TextFrameGeschichte from "./Customframes/TextFrameGeschichte";
 
 const About = () => {
@@ -423,6 +424,8 @@ const About = () => {
             rotation={10}
           ></CollapseImageFrame>
         </div>
+
+        <Carousel></Carousel>
       </div>
 
       <div id="foot">

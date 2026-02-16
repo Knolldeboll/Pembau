@@ -129,6 +129,30 @@ a {
 }
 
 
+.carousel {
+  display: flex;
+  width: 90%;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+
+}
+
+.group {
+  display: flex;
+  scroll-snap-align: start;
+}
+
+.card {
+  background-color: aqua;
+  flex: 0 0 100%;
+  height: 40vw;
+  text-align: center;
+  align-content: center;
+  border: 0.2vw solid black;
+  scroll-snap-align: center;
+
+}
+
 
 .aktuell h2 {
   font-family: "DM Sans", sans-serif;
