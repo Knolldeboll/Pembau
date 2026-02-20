@@ -144,9 +144,12 @@ a {
   display: flex;
   /*scroll-snap-align: start;*/
   width: 100%;
+  scrollbar-width: none;
 }
 
 .card {
+  /*TODO: Für Image Cutoff vielleicht einfach clippath nutzen? sodass die Card der Clipoff für das Bild ist und das Polygon da 100% groß ist oder so
+  Vielleicht kann das auch einfach das Bild Mittig abschneiden! */
   background-color: aqua;
   flex: 0 0 100%;
   height: 100%;
@@ -154,8 +157,18 @@ a {
   text-align: center;
   align-content: center;
   scroll-snap-align: center;
+
   overflow-y: hidden;
   overflow-x: hidden;
+
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+
 
 }
 
