@@ -56,6 +56,9 @@ export const App = () => {
       </div>
 
 
+      {/**TODO wegen dem Menü: Das sollte ggf. UNTER dem head platziert werden, so vielleicht flex column mäßig ohne flex? 
+       * und dann von dem teil aus den margin haben, und nicht vom viewport!
+       */}
 
       {menuOpen && <Menu></Menu>}
 
