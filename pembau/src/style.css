@@ -78,6 +78,16 @@ a {
   color: black;
 }
 
+
+#sidemenu {
+  .h4 {
+    font-family: "DM Sans";
+    font-weight: 700;
+    font-size: max(1rem, 2.7vw);
+    color: black;
+  }
+}
+
 .h4 {
   font-family: "DM Sans";
   font-weight: 700;

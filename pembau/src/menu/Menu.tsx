@@ -6,16 +6,33 @@ const Menu = () => {
 
     return (
 
-        <div style={{ display: "flex", flexDirection: "column", gap: "10%", marginTop: "30%", marginLeft: "10%" }}>
+
+        <div id="sidemenu" style={{
+            position: "fixed",
+            width: "fit-content",
+            paddingRight: "25vw",
+            height: "100vh",
+            top: "0%",
+            right: "-25%",
+            zIndex: "3",
+            backgroundColor: "#ffffff",
+            transform: "rotate(-5deg)"
+        }} >
+
+            <div id="menu" style={{ display: "flex", flexDirection: "column", gap: "0.7vw", marginTop: "16vw", marginLeft: "5vw" }}>
 
 
-            <Link className="h4 hoverable " to={"/Pembau/About/"}>_ABOUT</Link>
-            <Link className="h4 hoverable m10t" to={""}>_KONTAKT</Link>
-            <Link className="h4 hoverable m10t" to={""}>_FORUM</Link>
-            <Link className="h4 hoverable m10t" to={""}>_INFRASTRUKTUR</Link>
-            <Link className="h4 hoverable m10t" to={""}>_PROGRAMM</Link>
-            <Link className="h4 hoverable m10t" to={""}>_MITWIRKEN</Link>
+                <Link className="h4 hoverable " to={"/Pembau/About/"}>_ABOUT</Link>
+                <Link className="h4 hoverable m10t" to={""}>_KONTAKT</Link>
+                <Link className="h4 hoverable m10t" to={""}>_FORUM</Link>
+                <Link className="h4 hoverable m10t" to={""}>_INFRASTRUKTUR</Link>
+                <Link className="h4 hoverable m10t" to={""}>_PROGRAMM</Link>
+                <Link className="h4 hoverable m10t" to={""}>_MITWIRKEN</Link>
+            </div>
+
         </div>
+
+
     )
 
 }

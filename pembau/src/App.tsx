@@ -56,20 +56,7 @@ export const App = () => {
 
 
 
-      {menuOpen && <div id="sidemenu" style={{
-        position: "fixed",
-        width: "35vw",
-        height: "100vh",
-        top: "5%",
-        right: "-5%",
-        zIndex: "3",
-        backgroundColor: "#ffffff",
-        transform: "rotate(-5deg)"
-      }} >
-        <Menu></Menu>
-
-
-      </div>}
+      {menuOpen && <Menu></Menu>}
 
 
       {/**TODO: Routing hierrum */}
