@@ -7,12 +7,12 @@ interface CollapseTextProps {
     marginTopProp?: string;
     rotate?: string;
     textColor?: string;
-    width: string;
+    width?: string;
     alwaysSrc: string,
     expandSrc: string,
 }
 
-export const CollapseText = ({ alwaysSrc, expandSrc, marginTopProp, textColor, width, rotate }: CollapseTextProps) => {
+export const CollapseText = ({ alwaysSrc, expandSrc, marginTopProp, width, textColor, rotate }: CollapseTextProps) => {
 
 
     const [alwaysMd, setAlwaysMd] = useState("");
@@ -36,7 +36,10 @@ export const CollapseText = ({ alwaysSrc, expandSrc, marginTopProp, textColor, w
 
     // md im render in reactMd shit packen
 
-    return (<div className="collapsetextwrapper" style={{ marginTop: marginTopProp, width: width, color: textColor, rotate: rotate }} >
+    // Width ist jetzt optional. wenn gegeben, nimm das, ansonsten 100%
+    const appliedWidth = width ? width : "100%";
+
+    return (<div className="collapsetextwrapper" style={{ marginTop: marginTopProp, width: appliedWidth, color: textColor, rotate: rotate }} >
 
         <Markdown >
             {alwaysMd}

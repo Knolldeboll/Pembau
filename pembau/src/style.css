@@ -129,6 +129,27 @@ a {
 }
 
 
+
+#containercity {
+
+  .collapsetextwrapper h2 {
+    font-family: "DM Sans";
+    font-weight: 400;
+    font-size: clamp(1.5rem, 2vw, 2rem);
+    color: #FF6400;
+    margin-block: 0;
+  }
+
+  .collapsetextwrapper p {
+    font-family: "DM Sans";
+    font-weight: 400;
+    font-size: clamp(1rem, 1.2vw, 1.2rem);
+    margin-block: 0.5vw;
+
+
+  }
+}
+
 .carousel {
   position: relative;
   display: flex;

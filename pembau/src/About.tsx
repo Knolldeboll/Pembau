@@ -277,32 +277,40 @@ const About = () => {
         id="containercity"
         style={{
           display: "flex",
-          flex: "none",
+          alignItems: "stretch",
+          flexWrap: "wrap",
           flexDirection: "row",
           marginTop: "5vw",
           zIndex: "2",
         }}
       >
         <div
-          id="containercitywrapper"
+          id="containercityimagewrapper"
           style={{
             position: "relative",
-            width: "65vw",
             transform: "translateX(-3vw)",
             zIndex: "1",
+            flex: "1 1 60vw"
           }}
-        >
+        >1
+
+
           <ImageFrameJPG
             collapsedImg={ContainerCollapsedImg}
             uncollapsedImg={ContainerImg}
           ></ImageFrameJPG>
         </div>
-        <CollapseText
-          marginTopProp="0vw"
-          width="55vw"
-          alwaysSrc="/Pembau/content/aboutContainerAlways.md"
-          expandSrc="/Pembau/content/aboutContainerExpand.md"
-        ></CollapseText>
+
+        <div id="containercitytextwrapper" style={{ marginTop: "2vw", flex: "1 1 550px" }} >
+
+          <CollapseText
+            marginTopProp="0vw"
+            alwaysSrc="/Pembau/content/aboutContainerAlways.md"
+            expandSrc="/Pembau/content/aboutContainerExpand.md"
+          ></CollapseText>
+
+        </div>
+
       </div>
 
       <div
@@ -412,6 +420,7 @@ const About = () => {
           </div>
         </div>
 
+        {/**Test CollapseImageFrame 
         <div style={{ width: "80vw" }}>
           <CollapseImageFrame
             image={images.example3}
@@ -424,8 +433,11 @@ const About = () => {
             rotation={10}
           ></CollapseImageFrame>
         </div>
+*/}
 
-        <Carousel></Carousel>
+
+        {/** Test carosuel 
+        <Carousel></Carousel>*/}
       </div>
 
       <div id="foot">
