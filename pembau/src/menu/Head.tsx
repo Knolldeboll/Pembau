@@ -28,19 +28,19 @@ export const Head = ({ currentPage }: HeadProps) => {
 
   return (
 
-    <div style={{ display: "flex", flexDirection: "row", width: "100%", justifyContent: "space-between" }}>
+    <div style={{ display: "flex", flexDirection: "row", width: "100%", height: "100%", justifyContent: "space-between", alignItems: "center" }}>
 
 
 
       <div id="logodiv" style={{
-        display: "flex", flexDirection: "row", width: "15vw", height: "auto",
+        display: "flex", flexDirection: "row", height: "75%",
+        gap: "1vw",
         marginLeft: "1.5%",
-        marginTop: "1.5%"
       }}
 
       >
 
-        <svg className="icon" onClick={() => navigate("/Pembau/")} viewBox="0 0 97 87" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className="icon" style={{ flex: "none", height: "100%", width: "auto" }} onClick={() => navigate("/Pembau/")} viewBox="0 0 97 87" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M6.92857 18.5328V5.71563H23.0365V11.5473L6.92857 18.5328ZM29.9641 0H0V40.4144H6.92857V24.4794L29.9651 15.415V0H29.9641Z" />
           <path d="M40.1866 18.5908V5.94662H55.6016V11.1423L40.1866 18.5898V18.5908ZM61.3752 0H34.2979V40.4144H61.3752V34.4678H40.1866V24.4794L61.3752 15.299V0Z" />
           <path d="M97 0H65.072V40.3564H70.9896V5.83164H78.0777V40.3564H83.8772L83.8192 5.83164H91.0244L91.0834 40.3564H97V0Z" />
@@ -50,15 +50,15 @@ export const Head = ({ currentPage }: HeadProps) => {
         </svg>
 
 
-        <p className="headline" style={{ color: "#ffffff", fontSize: "2vw", transform: " translateX(0.6vw) translateY(2.7vw)" }}>{currentPage}</p>
+        <p className="headline" style={{ flex: "none", color: "#ffffff", fontSize: "2vw", margin: "0", height: "fit-content", alignSelf: "end" }}>{currentPage}</p>
 
 
 
       </div>
 
-      <div id="burger" style={{ width: "7vw", height: "auto", marginRight: "3.5vw", marginTop: "2.7vw" }}>
+      <div id="burger" style={{ height: "50%", width: "fit-content", marginRight: "3.5vw" }}>
 
-        <svg className="icon" onClick={toggleMenuOpen} viewBox="0 0 69 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className="icon" style={{ height: "100%", width: "auto" }} onClick={toggleMenuOpen} viewBox="0 0 69 39" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M0 39L2.09669 33H69V39H0Z" />
           <path d="M4 28L6.09677 22H69V28H4Z" />
           <path d="M8 17L10.1057 11H69V17H8Z" />

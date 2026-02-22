@@ -49,6 +49,7 @@ export const App = () => {
         top: "0%",
         left: "0%",
         zIndex: "4",
+        justifyContent: "center",
         backgroundColor: "#000000"
       }}>
         <Head currentPage="_HOME"></Head>
