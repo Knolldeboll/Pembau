@@ -45,7 +45,7 @@ export const App = () => {
       <div id="headmenu" style={{
         position: "fixed",
         width: "100vw",
-        height: "10vw",
+        height: "max(10vw,4rem)",
         top: "0%",
         left: "0%",
         zIndex: "4",

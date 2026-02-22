@@ -50,7 +50,7 @@ export const Head = ({ currentPage }: HeadProps) => {
         </svg>
 
 
-        <p className="headline" style={{ flex: "none", color: "#ffffff", fontSize: "2vw", margin: "0", height: "fit-content", alignSelf: "end" }}>{currentPage}</p>
+        <p className="headline" style={{ flex: "none", color: "#ffffff", fontSize: "90%", margin: "0", height: "fit-content", alignSelf: "end" }}>{currentPage}</p>
 
 
 
