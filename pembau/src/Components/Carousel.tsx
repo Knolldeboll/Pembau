@@ -1,62 +1,110 @@
-import React, { useEffect, useRef } from "react"
-import testimage from "../assets/bg-1.jpg"
+import React, { useEffect, useRef, useState } from "react"
 
+interface CarouselProps {
+    images: string[];
+}
 
-
-// TODO: x Cards, je nach anzahl images hinzufügen. 
-// TODO: Fixes Seitenverhältnis z.b. 1:2 mit Cutoff der Bilder, falls die unregelmäßig sind? 
-// oder sollen Bilder immer Gleich groß sein und komplett angezeigt werden? 
-
-// > Vorerst einfach fixes Seitenverhältnis des Carousels. Die Bilder sind bisher eh immer gleich groß! 
-// Machen wir dann anderst, wenn andere Bilder kommen.
-
-export const Carousel = () => {
-
+export const Carousel = ({ images }: CarouselProps) => {
+    const containerRef = useRef<HTMLDivElement>(null);
+    const [touchStart, setTouchStart] = useState<number | null>(null);
+    const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
     // Preload images
-    /*
     useEffect(() => {
-
         for (let image of images) {
             const img = new Image();
             img.src = image;
         }
-    }, [])*/
-
-    const containerRef = useRef<HTMLDivElement>(null);
+    }, [images]);
 
     const scrollLeft = () => {
-        console.log("scrollleft");
-
         containerRef.current?.scrollBy({
             left: -containerRef.current.offsetWidth,
             behavior: "smooth"
         });
-
-    }
+    };
 
     const scrollRight = () => {
-        console.log("scrollright");
-
         containerRef.current?.scrollBy({
             left: containerRef.current.offsetWidth,
             behavior: "smooth"
         });
-    }
+    };
 
+    // Swipe handlers
+    const handleTouchStart = (e: React.TouchEvent) => {
+        setTouchStart(e.targetTouches[0].clientX);
+    };
 
-    // TODO: images sources zu Elementen Mappen, das kommt dann statt den item divs rein
+    const handleTouchEnd = (e: React.TouchEvent) => {
+        setTouchEnd(e.changedTouches[0].clientX);
+        handleSwipe();
+    };
 
-    // TODO: Da so Kack rein machen von youtuve: https://www.youtube.com/watch?v=KD1Yo8a_Qis
-    return <div className="carousel" >
-        <div style={{ position: "absolute", left: "0", top: "50%", backgroundColor: "#000000", color: "#ffffff", height: "10%", alignContent: "center" }} onClick={scrollLeft}>LEFT</div>
-        <div style={{ position: "absolute", right: "0", top: "50%", backgroundColor: "#000000", color: "#ffffff", height: "10%", alignContent: "center" }} onClick={scrollRight}>RIGHT</div>
+    const handleSwipe = () => {
+        if (!touchStart || !touchEnd) return;
 
-        <div className="group" ref={containerRef} >
+        const distance = touchStart - touchEnd;
+        const isLeftSwipe = distance > 50;
+        const isRightSwipe = distance < -50;
 
-            <div className="card"><img src={testimage} width="100%">
-            </img></div>
-            <div className="card">2</div>
-            <div className="card">3</div>
-        </div></div>
-}
+        if (isLeftSwipe) {
+            scrollRight();
+        } else if (isRightSwipe) {
+            scrollLeft();
+        }
+
+        setTouchStart(null);
+        setTouchEnd(null);
+    };
+
+    return (
+        <div className="carousel">
+            <div
+                style={{
+                    position: "absolute",
+                    left: "0",
+                    top: "50%",
+                    backgroundColor: "#000000",
+                    color: "#ffffff",
+                    height: "10%",
+                    alignContent: "center"
+                }}
+                onClick={scrollLeft}
+            >
+                LEFT
+            </div>
+            <div
+                style={{
+                    position: "absolute",
+                    right: "0",
+                    top: "50%",
+                    backgroundColor: "#000000",
+                    color: "#ffffff",
+                    height: "10%",
+                    alignContent: "center"
+                }}
+                onClick={scrollRight}
+            >
+                RIGHT
+            </div>
+
+            <div
+                className="group"
+                ref={containerRef}
+                onTouchStart={handleTouchStart}
+                onTouchEnd={handleTouchEnd}
+            >
+                {images.map((image, index) => (
+                    <div className="card" key={index}>
+                        <img
+                            src={image}
+                            className="carousel-image"
+                            alt={`slide-${index}`}
+                        />
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
+};

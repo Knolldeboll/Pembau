@@ -33,11 +33,15 @@ import TextFrameAktuell from "./Customframes/TextFrameAktuell";
 import TextButton from "./Components/TextButton";
 import { CollapseImageFrame } from "./Components/CollapseImageFrame";
 import BodyFrame1 from "./alter shit/BodyFrame1";
+import TestImage from "./assets/bg-1.jpg"
 import { Carousel } from "./Components/Carousel";
 //import TextFrameGeschichte from "./Customframes/TextFrameGeschichte";
 
 const About = () => {
   console.log("testrectimg:", TestRectImg);
+
+
+  const carouselImages: string[] = [TestImage, PermaImg, TeamImg];
 
   return (
     <div
@@ -436,8 +440,8 @@ const About = () => {
 */}
 
 
-        {/** Test carosuel 
-        <Carousel></Carousel>*/}
+        {/** Test carosuel */}
+        <Carousel images={carouselImages}></Carousel>
       </div>
 
       <div id="foot">
