@@ -1,29 +1,37 @@
-import { useState } from "react";
-import { ImageData } from "../types/ImageData";
+import { useState, ReactNode } from "react";
 
-type Corner = "topLeft" | "topRight" | "bottomRight" | "bottomLeft";
+export type Corner = "topLeft" | "topRight" | "bottomRight" | "bottomLeft";
 
-type CornerData = {
+export type CornerData = {
     horPercent: number;
     vertPercent: number;
 };
-interface CollapseImageFrameProps {
-    image: ImageData;
-
+interface CollapseFrameProps {
+    children: ReactNode;
+    /** Width in vw units */
+    width: number;
+    /** Height in vw units */
+    height: number;
     // partial: 0-alle elemente aus ner Auswahl.
     // die Auswahl ist hier die Kombinationsmöglichkeiten aus Strings im Typ "Corner" und zugehöriger Data
     folds?: Partial<Record<Corner, CornerData>>;
+
+    bgColor?: string;
+    /**Rotation vom ganzen Frame */
     rotation: number;
 }
 
 // TODO: einzelner State für alle Collapse oder nicht.
 // Dann muss man nicht so dumm alles machen.
 
-export const CollapseImageFrame = ({
-    image,
+export const CollapseFrame = ({
+    children,
+    width,
+    height,
     folds,
-    rotation
-}: CollapseImageFrameProps) => {
+    rotation,
+    bgColor
+}: CollapseFrameProps) => {
     //Existenz von Folds prüfen: wenn nicht da, dann undefined. Dann auch kein dreieck oder Mask rendern!
     // console.log("Collapse Folds: ", folds);
 
@@ -31,12 +39,9 @@ export const CollapseImageFrame = ({
     let polygonString = ``;
     if (folds && isCollapsed) polygonString = generatePolyonString(folds);
 
-
-
     console.log("rerender cimfmfm")
     // für jeden key, value:Record xy einmal generateTriangles ausführen.
     // generateTriangles braucht (key:Corner, value:CornerData, width, height)
-
 
     // bisher nicht ausgelagert, da wir den angle eig. zuerst berechnen müssen, und das iwie dumm ist,
     // die als paket zurückzugeben.
@@ -46,28 +51,32 @@ export const CollapseImageFrame = ({
     //let triangles = <></>;
     //if (folds) triangles = generateFoldTriangles(folds);
 
-
-
     //    console.log("triangles", triangles);
     console.log("polystring", polygonString);
 
     return (
         <div
-            className="collapseimageframe"
-            style={{ position: "relative", width: "100%", height: "100%", rotate: `${rotation}deg` }
-            }
+            style={{
+                position: "relative",
+                width: `${width}vw`,
+                height: `${height}vw`,
+                rotate: `${rotation}deg`,
 
+            }}
             onClick={() => setCollapsed(!isCollapsed)}
         >
-            <img
-                src={image.url}
+            <div
                 style={{
                     width: "100%",
                     height: "100%",
                     display: "block",
                     clipPath: polygonString,
+                    overflow: "hidden",
+                    backgroundColor: bgColor ? bgColor : "transparent",
                 }}
-            ></img>
+            >
+                {children}
+            </div>
 
 
 
@@ -81,7 +90,7 @@ export const CollapseImageFrame = ({
                         top: "0",
                         left: "0",
                         scale: "-1 1",
-                        rotate: `${getCornerAngle("topLeft", image.width, image.height, folds.topLeft)}deg`,
+                        rotate: `${getCornerAngle("topLeft", width, height, folds.topLeft)}deg`,
                         transformOrigin: "",
                         fill: "#386638",
                     }}
@@ -102,7 +111,7 @@ export const CollapseImageFrame = ({
                         top: "0",
                         right: "0",
                         scale: "-1 1",
-                        rotate: `${getCornerAngle("topRight", image.width, image.height, folds.topRight)}deg`,
+                        rotate: `${getCornerAngle("topRight", width, height, folds.topRight)}deg`,
                         transformOrigin: "",
                         fill: "#386638",
                     }}
@@ -123,7 +132,7 @@ export const CollapseImageFrame = ({
                         bottom: "0",
                         right: "0",
                         scale: "-1 1",
-                        rotate: `${getCornerAngle("bottomRight", image.width, image.height, folds.bottomRight)}deg`,
+                        rotate: `${getCornerAngle("bottomRight", width, height, folds.bottomRight)}deg`,
                         transformOrigin: "",
                         fill: "#386638",
                     }}
@@ -143,7 +152,7 @@ export const CollapseImageFrame = ({
                         bottom: "0",
                         left: "0",
                         scale: "-1 1",
-                        rotate: `${getCornerAngle("bottomLeft", image.width, image.height, folds.bottomLeft)}deg`,
+                        rotate: `${getCornerAngle("bottomLeft", width, height, folds.bottomLeft)}deg`,
                         fill: "#386638",
                     }}
                     viewBox="0 0 100 100"

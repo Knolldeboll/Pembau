@@ -35,6 +35,7 @@ import { CollapseImageFrame } from "./Components/CollapseImageFrame";
 import BodyFrame1 from "./alter shit/BodyFrame1";
 import TestImage from "./assets/bg-1.jpg"
 import { Carousel } from "./Components/Carousel";
+import { CollapseFrame } from "./Components/CollapseFrame";
 //import TextFrameGeschichte from "./Customframes/TextFrameGeschichte";
 
 const About = () => {
@@ -429,10 +430,9 @@ const About = () => {
           <CollapseImageFrame
             image={images.example3}
             folds={{
-              topLeft: { horPercent: 10, vertPercent: 22 },
+
               topRight: { horPercent: 10, vertPercent: 35 },
-              bottomLeft: { horPercent: 50, vertPercent: 25 },
-              bottomRight: { horPercent: 25, vertPercent: 55 },
+
             }}
             rotation={10}
           ></CollapseImageFrame>
@@ -443,6 +443,12 @@ const About = () => {
         {/** Test carosuel */}
         <Carousel images={carouselImages}></Carousel>
       </div>
+
+
+      <CollapseFrame width={80} height={50} rotation={2} bgColor="rgb(116, 116, 155)" folds={{ bottomRight: { horPercent: 10, vertPercent: 20 } }}>
+        <img width="100%" src={TestImage}></img>
+      </CollapseFrame>
+
 
       <div id="foot">
         <Foot></Foot>
