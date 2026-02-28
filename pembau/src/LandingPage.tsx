@@ -29,15 +29,7 @@ const LandingPage = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="lp-body-instance"
-      style={{
-
-        display: "flex",
-        flexDirection: "column",
-        background: "#FFFFFF",
-        gap: "2vw",
-        overflow: "hidden",
-      }}>
+    < >
 
 
       {/* früher war die hor. verschiebung und der rotate über position absolute und dann top gemacht. 
@@ -123,20 +115,7 @@ const LandingPage = () => {
         <TextButton text="ZURÜCK_ZUM_ANFANG" onClick={() => { console.log("TODO: Zurück ocnlick") }}></TextButton>
       </div>
 
-      <div id="foot">
-        <Foot></Foot>
-      </div>
-
-    </div>
+    </>
   );
-
-  // Bei den Bildern im Body mit den Knickecken folgendes:
-  // Genauso wie im Figma-Ablauf machen. d.H "einfach" die
-  // Ansichten mit je einer Ecke Weg bzw. alle Permutationen vorbereiten und dann
-  // die Dinger austauschen.
-  //
-  // Sind bei der mit 3 Ecken: 8, bei denen mit 2 Ecken: 4
-
-  // Alternativ: Irgendwie ne Mask drüberlegen, die bei zugefalteter Ecke
 };
 export default LandingPage;

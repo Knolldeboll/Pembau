@@ -141,6 +141,73 @@ a {
 }
 
 
+/*MENU STUFF*/
+
+.headmenu {
+  position: fixed;
+  width: 100vw;
+  height: max(10vw, 4.6rem);
+  top: 0%;
+  left: 0%;
+  z-index: 4;
+  justify-content: center;
+  background-color: #000000;
+}
+
+.headlogodiv {
+  display: flex;
+  flex-direction: row;
+  height: 75%;
+  gap: 1vw;
+  margin-left: 1.5%;
+}
+
+.footmenu {
+
+  width: 100vw;
+  height: max(10vw, 4.6rem);
+  z-index: 4;
+  justify-content: center;
+  background-color: #000000;
+}
+
+
+.paragraph-white-line {
+  font-family: "DM Sans";
+  width: fit-content;
+  height: fit-content;
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 1.2vw;
+  text-decoration-line: underline;
+}
+
+.paragraph-white-line:hover {
+  color: #FF6400;
+}
+
+
+.foot-text {
+  font-family: 'DM Sans';
+  font-style: normal;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.2vw;
+  line-height: 1.3vw;
+}
+
+.footlogodiv {
+  display: flex;
+  flex-direction: row;
+  height: 75%;
+  gap: 1vw;
+  margin-left: 1.5%;
+  align-self: center;
+}
+
+
+
+
 
 #containercity {
 
@@ -238,27 +305,7 @@ a {
 
 }
 
-.paragraph-white-line {
-  font-family: "DM Sans";
-  width: fit-content;
-  height: fit-content;
-  color: #ffffff;
-  font-weight: 400;
-  font-size: 1.2vw;
-  text-decoration-line: underline;
-}
 
-.paragraph-white-line:hover {
-  color: #FF6400;
-}
-
-.foot-text {
-  font-family: 'DM Sans';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 1.2vw;
-  line-height: 1.3vw;
-}
 
 /*Wir machen nun so: bodyframe hat nix Höhe und gggf. auch keine Breite, 
 die Höhe wird von den Responsiven Elementen vorgegeben, die dann übereinandergestapelt ssind

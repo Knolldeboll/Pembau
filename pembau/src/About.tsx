@@ -45,16 +45,7 @@ const About = () => {
   const carouselImages: string[] = [TestImage, PermaImg, TeamImg];
 
   return (
-    <div
-      className="lp-body-instance"
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        background: "#FFFFFF",
-
-        overflow: "hidden",
-      }}
-    >
+    <>
       <div
         id="start_about"
         style={{
@@ -425,19 +416,6 @@ const About = () => {
           </div>
         </div>
 
-        {/**Test CollapseImageFrame 
-        <div style={{ width: "80vw" }}>
-          <CollapseImageFrame
-            image={images.example3}
-            folds={{
-
-              topRight: { horPercent: 10, vertPercent: 35 },
-
-            }}
-            rotation={10}
-          ></CollapseImageFrame>
-        </div>
-*/}
 
 
         {/** Test carosuel */}
@@ -445,15 +423,15 @@ const About = () => {
       </div>
 
 
+      {/**Test CollapseFrame (with image isnide) */}
+
       <CollapseFrame width={80} height={50} rotation={2} bgColor="rgb(116, 116, 155)" folds={{ bottomRight: { horPercent: 10, vertPercent: 20 } }}>
         <img width="100%" src={TestImage}></img>
       </CollapseFrame>
 
+    </>
 
-      <div id="foot">
-        <Foot></Foot>
-      </div>
-    </div>
+    //Futti Futti
   );
 };
 

@@ -20,7 +20,7 @@ import LandingPage from "./LandingPage";
 import Menu from "./menu/Menu";
 import { useMainStore } from "./stores/MainStore";
 import About from "./About";
-
+import Foot from "./menu/Foot";
 
 
 
@@ -42,18 +42,8 @@ export const App = () => {
 
 
 
-      <div id="headmenu" style={{
-        position: "fixed",
-        width: "100vw",
-        height: "max(10vw,5rem)",
-        top: "0%",
-        left: "0%",
-        zIndex: "4",
-        justifyContent: "center",
-        backgroundColor: "#000000"
-      }}>
-        <Head currentPage="_HOME"></Head>
-      </div>
+      <Head currentPage="_HOME"></Head>
+
 
 
       {/**TODO wegen dem Menü: Das sollte ggf. UNTER dem head platziert werden, so vielleicht flex column mäßig ohne flex? 
@@ -65,13 +55,30 @@ export const App = () => {
 
       {/**TODO: Routing hierrum */}
 
-      <Routes>
 
-        <Route path="/Pembau/" element={<LandingPage></LandingPage>} />
-        <Route path="/Pembau/About/" element={<About></About>} />
+      {/**Kann man den Foot auch hier in den Flow mit reingeben? 
+         * Header heht ja auch, liegt halt an Positon fixed. 
+         */}
 
-      </Routes>
+      <div id="pageswrapper" style={{
 
+        display: "flex",
+        flexDirection: "column",
+        background: "#FFFFFF",
+        gap: "2vw",
+        overflow: "hidden",
+      }}>
+        <Routes>
+
+          <Route path="/Pembau/" element={<LandingPage></LandingPage>} />
+          <Route path="/Pembau/About/" element={<About></About>} />
+
+        </Routes>
+
+        <div id="foot">
+          <Foot></Foot>
+        </div>
+      </div>
 
 
 
