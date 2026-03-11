@@ -75,9 +75,9 @@ export const App = () => {
 
         </Routes>
 
-        <div id="foot">
-          <Foot></Foot>
-        </div>
+
+        <Foot></Foot>
+
       </div>
 
 

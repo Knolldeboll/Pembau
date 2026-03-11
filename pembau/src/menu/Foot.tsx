@@ -7,14 +7,14 @@ const Foot = () => {
 
     return (
         <div className="footmenu">
-            <div style={{ display: "flex", flexDirection: "row", width: "100%", height: "100%", backgroundColor: "black", fill: "white" }}>
+            <div style={{ display: "flex", flexDirection: "row", width: "100%", height: "100%", justifyContent: "space-between", backgroundColor: "black", fill: "white" }}>
 
                 <div className="footlogodiv">
 
                     <svg style={{ flex: "none", width: "auto", height: "100%" }} viewBox="0 0 186 137" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M143.728 4.53274L179.845 132.504H4.50272V4.50391L143.728 4.53274Z" stroke="white" strokeWidth="9.00542" strokeMiterlimit="10" />
                     </svg>
-                    <p className="foot-text" style={{ flex: "none", color: "#ffffff", fontSize: "50%", margin: "0", height: "fit-content", alignSelf: "end" }}>PLATTFORM FÜR KUNST, KULTUR UND <br></br> GESELLSCHAFT.</p>
+                    <p className="foot-text" style={{ flex: "none", color: "#ffffff", fontSize: "max(1.2vw, 1rem)", margin: "0", height: "fit-content", alignSelf: "end" }}>PLATTFORM FÜR KUNST, <br></br> KULTUR UND <br></br> GESELLSCHAFT.</p>
                 </div>
 
                 {/**
@@ -50,7 +50,7 @@ const Foot = () => {
 
                 </div>
 
-                <div style={{ width: "45%", height: "100%" }}>
+                <div style={{ width: "27%", height: "100%" }}>
 
                     <div id="links" style={{ display: "grid", width: "fit-content", gridTemplateColumns: "8vw 8vw ", gridTemplateRows: "1vw 1vw 1vw", gap: "1.5vw", marginLeft: "10%", marginTop: "1%" }}>
 
