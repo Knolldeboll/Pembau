@@ -186,6 +186,18 @@ a {
   color: #FF6400;
 }
 
+#links {
+  display: block !important;
+}
+
+#info-button {
+  display: none !important;
+
+  width: 7vw;
+  height: auto;
+  padding-right: 10vw;
+  align-self: center;
+}
 
 .foot-text {
   font-family: 'DM Sans';
@@ -359,4 +371,16 @@ body {
   margin: 0px;
   padding: 0px;
   overflow-x: hidden;
+}
+
+
+/* Mobile & Tablet: Hide desktop links, show info button */
+@media (max-width: 1024px) {
+  #links {
+    display: none !important;
+  }
+
+  #info-button {
+    display: inline-block !important;
+  }
 }
