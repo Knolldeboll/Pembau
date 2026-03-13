@@ -162,6 +162,7 @@ a {
   margin-left: 1.5%;
 }
 
+/*footmenu, weil soll immer was aufgespannt sein mit fixer größe!*/
 .footmenu {
 
   width: 100vw;
@@ -171,6 +172,20 @@ a {
   background-color: #000000;
 }
 
+
+.footflex {
+
+
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  justify-content: "space-between";
+  background-color: "black";
+  fill: "white"
+
+
+}
 
 .paragraph-white-line {
   font-family: "DM Sans";
