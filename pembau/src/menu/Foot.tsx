@@ -8,8 +8,8 @@ const Foot = () => {
     // footmenu: div als container für foot und popups!
     // footflex: div als container für die drei spalten (logo, social media, links), fixe größe.
     return (
-        <div className="footmenu">
-            <div className="footflex" style={{ display: "flex", flexDirection: "row", width: "100%", height: "100%", justifyContent: "space-between", backgroundColor: "black", fill: "white" }}>
+        <div className="footcontainer">
+            <div className="footmenu" >
 
                 <div className="footlogodiv">
 
