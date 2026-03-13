@@ -162,7 +162,8 @@ a {
   margin-left: 1.5%;
 }
 
-/*footmenu, weil soll immer was aufgespannt sein mit fixer größe!*/
+/*FOOTER*/
+
 .footmenu {
   display: flex;
   flex-direction: row;
@@ -188,6 +189,71 @@ a {
 
 }
 
+.footlogodiv {
+  display: flex;
+  flex-direction: row;
+  height: 75%;
+  gap: 1vw;
+  margin-left: 1.5%;
+  align-self: center;
+}
+
+
+.foot-logo-text {
+  flex: none;
+  height: fit-content;
+  font-family: 'DM Sans';
+  font-style: normal;
+
+  font-weight: 700;
+  font-size: max(1.4vw, 0.55rem);
+  line-height: 100%;
+  color: #ffffff;
+  margin: 0;
+
+  align-self: end;
+
+
+}
+
+/*TODO: die width oder height der Icons responsive machen, dann das socialmedia div passend darum legen :)*/
+.socialmedia {
+  display: flex;
+  flex-direction: row;
+  gap: 2.0vw;
+  height: 100%;
+  margin-left: 1.9vw;
+  align-items: center;
+}
+
+.socialmediaicon {
+  height: max(1.5rem, 40%);
+
+  width: auto;
+
+}
+
+
+#links {
+  display: block !important;
+}
+
+#info-button {
+  display: none !important;
+  height: max(1.9rem, 40%);
+  width: auto;
+
+  margin-right: 4vw;
+  margin-left: 2vw;
+  align-self: center;
+  align-content: center;
+}
+
+
+/*FOOTER ENDE*/
+
+
+
 .paragraph-white-line {
   font-family: "DM Sans";
   width: fit-content;
@@ -200,37 +266,6 @@ a {
 
 .paragraph-white-line:hover {
   color: #FF6400;
-}
-
-#links {
-  display: block !important;
-}
-
-#info-button {
-  display: none !important;
-
-  width: 7vw;
-  height: auto;
-  padding-right: 10vw;
-  align-self: center;
-}
-
-.foot-text {
-  font-family: 'DM Sans';
-  font-style: normal;
-  color: #ffffff;
-  font-weight: 700;
-  font-size: max(1.2vw, 1.5rem);
-  line-height: 100%
-}
-
-.footlogodiv {
-  display: flex;
-  flex-direction: row;
-  height: 75%;
-  gap: 1vw;
-  margin-left: 1.5%;
-  align-self: center;
 }
 
 
@@ -391,7 +426,7 @@ body {
 
 
 /* Mobile & Tablet: Hide desktop links, show info button */
-@media (max-width: 1024px) {
+@media (max-width: 824px) {
   #links {
     display: none !important;
   }
