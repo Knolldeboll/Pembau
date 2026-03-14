@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import FootLink from "./FootLink";
 //import { useNavigate } from "react-router";
 
@@ -5,10 +6,38 @@ const Foot = () => {
 
     //const navigate = useNavigate();
 
+    const [isPopupOpen, setIsPopupOpen] = useState(true);
+
+    /*
+    useEffect(() => {
+        if (isPopupOpen) {
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'instant' });
+        }
+    }, [isPopupOpen]);
+*/
     // footmenu: div als container für foot und popups!
     // footflex: div als container für die drei spalten (logo, social media, links), fixe größe.
+
+    // tODO: Footpopup muss auch fixed sein!
     return (
         <div className="footcontainer">
+
+            {isPopupOpen && (<div className="footpopup">
+
+                <div style={{ display: "grid", width: "fit-content", height: "100%", margin: "auto", gridTemplateColumns: "16vw 16vw ", gridTemplateRows: "2vw 2vw 2vw", rowGap: "max(0.9rem,1.5vw)", columnGap: "max(3.5rem,1.5vw)" }}>
+
+                    <FootLink text="IMPRESSUM" onClick={() => console.log("implement")}></FootLink>
+                    <FootLink text="KONTAKT" onClick={() => console.log("implement")}></FootLink>
+                    <FootLink text="NEWSLETTER" onClick={() => console.log("implement")}></FootLink>
+                    <FootLink text="URHEBERRECHT" onClick={() => console.log("implement")}></FootLink>
+                    <FootLink text="HAFTUNG" onClick={() => console.log("implement")}></FootLink>
+                    <FootLink text="AGBS" onClick={() => console.log("implement")}></FootLink>
+
+
+                </div>
+
+            </div>)}
+
             <div className="footmenu" >
                 <div className="footlogodiv">
 
@@ -70,7 +99,7 @@ const Foot = () => {
 
 
 
-                <svg id="info-button" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg id="info-button" onClick={() => setIsPopupOpen(!isPopupOpen)} viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M35 0C54.33 0 70 15.67 70 35C70 54.33 54.33 70 35 70C15.67 70 0 54.33 0 35C0 15.67 15.67 0 35 0ZM25.916 23.6445V26.6934H26.4756C27.1807 26.6934 27.8857 26.7765 28.5908 26.9424C29.296 27.1083 29.8977 27.4817 30.3955 28.0625C30.8932 28.6017 31.1426 29.4519 31.1426 30.6133V49.9023C31.1426 51.0637 30.8933 51.9349 30.3955 52.5156C29.9392 53.0964 29.3375 53.4908 28.5908 53.6982C27.8858 53.8641 27.1806 53.9463 26.4756 53.9463H25.667V56.9951H44.6445V53.9463H43.8975C43.1924 53.9463 42.4663 53.8641 41.7197 53.6982C40.9732 53.4908 40.3722 53.0962 39.916 52.5156C39.4597 51.8934 39.2314 50.9803 39.2314 49.7773V23.6445H25.916ZM34.9375 9.33301C33.6103 9.33306 32.4906 9.66551 31.5781 10.3291C30.707 10.9513 30.2715 12.0296 30.2715 13.5645C30.2715 15.0578 30.707 16.1361 31.5781 16.7998C32.4907 17.4634 33.5901 17.7959 34.876 17.7959C36.1617 17.7958 37.2613 17.4634 38.1738 16.7998C39.0861 16.1361 39.542 15.0576 39.542 13.5645C39.542 12.0299 39.0861 10.9514 38.1738 10.3291C37.2612 9.6654 36.1819 9.33301 34.9375 9.33301Z" fill="white" />
                 </svg>
 

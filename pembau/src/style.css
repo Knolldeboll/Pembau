@@ -233,6 +233,23 @@ a {
 
 }
 
+.footcontainer {
+  position: relative
+}
+
+.footpopup {
+  position: absolute;
+  background-color: #000000;
+  height: 25vw;
+  top: 0;
+  left: 0;
+
+
+}
+
+.footpopup .paragraph-white-line {
+  font-size: clamp(0.9rem, 2vw, 1.5rem);
+}
 
 #links {
   display: block !important;
@@ -260,7 +277,7 @@ a {
   height: fit-content;
   color: #ffffff;
   font-weight: 400;
-  font-size: 1.2vw;
+  font-size: 1.4vw;
   text-decoration-line: underline;
 }
 
