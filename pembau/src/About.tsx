@@ -33,14 +33,13 @@ import TextFrameAktuell from "./Customframes/TextFrameAktuell";
 import TextButton from "./Components/TextButton";
 import { CollapseImageFrame } from "./Components/CollapseImageFrame";
 import BodyFrame1 from "./alter shit/BodyFrame1";
-import TestImage from "./assets/bg-1.jpg"
+import TestImage from "./assets/bg-1.jpg";
 import { Carousel } from "./Components/Carousel";
 import { CollapseFrame } from "./Components/CollapseFrame";
 //import TextFrameGeschichte from "./Customframes/TextFrameGeschichte";
 
 const About = () => {
   console.log("testrectimg:", TestRectImg);
-
 
   const carouselImages: string[] = [TestImage, PermaImg, TeamImg];
 
@@ -286,27 +285,26 @@ const About = () => {
             position: "relative",
             transform: "translateX(-3vw)",
             zIndex: "1",
-            flex: "1 1 60vw"
+            flex: "1 1 60vw",
           }}
-        >1
-
-
+        >
+          1
           <ImageFrameJPG
             collapsedImg={ContainerCollapsedImg}
             uncollapsedImg={ContainerImg}
           ></ImageFrameJPG>
         </div>
 
-        <div id="containercitytextwrapper" style={{ marginTop: "2vw", flex: "1 1 550px" }} >
-
+        <div
+          id="containercitytextwrapper"
+          style={{ marginTop: "2vw", flex: "1 1 550px" }}
+        >
           <CollapseText
             marginTopProp="0vw"
             alwaysSrc="/Pembau/content/aboutContainerAlways.md"
             expandSrc="/Pembau/content/aboutContainerExpand.md"
           ></CollapseText>
-
         </div>
-
       </div>
 
       <div
@@ -416,19 +414,42 @@ const About = () => {
           </div>
         </div>
 
-
-
         {/** Test carosuel */}
-        <Carousel images={carouselImages}></Carousel>
-      </div>
 
+        <div
+          id="carouselWrapper"
+          style={{ paddingTop: "7vw", width: "90%", height: "60vw" }}
+        >
+          <Carousel images={carouselImages}></Carousel>
+        </div>
+      </div>
 
       {/**Test CollapseFrame (with image isnide) */}
 
-      <CollapseFrame width={80} height={50} rotation={2} bgColor="rgb(116, 116, 155)" folds={{ bottomRight: { horPercent: 10, vertPercent: 20 } }}>
+      <CollapseFrame
+        width={80}
+        height={50}
+        rotation={2}
+        bgColor="rgb(116, 116, 155)"
+        folds={{ bottomRight: { horPercent: 10, vertPercent: 20 } }}
+      >
         <img width="100%" src={TestImage}></img>
       </CollapseFrame>
 
+      {/**Test CollapseFrame with other stuff inside! */}
+
+      <CollapseFrame
+        width={80}
+        height={50}
+        rotation={0}
+        bgColor="#44ff22"
+        folds={{
+          bottomLeft: { horPercent: 15, vertPercent: 20 },
+          topRight: { horPercent: 15, vertPercent: 15 },
+        }}
+      >
+        <Carousel images={carouselImages}></Carousel>
+      </CollapseFrame>
     </>
 
     //Futti Futti

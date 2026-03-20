@@ -316,9 +316,9 @@ a {
 .carousel {
   position: relative;
   display: flex;
-  padding-top: 10vw;
-  width: 90%;
-  height: 40vw;
+
+  width: 100%;
+  height: 100%;
 
 }
 
