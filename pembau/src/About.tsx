@@ -447,6 +447,8 @@ const About = () => {
           bottomLeft: { horPercent: 15, vertPercent: 20 },
           topRight: { horPercent: 15, vertPercent: 15 },
         }}
+        initiallyCollapsed={true}
+        toggleOnce={true}
       >
         <Carousel images={carouselImages}></Carousel>
       </CollapseFrame>

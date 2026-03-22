@@ -1,4 +1,4 @@
-import { useState, ReactNode } from "react";
+import { useState, ReactNode, useRef } from "react";
 
 export type Corner = "topLeft" | "topRight" | "bottomRight" | "bottomLeft";
 
@@ -33,8 +33,8 @@ export const CollapseFrame = ({
   folds,
   rotation,
   bgColor,
-  initiallyCollapsed,
-  toggleOnce,
+  initiallyCollapsed = false,
+  toggleOnce = false,
 }: CollapseFrameProps) => {
   //Existenz von Folds prüfen: wenn nicht da, dann undefined. Dann auch kein dreieck oder Mask rendern!
   // console.log("Collapse Folds: ", folds);
@@ -57,6 +57,18 @@ export const CollapseFrame = ({
   //    console.log("triangles", triangles);
   console.log("polystring", polygonString);
 
+  // für wenn toggleOnce aktiv ist, ist das die Condition fürs togglen
+  const [toggled, setToggled] = useState(false);
+
+  // kp of das die beste lösung ist, noch nen state zu verwenden. aber warum nicht?
+  const toggleCollapsed = () => {
+    console.log("togglecollapsed");
+    if (toggled) return;
+    if (toggleOnce) setToggled(true);
+
+    setCollapsed(!isCollapsed);
+  };
+
   return (
     <div
       style={{
@@ -65,7 +77,7 @@ export const CollapseFrame = ({
         height: `${height}vw`,
         rotate: `${rotation}deg`,
       }}
-      onClick={() => setCollapsed(!isCollapsed)}
+      onClick={toggleCollapsed}
     >
       <div
         style={{
