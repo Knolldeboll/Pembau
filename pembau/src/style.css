@@ -162,6 +162,9 @@ a {
   margin-left: 1.5%;
 }
 
+/*HEAD ENDE*/
+
+
 /*FOOTER*/
 
 .footmenu {
@@ -238,12 +241,13 @@ a {
 }
 
 .footpopup {
+  /*war als absolute gedacht, damit das popup über dem rest der seite liegt und sich nicht in den flow schiebt! */
   position: absolute;
   background-color: #000000;
   height: 25vw;
-  top: 0;
-  left: 0;
-
+  bottom: 100%;
+  left: 25%;
+ 
 
 }
 
@@ -312,9 +316,9 @@ a {
 .carousel {
   position: relative;
   display: flex;
-  padding-top: 10vw;
-  width: 90%;
-  height: 40vw;
+
+  width: 100%;
+  height: 100%;
 
 }
 
