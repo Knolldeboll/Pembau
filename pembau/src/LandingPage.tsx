@@ -20,7 +20,7 @@ import KeinProgrammFrame from "./Customframes/KeinProgrammFrame";
 import MithelfenFrame from "./Customframes/MithelfenFrame";
 import TextFrameEndeLP from "./Customframes/TextFrameEndeLP";
 import TextButton from "./Components/TextButton";
-import Foot from "./menu/Foot";
+//import Foot from "./menu/Foot";
 import { useNavigate } from "react-router";
 
 

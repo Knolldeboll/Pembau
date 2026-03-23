@@ -19,10 +19,10 @@ import TeamImg from "./assets/about/team.webp";
 import TeamCollapsedImg from "./assets/about/teambrtl.webp";
 import TeamDream from "./assets/about/teamdream.webp";
 
-import images from "./assets/about/images.json";
+//import images from "./assets/about/images.json";
 import TestRectImg from "./assets/bg-2.jpg";
 
-import Foot from "./menu/Foot";
+//import Foot from "./menu/Foot";
 
 //md texts
 
@@ -31,8 +31,8 @@ import Foot from "./menu/Foot";
 import { CollapseText } from "./Components/CollapseText";
 import TextFrameAktuell from "./Customframes/TextFrameAktuell";
 import TextButton from "./Components/TextButton";
-import { CollapseImageFrame } from "./Components/CollapseImageFrame";
-import BodyFrame1 from "./alter shit/BodyFrame1";
+//import { CollapseImageFrame } from "./Components/CollapseImageFrame";
+//import BodyFrame1 from "./alter shit/BodyFrame1";
 import TestImage from "./assets/bg-1.jpg"
 import { Carousel } from "./Components/Carousel";
 import { CollapseFrame } from "./Components/CollapseFrame";
