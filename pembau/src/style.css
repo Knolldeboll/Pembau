@@ -247,7 +247,7 @@ a {
   height: 25vw;
   bottom: 100%;
   left: 25%;
- 
+
 
 }
 
@@ -313,12 +313,24 @@ a {
   }
 }
 
+/*CAROUSEL*/
+
 .carousel {
   position: relative;
   display: flex;
 
   width: 100%;
   height: 100%;
+
+}
+
+.carousel-button {
+
+
+  position: absolute;
+  height: 15vw;
+  width: 10vw;
+  align-content: center;
 
 }
 

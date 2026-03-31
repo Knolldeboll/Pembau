@@ -1,4 +1,4 @@
-import { useState, ReactNode, useRef } from "react";
+import { useState, ReactNode } from "react";
 
 export type Corner = "topLeft" | "topRight" | "bottomRight" | "bottomLeft";
 
@@ -6,6 +6,10 @@ export type CornerData = {
   horPercent: number;
   vertPercent: number;
 };
+
+
+
+
 interface CollapseFrameProps {
   children: ReactNode;
   /** Width in vw units */
@@ -24,7 +28,11 @@ interface CollapseFrameProps {
 }
 
 // TODO: einzelner State für alle Collapse oder nicht.
-// Dann muss man nicht so dumm alles machen.
+// Dann muss man nicht so dumm alles machen. -ah.
+
+// TODO: Manche Objekte aus den Children sollen erst beim Anklicken des CollapseFrames angezeigt werden - 
+// Dieser State muss also irgendwie zugänglich sein.
+
 
 export const CollapseFrame = ({
   children,

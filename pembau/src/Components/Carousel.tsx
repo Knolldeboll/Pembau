@@ -4,6 +4,9 @@ interface CarouselProps {
     images: string[];
 }
 
+
+// TODO: Fetch parent's collapse state and render buttons based on that
+
 export const Carousel = ({ images }: CarouselProps) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const [touchStart, setTouchStart] = useState<number | null>(null);
@@ -58,35 +61,35 @@ export const Carousel = ({ images }: CarouselProps) => {
         setTouchEnd(null);
     };
 
+    // TODO: svg buttons.
     return (
         <div className="carousel">
             <div
+                className="carousel-button"
                 style={{
-                    position: "absolute",
                     left: "0",
                     top: "50%",
-                    backgroundColor: "#000000",
-                    color: "#ffffff",
-                    height: "10%",
-                    alignContent: "center"
                 }}
                 onClick={scrollLeft}
             >
-                LEFT
+                <svg width="100%" height="100%" viewBox="0 0 56 104" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 51.9614L55.5 -9.72702e-05L55.5 103.923L0 51.9614Z" fill="#C3D9FF" />
+                </svg>
+
+
             </div>
             <div
+                className="carousel-button"
                 style={{
-                    position: "absolute",
                     right: "0",
                     top: "50%",
-                    backgroundColor: "#000000",
-                    color: "#ffffff",
-                    height: "10%",
-                    alignContent: "center"
                 }}
                 onClick={scrollRight}
             >
-                RIGHT
+                <svg width="100%" height="100%" viewBox="0 0 56 104" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M55.5 51.9614L1.01328e-06 103.923L1.01328e-06 -9.82239e-05L55.5 51.9614Z" fill="#C3D9FF" />
+                </svg>
+
             </div>
 
             <div
