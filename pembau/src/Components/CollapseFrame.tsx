@@ -12,9 +12,9 @@ export type CornerData = {
 
 interface CollapseFrameProps {
   children: ReactNode;
-  /** Width in vw units */
+  /** Width in % units */
   width: number;
-  /** Height in vw units */
+  /** Height in % units */
   height: number;
   // partial: 0-alle elemente aus ner Auswahl.
   // die Auswahl ist hier die Kombinationsmöglichkeiten aus Strings im Typ "Corner" und zugehöriger Data
@@ -81,8 +81,8 @@ export const CollapseFrame = ({
     <div
       style={{
         position: "relative",
-        width: `${width}vw`,
-        height: `${height}vw`,
+        width: `${width}`,
+        height: `${height}`,
         rotate: `${rotation}deg`,
       }}
       onClick={toggleCollapsed}

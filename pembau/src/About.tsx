@@ -12,6 +12,8 @@ import HelpingHandsImg from "./assets/about/helpinghands.webp";
 import HelpingHandsCollapsedImg from "./assets/about/helpinghandstrbl.webp";
 import ContainerImg from "./assets/about/container.webp";
 import ContainerCollapsedImg from "./assets/about/containerbltr.webp";
+
+import TxPImg from "./assets/about/txp.webp";
 import PermaImg from "./assets/about/perma.webp";
 import VisionImg from "./assets/about/vision.webp";
 import PermaCollapsedImg from "./assets/about/permatrbl.webp";
@@ -36,6 +38,7 @@ import TextButton from "./Components/TextButton";
 import TestImage from "./assets/bg-1.jpg"
 import { Carousel } from "./Components/Carousel";
 import { CollapseFrame } from "./Components/CollapseFrame";
+import ImageWithCollapseText from "./Components/ImageWithCollapseText";
 //import TextFrameGeschichte from "./Customframes/TextFrameGeschichte";
 
 const About = () => {
@@ -163,6 +166,7 @@ const About = () => {
           }}
         ></img>
 
+        {/*wtf wyh absolute hier?!?  mach doch einfach alle untereinander..*/}
         <div
           id="gscollapsecontainer"
           style={{ position: "absolute", top: "15%", left: "30%" }}
@@ -176,6 +180,7 @@ const About = () => {
             expandSrc="/Pembau/content/aboutGrundstuckExpand.md"
           ></CollapseText>
         </div>
+
       </div>
 
       <div
@@ -288,7 +293,7 @@ const About = () => {
             zIndex: "1",
             flex: "1 1 60vw"
           }}
-        >1
+        >
 
 
           <ImageFrameJPG
@@ -308,6 +313,15 @@ const About = () => {
         </div>
 
       </div>
+
+
+      {/**Test: neue component mit image und collapsetext gemeinsam  */}
+
+      <ImageWithCollapseText imgSrc={TxPImg} alwaysTextSrc="/Pembau/content/aboutContainerAlways.md" expandTextSrc="/Pembau/content/aboutContainerExpand.md" >
+      </ImageWithCollapseText>
+
+      {/** TODO: Für TXP am Besten manuell was machen, eig so wie oben bei ContainerCity -> Denn da kommt noch Custom Shit wie Buttons etc. dazu. */}
+
 
       <div
         id="perma"
@@ -423,9 +437,9 @@ const About = () => {
       </div>
 
 
-      {/**Test CollapseFrame (with image isnide) */}
+      {/**Test CollapseFrame (with image inside) */}
 
-      <CollapseFrame width={80} height={50} rotation={2} bgColor="rgb(116, 116, 155)" folds={{ bottomRight: { horPercent: 10, vertPercent: 20 } }}>
+      <CollapseFrame width={80} height={50} rotation={2} bgColor="rgb(116, 116, 155)" folds={{ bottomRight: { horPercent: 10, vertPercent: 20 }, topLeft: { horPercent: 10, vertPercent: 20 } }}>
         <img width="100%" src={TestImage}></img>
       </CollapseFrame>
 
