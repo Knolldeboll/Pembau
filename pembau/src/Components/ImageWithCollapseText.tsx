@@ -12,7 +12,7 @@ const ImageWithCollapseText = ({ imgSrc, alwaysTextSrc, expandTextSrc }: ImageWi
 
 
 
-    return (<div
+    return (<div className="imagewithcollapsetext"
 
 
         style={{
@@ -53,7 +53,7 @@ const ImageWithCollapseText = ({ imgSrc, alwaysTextSrc, expandTextSrc }: ImageWi
         {/**Width der children wird über flex basis definiert! ggf. als prop zum individuellen anpassen. */}
 
 
-        <div style={{ marginTop: "2vw", flex: "1 1 550px" }} >
+        <div style={{ marginTop: "2vw", marginLeft: "2vw", flex: "1 1 550px" }} >
 
             <CollapseText
                 marginTopProp="0vw"
