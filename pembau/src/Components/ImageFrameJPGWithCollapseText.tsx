@@ -12,7 +12,7 @@ interface ImageFrameJPGWithCollapseTextProps {
 
 export const ImageFrameJPGWithCollapseText = ({ alwaysTextSrc, expandTextSrc, uncollapsedImg, collapsedImg }: ImageFrameJPGWithCollapseTextProps) => {
 
-    {/**Container City */ }
+    {/**Container City - based */ }
 
     return (
         <div

@@ -245,6 +245,7 @@ const AboutAktuell = () => {
         ></CollapseText>
       </div>
 
+      {/**helpinghands */}
       <div
         id="helpinghands"
         style={{
@@ -278,6 +279,14 @@ const AboutAktuell = () => {
       </div>
 
 
+      {/** gut gedacht das auszutauschen, aber das originale hat eben auch custom styling drinnen, bzgl. translate, margins & percentage! 
+
+      <ImageFrameJPGWithCollapseText
+        alwaysTextSrc="/Pembau/content/aboutHelpingAlways.md"
+        expandTextSrc="/Pembau/content/aboutHelpingExpand.md"
+        collapsedImg={HelpingHandsCollapsedImg} uncollapsedImg={HelpingHandsImg} >
+      </ImageFrameJPGWithCollapseText>
+*/}
 
       {/**Container City */}
 
@@ -312,6 +321,7 @@ const AboutAktuell = () => {
             flex: "1 1 60vw"
           }}>
 
+          {/**Normal kommt hier imgFrameJpg */}
           <img width="100%" src={TxPImg}></img>
         </div>
 
