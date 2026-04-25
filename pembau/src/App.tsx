@@ -21,6 +21,7 @@ import Menu from "./menu/Menu";
 import { useMainStore } from "./stores/MainStore";
 import About from "./About";
 import Foot from "./menu/Foot";
+import AboutAktuell from "./AboutAktuell";
 
 
 
@@ -71,7 +72,7 @@ export const App = () => {
         <Routes>
 
           <Route path="/Pembau/" element={<LandingPage></LandingPage>} />
-          <Route path="/Pembau/About/" element={<About></About>} />
+          <Route path="/Pembau/About/" element={<AboutAktuell></AboutAktuell>} />
 
         </Routes>
 

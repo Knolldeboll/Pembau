@@ -9,7 +9,7 @@ interface CollapseTextProps {
     textColor?: string;
     width?: string;
     alwaysSrc: string,
-    expandSrc: string,
+    expandSrc?: string,
 }
 
 export const CollapseText = ({ alwaysSrc, expandSrc, marginTopProp, width, textColor, rotate }: CollapseTextProps) => {
@@ -27,11 +27,14 @@ export const CollapseText = ({ alwaysSrc, expandSrc, marginTopProp, width, textC
             .then(setAlwaysMd).catch(() => console.log("Failed to load md"));;
     }, [alwaysSrc]);
 
-    useEffect(() => {
-        fetch(expandSrc)
-            .then((r) => r.text())
-            .then(setExpandMd).catch(() => console.log("Failed to load md"));
-    }, [expandSrc])
+    if (expandSrc) {
+        useEffect(() => {
+            fetch(expandSrc)
+                .then((r) => r.text())
+                .then(setExpandMd).catch(() => console.log("Failed to load md"));
+        }, [expandSrc])
+    }
+
 
 
     // md im render in reactMd shit packen
@@ -45,14 +48,15 @@ export const CollapseText = ({ alwaysSrc, expandSrc, marginTopProp, width, textC
             {alwaysMd}
         </Markdown>
 
-        {!isCollapsed &&
+        {expandSrc && !isCollapsed &&
             <Markdown>
                 {expandMd}
             </Markdown>}
 
-        <p className="underline" onClick={() => setCollapsed(!isCollapsed)}>
-            {isCollapsed ? "Mehr Lesen" : "Weniger Lesen"}
-        </p>
+        {expandSrc &&
+            <p className="underline" onClick={() => setCollapsed(!isCollapsed)}>
+                {isCollapsed ? "Mehr Lesen" : "Weniger Lesen"}
+            </p>}
 
     </div>);
 

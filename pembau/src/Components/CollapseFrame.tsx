@@ -8,7 +8,7 @@ export type CornerData = {
 };
 
 
-
+/**CollapseFrame: CollapseFrame auch mit anderen Inhalten als iamge. */
 
 interface CollapseFrameProps {
   children: ReactNode;

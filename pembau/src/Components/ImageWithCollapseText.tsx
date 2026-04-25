@@ -25,6 +25,7 @@ const ImageWithCollapseText = ({ imgSrc, alwaysTextSrc, expandTextSrc }: ImageWi
     >
 
         {/** bevorzugte breite des texts und bilds werden jeweils über flex base gesteuert */}
+        {/**div für bild/content */}
         <div
             style={{
                 position: "relative",
@@ -40,11 +41,12 @@ const ImageWithCollapseText = ({ imgSrc, alwaysTextSrc, expandTextSrc }: ImageWi
 
 
             {/**TODO: Folds aus imgData ziehen.*/}
+
             {/**TODO: schauen, warum hier die Ecken innerhalb von nem Container div 
              * nicht ganz korrekt gerendert werden.. hat das mit inem transform zu tun hm? */}
             {/**Solange die beiden sachen mit den Folds noch nicht klappen, keine Folds erlauben... */}
 
-            <CollapseFrame width={100} height={100} rotation={0} bgColor="transparent" >
+            <CollapseFrame width={100} height={100} folds={{ topLeft: { horPercent: 15, vertPercent: 10 } }} rotation={0} bgColor="transparent" >
                 <img width="100%" src={imgSrc}></img>
             </CollapseFrame>
 
@@ -52,7 +54,7 @@ const ImageWithCollapseText = ({ imgSrc, alwaysTextSrc, expandTextSrc }: ImageWi
 
         {/**Width der children wird über flex basis definiert! ggf. als prop zum individuellen anpassen. */}
 
-
+        {/**div text */}
         <div style={{ marginTop: "2vw", marginLeft: "2vw", flex: "1 1 550px" }} >
 
             <CollapseText

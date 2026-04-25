@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { ImageData } from "../types/ImageData";
 
+/**CollapseImageFrame: CollapseFrame mit ausschlißlich Image als Inhalt, nix anderes! */
+
 type Corner = "topLeft" | "topRight" | "bottomRight" | "bottomLeft";
 
 type CornerData = {
