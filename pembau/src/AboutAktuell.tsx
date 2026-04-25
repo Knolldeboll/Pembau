@@ -353,7 +353,7 @@ const AboutAktuell = () => {
             <div id="instatxp" style={{
               display: "flex", flexDirection: "column", flex: "none", alignItems: "center"
             }} >
-              <p>Folge Techno x Punsch</p>
+              <p className="dmsans400regularresponsive">Folge Techno x Punsch</p>
               <a
                 className="socialmedialinkwrapper"
                 href="https://www.instagram.com/technoxpunsch/"
@@ -373,7 +373,7 @@ const AboutAktuell = () => {
             <div id="innsbruck" style={{
               display: "flex", flexDirection: "column", flex: "none", alignItems: "center"
             }} >
-              <p>Gefördert von</p>
+              <p className="dmsans400regularresponsive">Gefördert von</p>
               <img width="100vw" src={InnsbruckLogo}></img>
             </div>
           </div>

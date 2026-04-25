@@ -347,6 +347,13 @@ a {
 }
 
 
+.dmsans400regularresponsive {
+  font-family: "DM Sans";
+  font-weight: 400;
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  margin-block: 0.5vw;
+}
+
 /* voll unsauber. idealerweise für alle CollapseTextWrapper (in Kombi mit Image und auch ohne) verwenden.*/
 
 /* IMAGE WITH COLLAPSE TEXT */
