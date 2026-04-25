@@ -434,7 +434,6 @@ const AboutAktuell = () => {
           marginTopProp="14vw"
           width="55vw"
           alwaysSrc="/Pembau/content/aboutPermaAlways.md"
-          expandSrc="/Pembau/content/aboutPermaExpand.md"
         ></CollapseText>
       </div>
 
