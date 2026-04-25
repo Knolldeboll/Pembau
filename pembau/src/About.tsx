@@ -38,7 +38,7 @@ import TextButton from "./Components/TextButton";
 import TestImage from "./assets/bg-1.jpg"
 import { Carousel } from "./Components/Carousel";
 import { CollapseFrame } from "./Components/CollapseFrame";
-import ImageWithCollapseText from "./Components/ImageWithCollapseText";
+import CollapseFrameWithCollapseText from "./Components/CollapseFrameWithCollapseText";
 //import TextFrameGeschichte from "./Customframes/TextFrameGeschichte";
 
 const About = () => {
@@ -317,8 +317,8 @@ const About = () => {
 
       {/**Test: neue component mit image und collapsetext gemeinsam  */}
 
-      <ImageWithCollapseText imgSrc={TxPImg} alwaysTextSrc="/Pembau/content/aboutContainerAlways.md" expandTextSrc="/Pembau/content/aboutContainerExpand.md" >
-      </ImageWithCollapseText>
+      <CollapseFrameWithCollapseText imgSrc={TxPImg} alwaysTextSrc="/Pembau/content/aboutContainerAlways.md" expandTextSrc="/Pembau/content/aboutContainerExpand.md" >
+      </CollapseFrameWithCollapseText>
 
       {/** TODO: Für TXP am Besten manuell was machen, eig so wie oben bei ContainerCity -> Denn da kommt noch Custom Shit wie Buttons etc. dazu. */}
 

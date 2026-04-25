@@ -1,14 +1,14 @@
 import { CollapseFrame } from "./CollapseFrame";
 import { CollapseText } from "./CollapseText";
 
-interface ImageWithCollapseTextProps {
+interface CollapseFrameWithCollapseTextProps {
     imgSrc: string;
     alwaysTextSrc: string;
     expandTextSrc: string;
 }
 
 
-const ImageWithCollapseText = ({ imgSrc, alwaysTextSrc, expandTextSrc }: ImageWithCollapseTextProps) => {
+const CollapseFrameWithCollapseText = ({ imgSrc, alwaysTextSrc, expandTextSrc }: CollapseFrameWithCollapseTextProps) => {
 
 
 
@@ -68,4 +68,4 @@ const ImageWithCollapseText = ({ imgSrc, alwaysTextSrc, expandTextSrc }: ImageWi
     </div>)
 
 };
-export default ImageWithCollapseText;
+export default CollapseFrameWithCollapseText;

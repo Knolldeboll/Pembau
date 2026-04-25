@@ -124,10 +124,18 @@ a {
 
 }
 
+
+/**  kann man nicht einfach hier für alle responsive machen?*/
+
+/** prinzipiell ja, aber das kackt aktuell bei about - vision (zu wenig platz) rein*/
+
+
+/**collapsetext wird responsive*/
+
 .collapsetextwrapper h2 {
   font-family: "DM Sans";
   font-weight: 400;
-  font-size: 2.1vw;
+  font-size: clamp(1.5rem, 2vw, 2rem);
   color: #FF6400;
   margin-block: 0;
 }
@@ -135,10 +143,31 @@ a {
 .collapsetextwrapper p {
   font-family: "DM Sans";
   font-weight: 400;
-  font-size: 1.15vw;
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
   margin-block: 0.5vw;
 
 
+}
+
+/* ausser bei grundstück und geschichte, da no net.*/
+#grundstück,
+#geschichte {
+  .collapsetextwrapper h2 {
+    font-family: "DM Sans";
+    font-weight: 400;
+    font-size: 2.1vw;
+    color: #FF6400;
+    margin-block: 0;
+  }
+
+  .collapsetextwrapper p {
+    font-family: "DM Sans";
+    font-weight: 400;
+    font-size: 1.15vw;
+    margin-block: 0.5vw;
+
+
+  }
 }
 
 
@@ -301,50 +330,9 @@ a {
 
 
 
-#containercity {
-
-  .collapsetextwrapper h2 {
-    font-family: "DM Sans";
-    font-weight: 400;
-    font-size: clamp(1.5rem, 2vw, 2rem);
-    color: #FF6400;
-    margin-block: 0;
-  }
-
-  .collapsetextwrapper p {
-    font-family: "DM Sans";
-    font-weight: 400;
-    font-size: clamp(1rem, 1.2vw, 1.2rem);
-    margin-block: 0.5vw;
-
-
-  }
-
-}
 
 
 
-/*TxP*/
-#technoxpunsch {
-
-  .collapsetextwrapper h2 {
-    font-family: "DM Sans";
-    font-weight: 400;
-    font-size: clamp(1.5rem, 2vw, 2rem);
-    color: #FF6400;
-    margin-block: 0;
-  }
-
-  .collapsetextwrapper p {
-    font-family: "DM Sans";
-    font-weight: 400;
-    font-size: clamp(1rem, 1.2vw, 1.2rem);
-    margin-block: 0.5vw;
-
-
-  }
-
-}
 
 
 .dmsans400regularresponsive {

@@ -40,7 +40,8 @@ import TextButton from "./Components/TextButton";
 import TestImage from "./assets/bg-1.jpg"
 import { Carousel } from "./Components/Carousel";
 import { CollapseFrame } from "./Components/CollapseFrame";
-import ImageWithCollapseText from "./Components/ImageWithCollapseText";
+import CollapseFrameWithCollapseText from "./Components/CollapseFrameWithCollapseText";
+import { ImageFrameJPGWithCollapseText } from "./Components/ImageFrameJPGWithCollapseText";
 //import TextFrameGeschichte from "./Customframes/TextFrameGeschichte";
 
 const AboutAktuell = () => {
@@ -279,41 +280,12 @@ const AboutAktuell = () => {
 
 
       {/**Container City */}
-      <div
-        id="containercity"
-        style={{
-          display: "flex",
-          alignItems: "stretch",
-          flexWrap: "wrap",
-          flexDirection: "row",
-          marginTop: "5vw",
-          zIndex: "2",
-        }}
-      >
 
-        <div
-          id="containercityimagewrapper"
-          style={{
-            position: "relative",
-            transform: "translateX(-3vw)",
-            zIndex: "1",
-            flex: "1 1 60vw"
-          }}>
-          <ImageFrameJPG
-            collapsedImg={ContainerCollapsedImg}
-            uncollapsedImg={ContainerImg}
-          ></ImageFrameJPG>
-        </div>
-
-        <div id="containercitytextwrapper" style={{ marginTop: "2vw", flex: "1 1 550px" }} >
-          <CollapseText
-            marginTopProp="0vw"
-            alwaysSrc="/Pembau/content/aboutContainerAlways.md"
-            expandSrc="/Pembau/content/aboutContainerExpand.md"
-          ></CollapseText>
-        </div>
-
-      </div>
+      <ImageFrameJPGWithCollapseText
+        alwaysTextSrc="/Pembau/content/aboutContainerAlways.md"
+        expandTextSrc="/Pembau/content/aboutContainerExpand.md"
+        collapsedImg={ContainerCollapsedImg} uncollapsedImg={ContainerImg} >
+      </ImageFrameJPGWithCollapseText>
 
 
 
@@ -386,8 +358,8 @@ const AboutAktuell = () => {
       {/**Test: neue component mit image und collapsetext gemeinsam  */}
 
       {/** 
-      <ImageWithCollapseText imgSrc={TxPImg} alwaysTextSrc="/Pembau/content/aboutContainerAlways.md" expandTextSrc="/Pembau/content/aboutContainerExpand.md" >
-      </ImageWithCollapseText>
+      <CollapseFrameWithCollapseText imgSrc={TxPImg} alwaysTextSrc="/Pembau/content/aboutContainerAlways.md" expandTextSrc="/Pembau/content/aboutContainerExpand.md" >
+      </CollapseFrameWithCollapseText>
 */}
       {/**Test: warum klappt CollapseImage im ImageWithCollapseText nicht? test mit txp bild, vllt liegts nur am bilde */}
 
