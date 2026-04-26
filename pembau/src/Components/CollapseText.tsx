@@ -42,6 +42,10 @@ export const CollapseText = ({ alwaysSrc, expandSrc, marginTopProp, width, textC
     // Width ist jetzt optional. wenn gegeben, nimm das, ansonsten 100%
     const appliedWidth = width ? width : "100%";
 
+    //TODO: MarginTop conditional auf umbruch... damn son. 
+    // das kommt ja auch vom css, kein state ablesbar. 
+    // vielleicht kann 
+
     return (<div className="collapsetextwrapper" style={{ marginTop: marginTopProp, width: appliedWidth, color: textColor, rotate: rotate }} >
 
         <Markdown >

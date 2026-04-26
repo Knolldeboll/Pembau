@@ -98,11 +98,14 @@ const AboutAktuell = () => {
         ></ImageFrameJPG>
       </div>
 
+
+      {/*geschichte*/}
+
+
       <div
         id="geschichte"
         style={{
           display: "flex",
-
           flex: "none",
           flexDirection: "row",
           marginTop: "5vw",
@@ -144,6 +147,9 @@ const AboutAktuell = () => {
             _Kulturplattform
           </p>
         </div>
+
+
+
         <CollapseText
           marginTopProp="15vw"
           width="55vw"
@@ -213,11 +219,14 @@ const AboutAktuell = () => {
       </div>
 
       {/*Ab hier die Bilder mit Collapsetext nebenan    transform: "translateX(25vw )translateY(-70vw) rotate(20deg)", transform: "translateX(25vw )translateY(-70vw) rotate(20deg)",*/}
+
+      {/**Kultursommer - ok wrapped!*/}
       <div
         id="kultursommer"
         style={{
           display: "flex",
-          flex: "none",
+          alignItems: "stretch",
+          flexWrap: "wrap",
           flexDirection: "row",
           marginTop: "5vw",
           zIndex: "2",
@@ -227,7 +236,7 @@ const AboutAktuell = () => {
           id="kulturimgwrapper"
           style={{
             position: "relative",
-            width: "65vw",
+            flex: "1 1 60vw",
             transform: "translateX(-3vw)",
             zIndex: "1",
           }}
@@ -237,20 +246,28 @@ const AboutAktuell = () => {
             uncollapsedImg={KulturImg}
           ></ImageFrameJPG>
         </div>
-        <CollapseText
-          marginTopProp="0vw"
-          width="55vw"
-          alwaysSrc="/Pembau/content/aboutKulturAlways.md"
-          expandSrc="/Pembau/content/aboutKulturExpand.md"
-        ></CollapseText>
+
+        <div id="kulturtextwrapper"
+          style={{ flex: "1 1 550px" }}
+        >
+          <CollapseText
+            alwaysSrc="/Pembau/content/aboutKulturAlways.md"
+            expandSrc="/Pembau/content/aboutKulturExpand.md"
+          ></CollapseText>
+        </div>
+
       </div>
 
-      {/**helpinghands */}
+
+
+
+      {/**helpinghands  - ok wrapped!*/}
       <div
         id="helpinghands"
         style={{
           display: "flex",
-          flex: "none",
+          alignItems: "stretch",
+          flexWrap: "wrap",
           flexDirection: "row",
           marginTop: "5vw",
           zIndex: "2",
@@ -260,7 +277,7 @@ const AboutAktuell = () => {
           id="helpingimgwrapper"
           style={{
             position: "relative",
-            width: "65vw",
+            flex: "1 1 60vw",
             transform: "translateX(-3vw)",
             zIndex: "1",
           }}
@@ -270,13 +287,17 @@ const AboutAktuell = () => {
             uncollapsedImg={HelpingHandsImg}
           ></ImageFrameJPG>
         </div>
-        <CollapseText
-          marginTopProp="14vw"
-          width="55vw"
-          alwaysSrc="/Pembau/content/aboutHelpingAlways.md"
-          expandSrc="/Pembau/content/aboutHelpingExpand.md"
-        ></CollapseText>
+
+        <div id="helpingtextwrapper" style={{ flex: "1 1 550px", marginTop: "14vw" }} >
+          <CollapseText
+            marginTopProp="0vw"
+            alwaysSrc="/Pembau/content/aboutHelpingAlways.md"
+            expandSrc="/Pembau/content/aboutHelpingExpand.md"
+          ></CollapseText></div>
+
       </div>
+
+
 
 
       {/** gut gedacht das auszutauschen, aber das originale hat eben auch custom styling drinnen, bzgl. translate, margins & percentage! 
@@ -288,7 +309,7 @@ const AboutAktuell = () => {
       </ImageFrameJPGWithCollapseText>
 */}
 
-      {/**Container City */}
+      {/**Container City - hier passt das neue Component ja. */}
 
       <ImageFrameJPGWithCollapseText
         alwaysTextSrc="/Pembau/content/aboutContainerAlways.md"
@@ -329,7 +350,6 @@ const AboutAktuell = () => {
           <CollapseText
             marginTopProp="0vw"
             alwaysSrc="/Pembau/content/aboutTxPAlways.md"
-
           ></CollapseText>
           <div style={{ display: "flex", flexDirection: "row", flex: "none", marginTop: "2vw", justifyContent: "center", gap: "3vw" }}>
             <div id="instatxp" style={{
