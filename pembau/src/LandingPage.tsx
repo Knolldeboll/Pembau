@@ -46,8 +46,8 @@ const LandingPage = () => {
 
 
       <div id="nicetryjpg" style={{
-        width: "150vw",
-        transform: "translateX(-29%) rotate(1.44deg)",
+        width: "110vw",
+        transform: "translateX(-5%) rotate(1.44deg)",
         zIndex: "2"
       }}>
         <ImageFrameJPG collapsedImg={NiceTryCollapsedImg} uncollapsedImg={NiceTryImg}></ImageFrameJPG>

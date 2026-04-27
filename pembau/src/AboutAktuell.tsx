@@ -1,11 +1,11 @@
 // images
-import GeschichteImg from "./assets/about/geschichte.webp";
-import GeschichteCollapsedImg from "./assets/about/geschichtetrbl.webp";
+import GeschichteImg from "./assets/about/geschichteuncollapsed.webp";
+import GeschichteCollapsedImg from "./assets/about/geschichtecollapsed.webp";
 import LeitbildImg from "./assets/about/leitbildwerte.webp";
 import LeitbildCollapsedImg from "./assets/about/leitbildwertebrtl.webp";
 import StartImg from "./assets/about/neu für start.webp";
 import StartCollapsedImg from "./assets/about/neu für start br.webp";
-import ImageFrameJPG from "./Components/ImageFrameJPG";
+
 import KulturImg from "./assets/about/kultur.webp";
 import KulturCollapsedImg from "./assets/about/kulturbrtl.webp";
 import HelpingHandsImg from "./assets/about/helpinghands.webp";
@@ -23,6 +23,9 @@ import TeamImg from "./assets/about/team.webp";
 import TeamCollapsedImg from "./assets/about/teambrtl.webp";
 import TeamDream from "./assets/about/teamdream.webp";
 
+
+import ImageFrameJPG from "./Components/ImageFrameJPG";
+
 //import images from "./assets/about/images.json";
 import TestRectImg from "./assets/bg-2.jpg";
 
@@ -37,10 +40,10 @@ import TextFrameAktuell from "./Customframes/TextFrameAktuell";
 import TextButton from "./Components/TextButton";
 //import { CollapseImageFrame } from "./Components/CollapseImageFrame";
 //import BodyFrame1 from "./alter shit/BodyFrame1";
-import TestImage from "./assets/bg-1.jpg"
-import { Carousel } from "./Components/Carousel";
-import { CollapseFrame } from "./Components/CollapseFrame";
-import CollapseFrameWithCollapseText from "./Components/CollapseFrameWithCollapseText";
+//import TestImage from "./assets/bg-1.jpg"
+//import { Carousel } from "./Components/Carousel";
+//import { CollapseFrame } from "./Components/CollapseFrame";
+//import CollapseFrameWithCollapseText from "./Components/CollapseFrameWithCollapseText";
 import { ImageFrameJPGWithCollapseText } from "./Components/ImageFrameJPGWithCollapseText";
 //import TextFrameGeschichte from "./Customframes/TextFrameGeschichte";
 
@@ -48,7 +51,7 @@ const AboutAktuell = () => {
   console.log("testrectimg:", TestRectImg);
 
 
-  const carouselImages: string[] = [TestImage, PermaImg, TeamImg];
+  //const carouselImages: string[] = [TestImage, PermaImg, TeamImg];
 
   return (
     <>
@@ -107,6 +110,7 @@ const AboutAktuell = () => {
         style={{
           display: "flex",
           flex: "none",
+          flexWrap: "wrap",
           flexDirection: "row",
           marginTop: "5vw",
           zIndex: "2",
@@ -116,53 +120,64 @@ const AboutAktuell = () => {
           id="geschichteimgwrapper"
           style={{
             position: "relative",
-            width: "65vw",
+            flex: "1 1 60vw",
+
             transform: "translateX(-3vw)",
             zIndex: "1",
           }}
-        >
-          <ImageFrameJPG
-            collapsedImg={GeschichteCollapsedImg}
-            uncollapsedImg={GeschichteImg}
-          ></ImageFrameJPG>
+        >       {/**nicht mehr gebraucht: ist jetzt image. 
           <p
             className="h1serif"
             style={{
               display: "block",
               position: "absolute",
-              top: "-1%",
-              left: "48%",
+
+              left: "42%",
+              top: "-2%",
               rotate: "20deg",
-              width: "35vw",
+              width: "60vw",
+              textAlign: "center",
               height: "fit-content",
               zIndex: "0",
+              fontSize: "max(1rem,2.5vw)"
+
             }}
           >
             Vom
-            <span className="dmsans700orange">
+            <span className="dmsans700orange" style={{ fontSize: "max(1rem,2.5vw)" }} >
               _BAUERNHOF
               <br />
               _ZUR{" "}
             </span>
             _Kulturplattform
           </p>
+
+          */}
+          <ImageFrameJPG
+            collapsedImg={GeschichteCollapsedImg}
+            uncollapsedImg={GeschichteImg}
+          ></ImageFrameJPG>
+
+
         </div>
 
 
+        {/**Textsize ist responsive! */}
+        <div id="geschichtetextwrapper" style={{ flex: "1 1 550px", marginTop: "14vw" }} >
 
-        <CollapseText
-          marginTopProp="15vw"
-          width="55vw"
-          alwaysSrc="/Pembau/content/aboutGeschichteAlways.md"
-          expandSrc="/Pembau/content/aboutGeschichteExpand.md"
-        ></CollapseText>
+
+          <CollapseText
+            alwaysSrc="/Pembau/content/aboutGeschichteAlways.md"
+            expandSrc="/Pembau/content/aboutGeschichteExpand.md"
+          ></CollapseText>
+
+        </div>
       </div>
 
       <div
         id="grundstück"
         style={{
           position: "relative",
-          backgroundColor: "rgba(170, 131, 131, 0.36)",
           color: "#000000",
         }}
       >
@@ -175,7 +190,7 @@ const AboutAktuell = () => {
           }}
         ></img>
 
-        {/*wtf wyh absolute hier?!?  mach doch einfach alle untereinander..*/}
+        {/*hier absolute, für platzierung innerhalb des imgs.*/}
         <div
           id="gscollapsecontainer"
           style={{ position: "absolute", top: "15%", left: "30%" }}

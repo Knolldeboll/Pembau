@@ -150,8 +150,7 @@ a {
 }
 
 /* ausser bei grundstück und geschichte, da no net.*/
-#grundstück,
-#geschichte {
+#grundstück {
   .collapsetextwrapper h2 {
     font-family: "DM Sans";
     font-weight: 400;

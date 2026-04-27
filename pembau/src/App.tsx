@@ -19,7 +19,7 @@ import { Head } from "./menu/Head";
 import LandingPage from "./LandingPage";
 import Menu from "./menu/Menu";
 import { useMainStore } from "./stores/MainStore";
-import About from "./About";
+//import About from "./About";
 import Foot from "./menu/Foot";
 import AboutAktuell from "./AboutAktuell";
 
