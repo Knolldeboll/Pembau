@@ -62,23 +62,34 @@ const AboutAktuell = () => {
         style={{
           display: "flex",
           flexDirection: "row",
-          transform: "translateX(-19vw) translateY(-10vw)",
-          width: "120vw",
-
-          zIndex: "2",
+          justifyContent: "flex-end",
+          width: "100vw",
+          overflow: "hidden",  // Clip overflow
+          zIndex: "1",
+          marginBlockEnd: "80px",
         }}
       >
-        <ImageFrameJPG
-          collapsedImg={StartCollapsedImg}
-          uncollapsedImg={StartImg}
-        ></ImageFrameJPG>
+        <div style={{
+          flex: "1 1 60%",
+          minWidth: "650px",
+          transform: " translateX(-17vw) translateY(-8vw)",
+          zIndex: "1"
+        }}>
+          <img src={StartCollapsedImg} style={{ width: "100%", height: "auto" }}></img>
+        </div>
+
         <div
+          id="start_about_menu"
           style={{
             display: "flex",
             flexDirection: "column",
             gap: "1vw",
             height: "fit-content",
-            transform: " rotate(10deg) translateY(35vw) translateX(0vw)",
+            minWidth: "170px",
+            zIndex: "2",
+            alignSelf: "center",
+            transform: " translateY(-2vw) translateX(-25vw) rotate(10deg)   ",
+
           }}
         >
           <a className="h2 hoverable" href="#leitbild">
