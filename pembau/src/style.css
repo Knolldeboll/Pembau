@@ -17,9 +17,6 @@ html {
 }
 
 
-.textframe {
-  transform: translateX(10vw);
-}
 
 .headline {
   font-family: "DM Sans", sans-serif;
@@ -74,25 +71,10 @@ a {
 
 }
 
-#start_about {
-  .h2 {
-    font-family: "DM Sans";
-    font-weight: 400;
-    font-size: clamp(1.3rem, 2vw, 2rem);
-    color: black;
-  }
-}
 
 
 
-#sidemenu {
-  .h4 {
-    font-family: "DM Sans";
-    font-weight: 700;
-    font-size: max(1rem, 2.7vw);
-    color: black;
-  }
-}
+
 
 .h4 {
   font-family: "DM Sans";
@@ -116,6 +98,9 @@ a {
   color: #FF6400;
   fill: #FF6400;
 }
+
+
+/*COMPONENTS */
 
 .collapsetextwrapper {
 
@@ -152,6 +137,33 @@ a {
 
 }
 
+/*Landing Page Custom */
+
+/*die freien texte auf der Lp heißen textframe.*/
+
+.textframe {
+  transform: translateX(10vw);
+
+}
+
+.textframe h2 {
+  font-size: clamp(1.5rem, 2vw, 2rem);
+}
+
+.textframe p {
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
+}
+
+/*Custom about */
+#start_about {
+  .h2 {
+    font-family: "DM Sans";
+    font-weight: 400;
+    font-size: clamp(1.3rem, 2vw, 2rem);
+    color: black;
+  }
+}
+
 /* ausser bei grundstück und geschichte, da no net.*/
 #grundstück {
   .collapsetextwrapper h2 {
@@ -171,6 +183,8 @@ a {
 
   }
 }
+
+
 
 
 /*MENU STUFF*/
@@ -196,6 +210,16 @@ a {
 
 /*HEAD ENDE*/
 
+
+/**SIDEMENU*/
+#sidemenu {
+  .h4 {
+    font-family: "DM Sans";
+    font-weight: 700;
+    font-size: max(1rem, 2.7vw);
+    color: black;
+  }
+}
 
 /*FOOTER*/
 
@@ -311,6 +335,8 @@ a {
 
 
 /*FOOTER ENDE*/
+
+
 
 
 

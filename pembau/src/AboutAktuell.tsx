@@ -71,7 +71,7 @@ const AboutAktuell = () => {
       >
         <div style={{
           flex: "1 1 60%",
-          minWidth: "650px",
+          minWidth: "550px",
           transform: " translateX(-17vw) translateY(-8vw)",
           zIndex: "1"
         }}>
@@ -88,7 +88,7 @@ const AboutAktuell = () => {
             minWidth: "170px",
             zIndex: "2",
             alignSelf: "center",
-            transform: " translateY(-2vw) translateX(-25vw) rotate(10deg)   ",
+            transform: " translateY(-5vw) translateX(-25vw) rotate(10deg)   ",
 
           }}
         >
