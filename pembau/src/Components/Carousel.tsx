@@ -67,8 +67,8 @@ export const Carousel = ({ images }: CarouselProps) => {
             <div
                 className="carousel-button"
                 style={{
-                    left: "0",
-                    top: "50%",
+                    left: "2%",
+
                 }}
                 onClick={scrollLeft}
             >
@@ -81,8 +81,8 @@ export const Carousel = ({ images }: CarouselProps) => {
             <div
                 className="carousel-button"
                 style={{
-                    right: "0",
-                    top: "50%",
+                    right: "2%",
+
                 }}
                 onClick={scrollRight}
             >

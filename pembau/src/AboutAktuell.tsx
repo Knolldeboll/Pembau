@@ -45,13 +45,15 @@ import TextButton from "./Components/TextButton";
 //import { CollapseFrame } from "./Components/CollapseFrame";
 //import CollapseFrameWithCollapseText from "./Components/CollapseFrameWithCollapseText";
 import { ImageFrameJPGWithCollapseText } from "./Components/ImageFrameJPGWithCollapseText";
+import { Carousel } from "./Components/Carousel";
 //import TextFrameGeschichte from "./Customframes/TextFrameGeschichte";
 
 const AboutAktuell = () => {
   console.log("testrectimg:", TestRectImg);
 
-
-  //const carouselImages: string[] = [TestImage, PermaImg, TeamImg];
+  const imageModules = import.meta.glob<string>('./assets/about/carousel/*.webp', { eager: true, import: 'default' })
+  const carouselImages: string[] = Object.values(imageModules);
+  //console.log("image paths: ", carouselImages)
 
   return (
     <>
@@ -174,6 +176,8 @@ const AboutAktuell = () => {
         </div>
       </div>
 
+
+      {/**Grundstück */}
       <div
         id="grundstück"
         style={{
@@ -212,28 +216,98 @@ const AboutAktuell = () => {
         style={{
           width: "80vw",
           marginLeft: "5vw",
-          height: "30vw",
+
           color: "#000000",
         }}
       >
-        <TextFrameAktuell></TextFrameAktuell>
+        <div className="aktuell">
+          <h2 >PEMBAU<span >_aktuell</span></h2>
+          <p >Der Pembau ist derzeit ein Ort im Aufbau. Mögliche Konzepte für den Ort werden erforscht und getestet. Menschen kommen zusammen, tauschen sich aus, bauen auf, füllen die Räume mit Leben – und eine lebendige Gemeinschaft entsteht. Da sich das Gelände aktuell im rechtlichen Übergang befindet, finden die Aktivitäten bisher im Rahmen privater Veranstaltungen statt – doch das soll sich bald ändern! Aktuell arbeiten wir daran, die Infrastruktur auszubauen und rechtliche Grundlagen zu schaffen, um das Gelände Stück für Stück für mehr Menschen nutzbar und zugänglich zu machen.</p>
+
+        </div>
       </div>
 
-      <div
-        id="slideshow"
-        style={{ width: "100vw", height: "40vw", backgroundColor: "#3c8f3c" }}
-      >
-        PLACEHOLDER SLIDESHOW
+
+      {/** TODO: Hier Slideshow*/}
+
+      <div style={{ alignSelf: "center", width: "95vw", height: "max(45vw, 300px)" }}>
+        <Carousel images={carouselImages}></Carousel>
       </div>
 
-      <div className="aktuell" style={{ width: "65vw", marginLeft: "10vw" }}>
+
+      <div className="aktuell" style={{ width: "65vw", marginLeft: "5vw", }}>
         <p>
           Alles was bisher schon am Pembau entsteht, entstanden ist und
-          entstehen soll, dass erfährst du hier!
+          entstehen soll, dass erfährst du hier:
         </p>
-      </div>
+      </div >
 
       {/*Ab hier die Bilder mit Collapsetext nebenan    transform: "translateX(25vw )translateY(-70vw) rotate(20deg)", transform: "translateX(25vw )translateY(-70vw) rotate(20deg)",*/}
+
+
+
+      {/**Techno x Punsch */}
+      <div
+        id="technoxpunsch"
+        style={{
+          display: "flex",
+          alignItems: "stretch",
+          flexWrap: "wrap",
+          flexDirection: "row",
+          marginTop: "5vw",
+          zIndex: "2",
+        }}
+      >
+
+        <div
+          id="technoxpunschimagewrapper"
+          style={{
+            position: "relative",
+            transform: "translateX(-3vw)",
+            zIndex: "1",
+            flex: "1 1 60vw"
+          }}>
+
+          {/**Normal kommt hier imgFrameJpg */}
+          <img width="100%" src={TxPImg}></img>
+        </div>
+
+        <div id="technoxpunschtextwrapper" style={{ marginTop: "2vw", flex: "1 1 550px" }} >
+          <CollapseText
+            marginTopProp="0vw"
+            alwaysSrc="/Pembau/content/aboutTxPAlways.md"
+          ></CollapseText>
+          <div style={{ display: "flex", flexDirection: "row", flex: "none", marginTop: "2vw", justifyContent: "center", gap: "3vw" }}>
+            <div id="instatxp" style={{
+              display: "flex", flexDirection: "column", flex: "none", alignItems: "center"
+            }} >
+              <p className="dmsans400regularresponsive">Folge Techno x Punsch</p>
+              <a
+                className="socialmedialinkwrapper"
+                href="https://www.instagram.com/technoxpunsch/"
+              >
+                <svg style={{ width: "5vw" }}
+                  className="blackicon socialmediaicon"
+                  viewBox="0 0 38 38"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M6.47574 0.518077C10.376 -0.192367 26.5208 -0.111314 30.6928 0.394103C34.5693 0.866143 37.1679 3.99877 37.597 7.79416C38.1739 12.9342 38.0834 24.5063 37.6161 29.7464C37.2203 34.195 34.7552 37.0845 30.2065 37.5947C25.0665 38.1716 13.4944 38.081 8.25424 37.6137C3.80562 37.218 0.91616 34.7529 0.405975 30.2041C-0.104209 25.6554 -0.1805 11.9758 0.448886 7.3555C0.873246 4.22764 3.3002 1.09024 6.48051 0.513305L6.47574 0.518077ZM7.42459 3.37893C4.74016 3.92249 3.54338 6.2207 3.26206 8.75255C2.75664 13.3013 2.75187 24.7066 3.26206 29.2601C3.69119 33.1079 5.48398 34.4334 9.20308 34.7624C14.0332 35.1916 24.5134 35.2726 29.2481 34.7434C31.6417 34.4764 33.2438 33.785 34.1401 31.5011C35.2559 28.6641 35.0318 9.69663 34.1401 6.47818C33.6109 4.56618 31.6274 3.48859 29.7297 3.25972C26.0869 2.82106 10.7003 2.71616 7.41983 3.37893H7.42459Z" />
+                  <path d="M16.9656 9.58242C30.4545 7.2842 32.5238 26.4662 21.0328 28.4259C7.54386 30.7241 5.47451 11.5421 16.9656 9.58242ZM17.4424 12.4337C9.88022 13.9691 11.201 26.4471 19.6548 25.6556C28.7141 24.8069 26.7354 10.5456 17.4424 12.4337Z" />
+                  <path d="M29.0528 8.94282C27.8751 7.78895 29.6154 5.74344 31.0077 6.8544C32.4811 8.03212 30.488 10.3494 29.0528 8.94282Z" />
+                </svg>
+              </a>
+            </div>
+            <div id="innsbruck" style={{
+              display: "flex", flexDirection: "column", flex: "none", alignItems: "center"
+            }} >
+              <p className="dmsans400regularresponsive">Gefördert von</p>
+              <img width="100vw" src={InnsbruckLogo}></img>
+            </div>
+          </div>
+        </div>
+
+      </div>
 
       {/**Kultursommer - ok wrapped!*/}
       <div
@@ -335,68 +409,6 @@ const AboutAktuell = () => {
 
 
 
-      {/**Techno x Punsch */}
-      <div
-        id="technoxpunsch"
-        style={{
-          display: "flex",
-          alignItems: "stretch",
-          flexWrap: "wrap",
-          flexDirection: "row",
-          marginTop: "5vw",
-          zIndex: "2",
-        }}
-      >
-
-        <div
-          id="technoxpunschimagewrapper"
-          style={{
-            position: "relative",
-            transform: "translateX(-3vw)",
-            zIndex: "1",
-            flex: "1 1 60vw"
-          }}>
-
-          {/**Normal kommt hier imgFrameJpg */}
-          <img width="100%" src={TxPImg}></img>
-        </div>
-
-        <div id="technoxpunschtextwrapper" style={{ marginTop: "2vw", flex: "1 1 550px" }} >
-          <CollapseText
-            marginTopProp="0vw"
-            alwaysSrc="/Pembau/content/aboutTxPAlways.md"
-          ></CollapseText>
-          <div style={{ display: "flex", flexDirection: "row", flex: "none", marginTop: "2vw", justifyContent: "center", gap: "3vw" }}>
-            <div id="instatxp" style={{
-              display: "flex", flexDirection: "column", flex: "none", alignItems: "center"
-            }} >
-              <p className="dmsans400regularresponsive">Folge Techno x Punsch</p>
-              <a
-                className="socialmedialinkwrapper"
-                href="https://www.instagram.com/technoxpunsch/"
-              >
-                <svg style={{ width: "5vw" }}
-                  className="blackicon socialmediaicon"
-                  viewBox="0 0 38 38"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M6.47574 0.518077C10.376 -0.192367 26.5208 -0.111314 30.6928 0.394103C34.5693 0.866143 37.1679 3.99877 37.597 7.79416C38.1739 12.9342 38.0834 24.5063 37.6161 29.7464C37.2203 34.195 34.7552 37.0845 30.2065 37.5947C25.0665 38.1716 13.4944 38.081 8.25424 37.6137C3.80562 37.218 0.91616 34.7529 0.405975 30.2041C-0.104209 25.6554 -0.1805 11.9758 0.448886 7.3555C0.873246 4.22764 3.3002 1.09024 6.48051 0.513305L6.47574 0.518077ZM7.42459 3.37893C4.74016 3.92249 3.54338 6.2207 3.26206 8.75255C2.75664 13.3013 2.75187 24.7066 3.26206 29.2601C3.69119 33.1079 5.48398 34.4334 9.20308 34.7624C14.0332 35.1916 24.5134 35.2726 29.2481 34.7434C31.6417 34.4764 33.2438 33.785 34.1401 31.5011C35.2559 28.6641 35.0318 9.69663 34.1401 6.47818C33.6109 4.56618 31.6274 3.48859 29.7297 3.25972C26.0869 2.82106 10.7003 2.71616 7.41983 3.37893H7.42459Z" />
-                  <path d="M16.9656 9.58242C30.4545 7.2842 32.5238 26.4662 21.0328 28.4259C7.54386 30.7241 5.47451 11.5421 16.9656 9.58242ZM17.4424 12.4337C9.88022 13.9691 11.201 26.4471 19.6548 25.6556C28.7141 24.8069 26.7354 10.5456 17.4424 12.4337Z" />
-                  <path d="M29.0528 8.94282C27.8751 7.78895 29.6154 5.74344 31.0077 6.8544C32.4811 8.03212 30.488 10.3494 29.0528 8.94282Z" />
-                </svg>
-              </a>
-            </div>
-            <div id="innsbruck" style={{
-              display: "flex", flexDirection: "column", flex: "none", alignItems: "center"
-            }} >
-              <p className="dmsans400regularresponsive">Gefördert von</p>
-              <img width="100vw" src={InnsbruckLogo}></img>
-            </div>
-          </div>
-        </div>
-
-      </div>
 
 
       {/**unnötige testkacke bzgl collapseFrame mit nem collapsetext zusammen, die nicht funktioniert hat.. */}
@@ -428,6 +440,7 @@ const AboutAktuell = () => {
         style={{
           display: "flex",
           flex: "none",
+          flexWrap: "wrap",
           flexDirection: "row",
           marginTop: "5vw",
           zIndex: "2",
@@ -437,7 +450,7 @@ const AboutAktuell = () => {
           id="permaimgwrapper"
           style={{
             position: "relative",
-            width: "65vw",
+            flex: "1 1 60vw",
             transform: "translateX(-3vw)",
             zIndex: "1",
           }}
@@ -447,11 +460,16 @@ const AboutAktuell = () => {
             uncollapsedImg={PermaImg}
           ></ImageFrameJPG>
         </div>
-        <CollapseText
-          marginTopProp="14vw"
-          width="55vw"
-          alwaysSrc="/Pembau/content/aboutPermaAlways.md"
-        ></CollapseText>
+
+        <div id="permatextwrapper"
+          style={{ flex: "1 1 550px" }}>
+
+          <CollapseText
+            marginTopProp="14vw"
+            alwaysSrc="/Pembau/content/aboutPermaAlways.md"
+          ></CollapseText>
+        </div>
+
       </div>
 
       <div
