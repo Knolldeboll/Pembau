@@ -14,7 +14,7 @@ import { TeilSein } from "./TeilSein";
 
 */
 
-import { BrowserRouter, Route, Routes } from "react-router";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router";
 import { Head } from "./menu/Head";
 import LandingPage from "./LandingPage";
 import Menu from "./menu/Menu";
@@ -36,6 +36,8 @@ export const App = () => {
   // nur zum testen, remove
   menuOpen ? console.log("menu opened") : console.log("menu closed")
 
+  //const route = useLocation();
+  //console.log("current route: ", route.pathname)
 
   return <>
 

@@ -1,7 +1,7 @@
 //import React from "react";
 //import { BurgerIcon } from "./BurgerIcon";
 //import { LogoIcon } from "./LogoIcon";
-import { useNavigate } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 import { useMainStore } from "../stores/MainStore";
 import "../style.css";
 //import { Burger } from "./Burger";
@@ -20,6 +20,10 @@ interface HeadProps {
 export const Head = ({ currentPage }: HeadProps) => {
 
 
+  const route = useLocation();
+  //console.log("current route: ", route.pathname)
+
+  const currentPageString = route.pathname === "/Pembau/" ? "_HOME" : route.pathname === "/Pembau/About/" ? "_ABOUT" : "Home";
 
   const navigate = useNavigate();
   const toggleMenuOpen = useMainStore((state) => (state.toggleMenuOpen));
@@ -50,7 +54,7 @@ export const Head = ({ currentPage }: HeadProps) => {
           </svg>
 
 
-          <p className="headline" style={{ flex: "none", color: "#ffffff", fontSize: "max(0.9rem,2vw)", margin: "0", height: "fit-content", alignSelf: "end" }}>{currentPage}</p>
+          <p className="headline" style={{ flex: "none", color: "#ffffff", fontSize: "max(0.9rem,2vw)", margin: "0", height: "fit-content", alignSelf: "end" }}>{currentPageString}</p>
 
 
 
