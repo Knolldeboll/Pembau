@@ -2,9 +2,11 @@ import { useState, ReactNode } from "react";
 
 export type Corner = "topLeft" | "topRight" | "bottomRight" | "bottomLeft";
 
+
 export type CornerData = {
   horPercent: number;
   vertPercent: number;
+  perma?: boolean;
 };
 
 
@@ -49,7 +51,7 @@ export const CollapseFrame = ({
 
   const [isCollapsed, setCollapsed] = useState(initiallyCollapsed ?? false);
   let polygonString = ``;
-  if (folds && isCollapsed) polygonString = generatePolyonString(folds);
+  if (folds) polygonString = generatePolyonString(folds, isCollapsed);
 
   // für jeden key, value:Record xy einmal generateTriangles ausführen.
   // generateTriangles braucht (key:Corner, value:CornerData, width, height)
@@ -100,7 +102,7 @@ export const CollapseFrame = ({
         {children}
       </div>
 
-      {isCollapsed && folds?.topLeft && (
+      {(isCollapsed || folds?.topLeft?.perma) && folds?.topLeft && (
         <svg
           className="toprightcorner"
           style={{
@@ -121,7 +123,7 @@ export const CollapseFrame = ({
         </svg>
       )}
 
-      {isCollapsed && folds?.topRight && (
+      {(isCollapsed || folds?.topRight?.perma) && folds?.topRight && (
         <svg
           className="toprightcorner"
           style={{
@@ -142,7 +144,7 @@ export const CollapseFrame = ({
         </svg>
       )}
 
-      {isCollapsed && folds?.bottomRight && (
+      {(isCollapsed || folds?.bottomRight?.perma) && folds?.bottomRight && (
         <svg
           className="toprightcorner"
           style={{
@@ -162,7 +164,7 @@ export const CollapseFrame = ({
           <polygon points="100,0 100,100 0,100"></polygon>
         </svg>
       )}
-      {isCollapsed && folds?.bottomLeft && (
+      {(isCollapsed || folds?.bottomLeft?.perma) && folds?.bottomLeft && (
         <svg
           className="toprightcorner"
           style={{
@@ -185,19 +187,19 @@ export const CollapseFrame = ({
   );
 };
 
-const generatePolyonString = (folds: Partial<Record<Corner, CornerData>>) => {
+const generatePolyonString = (folds: Partial<Record<Corner, CornerData>>, isCollapsed: boolean) => {
   let polygonString = "polygon(";
 
-  folds.topLeft
+  folds.topLeft && (isCollapsed || folds.topLeft.perma)
     ? (polygonString += `0% ${folds.topLeft.vertPercent}%, ${folds.topLeft.horPercent}% 0%`)
     : (polygonString += "0% 0%");
-  folds.topRight
+  folds.topRight && (isCollapsed || folds.topRight.perma)
     ? (polygonString += `, ${100 - folds.topRight.horPercent}% 0%, 100% ${folds.topRight.vertPercent}%`)
     : (polygonString += ", 100% 0%");
-  folds.bottomRight
+  folds.bottomRight && (isCollapsed || folds.bottomRight.perma)
     ? (polygonString += `, 100% ${100 - folds.bottomRight.vertPercent}%, ${100 - folds.bottomRight.horPercent}% 100%`)
     : (polygonString += ", 100% 100%");
-  folds.bottomLeft
+  folds.bottomLeft && (isCollapsed || folds.bottomLeft.perma)
     ? (polygonString += `, ${folds.bottomLeft.horPercent}% 100%, 0% ${100 - folds.bottomLeft.vertPercent}%`)
     : (polygonString += ", 0% 100%");
 

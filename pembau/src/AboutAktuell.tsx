@@ -561,9 +561,10 @@ const AboutAktuell = () => {
           </div>*/}
         </div>
 
-        {/**Test CollapseFrame (with image inside) */}
+        {/**Test CollapseFrame (with image inside) 
+*/}
 
-        <CollapseFrame width={80} height={50} rotation={2} bgColor="rgb(116, 116, 155)" folds={{ bottomRight: { horPercent: 10, vertPercent: 20 }, topLeft: { horPercent: 10, vertPercent: 20 } }}>
+        <CollapseFrame width={80} height={50} rotation={2} bgColor="rgb(116, 116, 155)" folds={{ bottomRight: { horPercent: 10, vertPercent: 20, perma: true }, topLeft: { horPercent: 10, vertPercent: 20 } }}>
           <img width="100%" height="100%" src={TeamImg}></img>
         </CollapseFrame>
 
