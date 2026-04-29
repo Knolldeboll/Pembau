@@ -95,14 +95,20 @@ const LandingPage = () => {
         </div>
       </div>
 
+
+      {/** Vielleicht statt dem starren Shit ein CollapseFrame mit einfach 100%/100% buntem Div mit Text drinnen? */}
+      {/**Und da dann per Media Query noch ein längeres mit längerer height als Prop rendern! */}
+
       <div id="keinprogramm" style={{ width: "120vw", height: "70vw", marginTop: "30vw", transform: "translateX(-15vw)" }}>
         <KeinProgrammFrame uncollapsedImg={KPKPImg} collapsedImg={KPKPCollapsedImage} ></KeinProgrammFrame>
       </div>
 
+
+      {/**Mithelfen raus, da steht quasi eh nix drin, außerdem keine Links für Newsletter, Crowdfunding, "teil sein" 
       <div id="mithelfen" style={{ width: "140vw", height: "70vw", marginTop: "13vw", transform: "rotate(-4deg) translateX(-10vw)" }}>
         <MithelfenFrame uncollapsedImg={MithelfenImg} collapsedImg={MithelfenCollapsedImage}></MithelfenFrame>
       </div>
-
+*/}
       <div className="textframe" id="ende" style={{
         width: "75vw", height: "20vw", marginTop: "30vw", transform: "rotate(4deg) "
       }}>

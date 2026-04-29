@@ -46,6 +46,7 @@ import TextButton from "./Components/TextButton";
 //import CollapseFrameWithCollapseText from "./Components/CollapseFrameWithCollapseText";
 import { ImageFrameJPGWithCollapseText } from "./Components/ImageFrameJPGWithCollapseText";
 import { Carousel } from "./Components/Carousel";
+import { CollapseFrame } from "./Components/CollapseFrame";
 //import TextFrameGeschichte from "./Customframes/TextFrameGeschichte";
 
 const AboutAktuell = () => {
@@ -514,7 +515,7 @@ const AboutAktuell = () => {
         style={{
           position: "relative",
           width: "95vw",
-          transform: "translateX(5%) rotate(0deg)",
+          alignSelf: "flex-end",
           zIndex: "2",
         }}
       >
@@ -529,7 +530,7 @@ const AboutAktuell = () => {
 
         <div
           className="aktuell"
-          style={{ position: "absolute", top: "3%", left: "37%", width: "45%" }}
+          style={{ position: "absolute", top: "3%", left: "37%", width: "40%", height: "90%", overflow: "scroll" }}
         >
           <h2 style={{ marginBottom: "10%" }}>Ohne Team </h2>
           <p>
@@ -549,14 +550,22 @@ const AboutAktuell = () => {
             bereichert unser gemeinsames Wirken – und wir freuen uns deswegen
             über alle, die sich einbringen möchten!
           </p>
+
+          {/**Aktuell draußen der Button - gibt kein Teil sein Link! 
           <div style={{ width: "50%", marginTop: "10%" }}>
             <TextButton
               text="TEIL_SEIN"
               width="20vw"
               onClick={() => console.log("implement teil sein")}
             ></TextButton>
-          </div>
+          </div>*/}
         </div>
+
+        {/**Test CollapseFrame (with image inside) */}
+
+        <CollapseFrame width={80} height={50} rotation={2} bgColor="rgb(116, 116, 155)" folds={{ bottomRight: { horPercent: 10, vertPercent: 20 }, topLeft: { horPercent: 10, vertPercent: 20 } }}>
+          <img width="100%" height="100%" src={TeamImg}></img>
+        </CollapseFrame>
 
 
       </div>
