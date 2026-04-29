@@ -147,7 +147,7 @@ a {
 }
 
 .textframe h2 {
-  font-size: clamp(1.5rem, 2vw, 2rem);
+  font-size: clamp(1.35rem, 2vw, 2rem);
 }
 
 .textframe p {
@@ -490,8 +490,43 @@ die Höhe wird von den Responsiven Elementen vorgegeben, die dann übereinanderg
 /* LANDINGPAGE/HOME */
 
 
+.keinprogramm h2 {
+  font-family: "DM Sans";
+  font-weight: 700;
+  font-style: bold;
+  color: #FF6400;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+}
 
+.keinprogramm h2 span {
+  font-family: "Noto Serif";
+  font-weight: 700;
+  font-style: italic;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+}
 
+.keinprogramm h3 {
+  font-family: "DM Sans";
+  font-weight: 700;
+  font-style: bold;
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  color: black;
+}
+
+.keinprogramm p {
+  font-family: "DM Sans";
+  font-weight: 400;
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  color: black;
+}
+
+.keinprogramm p span {
+  font-family: "DM Sans";
+  font-weight: 400;
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  font-style: italic;
+  color: #000000;
+}
 
 /*FIGMA-DATA: 
 Die Landing Page ist 9039 lang -> alles an y-Coords muss /9039 gerechnet werden, um die % zu berechnen.

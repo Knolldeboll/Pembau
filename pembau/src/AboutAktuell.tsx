@@ -116,6 +116,14 @@ const AboutAktuell = () => {
       </div>
 
 
+      {/*Leitbild neu/skalierbar: */}
+      <CollapseFrame width={60} height={80} rotation={0} folds={{ topLeft: { horPercent: 60, vertPercent: 25, perma: true }, bottomRight: { horPercent: 25, vertPercent: 25, perma: false } }}>
+        <div style={{ width: "100%", height: "100%", backgroundColor: "#C3D9FF" }}></div>
+      </CollapseFrame>
+
+
+
+
       {/*geschichte*/}
 
 
@@ -562,12 +570,12 @@ const AboutAktuell = () => {
         </div>
 
         {/**Test CollapseFrame (with image inside) 
-*/}
+
 
         <CollapseFrame width={80} height={50} rotation={2} bgColor="rgb(116, 116, 155)" folds={{ bottomRight: { horPercent: 10, vertPercent: 20, perma: true }, topLeft: { horPercent: 10, vertPercent: 20 } }}>
           <img width="100%" height="100%" src={TeamImg}></img>
         </CollapseFrame>
-
+*/}
 
       </div>
 

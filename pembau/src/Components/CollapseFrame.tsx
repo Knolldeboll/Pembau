@@ -21,7 +21,7 @@ interface CollapseFrameProps {
   // partial: 0-alle elemente aus ner Auswahl.
   // die Auswahl ist hier die Kombinationsmöglichkeiten aus Strings im Typ "Corner" und zugehöriger Data
   folds?: Partial<Record<Corner, CornerData>>;
-
+  foldColor?: string;
   bgColor?: string;
   /**Rotation vom ganzen Frame */
   rotation: number;
@@ -43,7 +43,8 @@ export const CollapseFrame = ({
   folds,
   rotation,
   bgColor,
-  initiallyCollapsed = false,
+  foldColor,
+  initiallyCollapsed = true,
   toggleOnce = false,
 }: CollapseFrameProps) => {
   //Existenz von Folds prüfen: wenn nicht da, dann undefined. Dann auch kein dreieck oder Mask rendern!
@@ -114,7 +115,7 @@ export const CollapseFrame = ({
             scale: "-1 1",
             rotate: `${getCornerAngle("topLeft", width, height, folds.topLeft)}deg`,
             transformOrigin: "",
-            fill: "#386638",
+            fill: foldColor || "#386638",
           }}
           viewBox="0 0 100 100"
           preserveAspectRatio="none"
@@ -135,7 +136,7 @@ export const CollapseFrame = ({
             scale: "-1 1",
             rotate: `${getCornerAngle("topRight", width, height, folds.topRight)}deg`,
             transformOrigin: "",
-            fill: "#386638",
+            fill: foldColor || "#386638",
           }}
           viewBox="0 0 100 100"
           preserveAspectRatio="none"
@@ -156,7 +157,7 @@ export const CollapseFrame = ({
             scale: "-1 1",
             rotate: `${getCornerAngle("bottomRight", width, height, folds.bottomRight)}deg`,
             transformOrigin: "",
-            fill: "#386638",
+            fill: foldColor || "#386638",
           }}
           viewBox="0 0 100 100"
           preserveAspectRatio="none"
@@ -175,7 +176,7 @@ export const CollapseFrame = ({
             left: "0",
             scale: "-1 1",
             rotate: `${getCornerAngle("bottomLeft", width, height, folds.bottomLeft)}deg`,
-            fill: "#386638",
+            fill: foldColor || "#386638",
           }}
           viewBox="0 0 100 100"
           preserveAspectRatio="none"

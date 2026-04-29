@@ -22,6 +22,7 @@ import TextFrameEndeLP from "./Customframes/TextFrameEndeLP";
 import TextButton from "./Components/TextButton";
 //import Foot from "./menu/Foot";
 import { useNavigate } from "react-router";
+import { CollapseFrame } from "./Components/CollapseFrame";
 
 
 const LandingPage = () => {
@@ -99,9 +100,34 @@ const LandingPage = () => {
       {/** Vielleicht statt dem starren Shit ein CollapseFrame mit einfach 100%/100% buntem Div mit Text drinnen? */}
       {/**Und da dann per Media Query noch ein längeres mit längerer height als Prop rendern! */}
 
+      {/** 
       <div id="keinprogramm" style={{ width: "120vw", height: "70vw", marginTop: "30vw", transform: "translateX(-15vw)" }}>
         <KeinProgrammFrame uncollapsedImg={KPKPImg} collapsedImg={KPKPCollapsedImage} ></KeinProgrammFrame>
       </div>
+      */}
+
+      {/*kpkp neu skalierbar - 2nd class für umschalten per mQ*/}
+
+
+
+      <div className="keinprogramm keinprogrammSmall" style={{ marginTop: "40vw", alignSelf: "center", transform: "translateX(-4vw)" }}>
+        <CollapseFrame width={110} height={80} rotation={-3} folds={{ bottomLeft: { horPercent: 58, vertPercent: 80, perma: false }, topRight: { horPercent: 15, vertPercent: 30, perma: true } }} foldColor="#000000">
+          <div id="kpkpbg" style={{ width: "100%", height: "100%", backgroundColor: "#D2F2EB", overflow: "hidden" }}>
+            <h2 style={{ marginLeft: "12%", marginTop: "10%" }}>KEIN_<span>Programm</span>_KEIN_<span>Problem</span></h2>
+            <div id="kpkptextblock" style={{ marginLeft: "20%", width: "50%" }}>
+              <p><span>Ein_Grundstück</span> mit viel Potential. <br />
+                <span>Eine_Fläche</span> die genutzt werden möchte.<br />
+                <span>Eine_Grundlage</span> auf der Ideen wachsen. <br />
+                <span>Eine_Spielwiese auf der Kultur neu gedacht wird.</span> <br />
+                Alles über den aktuellen Stand des Pembaus und bereits laufende Aktionen findest du hier.
+              </p>
+              <TextButton text="MEHR ERFAHREN" onClick={() => { navigate("/Pembau/About") }}></TextButton>
+            </div>
+          </div>
+        </CollapseFrame >
+      </div >
+
+
 
 
       {/**Mithelfen raus, da steht quasi eh nix drin, außerdem keine Links für Newsletter, Crowdfunding, "teil sein" 
@@ -109,11 +135,11 @@ const LandingPage = () => {
         <MithelfenFrame uncollapsedImg={MithelfenImg} collapsedImg={MithelfenCollapsedImage}></MithelfenFrame>
       </div>
 */}
-      <div className="textframe" id="ende" style={{
-        width: "75vw", height: "20vw", marginTop: "30vw", transform: "rotate(4deg) "
+      < div className="textframe" id="ende" style={{
+        width: "75vw", height: "20vw", marginTop: "5vw", transform: "rotate(-3deg) "
       }}>
         <TextFrameEndeLP></TextFrameEndeLP>
-      </div>
+      </div >
 
       <div id="endbuttons" style={{ display: "flex", flexDirection: "column", gap: "1vw", marginTop: "10vw", width: "40vw", height: "30vw", transform: "translateX(10vw)" }} >
         <TextButton text="ABOUT" onClick={() => { navigate("/Pembau/About") }}></TextButton>
