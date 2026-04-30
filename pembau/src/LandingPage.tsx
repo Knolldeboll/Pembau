@@ -83,7 +83,8 @@ const LandingPage = () => {
 
       }}>
         <div className="textframe" style={{
-          width: "70vw",
+          flex: "none",
+          width: "min(600px,70vw)",
           marginLeft: "5vw",
           zIndex: "1",
 
@@ -93,13 +94,11 @@ const LandingPage = () => {
         </div>
 
         <div style={{
-          flex: "0 0 max(500px,105%)",
-
-
+          flex: "0 0 max(500px,85%)",
           zIndex: "2",
           transform: "   rotate(-15deg)",
           marginTop: "-15vw",
-          marginLeft: "max(-370px, -28vw)",
+          marginLeft: "max(-200px, -28vw)",
         }} >
           <ImageFrameJPG collapsedImg={GestaltenCollapsedImg} uncollapsedImg={GestaltenImg}></ImageFrameJPG>
         </div>
