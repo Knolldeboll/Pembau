@@ -529,6 +529,34 @@ die Höhe wird von den Responsiven Elementen vorgegeben, die dann übereinanderg
   color: #000000;
 }
 
+
+
+/**About*/
+
+.leitbild p {
+  font-family: "DM Sans";
+  font-weight: 400;
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  color: black;
+}
+
+.leitbild h2 {
+  font-family: "DM Sans";
+  font-weight: 700;
+  font-style: bold;
+  color: #FF6400;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+}
+
+.leitbild h3 {
+  font-family: "DM Sans";
+  font-weight: 700;
+  font-style: bold;
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  color: black;
+}
+
+
 /*FIGMA-DATA: 
 Die Landing Page ist 9039 lang -> alles an y-Coords muss /9039 gerechnet werden, um die % zu berechnen.
 Der Body hat schon dem der Länge der Figma-Landingpage entsprechenden Länge, also kann mit % darin gearbeitet werden.
@@ -587,6 +615,8 @@ body {
 }
 
 
+
+
 /*Mobile: Farbige Frames auf groß umschalten. */
 .keinprogrammBig {
   display: inline-block !important;
@@ -605,3 +635,16 @@ body {
     display: inline-block !important;
   }
 }
+
+
+/*ACHTUNG ggf. bei leitbild: das ist display flex normalerweise. vielleicht aber auch nur inner und outer dann egal.
+nur outerdiv hat class. innere sind immer flex. */
+
+/*
+.leitbildSmall {
+  display: none !important
+}
+
+.leitbildBig {
+  display: inline-block !important
+}*/

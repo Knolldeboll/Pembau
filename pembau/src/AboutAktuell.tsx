@@ -47,6 +47,7 @@ import { CollapseText } from "./Components/CollapseText";
 import { ImageFrameJPGWithCollapseText } from "./Components/ImageFrameJPGWithCollapseText";
 import { Carousel } from "./Components/Carousel";
 import { CollapseFrame } from "./Components/CollapseFrame";
+import TextButton from "./Components/TextButton";
 //import TextFrameGeschichte from "./Customframes/TextFrameGeschichte";
 
 const AboutAktuell = () => {
@@ -117,9 +118,68 @@ const AboutAktuell = () => {
 
 
       {/*Leitbild neu/skalierbar: */}
-      <CollapseFrame width={60} height={80} rotation={0} folds={{ topLeft: { horPercent: 60, vertPercent: 25, perma: true }, bottomRight: { horPercent: 25, vertPercent: 25, perma: false } }}>
-        <div style={{ width: "100%", height: "100%", backgroundColor: "#C3D9FF" }}></div>
-      </CollapseFrame>
+      <div className="leitbild leitbildSmall">
+
+        <CollapseFrame width={60} height={80} rotation={0} folds={{ topLeft: { horPercent: 60, vertPercent: 25, perma: true }, bottomRight: { horPercent: 25, vertPercent: 25, perma: false } }} foldColor="#000000">
+          <div id="leitbildtextcontainer" style={{ width: "100%", height: "100%", backgroundColor: "#C3D9FF", display: "flex", flexDirection: "column" }}>
+
+            {/**Free float h2 */}
+            <h2 style={{ zIndex: "3" }}>Leitbild_UND</h2>
+
+
+            {/**Achtung: ist diagonal getauscht worden! */}
+            <div id="lowerlefttext" style={{ flex: "none", marginLeft: "2%", width: "45%", alignSelf: "flex-start", marginTop: "auto" }}>
+              <p>Der Pembau lebt von Menschen. Von ihren Ideen, ihrer Vielfalt und ihrem gemeinsamen Wunsch nach Ausdruck.
+                Wir sind überzeugt davon, dass echte Entwicklung dort entsteht, wo Menschen sich ausprobieren dürfen - in einem sicheren, inspirierenden, respektvollen Umfeld. Wir wollen Räume schaffen, in denen Menschen sich entfalten, begegnen, wachsen, ausprobieren und mitgestalten können - als Individuum und als Gemeinschaft.
+                Pembau mehr als ein Ort - er ist eine Haltung und ein Wunsch nach Wandel und Veränderung. 
+                Wir tragen gemeinsame Werte, die unser Miteinander und unser Tun prägen. Sie sind nicht starr, sondern wachsen mit uns, genauso wie der Ort selbst. 
+                Er soll als Raum dienen, Kultur neu zu denken und auszuprobieren - die eigenen Grenzen zu sprengen und die eines bestehenden Systems.
+                Kultur nicht als etwas, das wir nur konsumieren, sondern das wir aktiv gestalten und entwickeln - und wo jeder Selbstwirksamkeit erfahren kann.
+              </p>
+            </div>
+
+            <div id="upperrighttext" style={{ flex: "none", alignSelf: "flex-end", marginRight: "2%", width: "45%", marginBottom: "auto" }}>
+              <h2>Werte</h2>
+
+              <h3>GEMEINSCHAFT_IM ZENTRUM</h3>
+              <p>Wir schaffen Räume in denen Menschen sich verbinden können. Mit sich selbst, mit anderen und mit einer gemeinsamen Vision. </p>
+
+              <h3>VERANTWORTUNG_HEIßt ACHTSAM ZU HANDELN</h3>
+              <p></p>
+
+              <h3>EMPOWERMENT_ALS ANTRIEB</h3>
+              <p></p>
+
+              <h3>FREIHEIT_ALS MÖGLICHKEIT ZUR ENTFALTUNG</h3>
+              <p></p>
+
+              <h3></h3>
+              <p></p>
+
+              <h3></h3>
+              <p></p>
+
+              <h3></h3>
+              <p></p>
+
+            </div>
+          </div>
+        </CollapseFrame >
+      </div>
+
+
+
+      {/**
+      <div className="leitbild leitbildBid">
+
+        *TODO Big Smoke number 9 large
+         * 
+        
+      </div> */}
+
+
+
+
 
 
 
