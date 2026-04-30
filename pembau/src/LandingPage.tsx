@@ -161,7 +161,7 @@ const LandingPage = () => {
       </div>
 */}
       < div className="textframe" id="ende" style={{
-        width: "75vw", height: "20vw", marginTop: "5vw", transform: "rotate(-3deg) "
+        width: "75vw", marginTop: "5vw", transform: "rotate(-3deg) "
       }}>
         <TextFrameEndeLP></TextFrameEndeLP>
       </div >
