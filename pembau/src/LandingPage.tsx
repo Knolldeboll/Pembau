@@ -7,17 +7,17 @@ import AussichtImg from "./assets/Aussicht.webp";
 import AussichtCollapsedImg from "./assets/AussichtBrTl.webp";
 import GestaltenImg from "./assets/Gestalten.webp";
 import GestaltenCollapsedImg from "./assets/GestaltenBrTl.webp";
-import KPKPCollapsedImage from "./assets/KPKPBl.webp";
-import KPKPImg from "./assets/KPKP.webp";
-import MithelfenImg from "./assets/Mithelfen.webp";
-import MithelfenCollapsedImage from "./assets/MithelfenBr.webp";
+//import KPKPCollapsedImage from "./assets/KPKPBl.webp";
+//import KPKPImg from "./assets/KPKP.webp";
+//import MithelfenImg from "./assets/Mithelfen.webp";
+//import MithelfenCollapsedImage from "./assets/MithelfenBr.webp";
 
 // Components
 import ImageFrameJPG from "./Components/ImageFrameJPG";
 import TextFrameAussicht from "./Customframes/TextFrameAussicht";
 import TextFrameGestalten from "./Customframes/TextFrameGestalten";
-import KeinProgrammFrame from "./Customframes/KeinProgrammFrame";
-import MithelfenFrame from "./Customframes/MithelfenFrame";
+//import KeinProgrammFrame from "./Customframes/KeinProgrammFrame";
+//import MithelfenFrame from "./Customframes/MithelfenFrame";
 import TextFrameEndeLP from "./Customframes/TextFrameEndeLP";
 import TextButton from "./Components/TextButton";
 //import Foot from "./menu/Foot";
@@ -76,21 +76,30 @@ const LandingPage = () => {
       <div id="gestalten" style={{
         display: "flex",
         flexDirection: "row",
-        marginTop: "-6vw",
+
+        marginTop: "0vw",
         width: "100vw",
+
 
       }}>
         <div className="textframe" style={{
-          width: "50%",
+          width: "70vw",
+          marginLeft: "5vw",
           zIndex: "1",
+
         }}>
 
           <TextFrameGestalten></TextFrameGestalten>
         </div>
+
         <div style={{
-          width: "50%",
+          flex: "0 0 max(500px,105%)",
+
+
           zIndex: "2",
-          transform: " translateY(11vw) scale(170%) rotate(-10deg)"
+          transform: "   rotate(-15deg)",
+          marginTop: "-15vw",
+          marginLeft: "max(-370px, -28vw)",
         }} >
           <ImageFrameJPG collapsedImg={GestaltenCollapsedImg} uncollapsedImg={GestaltenImg}></ImageFrameJPG>
         </div>

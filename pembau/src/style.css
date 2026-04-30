@@ -141,10 +141,11 @@ a {
 
 /*die freien texte auf der Lp heißen textframe.*/
 
+/*
 .textframe {
-  transform: translateX(10vw);
+ // transform: translateX(10vw);
 
-}
+}*/
 
 .textframe h2 {
   font-size: clamp(1.35rem, 2vw, 2rem);

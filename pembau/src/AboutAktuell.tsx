@@ -3,7 +3,7 @@ import GeschichteImg from "./assets/about/geschichteuncollapsed.webp";
 import GeschichteCollapsedImg from "./assets/about/geschichtecollapsed.webp";
 import LeitbildImg from "./assets/about/leitbildwerte.webp";
 import LeitbildCollapsedImg from "./assets/about/leitbildwertebrtl.webp";
-import StartImg from "./assets/about/neu für start.webp";
+//import StartImg from "./assets/about/neu für start.webp";
 import StartCollapsedImg from "./assets/about/neu für start br.webp";
 
 import KulturImg from "./assets/about/kultur.webp";
@@ -36,8 +36,8 @@ import TestRectImg from "./assets/bg-2.jpg";
 //import aboutGeschichteAlways from "./content/aboutGeschichteAlways.md"
 
 import { CollapseText } from "./Components/CollapseText";
-import TextFrameAktuell from "./Customframes/TextFrameAktuell";
-import TextButton from "./Components/TextButton";
+//import TextFrameAktuell from "./Customframes/TextFrameAktuell";
+//import TextButton from "./Components/TextButton";
 //import { CollapseImageFrame } from "./Components/CollapseImageFrame";
 //import BodyFrame1 from "./alter shit/BodyFrame1";
 //import TestImage from "./assets/bg-1.jpg"
