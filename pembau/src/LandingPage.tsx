@@ -117,12 +117,29 @@ const LandingPage = () => {
       {/*kpkp neu skalierbar - 2nd class für umschalten per mQ*/}
 
 
-
       <div className="keinprogramm keinprogrammSmall" style={{ marginTop: "40vw", alignSelf: "center", transform: "translateX(-4vw)" }}>
-        <CollapseFrame width={110} height={80} rotation={-3} folds={{ bottomLeft: { horPercent: 58, vertPercent: 80, perma: false }, topRight: { horPercent: 15, vertPercent: 30, perma: true } }} foldColor="#000000">
+        <CollapseFrame width={110} height={150} rotation={-3} folds={{ bottomLeft: { horPercent: 58, vertPercent: 80, perma: false }, topRight: { horPercent: 15, vertPercent: 30, perma: true } }} foldColor="#000000">
+          <div id="kpkpbg" style={{ width: "100%", height: "100%", backgroundColor: "#D2F2EB", overflow: "hidden" }}>
+            <h2 style={{ marginLeft: "12%", marginTop: "10%" }}>KEIN_<span>Programm</span><wbr />_KEIN_<span>Problem</span></h2>
+            <div id="kpkptextblock" style={{ marginLeft: "20%", width: "50%" }}>
+              <p><span>Ein_Grundstück</span> mit viel Potential. <br />
+                <span>Eine_Fläche</span> die genutzt werden möchte.<br />
+                <span>Eine_Grundlage</span> auf der Ideen wachsen. <br />
+                <span>Eine_Spielwiese</span> auf der Kultur neu gedacht wird.<br /><br />
+                Alles über den aktuellen Stand des Pembaus und bereits laufende Aktionen findest du hier.
+              </p>
+              <TextButton text="MEHR ERFAHREN" onClick={() => { navigate("/Pembau/About") }}></TextButton>
+            </div>
+          </div>
+        </CollapseFrame >
+      </div >
+
+
+      <div className="keinprogramm keinprogrammBig" style={{ marginTop: "40vw", alignSelf: "center", transform: "translateX(-4vw)" }}>
+        <CollapseFrame width={110} height={50} rotation={-3} folds={{ bottomLeft: { horPercent: 33, vertPercent: 73, perma: false }, topRight: { horPercent: 15, vertPercent: 30, perma: true } }} foldColor="#000000">
           <div id="kpkpbg" style={{ width: "100%", height: "100%", backgroundColor: "#D2F2EB", overflow: "hidden" }}>
             <h2 style={{ marginLeft: "12%", marginTop: "10%" }}>KEIN_<span>Programm</span>_KEIN_<span>Problem</span></h2>
-            <div id="kpkptextblock" style={{ marginLeft: "20%", width: "50%" }}>
+            <div id="kpkptextblock" style={{ marginLeft: "25%", width: "50%" }}>
               <p><span>Ein_Grundstück</span> mit viel Potential. <br />
                 <span>Eine_Fläche</span> die genutzt werden möchte.<br />
                 <span>Eine_Grundlage</span> auf der Ideen wachsen. <br />

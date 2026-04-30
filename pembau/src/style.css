@@ -587,4 +587,21 @@ body {
 }
 
 
-/*Mobile: Manche Texte in inherent unresponsiven Frames auf Scroll umschalten. */
+/*Mobile: Farbige Frames auf groß umschalten. */
+.keinprogrammBig {
+  display: inline-block !important;
+}
+
+.keinprogrammSmall {
+  display: none !important;
+}
+
+@media (max-width: 700px) {
+  .keinprogrammBig {
+    display: none !important;
+  }
+
+  .keinprogrammSmall {
+    display: inline-block !important;
+  }
+}
