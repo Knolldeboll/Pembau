@@ -118,54 +118,128 @@ const AboutAktuell = () => {
 
 
       {/*Leitbild neu/skalierbar: */}
-      <div className="leitbild leitbildSmall">
+      <div className="leitbild leitbildSmall" style={{ display: "flex", justifyContent: "center" }}>
+        <CollapseFrame width={80} height={100} rotation={0} folds={{ topLeft: { horPercent: 60, vertPercent: 25, perma: true }, bottomRight: { horPercent: 25, vertPercent: 25, perma: false } }} foldColor="#30196C">
+          <h2 style={{ rotate: "32deg", position: "absolute", left: "13%", top: "32%", zIndex: "3" }}>Leitbild</h2>
+          <h2 style={{ rotate: "-55deg", position: "absolute", left: "30%", top: "30%", zIndex: "3" }}>_UND</h2>
+          <div id="leitbildtextcontainer" style={{ width: "100%", height: "100%", backgroundColor: "#C3D9FF" }}>
 
-        <CollapseFrame width={60} height={80} rotation={0} folds={{ topLeft: { horPercent: 60, vertPercent: 25, perma: true }, bottomRight: { horPercent: 25, vertPercent: 25, perma: false } }} foldColor="#000000">
-          <div id="leitbildtextcontainer" style={{ width: "100%", height: "100%", backgroundColor: "#C3D9FF", display: "flex", flexDirection: "column" }}>
-
-            {/**Free float h2 */}
-            <h2 style={{ zIndex: "3" }}>Leitbild_UND</h2>
-
-
-            {/**Achtung: ist diagonal getauscht worden! */}
-            <div id="lowerlefttext" style={{ flex: "none", marginLeft: "2%", width: "45%", alignSelf: "flex-start", marginTop: "auto" }}>
+            <div id="lowerlefttext" style={{ position: "absolute", top: "40%", left: "5%", width: "45%", }}>
               <p>Der Pembau lebt von Menschen. Von ihren Ideen, ihrer Vielfalt und ihrem gemeinsamen Wunsch nach Ausdruck.
                 Wir sind überzeugt davon, dass echte Entwicklung dort entsteht, wo Menschen sich ausprobieren dürfen - in einem sicheren, inspirierenden, respektvollen Umfeld. Wir wollen Räume schaffen, in denen Menschen sich entfalten, begegnen, wachsen, ausprobieren und mitgestalten können - als Individuum und als Gemeinschaft.
-                Pembau mehr als ein Ort - er ist eine Haltung und ein Wunsch nach Wandel und Veränderung. 
-                Wir tragen gemeinsame Werte, die unser Miteinander und unser Tun prägen. Sie sind nicht starr, sondern wachsen mit uns, genauso wie der Ort selbst. 
+                Pembau mehr als ein Ort - er ist eine Haltung und ein Wunsch nach Wandel und Veränderung.
+                Wir tragen gemeinsame Werte, die unser Miteinander und unser Tun prägen. Sie sind nicht starr, sondern wachsen mit uns, genauso wie der Ort selbst.
                 Er soll als Raum dienen, Kultur neu zu denken und auszuprobieren - die eigenen Grenzen zu sprengen und die eines bestehenden Systems.
                 Kultur nicht als etwas, das wir nur konsumieren, sondern das wir aktiv gestalten und entwickeln - und wo jeder Selbstwirksamkeit erfahren kann.
               </p>
             </div>
 
-            <div id="upperrighttext" style={{ flex: "none", alignSelf: "flex-end", marginRight: "2%", width: "45%", marginBottom: "auto" }}>
+            <div id="upperrighttext" className="hide-scrollbar-blue" style={{ position: "absolute", top: "7%", right: "1%", width: "45%", overflowY: "scroll", height: "90%" }}>
               <h2>Werte</h2>
 
               <h3>GEMEINSCHAFT_IM ZENTRUM</h3>
-              <p>Wir schaffen Räume in denen Menschen sich verbinden können. Mit sich selbst, mit anderen und mit einer gemeinsamen Vision. </p>
+              <p>Wir schaffen Räume in denen Menschen sich<wbr />
+                verbinden können. Mit sich selbst, mit anderen und<wbr />
+                mit einer gemeinsamen Vision. </p>
 
               <h3>VERANTWORTUNG_HEIßt ACHTSAM ZU HANDELN</h3>
-              <p></p>
+              <p>Im Umgang miteinander, mit der Umwelt, mit uns<wbr />
+                selbst und dem Raum den wir gestalten.</p>
 
               <h3>EMPOWERMENT_ALS ANTRIEB</h3>
-              <p></p>
+              <p>Wir glauben daran, dass jede*r etwas beitragen kann <wbr />
+                wenn es Raum zum Ausprobieren, Lernen und<wbr />
+                Wachsen gibt. Den Mut, das Selbstvertrauen und die<wbr />
+                Lust, Dinge selbst in die Hand zu nehmen wollen wir<wbr />
+                fördern.</p>
 
               <h3>FREIHEIT_ALS MÖGLICHKEIT ZUR ENTFALTUNG</h3>
-              <p></p>
+              <p>Sowohl persönlich, kreativ und gesellschaftlich. Dabei<wbr />
+                endet die eigene Freiheit dort, wo die des <wbr />
+                Gegenübers beginnt.</p>
 
-              <h3></h3>
-              <p></p>
+              <h3>KREATIVE VERSPIELTHEIT_EINE EINLADUNG</h3>
+              <p>Wir wollen neugierig bleiben. Wie auf einem Spielplatz<wbr />
+                wollen wir ausprobieren, scheitern, weiterdenken -<wbr />
+                gemeinsam, spontan und mit Freude am Prozess.</p>
 
-              <h3></h3>
-              <p></p>
+              <h3>AUTHENTIZITÄT_IST WICHTIGER ALS PERFEKTION</h3>
+              <p>Was zählt ist Raum für echten Ausdruck, ein ehrliches<wbr />
+                Miteinander und Offenheit - auch gegenüber<wbr />
+                Unsicherheiten, Zweifeln oder Ungewohnten.</p>
 
-              <h3></h3>
-              <p></p>
+              <h3>NACHHALTIGKEIT_ALS ALLUMASSENDER BEGRIFF</h3>
+              <p>Ökologisch, sozial, kulturell und wirtschaftlich. Was wir<wbr />
+                hier schaffen, soll nicht nur für den Moment bestehen,<wbr />
+                sondern auch langfristig tragfähig und sinnvoll sein.</p>
 
             </div>
           </div>
         </CollapseFrame >
       </div>
+
+
+      {/*Leitbild neu/skalierbar: */}
+      <div className="leitbild leitbildBig" style={{ display: "flex", justifyContent: "center" }}>
+        <CollapseFrame width={80} height={250} rotation={0} folds={{ topLeft: { horPercent: 60, vertPercent: 25, perma: true }, bottomRight: { horPercent: 25, vertPercent: 25, perma: false } }} foldColor="#30196C">
+          <h2 style={{ rotate: "32deg", position: "absolute", left: "13%", top: "32%", zIndex: "3" }}>Leitbild</h2>
+          <h2 style={{ rotate: "-55deg", position: "absolute", left: "30%", top: "30%", zIndex: "3" }}>_UND</h2>
+          <div id="leitbildtextcontainer" style={{ width: "100%", height: "100%", backgroundColor: "#C3D9FF" }}>
+
+            <div id="lowerlefttext" className="hide-scrollbar-blue" style={{ position: "absolute", bottom: "5%", left: "5%", width: "45%", overflowY: "scroll", }}>
+              <p>Der Pembau lebt von Menschen. Von ihren Ideen, ihrer Vielfalt und ihrem gemeinsamen Wunsch nach Ausdruck.
+                Wir sind überzeugt davon, dass echte Entwicklung dort entsteht, wo Menschen sich ausprobieren dürfen - in einem sicheren, inspirierenden, respektvollen Umfeld. Wir wollen Räume schaffen, in denen Menschen sich entfalten, begegnen, wachsen, ausprobieren und mitgestalten können - als Individuum und als Gemeinschaft.
+                Pembau mehr als ein Ort - er ist eine Haltung und ein Wunsch nach Wandel und Veränderung.
+                Wir tragen gemeinsame Werte, die unser Miteinander und unser Tun prägen. Sie sind nicht starr, sondern wachsen mit uns, genauso wie der Ort selbst.
+                Er soll als Raum dienen, Kultur neu zu denken und auszuprobieren - die eigenen Grenzen zu sprengen und die eines bestehenden Systems.
+                Kultur nicht als etwas, das wir nur konsumieren, sondern das wir aktiv gestalten und entwickeln - und wo jeder Selbstwirksamkeit erfahren kann.
+              </p>
+            </div>
+
+            <div id="upperrighttext" className="hide-scrollbar-blue" style={{ position: "absolute", top: "7%", right: "1%", width: "45%", overflowY: "scroll", height: "90%" }}>
+              <h2>Werte</h2>
+
+              <h3>GEMEINSCHAFT_IM ZENTRUM</h3>
+              <p>Wir schaffen Räume in denen Menschen sich<wbr />
+                verbinden können. Mit sich selbst, mit anderen und<wbr />
+                mit einer gemeinsamen Vision. </p>
+
+              <h3>VERANTWORTUNG_HEIßt ACHTSAM ZU HANDELN</h3>
+              <p>Im Umgang miteinander, mit der Umwelt, mit uns<wbr />
+                selbst und dem Raum den wir gestalten.</p>
+
+              <h3>EMPOWERMENT_ALS ANTRIEB</h3>
+              <p>Wir glauben daran, dass jede*r etwas beitragen kann <wbr />
+                wenn es Raum zum Ausprobieren, Lernen und<wbr />
+                Wachsen gibt. Den Mut, das Selbstvertrauen und die<wbr />
+                Lust, Dinge selbst in die Hand zu nehmen wollen wir<wbr />
+                fördern.</p>
+
+              <h3>FREIHEIT_ALS MÖGLICHKEIT ZUR ENTFALTUNG</h3>
+              <p>Sowohl persönlich, kreativ und gesellschaftlich. Dabei<wbr />
+                endet die eigene Freiheit dort, wo die des <wbr />
+                Gegenübers beginnt.</p>
+
+              <h3>KREATIVE VERSPIELTHEIT_EINE EINLADUNG</h3>
+              <p>Wir wollen neugierig bleiben. Wie auf einem Spielplatz<wbr />
+                wollen wir ausprobieren, scheitern, weiterdenken -<wbr />
+                gemeinsam, spontan und mit Freude am Prozess.</p>
+
+              <h3>AUTHENTIZITÄT_IST WICHTIGER ALS PERFEKTION</h3>
+              <p>Was zählt ist Raum für echten Ausdruck, ein ehrliches<wbr />
+                Miteinander und Offenheit - auch gegenüber<wbr />
+                Unsicherheiten, Zweifeln oder Ungewohnten.</p>
+
+              <h3>NACHHALTIGKEIT_ALS ALLUMASSENDER BEGRIFF</h3>
+              <p>Ökologisch, sozial, kulturell und wirtschaftlich. Was wir<wbr />
+                hier schaffen, soll nicht nur für den Moment bestehen,<wbr />
+                sondern auch langfristig tragfähig und sinnvoll sein.</p>
+
+            </div>
+          </div>
+        </CollapseFrame >
+      </div>
+
 
 
 

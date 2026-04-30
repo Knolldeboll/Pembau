@@ -563,6 +563,8 @@ Der Body hat schon dem der Länge der Figma-Landingpage entsprechenden Länge, a
 */
 
 
+
+
 #nicetry {
   position: absolute;
   /* wird aus dem Dokumentenfluss enfernt, d.h. muss nicht unbedingt an ein voriges Element folgen! */
@@ -575,6 +577,17 @@ Der Body hat schon dem der Länge der Figma-Landingpage entsprechenden Länge, a
 
 }
 
+
+/*Random einschub:*/
+.hide-scrollbar-blue {
+  scrollbar-width: thin;
+  scrollbar-color: #a6c0ec #C3D9FF;
+
+}
+
+.hide-scrollbar-blue::-webkit-scrollbar {
+  display: none;
+}
 
 #nicetryvector {
 
@@ -640,11 +653,22 @@ body {
 /*ACHTUNG ggf. bei leitbild: das ist display flex normalerweise. vielleicht aber auch nur inner und outer dann egal.
 nur outerdiv hat class. innere sind immer flex. */
 
-/*
+
 .leitbildSmall {
-  display: none !important
+  display: flex !important
 }
 
 .leitbildBig {
-  display: inline-block !important
-}*/
+  display: none !important
+}
+
+
+@media (max-width: 900px) {
+  .leitbildSmall {
+    display: none !important
+  }
+
+  .leitbildBig {
+    display: flex !important
+  }
+}

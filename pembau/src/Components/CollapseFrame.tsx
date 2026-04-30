@@ -81,16 +81,17 @@ export const CollapseFrame = ({
   };
 
   return (
-    <div
+    <div className="collapseFrameOuter"
       style={{
         position: "relative",
         width: `${width}vw`,
         height: `${height}vw`,
         rotate: `${rotation}deg`,
+        zIndex: "1",
       }}
       onClick={toggleCollapsed}
     >
-      <div
+      <div className="collapseFrameInner"
         style={{
           width: "100%",
           height: "100%",
@@ -103,88 +104,102 @@ export const CollapseFrame = ({
         {children}
       </div>
 
-      {(isCollapsed || folds?.topLeft?.perma) && folds?.topLeft && (
-        <svg
-          className="toprightcorner"
-          style={{
-            position: "absolute",
-            width: folds.topLeft.horPercent + "%",
-            height: folds.topLeft.vertPercent + "%",
-            top: "0",
-            left: "0",
-            scale: "-1 1",
-            rotate: `${getCornerAngle("topLeft", width, height, folds.topLeft)}deg`,
-            transformOrigin: "",
-            fill: foldColor || "#386638",
-          }}
-          viewBox="0 0 100 100"
-          preserveAspectRatio="none"
-        >
-          <polygon points="0,0 100,0 0,100"></polygon>
-        </svg>
-      )}
+      {
+        (isCollapsed || folds?.topLeft?.perma) && folds?.topLeft && (
+          <svg
+            className="topleftcorner"
+            style={{
+              position: "absolute",
+              width: folds.topLeft.horPercent + "%",
+              height: folds.topLeft.vertPercent + "%",
+              top: "0",
+              left: "0",
+              scale: "-1 1",
+              rotate: `${getCornerAngle("topLeft", width, height, folds.topLeft)}deg`,
+              transformOrigin: "",
+              fill: foldColor || "#386638",
+              zIndex: "2",
+            }}
+            viewBox="0 0 100 100"
+            preserveAspectRatio="none"
+          >
 
-      {(isCollapsed || folds?.topRight?.perma) && folds?.topRight && (
-        <svg
-          className="toprightcorner"
-          style={{
-            position: "absolute",
-            width: folds.topRight.horPercent + "%",
-            height: folds.topRight.vertPercent + "%",
-            top: "0",
-            right: "0",
-            scale: "-1 1",
-            rotate: `${getCornerAngle("topRight", width, height, folds.topRight)}deg`,
-            transformOrigin: "",
-            fill: foldColor || "#386638",
-          }}
-          viewBox="0 0 100 100"
-          preserveAspectRatio="none"
-        >
-          <polygon points="0,0 100,0 100,100"></polygon>
-        </svg>
-      )}
+            <polygon points="0,0 100,0 0,100">
+            </polygon>
+          </svg>
+        )
+      }
 
-      {(isCollapsed || folds?.bottomRight?.perma) && folds?.bottomRight && (
-        <svg
-          className="toprightcorner"
-          style={{
-            position: "absolute",
-            width: folds.bottomRight.horPercent + "%",
-            height: folds.bottomRight.vertPercent + "%",
-            bottom: "0",
-            right: "0",
-            scale: "-1 1",
-            rotate: `${getCornerAngle("bottomRight", width, height, folds.bottomRight)}deg`,
-            transformOrigin: "",
-            fill: foldColor || "#386638",
-          }}
-          viewBox="0 0 100 100"
-          preserveAspectRatio="none"
-        >
-          <polygon points="100,0 100,100 0,100"></polygon>
-        </svg>
-      )}
-      {(isCollapsed || folds?.bottomLeft?.perma) && folds?.bottomLeft && (
-        <svg
-          className="toprightcorner"
-          style={{
-            position: "absolute",
-            width: folds.bottomLeft.horPercent + "%",
-            height: folds.bottomLeft.vertPercent + "%",
-            bottom: "0",
-            left: "0",
-            scale: "-1 1",
-            rotate: `${getCornerAngle("bottomLeft", width, height, folds.bottomLeft)}deg`,
-            fill: foldColor || "#386638",
-          }}
-          viewBox="0 0 100 100"
-          preserveAspectRatio="none"
-        >
-          <polygon points="0,0 100,100 0,100"></polygon>
-        </svg>
-      )}
-    </div>
+      {
+        (isCollapsed || folds?.topRight?.perma) && folds?.topRight && (
+          <svg
+            className="toprightcorner"
+            style={{
+              position: "absolute",
+              width: folds.topRight.horPercent + "%",
+              height: folds.topRight.vertPercent + "%",
+              top: "0",
+              right: "0",
+              scale: "-1 1",
+              rotate: `${getCornerAngle("topRight", width, height, folds.topRight)}deg`,
+              transformOrigin: "",
+              fill: foldColor || "#386638",
+              zIndex: "2",
+            }}
+            viewBox="0 0 100 100"
+            preserveAspectRatio="none"
+          >
+            <polygon points="0,0 100,0 100,100"></polygon>
+          </svg>
+        )
+      }
+
+      {
+        (isCollapsed || folds?.bottomRight?.perma) && folds?.bottomRight && (
+          <svg
+            className="bottomrightcorner"
+            style={{
+              position: "absolute",
+              width: folds.bottomRight.horPercent + "%",
+              height: folds.bottomRight.vertPercent + "%",
+              bottom: "0",
+              right: "0",
+              scale: "-1 1",
+              rotate: `${getCornerAngle("bottomRight", width, height, folds.bottomRight)}deg`,
+              transformOrigin: "",
+              fill: foldColor || "#386638",
+              zIndex: "2",
+            }}
+            viewBox="0 0 100 100"
+            preserveAspectRatio="none"
+          >
+            <polygon points="100,0 100,100 0,100"></polygon>
+          </svg>
+        )
+      }
+      {
+        (isCollapsed || folds?.bottomLeft?.perma) && folds?.bottomLeft && (
+          <svg
+            className="bottomleftcorner"
+            style={{
+              position: "absolute",
+              width: folds.bottomLeft.horPercent + "%",
+              height: folds.bottomLeft.vertPercent + "%",
+              bottom: "0",
+              left: "0",
+              scale: "-1 1",
+              rotate: `${getCornerAngle("bottomLeft", width, height, folds.bottomLeft)}deg`,
+              fill: foldColor || "#386638",
+              zIndex: "2",
+            }}
+            viewBox="0 0 100 100"
+            preserveAspectRatio="none"
+          >
+            <polygon points="0,0 100,100 0,100"></polygon>
+          </svg>
+        )
+      }
+    </div >
   );
 };
 
