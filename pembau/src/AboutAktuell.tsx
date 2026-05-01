@@ -1,8 +1,8 @@
 // images
 import GeschichteImg from "./assets/about/geschichteuncollapsed.webp";
 import GeschichteCollapsedImg from "./assets/about/geschichtecollapsed.webp";
-import LeitbildImg from "./assets/about/leitbildwerte.webp";
-import LeitbildCollapsedImg from "./assets/about/leitbildwertebrtl.webp";
+//import LeitbildImg from "./assets/about/leitbildwerte.webp";
+//import LeitbildCollapsedImg from "./assets/about/leitbildwertebrtl.webp";
 //import StartImg from "./assets/about/neu für start.webp";
 import StartCollapsedImg from "./assets/about/neu für start br.webp";
 
@@ -47,7 +47,7 @@ import { CollapseText } from "./Components/CollapseText";
 import { ImageFrameJPGWithCollapseText } from "./Components/ImageFrameJPGWithCollapseText";
 import { Carousel } from "./Components/Carousel";
 import { CollapseFrame } from "./Components/CollapseFrame";
-import TextButton from "./Components/TextButton";
+//import TextButton from "./Components/TextButton";
 //import TextFrameGeschichte from "./Customframes/TextFrameGeschichte";
 
 const AboutAktuell = () => {
@@ -68,7 +68,8 @@ const AboutAktuell = () => {
           width: "100vw",
           overflow: "hidden",  // Clip overflow
           zIndex: "1",
-          marginBlockEnd: "80px",
+          height: " fit-content",
+          marginBlockEnd: "-8vw",
         }}
       >
         <div style={{
@@ -104,6 +105,8 @@ const AboutAktuell = () => {
         </div>
       </div>
 
+
+      {/** Raus_ altes lbwt 
       <div
         id="leitbild"
         style={{
@@ -115,12 +118,12 @@ const AboutAktuell = () => {
           uncollapsedImg={LeitbildImg}
         ></ImageFrameJPG>
       </div>
-
+*/}
 
       {/*Leitbild neu/skalierbar: */}
       <div className="leitbild leitbildSmall" style={{ display: "flex", justifyContent: "center" }}>
         <CollapseFrame width={80} height={100} rotation={0} folds={{ topLeft: { horPercent: 60, vertPercent: 25, perma: true }, bottomRight: { horPercent: 25, vertPercent: 25, perma: false } }} foldColor="#30196C">
-          <h2 style={{ rotate: "32deg", position: "absolute", left: "13%", top: "32%", zIndex: "3" }}>Leitbild</h2>
+          <h2 style={{ rotate: "32deg", position: "absolute", left: "12%", top: "33%", zIndex: "3" }}>Leitbild</h2>
           <h2 style={{ rotate: "-55deg", position: "absolute", left: "30%", top: "30%", zIndex: "3" }}>_UND</h2>
           <div id="leitbildtextcontainer" style={{ width: "100%", height: "100%", backgroundColor: "#C3D9FF" }}>
 
@@ -180,13 +183,13 @@ const AboutAktuell = () => {
 
 
       {/*Leitbild neu/skalierbar: */}
-      <div className="leitbild leitbildBig" style={{ display: "flex", justifyContent: "center" }}>
-        <CollapseFrame width={80} height={250} rotation={0} folds={{ topLeft: { horPercent: 60, vertPercent: 25, perma: true }, bottomRight: { horPercent: 25, vertPercent: 25, perma: false } }} foldColor="#30196C">
-          <h2 style={{ rotate: "32deg", position: "absolute", left: "13%", top: "32%", zIndex: "3" }}>Leitbild</h2>
-          <h2 style={{ rotate: "-55deg", position: "absolute", left: "30%", top: "30%", zIndex: "3" }}>_UND</h2>
-          <div id="leitbildtextcontainer" style={{ width: "100%", height: "100%", backgroundColor: "#C3D9FF" }}>
+      <div className="leitbild leitbildBig" style={{ display: "flex", justifyContent: "center", marginRight: "10vw" }}>
+        <CollapseFrame width={80} height={250} rotation={0} folds={{ topLeft: { horPercent: 50, vertPercent: 10, perma: true }, bottomRight: { horPercent: 30, vertPercent: 12, perma: false } }} foldColor="#30196C">
+          <h2 style={{ rotate: "28deg", position: "absolute", left: "0%", top: "10.5%", zIndex: "3" }}>Leitbild</h2>
+          <h2 style={{ rotate: "-62deg", position: "absolute", left: "28%", top: "8.5%", zIndex: "3" }}>_UND</h2>
+          <div id="leitbildtextcontainer" style={{ position: "relative", width: "100%", height: "100%", backgroundColor: "#C3D9FF" }}>
 
-            <div id="lowerlefttext" className="hide-scrollbar-blue" style={{ position: "absolute", bottom: "5%", left: "5%", width: "45%", overflowY: "scroll", }}>
+            <div id="lowerlefttext" className="hide-scrollbar-blue" style={{ position: "absolute", top: "18%", left: "5%", width: "45%", overflowY: "scroll", height: "79%" }}>
               <p>Der Pembau lebt von Menschen. Von ihren Ideen, ihrer Vielfalt und ihrem gemeinsamen Wunsch nach Ausdruck.
                 Wir sind überzeugt davon, dass echte Entwicklung dort entsteht, wo Menschen sich ausprobieren dürfen - in einem sicheren, inspirierenden, respektvollen Umfeld. Wir wollen Räume schaffen, in denen Menschen sich entfalten, begegnen, wachsen, ausprobieren und mitgestalten können - als Individuum und als Gemeinschaft.
                 Pembau mehr als ein Ort - er ist eine Haltung und ein Wunsch nach Wandel und Veränderung.
@@ -196,41 +199,41 @@ const AboutAktuell = () => {
               </p>
             </div>
 
-            <div id="upperrighttext" className="hide-scrollbar-blue" style={{ position: "absolute", top: "7%", right: "1%", width: "45%", overflowY: "scroll", height: "90%" }}>
+            <div id="upperrighttext" className="hide-scrollbar-blue" style={{ position: "absolute", top: "7%", right: "1%", width: "45%", overflowY: "scroll", overflowX: "hidden", height: "90%" }}>
               <h2>Werte</h2>
 
-              <h3>GEMEINSCHAFT_IM ZENTRUM</h3>
+              <h3>GEMEINSCHAFT_<wbr />IM ZENTRUM</h3>
               <p>Wir schaffen Räume in denen Menschen sich<wbr />
                 verbinden können. Mit sich selbst, mit anderen und<wbr />
                 mit einer gemeinsamen Vision. </p>
 
-              <h3>VERANTWORTUNG_HEIßt ACHTSAM ZU HANDELN</h3>
+              <h3>VERANTWORTUNG_<wbr />HEIßt ACHTSAM ZU HANDELN</h3>
               <p>Im Umgang miteinander, mit der Umwelt, mit uns<wbr />
                 selbst und dem Raum den wir gestalten.</p>
 
-              <h3>EMPOWERMENT_ALS ANTRIEB</h3>
+              <h3>EMPOWERMENT_<wbr />ALS ANTRIEB</h3>
               <p>Wir glauben daran, dass jede*r etwas beitragen kann <wbr />
                 wenn es Raum zum Ausprobieren, Lernen und<wbr />
                 Wachsen gibt. Den Mut, das Selbstvertrauen und die<wbr />
                 Lust, Dinge selbst in die Hand zu nehmen wollen wir<wbr />
                 fördern.</p>
 
-              <h3>FREIHEIT_ALS MÖGLICHKEIT ZUR ENTFALTUNG</h3>
+              <h3>FREIHEIT_<wbr />ALS MÖGLICHKEIT ZUR ENTFALTUNG</h3>
               <p>Sowohl persönlich, kreativ und gesellschaftlich. Dabei<wbr />
                 endet die eigene Freiheit dort, wo die des <wbr />
                 Gegenübers beginnt.</p>
 
-              <h3>KREATIVE VERSPIELTHEIT_EINE EINLADUNG</h3>
+              <h3>KREATIVE VERSPIELTHEIT_<wbr />EINE EINLADUNG</h3>
               <p>Wir wollen neugierig bleiben. Wie auf einem Spielplatz<wbr />
                 wollen wir ausprobieren, scheitern, weiterdenken -<wbr />
                 gemeinsam, spontan und mit Freude am Prozess.</p>
 
-              <h3>AUTHENTIZITÄT_IST WICHTIGER ALS PERFEKTION</h3>
+              <h3>AUTHENTIZITÄT_<wbr />IST WICHTIGER ALS PERFEKTION</h3>
               <p>Was zählt ist Raum für echten Ausdruck, ein ehrliches<wbr />
                 Miteinander und Offenheit - auch gegenüber<wbr />
                 Unsicherheiten, Zweifeln oder Ungewohnten.</p>
 
-              <h3>NACHHALTIGKEIT_ALS ALLUMASSENDER BEGRIFF</h3>
+              <h3>NACHHALTIGKEIT_<wbr />ALS ALLUMASSENDER BEGRIFF</h3>
               <p>Ökologisch, sozial, kulturell und wirtschaftlich. Was wir<wbr />
                 hier schaffen, soll nicht nur für den Moment bestehen,<wbr />
                 sondern auch langfristig tragfähig und sinnvoll sein.</p>

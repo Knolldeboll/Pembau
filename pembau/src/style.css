@@ -536,8 +536,9 @@ die Höhe wird von den Responsiven Elementen vorgegeben, die dann übereinanderg
 .leitbild p {
   font-family: "DM Sans";
   font-weight: 400;
-  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  font-size: clamp(0.9rem, 1.2vw, 1.2rem);
   color: black;
+  margin-block: 0.4em;
 }
 
 .leitbild h2 {
@@ -552,8 +553,9 @@ die Höhe wird von den Responsiven Elementen vorgegeben, die dann übereinanderg
   font-family: "DM Sans";
   font-weight: 700;
   font-style: bold;
-  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  font-size: clamp(0.9rem, 1.2vw, 1.2rem);
   color: black;
+  margin-block: 0.4em;
 }
 
 
@@ -585,7 +587,7 @@ Der Body hat schon dem der Länge der Figma-Landingpage entsprechenden Länge, a
 
 }
 
-.hide-scrollbar-blue::-webkit-scrollbar {
+.hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
 
