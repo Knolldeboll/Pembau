@@ -199,44 +199,48 @@ const AboutAktuell = () => {
               </p>
             </div>
 
-            <div id="upperrighttext" className="hide-scrollbar-blue" style={{ position: "absolute", top: "7%", right: "1%", width: "45%", overflowY: "scroll", overflowX: "hidden", height: "90%" }}>
+            <div id="werteh2placer" style={{ display: "flex", flexDirection: "column", flex: "none", position: "absolute", top: "7%", right: "1%", width: "45%", height: "90%" }}>
               <h2>Werte</h2>
 
-              <h3>GEMEINSCHAFT_<wbr />IM ZENTRUM</h3>
-              <p>Wir schaffen Räume in denen Menschen sich<wbr />
-                verbinden können. Mit sich selbst, mit anderen und<wbr />
-                mit einer gemeinsamen Vision. </p>
+              <div id="upperrighttext" className="hide-scrollbar-blue" style={{ overflowY: "scroll", overflowX: "hidden", }}>
 
-              <h3>VERANTWORTUNG_<wbr />HEIßt ACHTSAM ZU HANDELN</h3>
-              <p>Im Umgang miteinander, mit der Umwelt, mit uns<wbr />
-                selbst und dem Raum den wir gestalten.</p>
+                <h3>GEMEINSCHAFT_<wbr />IM ZENTRUM</h3>
+                <p>Wir schaffen Räume in denen Menschen sich<wbr />
+                  verbinden können. Mit sich selbst, mit anderen und<wbr />
+                  mit einer gemeinsamen Vision. </p>
 
-              <h3>EMPOWERMENT_<wbr />ALS ANTRIEB</h3>
-              <p>Wir glauben daran, dass jede*r etwas beitragen kann <wbr />
-                wenn es Raum zum Ausprobieren, Lernen und<wbr />
-                Wachsen gibt. Den Mut, das Selbstvertrauen und die<wbr />
-                Lust, Dinge selbst in die Hand zu nehmen wollen wir<wbr />
-                fördern.</p>
+                <h3>VERANTWORTUNG_<wbr />HEIßt ACHTSAM ZU HANDELN</h3>
+                <p>Im Umgang miteinander, mit der Umwelt, mit uns<wbr />
+                  selbst und dem Raum den wir gestalten.</p>
 
-              <h3>FREIHEIT_<wbr />ALS MÖGLICHKEIT ZUR ENTFALTUNG</h3>
-              <p>Sowohl persönlich, kreativ und gesellschaftlich. Dabei<wbr />
-                endet die eigene Freiheit dort, wo die des <wbr />
-                Gegenübers beginnt.</p>
+                <h3>EMPOWERMENT_<wbr />ALS ANTRIEB</h3>
+                <p>Wir glauben daran, dass jede*r etwas beitragen kann <wbr />
+                  wenn es Raum zum Ausprobieren, Lernen und<wbr />
+                  Wachsen gibt. Den Mut, das Selbstvertrauen und die<wbr />
+                  Lust, Dinge selbst in die Hand zu nehmen wollen wir<wbr />
+                  fördern.</p>
 
-              <h3>KREATIVE VERSPIELTHEIT_<wbr />EINE EINLADUNG</h3>
-              <p>Wir wollen neugierig bleiben. Wie auf einem Spielplatz<wbr />
-                wollen wir ausprobieren, scheitern, weiterdenken -<wbr />
-                gemeinsam, spontan und mit Freude am Prozess.</p>
+                <h3>FREIHEIT_<wbr />ALS MÖGLICHKEIT ZUR ENTFALTUNG</h3>
+                <p>Sowohl persönlich, kreativ und gesellschaftlich. Dabei<wbr />
+                  endet die eigene Freiheit dort, wo die des <wbr />
+                  Gegenübers beginnt.</p>
 
-              <h3>AUTHENTIZITÄT_<wbr />IST WICHTIGER ALS PERFEKTION</h3>
-              <p>Was zählt ist Raum für echten Ausdruck, ein ehrliches<wbr />
-                Miteinander und Offenheit - auch gegenüber<wbr />
-                Unsicherheiten, Zweifeln oder Ungewohnten.</p>
+                <h3>KREATIVE VERSPIELTHEIT_<wbr />EINE EINLADUNG</h3>
+                <p>Wir wollen neugierig bleiben. Wie auf einem Spielplatz<wbr />
+                  wollen wir ausprobieren, scheitern, weiterdenken -<wbr />
+                  gemeinsam, spontan und mit Freude am Prozess.</p>
 
-              <h3>NACHHALTIGKEIT_<wbr />ALS ALLUMASSENDER BEGRIFF</h3>
-              <p>Ökologisch, sozial, kulturell und wirtschaftlich. Was wir<wbr />
-                hier schaffen, soll nicht nur für den Moment bestehen,<wbr />
-                sondern auch langfristig tragfähig und sinnvoll sein.</p>
+                <h3>AUTHENTIZITÄT_<wbr />IST WICHTIGER ALS PERFEKTION</h3>
+                <p>Was zählt ist Raum für echten Ausdruck, ein ehrliches<wbr />
+                  Miteinander und Offenheit - auch gegenüber<wbr />
+                  Unsicherheiten, Zweifeln oder Ungewohnten.</p>
+
+                <h3>NACHHALTIGKEIT_<wbr />ALS ALLUMASSENDER BEGRIFF</h3>
+                <p>Ökologisch, sozial, kulturell und wirtschaftlich. Was wir<wbr />
+                  hier schaffen, soll nicht nur für den Moment bestehen,<wbr />
+                  sondern auch langfristig tragfähig und sinnvoll sein.</p>
+
+              </div>
 
             </div>
           </div>
