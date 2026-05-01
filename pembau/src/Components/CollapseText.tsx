@@ -7,7 +7,9 @@ interface CollapseTextProps {
     marginTopProp?: string;
     rotate?: string;
     textColor?: string;
+    /**width: z.b. für direktes placement unter viewport-level, ohne parentdiv mit width */
     width?: string;
+    height?: string;
     alwaysSrc: string,
     expandSrc?: string,
 }
@@ -41,6 +43,8 @@ export const CollapseText = ({ alwaysSrc, expandSrc, marginTopProp, width, textC
 
     // Width ist jetzt optional. wenn gegeben, nimm das, ansonsten 100%
     const appliedWidth = width ? width : "100%";
+
+    // const appliedHeight = height ? height : "auto";
 
     //TODO: MarginTop conditional auf umbruch... damn son. 
     // das kommt ja auch vom css, kein state ablesbar. 

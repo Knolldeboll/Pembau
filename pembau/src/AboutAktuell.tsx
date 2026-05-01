@@ -1,9 +1,7 @@
 // images
 import GeschichteImg from "./assets/about/geschichteuncollapsed.webp";
 import GeschichteCollapsedImg from "./assets/about/geschichtecollapsed.webp";
-//import LeitbildImg from "./assets/about/leitbildwerte.webp";
-//import LeitbildCollapsedImg from "./assets/about/leitbildwertebrtl.webp";
-//import StartImg from "./assets/about/neu für start.webp";
+
 import StartCollapsedImg from "./assets/about/neu für start br.webp";
 
 import KulturImg from "./assets/about/kultur.webp";
@@ -17,7 +15,7 @@ import InnsbruckLogo from "./assets/about/logoinnsbruck.webp";
 
 import TxPImg from "./assets/about/txp.webp";
 import PermaImg from "./assets/about/perma.webp";
-import VisionImg from "./assets/about/vision.webp";
+
 import PermaCollapsedImg from "./assets/about/permatrbl.webp";
 import TeamImg from "./assets/about/team.webp";
 import TeamCollapsedImg from "./assets/about/teambrtl.webp";
@@ -26,24 +24,16 @@ import TeamDream from "./assets/about/teamdream.webp";
 
 import ImageFrameJPG from "./Components/ImageFrameJPG";
 
-//import images from "./assets/about/images.json";
+
 import TestRectImg from "./assets/bg-2.jpg";
 
-//import Foot from "./menu/Foot";
 
 //md texts
 
 //import aboutGeschichteAlways from "./content/aboutGeschichteAlways.md"
 
 import { CollapseText } from "./Components/CollapseText";
-//import TextFrameAktuell from "./Customframes/TextFrameAktuell";
-//import TextButton from "./Components/TextButton";
-//import { CollapseImageFrame } from "./Components/CollapseImageFrame";
-//import BodyFrame1 from "./alter shit/BodyFrame1";
-//import TestImage from "./assets/bg-1.jpg"
-//import { Carousel } from "./Components/Carousel";
-//import { CollapseFrame } from "./Components/CollapseFrame";
-//import CollapseFrameWithCollapseText from "./Components/CollapseFrameWithCollapseText";
+
 import { ImageFrameJPGWithCollapseText } from "./Components/ImageFrameJPGWithCollapseText";
 import { Carousel } from "./Components/Carousel";
 import { CollapseFrame } from "./Components/CollapseFrame";
@@ -117,11 +107,11 @@ const AboutAktuell = () => {
           collapsedImg={LeitbildCollapsedImg}
           uncollapsedImg={LeitbildImg}
         ></ImageFrameJPG>
-      </div>
-*/}
+      </div>*/}
 
-      {/*Leitbild neu/skalierbar: */}
-      <div className="leitbild leitbildSmall" style={{ display: "flex", justifyContent: "center" }}>
+
+      {/*Leitbild neu/skalierbar DONE */}
+      <div className="leitbild leitbildSmall" style={{ display: "flex", justifyContent: "center", marginTop: "5vw" }}>
         <CollapseFrame width={80} height={100} rotation={0} folds={{ topLeft: { horPercent: 60, vertPercent: 25, perma: true }, bottomRight: { horPercent: 25, vertPercent: 25, perma: false } }} foldColor="#30196C">
           <h2 style={{ rotate: "32deg", position: "absolute", left: "12%", top: "33%", zIndex: "3" }}>Leitbild</h2>
           <h2 style={{ rotate: "-55deg", position: "absolute", left: "30%", top: "30%", zIndex: "3" }}>_UND</h2>
@@ -182,8 +172,8 @@ const AboutAktuell = () => {
       </div>
 
 
-      {/*Leitbild neu/skalierbar: */}
-      <div className="leitbild leitbildBig" style={{ display: "flex", justifyContent: "center", marginRight: "10vw" }}>
+      {/*Leitbild neu/skalierbar DONE */}
+      <div className="leitbild leitbildBig" style={{ display: "flex", justifyContent: "center", marginRight: "10vw", marginTop: "5vw" }}>
         <CollapseFrame width={80} height={250} rotation={0} folds={{ topLeft: { horPercent: 50, vertPercent: 10, perma: true }, bottomRight: { horPercent: 30, vertPercent: 12, perma: false } }} foldColor="#30196C">
           <h2 style={{ rotate: "28deg", position: "absolute", left: "0%", top: "10.5%", zIndex: "3" }}>Leitbild</h2>
           <h2 style={{ rotate: "-62deg", position: "absolute", left: "28%", top: "8.5%", zIndex: "3" }}>_UND</h2>
@@ -250,22 +240,10 @@ const AboutAktuell = () => {
 
 
 
-      {/**
-      <div className="leitbild leitbildBid">
-
-        *TODO Big Smoke number 9 large
-         * 
-        
-      </div> */}
 
 
 
-
-
-
-
-
-      {/*geschichte*/}
+      {/*geschichte */}
 
 
       <div
@@ -275,7 +253,7 @@ const AboutAktuell = () => {
           flex: "none",
           flexWrap: "wrap",
           flexDirection: "row",
-          marginTop: "5vw",
+          marginTop: "15vw",
           zIndex: "2",
         }}
       >
@@ -324,76 +302,95 @@ const AboutAktuell = () => {
 
         </div>
 
-
         {/**Textsize ist responsive! */}
         <div id="geschichtetextwrapper" style={{ flex: "1 1 550px", marginTop: "14vw" }} >
-
-
           <CollapseText
             alwaysSrc="/Pembau/content/aboutGeschichteAlways.md"
             expandSrc="/Pembau/content/aboutGeschichteExpand.md"
           ></CollapseText>
-
         </div>
       </div>
+      {/*Geschichtek omplett ende*/}
 
 
-      {/**Grundstück */}
+
+
+      {/**Grundstück TODO: */}
+
+
+      {/**Nochmal MQ umschalten auf ein Fetteres! Außerdem enablem. */}
+
+
+      {/** 
       <div
         id="grundstück"
         style={{
           position: "relative",
-          color: "#000000",
+
         }}
       >
         <img
-          src={VisionImg}
+          src={GrundstückImg}
           style={{
-            width: "100%",
-            height: "auto",
+            width: "150vw",
+            marginLeft: "-5vw",
+            height: "150%",
             zIndex: "2",
           }}
         ></img>
 
-        {/*hier absolute, für platzierung innerhalb des imgs.*/}
-        <div
-          id="gscollapsecontainer"
-          style={{ position: "absolute", top: "15%", left: "30%" }}
-        >
+       
+        <h2 style={{ transform: "rotate(-4deg)", position: "absolute", left: "7%", top: "15%", color: "#ffffff" }}>GROßES_<span style={{ fontStyle: "italic" }}>Grundstück_</span> <wbr /> GROßE_<span style={{ fontStyle: "italic" }}>Träume </span></h2>
+
+        <h2 style={{ transform: "rotate(44deg)", position: "absolute", left: "66%", top: "29%", color: "#ff6400" }}>
+          PEMBAU_Vision
+        </h2>
+        <div id="gsmaintext" className="hide-scrollbar-blue" style={{
+          transform: "rotate(-4deg)",
+          position: "absolute", left: "27%", top: "21%", width: "38%", height: "60%", overflowY: "auto"
+        }}>
           <CollapseText
-            marginTopProp="0vw"
-            rotate="-4deg"
-            width="33vw"
+
+
             textColor="#ffffff"
             alwaysSrc="/Pembau/content/aboutGrundstuckAlways.md"
             expandSrc="/Pembau/content/aboutGrundstuckExpand.md"
           ></CollapseText>
         </div>
 
-      </div>
 
-      <div
+
+      </div >
+*/
+      }
+
+      {/**Grundstück skalierbar small*/}
+
+
+
+      < div
         id="aktuelles"
         style={{
           width: "80vw",
           marginLeft: "5vw",
-
+          marginTop: "15vw",
           color: "#000000",
-        }}
+        }
+        }
       >
         <div className="aktuell">
           <h2 >PEMBAU<span >_aktuell</span></h2>
           <p >Der Pembau ist derzeit ein Ort im Aufbau. Mögliche Konzepte für den Ort werden erforscht und getestet. Menschen kommen zusammen, tauschen sich aus, bauen auf, füllen die Räume mit Leben – und eine lebendige Gemeinschaft entsteht. Da sich das Gelände aktuell im rechtlichen Übergang befindet, finden die Aktivitäten bisher im Rahmen privater Veranstaltungen statt – doch das soll sich bald ändern! Aktuell arbeiten wir daran, die Infrastruktur auszubauen und rechtliche Grundlagen zu schaffen, um das Gelände Stück für Stück für mehr Menschen nutzbar und zugänglich zu machen.</p>
 
         </div>
-      </div>
+      </div >
 
 
       {/** TODO: Hier Slideshow*/}
 
-      <div style={{ alignSelf: "center", width: "95vw", height: "max(45vw, 300px)" }}>
+      < div style={{ alignSelf: "center", width: "95vw", height: "max(45vw, 300px)" }}>
         <Carousel images={carouselImages}></Carousel>
-      </div>
+      </div >
 
 
       <div className="aktuell" style={{ width: "65vw", marginLeft: "5vw", }}>
@@ -415,7 +412,7 @@ const AboutAktuell = () => {
           alignItems: "stretch",
           flexWrap: "wrap",
           flexDirection: "row",
-          marginTop: "5vw",
+          marginTop: "10vw",
           zIndex: "2",
         }}
       >
@@ -438,7 +435,7 @@ const AboutAktuell = () => {
             marginTopProp="0vw"
             alwaysSrc="/Pembau/content/aboutTxPAlways.md"
           ></CollapseText>
-          <div style={{ display: "flex", flexDirection: "row", flex: "none", marginTop: "2vw", justifyContent: "center", gap: "3vw" }}>
+          <div style={{ display: "flex", flexDirection: "row", flex: "none", marginTop: "8vw", justifyContent: "center", gap: "3vw" }}>
             <div id="instatxp" style={{
               display: "flex", flexDirection: "column", flex: "none", alignItems: "center"
             }} >
@@ -478,7 +475,7 @@ const AboutAktuell = () => {
           alignItems: "stretch",
           flexWrap: "wrap",
           flexDirection: "row",
-          marginTop: "5vw",
+          marginTop: "10vw",
           zIndex: "2",
         }}
       >
@@ -519,7 +516,7 @@ const AboutAktuell = () => {
           alignItems: "stretch",
           flexWrap: "wrap",
           flexDirection: "row",
-          marginTop: "5vw",
+          marginTop: "10vw",
           zIndex: "2",
         }}
       >
@@ -603,7 +600,7 @@ const AboutAktuell = () => {
           flex: "none",
           flexWrap: "wrap",
           flexDirection: "row",
-          marginTop: "5vw",
+          marginTop: "10vw",
           zIndex: "2",
         }}
       >
@@ -633,6 +630,7 @@ const AboutAktuell = () => {
 
       </div>
 
+      {/**
       <div
         id="neuerungen"
         style={{
@@ -644,12 +642,14 @@ const AboutAktuell = () => {
       >
         neuerungen text und buttons placeholder
       </div>
+       */}
 
       <div
         id="team"
         style={{
-          width: "95vw",
-          transform: "translateX(5%) rotate(0deg)",
+          width: "120vw",
+          marginTop: "15vw",
+          alignSelf: "center",
           zIndex: "2",
         }}
       >
@@ -659,11 +659,16 @@ const AboutAktuell = () => {
         ></ImageFrameJPG>
       </div>
 
+
+
+
+
       <div
         id="teamdream"
         style={{
           position: "relative",
           width: "95vw",
+          marginTop: "15vw",
           alignSelf: "flex-end",
           zIndex: "2",
         }}
