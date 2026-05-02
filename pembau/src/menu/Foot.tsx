@@ -24,14 +24,17 @@ const Foot = () => {
         <div className="footpopup">
           <div
             style={{
+
               display: "grid",
               width: "fit-content",
-              height: "100%",
+              height: "8vw",
               margin: "auto",
               gridTemplateColumns: "16vw 16vw ",
-              gridTemplateRows: "2vw 2vw 2vw",
+              gridTemplateRows: "2vw",
               rowGap: "max(0.9rem,1.5vw)",
               columnGap: "max(3.5rem,1.5vw)",
+              zIndex: "5",
+              justifyItems: "center",
             }}
           >
             <FootLink
@@ -42,7 +45,7 @@ const Foot = () => {
               text="KONTAKT"
               onClick={() => console.log("implement")}
             ></FootLink>
-            <FootLink
+            {/*<FootLink
               text="NEWSLETTER"
               onClick={() => console.log("implement")}
             ></FootLink>
@@ -50,6 +53,8 @@ const Foot = () => {
               text="URHEBERRECHT"
               onClick={() => console.log("implement")}
             ></FootLink>
+
+
             <FootLink
               text="HAFTUNG"
               onClick={() => console.log("implement")}
@@ -57,7 +62,7 @@ const Foot = () => {
             <FootLink
               text="AGBS"
               onClick={() => console.log("implement")}
-            ></FootLink>
+            ></FootLink>*/}
           </div>
         </div>
       )}

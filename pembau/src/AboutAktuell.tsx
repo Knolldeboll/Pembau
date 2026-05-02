@@ -670,7 +670,7 @@ const AboutAktuell = () => {
           width: "95vw",
           marginTop: "15vw",
           alignSelf: "flex-end",
-          zIndex: "2",
+
         }}
       >
         <img
@@ -678,7 +678,7 @@ const AboutAktuell = () => {
           style={{
             width: "100%",
             height: "auto",
-            zIndex: "2",
+
           }}
         ></img>
 

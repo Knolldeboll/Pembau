@@ -308,15 +308,15 @@ a {
   /*war als absolute gedacht, damit das popup über dem rest der seite liegt und sich nicht in den flow schiebt! */
   position: absolute;
   background-color: #000000;
-  height: 25vw;
-  bottom: 100%;
-  left: 25%;
-
+  height: fit-content;
+  bottom: max(10vw, 4.6rem);
+  right: 0%;
 
 }
 
 .footpopup .paragraph-white-line {
   font-size: clamp(0.9rem, 2vw, 1.5rem);
+
 }
 
 #links {
