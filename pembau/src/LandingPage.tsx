@@ -117,8 +117,8 @@ const LandingPage = () => {
       {/*kpkp neu skalierbar - 2nd class für umschalten per mQ*/}
 
 
-      <div className="keinprogramm keinprogrammSmall" style={{ marginTop: "40vw", alignSelf: "center", transform: "translateX(-4vw)" }}>
-        <CollapseFrame width={110} height={150} rotation={-3} folds={{ bottomLeft: { horPercent: 58, vertPercent: 80, perma: false }, topRight: { horPercent: 15, vertPercent: 30, perma: true } }} foldColor="#000000">
+      <div className="keinprogramm keinprogrammSmall" style={{ marginTop: "15vw", alignSelf: "center", transform: "translateX(-4vw)" }}>
+        <CollapseFrame width={110} height={135} rotation={-3} folds={{ bottomLeft: { horPercent: 40, vertPercent: 60, perma: false }, topRight: { horPercent: 15, vertPercent: 30, perma: true } }} foldColor="#000000">
           <div id="kpkpbg" style={{ width: "100%", height: "100%", backgroundColor: "#D2F2EB", overflow: "hidden" }}>
             <h2 style={{ marginLeft: "12%", marginTop: "10%" }}>KEIN_<span>Programm</span><wbr />_KEIN_<span>Problem</span></h2>
             <div id="kpkptextblock" style={{ marginLeft: "20%", width: "50%" }}>
@@ -135,7 +135,7 @@ const LandingPage = () => {
       </div >
 
 
-      <div className="keinprogramm keinprogrammBig" style={{ marginTop: "40vw", alignSelf: "center", transform: "translateX(-4vw)" }}>
+      <div className="keinprogramm keinprogrammBig" style={{ marginTop: "15vw", alignSelf: "center", transform: "translateX(-4vw)" }}>
         <CollapseFrame width={110} height={50} rotation={-3} folds={{ bottomLeft: { horPercent: 33, vertPercent: 73, perma: false }, topRight: { horPercent: 15, vertPercent: 30, perma: true } }} foldColor="#000000">
           <div id="kpkpbg" style={{ width: "100%", height: "100%", backgroundColor: "#D2F2EB", overflow: "hidden" }}>
             <h2 style={{ marginLeft: "12%", marginTop: "10%" }}>KEIN_<span>Programm</span>_KEIN_<span>Problem</span></h2>

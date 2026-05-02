@@ -75,27 +75,23 @@ const Foot = () => {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path
-              d="M143.728 4.53274L179.845 132.504H4.50272V4.50391L143.728 4.53274Z"
-              stroke="white"
-              strokeWidth="9.00542"
-              strokeMiterlimit="10"
-            />
+            <path d="M143.728 4.53274L179.845 132.504H4.50272V4.50391L143.728 4.53274Z" stroke="white" strokeWidth="9.00542" strokeMiterlimit="10" />
+            <path d="M38.4313 44.0367V31.2195H54.5393V37.0512L38.4313 44.0367ZM61.4668 25.5039H31.5027V65.9183H38.4313V49.9833L61.4678 40.9189V25.5039H61.4668Z" fill="white" />
+            <path d="M71.6893 44.0947V31.4505H87.1043V36.6462L71.6893 44.0937V44.0947ZM92.8779 25.5039H65.8007V65.9183H92.8779V59.9717H71.6893V49.9833L92.8779 40.8029V25.5039Z" fill="white" />
+            <path d="M128.503 25.5039H96.5747V65.8603H102.492V31.3355H109.58V65.8603H115.38L115.322 31.3355H122.527L122.586 65.8603H128.503V25.5039Z" fill="white" />
+            <path d="M38.3153 106.506V92.5921L54.2503 100.676V106.507H38.3153V106.506ZM38.3153 87.5684V77.2921H54.2503V83.0077L38.3153 87.5694V87.5684ZM61.0628 71.6914H31.5027V112.106H61.0628V96.9218L44.8388 90.9172L61.0628 86.8765V71.6924V71.6914Z" fill="white" />
+            <path d="M71.7463 106.506V99.3477L87.2193 89.9363V106.506H71.7463ZM93.1659 71.6914H65.7997V77.58H87.2193V83.2376L65.7997 96.8058V112.106H93.1659V71.6914Z" fill="white" />
+            <path d="M128.503 71.6914H122.614V106.159H102.464V71.6914H96.5747V112.106H128.503V71.6914Z" fill="white" />
+
           </svg>
+
+
+
           <p className="foot-logo-text">
             PLATTFORM FÜR KUNST, <br></br> KULTUR UND <br></br> GESELLSCHAFT.
           </p>
         </div>
 
-        {/**
-                <div id="sprechblase" style={{ width: "10%", height: "auto", marginLeft: "2%", marginBlock: "auto" }}>
-                  
-                </div>
-
-                <div id="text" style={{ minWidth: "0", width: "30%", height: "auto", color: "#ffffff", marginLeft: "1%", transform: "translateY(3.5vw)" }}>
-                  
-                </div>
- */}
         <div className="socialmedia">
           <a
             className="socialmedialinkwrapper"
@@ -142,16 +138,16 @@ const Foot = () => {
            */}
         </div>
 
-        <div id="links" style={{ width: "27%", height: "100%" }}>
+        <div id="links" style={{ width: "27%", height: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
           <div
             style={{
               display: "grid",
-              width: "fit-content",
+              width: "100%",
               gridTemplateColumns: "8vw 8vw ",
-              gridTemplateRows: "1vw 1vw 1vw",
+              gridTemplateRows: "1vw ",
               gap: "1.5vw",
               marginLeft: "10%",
-              marginTop: "1%",
+
             }}
           >
             <FootLink
@@ -162,6 +158,8 @@ const Foot = () => {
               text="KONTAKT"
               onClick={() => console.log("implement")}
             ></FootLink>
+
+            {/** 
             <FootLink
               text="NEWSLETTER"
               onClick={() => console.log("implement")}
@@ -177,7 +175,7 @@ const Foot = () => {
             <FootLink
               text="AGBS"
               onClick={() => console.log("implement")}
-            ></FootLink>
+            ></FootLink>*/}
           </div>
         </div>
 
