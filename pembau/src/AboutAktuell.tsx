@@ -20,7 +20,7 @@ import PermaCollapsedImg from "./assets/about/permatrbl.webp";
 import TeamImg from "./assets/about/team.webp";
 import TeamCollapsedImg from "./assets/about/teambrtl.webp";
 import TeamDream from "./assets/about/teamdream.webp";
-
+import GrundstückImg from "./assets/about/grundstück.webp";
 
 import ImageFrameJPG from "./Components/ImageFrameJPG";
 
@@ -37,31 +37,61 @@ import { CollapseText } from "./Components/CollapseText";
 import { ImageFrameJPGWithCollapseText } from "./Components/ImageFrameJPGWithCollapseText";
 import { Carousel } from "./Components/Carousel";
 import { CollapseFrame } from "./Components/CollapseFrame";
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
+import TextButton from "./Components/TextButton";
 //import TextButton from "./Components/TextButton";
 //import TextFrameGeschichte from "./Customframes/TextFrameGeschichte";
 
 const AboutAktuell = () => {
-  console.log("testrectimg:", TestRectImg);
+
+
+
 
   const imageModules = import.meta.glob<string>('./assets/about/carousel/*.webp', { eager: true, import: 'default' })
   const carouselImages: string[] = Object.values(imageModules);
   //console.log("image paths: ", carouselImages)
 
+
+
+  //Scrollables - refs
+
   const leitBildRef = useRef<HTMLDivElement | null>(null);
-  const scrollToLeitbild = () => {
+  const geschichteRef = useRef<HTMLDivElement | null>(null);
+  // todo: vision ref
+
+  const aktuellRef = useRef<HTMLDivElement | null>(null);
+  const teamRef = useRef<HTMLDivElement | null>(null);
+
+
+  const scrollToRef = (ref: React.RefObject<HTMLDivElement | null>) => {
     // if type ? element, use scrollIntoView.
-    leitBildRef.current?.scrollIntoView({ behavior: "smooth" })
+    ref.current?.scrollIntoView({ behavior: "smooth" })
+
+
   }
 
 
   // upon URL ending with #leitbild, execute scrollToLeitbild
   useEffect(() => {
-    if (window.location.hash === "#leitbild") {
-      scrollToLeitbild()
-      console.log("window loc hash", window.location.hash)
+    switch (window.location.hash) {
+      case "#leitbild":
+        scrollToRef(leitBildRef)
+        break;
+      case "#geschichte":
+        scrollToRef(geschichteRef)
+        break;
+      case "#aktuell":
+        scrollToRef(aktuellRef);
+        break;
+      case "#team":
+        scrollToRef(teamRef);
+        break;
     }
+
   }, []);
+
+
+
 
   return (
     <>
@@ -101,13 +131,14 @@ const AboutAktuell = () => {
 
           }}
         >
-          <a className="h2 hoverable" onClick={scrollToLeitbild}>
+          <a className="h2 hoverable" onClick={() => scrollToRef(leitBildRef)}>
             _Leitbild_und_Werte
           </a>
-          <a className="h2 hoverable">_Geschichte</a>
-          <a className="h2 hoverable">_Vision</a>
-          <a className="h2 hoverable">_Aktuell</a>
-          <a className="h2 hoverable">_Team</a>
+          <a className="h2 hoverable" onClick={() => scrollToRef(geschichteRef)}>_Geschichte</a>
+          {/** <a className="h2 hoverable">_Vision</a> */}
+
+          <a className="h2 hoverable" onClick={() => scrollToRef(aktuellRef)}>_Aktuell</a>
+          <a className="h2 hoverable" onClick={() => scrollToRef(teamRef)}>_Team</a>
         </div>
       </div>
 
@@ -189,7 +220,7 @@ const AboutAktuell = () => {
 
 
       {/*Leitbild neu/skalierbar DONE */}
-      <div className="leitbild leitbildBig" style={{ display: "flex", justifyContent: "center", marginRight: "10vw", marginTop: "5vw" }}>
+      <div ref={leitBildRef} className="leitbild leitbildBig" style={{ display: "flex", justifyContent: "center", marginRight: "10vw", marginTop: "5vw" }}>
         <CollapseFrame width={80} height={250} rotation={0} folds={{ topLeft: { horPercent: 50, vertPercent: 10, perma: true }, bottomRight: { horPercent: 30, vertPercent: 12, perma: false } }} foldColor="#30196C">
           <h2 style={{ rotate: "28deg", position: "absolute", left: "0%", top: "10.5%", zIndex: "3" }}>Leitbild</h2>
           <h2 style={{ rotate: "-62deg", position: "absolute", left: "28%", top: "8.5%", zIndex: "3" }}>_UND</h2>
@@ -259,11 +290,13 @@ const AboutAktuell = () => {
 
 
 
-      {/*geschichte */}
+
+      {/*geschichte OKAY ist scalable */}
 
 
       <div
         id="geschichte"
+        ref={geschichteRef}
         style={{
           display: "flex",
           flex: "none",
@@ -326,20 +359,30 @@ const AboutAktuell = () => {
           ></CollapseText>
         </div>
       </div>
-      {/*Geschichtek omplett ende*/}
 
 
 
 
-      {/**Grundstück TODO: */}
+
+      {/**Grundstück TODO: Mit CollapseFrame nochmal ein Großes machen.  */}
 
 
-      {/**Nochmal MQ umschalten auf ein Fetteres! Außerdem enablem. */}
 
+      {/**Nochmal MQ umschalten auf ein FETTERES/Längeres Außerdem enable. 
 
-      {/** 
+        VORERST DISABLED
+
+      <div id="grundstückcollapse">
+        <CollapseFrame width={100} height={100} rotation={-5} folds={{ bottomLeft: { vertPercent: 15, horPercent: 30 }, topRight: { vertPercent: 30, horPercent: 15 } }} foldColor="#C3D9FF">
+          <div style={{ width: "100%", height: "100%", backgroundColor: "#30196C" }}></div>
+        </CollapseFrame>
+
+      </div>
+
+*/}
+      {/**
       <div
-        id="grundstück"
+        id="grundstückSmall"
         style={{
           position: "relative",
 
@@ -355,7 +398,7 @@ const AboutAktuell = () => {
           }}
         ></img>
 
-       
+
         <h2 style={{ transform: "rotate(-4deg)", position: "absolute", left: "7%", top: "15%", color: "#ffffff" }}>GROßES_<span style={{ fontStyle: "italic" }}>Grundstück_</span> <wbr /> GROßE_<span style={{ fontStyle: "italic" }}>Träume </span></h2>
 
         <h2 style={{ transform: "rotate(44deg)", position: "absolute", left: "66%", top: "29%", color: "#ff6400" }}>
@@ -376,16 +419,16 @@ const AboutAktuell = () => {
 
 
 
-      </div >
-*/
-      }
-
-      {/**Grundstück skalierbar small*/}
+      </div > */}
 
 
+
+
+      {/**Aktuelles Text Section */}
 
       < div
         id="aktuelles"
+        ref={aktuellRef}
         style={{
           width: "80vw",
           marginLeft: "5vw",
@@ -402,13 +445,14 @@ const AboutAktuell = () => {
       </div >
 
 
-      {/** TODO: Hier Slideshow*/}
+      {/** Carousel: Hier Slideshow*/}
 
-      < div style={{ alignSelf: "center", width: "95vw", height: "max(45vw, 300px)" }}>
+      < div id="carouselwrapper" style={{ alignSelf: "center", width: "95vw", height: "max(45vw, 300px)" }}>
         <Carousel images={carouselImages}></Carousel>
       </div >
 
 
+      {/**Aktuelles einfach in nem p */}
       <div className="aktuell" style={{ width: "65vw", marginLeft: "5vw", }}>
         <p>
           Alles was bisher schon am Pembau entsteht, entstanden ist und
@@ -451,6 +495,8 @@ const AboutAktuell = () => {
             marginTopProp="0vw"
             alwaysSrc="/Pembau/content/aboutTxPAlways.md"
           ></CollapseText>
+
+          {/**Insta und Innsbruck Extraflex. */}
           <div style={{ display: "flex", flexDirection: "row", flex: "none", marginTop: "8vw", justifyContent: "center", gap: "3vw" }}>
             <div id="instatxp" style={{
               display: "flex", flexDirection: "column", flex: "none", alignItems: "center"
@@ -661,6 +707,7 @@ const AboutAktuell = () => {
        */}
 
       <div
+        ref={teamRef}
         id="team"
         style={{
           width: "120vw",
@@ -679,6 +726,7 @@ const AboutAktuell = () => {
 
 
 
+      {/*
       <div
         id="teamdream"
         style={{
@@ -697,7 +745,6 @@ const AboutAktuell = () => {
 
           }}
         ></img>
-
         <div
           className="aktuell"
           style={{ position: "absolute", top: "3%", left: "37%", width: "40%", height: "90%", overflow: "scroll" }}
@@ -720,27 +767,13 @@ const AboutAktuell = () => {
             bereichert unser gemeinsames Wirken – und wir freuen uns deswegen
             über alle, die sich einbringen möchten!
           </p>
-
-          {/**Aktuell draußen der Button - gibt kein Teil sein Link! 
-          <div style={{ width: "50%", marginTop: "10%" }}>
-            <TextButton
-              text="TEIL_SEIN"
-              width="20vw"
-              onClick={() => console.log("implement teil sein")}
-            ></TextButton>
-          </div>*/}
         </div>
 
-        {/**Test CollapseFrame (with image inside) 
 
 
-        <CollapseFrame width={80} height={50} rotation={2} bgColor="rgb(116, 116, 155)" folds={{ bottomRight: { horPercent: 10, vertPercent: 20, perma: true }, topLeft: { horPercent: 10, vertPercent: 20 } }}>
-          <img width="100%" height="100%" src={TeamImg}></img>
-        </CollapseFrame>
-*/}
 
-      </div>
-
+      </div >
+*TEAMDREAM ENDE */}
 
 
     </>
