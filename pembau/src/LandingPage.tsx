@@ -166,7 +166,7 @@ const LandingPage = () => {
         <TextFrameEndeLP></TextFrameEndeLP>
       </div >
 
-      <div id="endbuttons" style={{ display: "flex", flexDirection: "column", gap: "1vw", marginTop: "10vw", width: "40vw", height: "30vw", transform: "translateX(10vw)" }} >
+      <div id="endbuttons" style={{ display: "flex", flexDirection: "column", gap: "1vw", marginTop: "10vh", width: "40vw", height: "auto", transform: "translateX(10vw)" }} >
         <TextButton text="ABOUT" onClick={() => { navigate("/Pembau/About") }}></TextButton>
         <TextButton text="INSTAGRAM" onClick={() => { console.log("TODO: Isnta ocnlick") }}></TextButton>
         <TextButton text="ZURÜCK_ZUM_ANFANG" onClick={() => { console.log("TODO: Zurück ocnlick") }}></TextButton>
