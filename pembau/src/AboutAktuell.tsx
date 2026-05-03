@@ -37,6 +37,7 @@ import { CollapseText } from "./Components/CollapseText";
 import { ImageFrameJPGWithCollapseText } from "./Components/ImageFrameJPGWithCollapseText";
 import { Carousel } from "./Components/Carousel";
 import { CollapseFrame } from "./Components/CollapseFrame";
+import { useEffect, useRef } from "react";
 //import TextButton from "./Components/TextButton";
 //import TextFrameGeschichte from "./Customframes/TextFrameGeschichte";
 
@@ -46,6 +47,21 @@ const AboutAktuell = () => {
   const imageModules = import.meta.glob<string>('./assets/about/carousel/*.webp', { eager: true, import: 'default' })
   const carouselImages: string[] = Object.values(imageModules);
   //console.log("image paths: ", carouselImages)
+
+  const leitBildRef = useRef<HTMLDivElement | null>(null);
+  const scrollToLeitbild = () => {
+    // if type ? element, use scrollIntoView.
+    leitBildRef.current?.scrollIntoView({ behavior: "smooth" })
+  }
+
+
+  // upon URL ending with #leitbild, execute scrollToLeitbild
+  useEffect(() => {
+    if (window.location.hash === "#leitbild") {
+      scrollToLeitbild()
+      console.log("window loc hash", window.location.hash)
+    }
+  }, []);
 
   return (
     <>
@@ -85,7 +101,7 @@ const AboutAktuell = () => {
 
           }}
         >
-          <a className="h2 hoverable" href="#leitbild">
+          <a className="h2 hoverable" onClick={scrollToLeitbild}>
             _Leitbild_und_Werte
           </a>
           <a className="h2 hoverable">_Geschichte</a>
@@ -111,7 +127,7 @@ const AboutAktuell = () => {
 
 
       {/*Leitbild neu/skalierbar DONE */}
-      <div className="leitbild leitbildSmall" style={{ display: "flex", justifyContent: "center", marginTop: "5vw" }}>
+      <div ref={leitBildRef} className="leitbild leitbildSmall" style={{ display: "flex", justifyContent: "center", marginTop: "5vw" }}>
         <CollapseFrame width={80} height={100} rotation={0} folds={{ topLeft: { horPercent: 60, vertPercent: 25, perma: true }, bottomRight: { horPercent: 25, vertPercent: 25, perma: false } }} foldColor="#30196C">
           <h2 style={{ rotate: "32deg", position: "absolute", left: "12%", top: "33%", zIndex: "3" }}>Leitbild</h2>
           <h2 style={{ rotate: "-55deg", position: "absolute", left: "30%", top: "30%", zIndex: "3" }}>_UND</h2>

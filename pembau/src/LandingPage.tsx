@@ -56,7 +56,7 @@ const LandingPage = () => {
 
       <div className="textframe" id="textframeaussicht" style={{
         width: "80vw",
-        marginTop: "-5vw",
+        marginTop: "5vw",
         zIndex: "1",
       }}>
         <TextFrameAussicht></TextFrameAussicht>
