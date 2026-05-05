@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 // Mit 8 Bildern pro Frame ist das schon ganz schön langsam
 // -- ALLERDINGS unnötig extralangsam, wenn man den Bums als PNG exportiert haha! Da haben die Files auhc 10 MB teils xD
 // JPG export auf mid-Quali ist viel
-// 
+//
 //
 
 //------------------------------------------
@@ -35,92 +35,79 @@ import { useEffect, useState } from "react";
 
 //--------------------
 interface ImageFrameJPGProps {
-    uncollapsedImg: string;
-    collapsedImg: string;
+  uncollapsedImg: string;
+  collapsedImg: string;
 }
 
 /**
- * Frame für das Anzeigen eines collapsbaren Images. 
- * Schaltet bei Klick zwischen den gegebenen Images um. 
+ * Frame für das Anzeigen eines collapsbaren Images.
+ * Schaltet bei Klick zwischen den gegebenen Images um.
  * @param uncollapsedImg Pfad zum ganzen Image
  * @param collapsedImg Pfad zum uncollapseden Image
- * @returns 
+ * @returns
  */
-const ImageFrameJPG = ({ uncollapsedImg, collapsedImg }: ImageFrameJPGProps) => {
+const ImageFrameJPG = ({
+  uncollapsedImg,
+  collapsedImg,
+}: ImageFrameJPGProps) => {
+  // Preload images
+  useEffect(() => {
+    const img = new Image();
+    img.src = uncollapsedImg;
 
+    //console.log("Images preloaded: ", uncollapsedImg);
+  }, []);
 
+  const [collapsed, setCollapsed] = useState(true);
 
-    // Preload images
-    useEffect(() => {
+  // Mach alle Ecken auf oder zu.
+  const toggleAllCorners = () => {
+    setCollapsed(!collapsed);
+  };
 
-        const img = new Image();
-        img.src = uncollapsedImg;
+  // Hier kommt der Image-Source-String entsprechend der States rein.
+  const currentImgSrc = collapsed ? collapsedImg : uncollapsedImg;
 
-        console.log("Images preloaded: ", uncollapsedImg)
-    }, [])
+  // TODO: Divs zum Anklicken wieder einfügen!
+  // Da kann man die aus bf1 wiederverwenden, aber ohne svgs drinnen.
 
+  // TODO: Conditional Rendering von alternativen Images.
+  // Fürzelkacke hihi :)
+  // Das Conditional Rendering basiert auf Kombinationi von States:
+  // z.B. {topLeft && bottomLeft && <img src={nicetry-topleft-bottomleft}}
 
+  return (
+    <div
+      onClick={toggleAllCorners}
+      style={{ position: "relative", zIndex: "2" }}
+    >
+      <img
+        src={currentImgSrc}
+        style={{
+          pointerEvents: "auto",
+          width: "100%",
+          height: "auto",
+          zIndex: "2",
+        }}
+        onClick={() => {
+          //console.log("img clicked");
+          toggleAllCorners();
+        }}
+      ></img>
+    </div>
+  );
 
-    const [collapsed, setCollapsed] = useState(true);
-
-
-
-    // Mach alle Ecken auf oder zu.
-    const toggleAllCorners = () => {
-
-        setCollapsed(!collapsed);
-
-    };
-
-
-
-    // Hier kommt der Image-Source-String entsprechend der States rein.
-    const currentImgSrc = collapsed ? collapsedImg : uncollapsedImg;
-
-
-    // TODO: Divs zum Anklicken wieder einfügen!
-    // Da kann man die aus bf1 wiederverwenden, aber ohne svgs drinnen.
-
-    // TODO: Conditional Rendering von alternativen Images.
-    // Fürzelkacke hihi :)
-    // Das Conditional Rendering basiert auf Kombinationi von States:
-    // z.B. {topLeft && bottomLeft && <img src={nicetry-topleft-bottomleft}}
-
-
-
-    return (
-        <div onClick={toggleAllCorners}
-            style={{ position: "relative", zIndex: "2" }}>
-            <img
-                src={currentImgSrc}
-                style={{
-
-                    pointerEvents: "auto",
-                    width: "100%",
-                    height: "auto",
-                    zIndex: "2",
-
-                }}
-                onClick={() => {
-                    console.log("img clicked");
-                    toggleAllCorners();
-                }}
-            ></img>
-
-        </div>
-    );
-
-    // Am Besten so:
-    // Div für alles.
-    // Darunter div für Bild
-    //    Da wird gekackt. hihi :%)
-    // Div als Container für die 4 Ecken.
-    //    Die werden conditional gerendert nach:
-    //      activeCorners: welche sind für dieses Bild überhaupt da?
-    //      openCorners: welche von denen sind aktuell auf/zugeklappt?
-    //    Die bestehen im Endeffekt aus SVGs, die die zugeklappte Ecke + übrigbleibenden Hintergrund darstellen.
-    //    Diese SVGs werden immer per CSS Placement in die jeweilige Ecke platziert -> Mit parentdiv.style.position = abhängig vom gesamt-Parent-div und dann Top 0 right 0 usw?!?
-    //
+  // Am Besten so:
+  // Div für alles.
+  // Darunter div für Bild
+  //    Da wird gekackt. hihi :%)
+  // Div als Container für die 4 Ecken.
+  //    Die werden conditional gerendert nach:
+  //      activeCorners: welche sind für dieses Bild überhaupt da?
+  //      openCorners: welche von denen sind aktuell auf/zugeklappt?
+  //    Die bestehen im Endeffekt aus SVGs, die die zugeklappte Ecke + übrigbleibenden Hintergrund darstellen.
+  //    Diese SVGs werden immer per CSS Placement in die jeweilige Ecke platziert -> Mit parentdiv.style.position = abhängig vom gesamt-Parent-div und dann Top 0 right 0 usw?!?
+  //
 };
 
 export default ImageFrameJPG;

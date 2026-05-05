@@ -22,7 +22,7 @@ import TeamCollapsedImg from "./assets/about/teambrtl.webp";
 import TeamDream from "./assets/about/teamdream.webp";
 
 //import images from "./assets/about/images.json";
-import TestRectImg from "./assets/bg-2.jpg";
+//import TestRectImg from "./assets/bg-2.jpg";
 
 //import Foot from "./menu/Foot";
 
@@ -35,15 +35,14 @@ import TextFrameAktuell from "./Customframes/TextFrameAktuell";
 import TextButton from "./Components/TextButton";
 //import { CollapseImageFrame } from "./Components/CollapseImageFrame";
 //import BodyFrame1 from "./alter shit/BodyFrame1";
-import TestImage from "./assets/bg-1.jpg"
+import TestImage from "./assets/bg-1.jpg";
 import { Carousel } from "./Components/Carousel";
 import { CollapseFrame } from "./Components/CollapseFrame";
 import CollapseFrameWithCollapseText from "./Components/CollapseFrameWithCollapseText";
 //import TextFrameGeschichte from "./Customframes/TextFrameGeschichte";
 
 const About = () => {
-  console.log("testrectimg:", TestRectImg);
-
+  //console.log("testrectimg:", TestRectImg);
 
   const carouselImages: string[] = [TestImage, PermaImg, TeamImg];
 
@@ -180,7 +179,6 @@ const About = () => {
             expandSrc="/Pembau/content/aboutGrundstuckExpand.md"
           ></CollapseText>
         </div>
-
       </div>
 
       <div
@@ -291,37 +289,36 @@ const About = () => {
             position: "relative",
             transform: "translateX(-3vw)",
             zIndex: "1",
-            flex: "1 1 60vw"
+            flex: "1 1 60vw",
           }}
         >
-
-
           <ImageFrameJPG
             collapsedImg={ContainerCollapsedImg}
             uncollapsedImg={ContainerImg}
           ></ImageFrameJPG>
         </div>
 
-        <div id="containercitytextwrapper" style={{ marginTop: "2vw", flex: "1 1 550px" }} >
-
+        <div
+          id="containercitytextwrapper"
+          style={{ marginTop: "2vw", flex: "1 1 550px" }}
+        >
           <CollapseText
             marginTopProp="0vw"
             alwaysSrc="/Pembau/content/aboutContainerAlways.md"
             expandSrc="/Pembau/content/aboutContainerExpand.md"
           ></CollapseText>
-
         </div>
-
       </div>
-
 
       {/**Test: neue component mit image und collapsetext gemeinsam  */}
 
-      <CollapseFrameWithCollapseText imgSrc={TxPImg} alwaysTextSrc="/Pembau/content/aboutContainerAlways.md" expandTextSrc="/Pembau/content/aboutContainerExpand.md" >
-      </CollapseFrameWithCollapseText>
+      <CollapseFrameWithCollapseText
+        imgSrc={TxPImg}
+        alwaysTextSrc="/Pembau/content/aboutContainerAlways.md"
+        expandTextSrc="/Pembau/content/aboutContainerExpand.md"
+      ></CollapseFrameWithCollapseText>
 
       {/** TODO: Für TXP am Besten manuell was machen, eig so wie oben bei ContainerCity -> Denn da kommt noch Custom Shit wie Buttons etc. dazu. */}
-
 
       <div
         id="perma"
@@ -430,19 +427,24 @@ const About = () => {
           </div>
         </div>
 
-
-
         {/** Test carosuel */}
         <Carousel images={carouselImages}></Carousel>
       </div>
 
-
       {/**Test CollapseFrame (with image inside) */}
 
-      <CollapseFrame width={80} height={50} rotation={2} bgColor="rgb(116, 116, 155)" folds={{ bottomRight: { horPercent: 10, vertPercent: 20 }, topLeft: { horPercent: 10, vertPercent: 20 } }}>
+      <CollapseFrame
+        width={80}
+        height={50}
+        rotation={2}
+        bgColor="rgb(116, 116, 155)"
+        folds={{
+          bottomRight: { horPercent: 10, vertPercent: 20 },
+          topLeft: { horPercent: 10, vertPercent: 20 },
+        }}
+      >
         <img width="100%" src={TestImage}></img>
       </CollapseFrame>
-
     </>
 
     //Futti Futti

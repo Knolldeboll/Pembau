@@ -2,15 +2,11 @@ import { useState, ReactNode } from "react";
 
 export type Corner = "topLeft" | "topRight" | "bottomRight" | "bottomLeft";
 
-
 export type CornerData = {
   horPercent: number;
   vertPercent: number;
   perma?: boolean;
 };
-
-
-
 
 interface CollapseFrameProps {
   children: ReactNode;
@@ -32,9 +28,8 @@ interface CollapseFrameProps {
 // TODO: einzelner State für alle Collapse oder nicht.
 // Dann muss man nicht so dumm alles machen. -ah.
 
-// TODO: Manche Objekte aus den Children sollen erst beim Anklicken des CollapseFrames angezeigt werden - 
+// TODO: Manche Objekte aus den Children sollen erst beim Anklicken des CollapseFrames angezeigt werden -
 // Dieser State muss also irgendwie zugänglich sein.
-
 
 export const CollapseFrame = ({
   children,
@@ -66,14 +61,14 @@ export const CollapseFrame = ({
   //if (folds) triangles = generateFoldTriangles(folds);
 
   //    console.log("triangles", triangles);
-  console.log("polystring", polygonString);
+  //console.log("polystring", polygonString);
 
   // für wenn toggleOnce aktiv ist, ist das die Condition fürs togglen
   const [toggled, setToggled] = useState(false);
 
   // kp of das die beste lösung ist, noch nen state zu verwenden. aber warum nicht?
   const toggleCollapsed = () => {
-    console.log("togglecollapsed");
+    //console.log("togglecollapsed");
     if (toggled) return;
     if (toggleOnce) setToggled(true);
 
@@ -81,7 +76,8 @@ export const CollapseFrame = ({
   };
 
   return (
-    <div className="collapseFrameOuter"
+    <div
+      className="collapseFrameOuter"
       style={{
         position: "relative",
         width: `${width}vw`,
@@ -91,7 +87,8 @@ export const CollapseFrame = ({
       }}
       onClick={toggleCollapsed}
     >
-      <div className="collapseFrameInner"
+      <div
+        className="collapseFrameInner"
         style={{
           width: "100%",
           height: "100%",
@@ -104,106 +101,99 @@ export const CollapseFrame = ({
         {children}
       </div>
 
-      {
-        (isCollapsed || folds?.topLeft?.perma) && folds?.topLeft && (
-          <svg
-            className="topleftcorner"
-            style={{
-              position: "absolute",
-              width: folds.topLeft.horPercent + "%",
-              height: folds.topLeft.vertPercent + "%",
-              top: "0",
-              left: "0",
-              scale: "-1 1",
-              rotate: `${getCornerAngle("topLeft", width, height, folds.topLeft)}deg`,
-              transformOrigin: "",
-              fill: foldColor || "#386638",
-              zIndex: "2",
-            }}
-            viewBox="0 0 100 100"
-            preserveAspectRatio="none"
-          >
+      {(isCollapsed || folds?.topLeft?.perma) && folds?.topLeft && (
+        <svg
+          className="topleftcorner"
+          style={{
+            position: "absolute",
+            width: folds.topLeft.horPercent + "%",
+            height: folds.topLeft.vertPercent + "%",
+            top: "0",
+            left: "0",
+            scale: "-1 1",
+            rotate: `${getCornerAngle("topLeft", width, height, folds.topLeft)}deg`,
+            transformOrigin: "",
+            fill: foldColor || "#386638",
+            zIndex: "2",
+          }}
+          viewBox="0 0 100 100"
+          preserveAspectRatio="none"
+        >
+          <polygon points="0,0 100,0 0,100"></polygon>
+        </svg>
+      )}
 
-            <polygon points="0,0 100,0 0,100">
-            </polygon>
-          </svg>
-        )
-      }
+      {(isCollapsed || folds?.topRight?.perma) && folds?.topRight && (
+        <svg
+          className="toprightcorner"
+          style={{
+            position: "absolute",
+            width: folds.topRight.horPercent + "%",
+            height: folds.topRight.vertPercent + "%",
+            top: "0",
+            right: "0",
+            scale: "-1 1",
+            rotate: `${getCornerAngle("topRight", width, height, folds.topRight)}deg`,
+            transformOrigin: "",
+            fill: foldColor || "#386638",
+            zIndex: "2",
+          }}
+          viewBox="0 0 100 100"
+          preserveAspectRatio="none"
+        >
+          <polygon points="0,0 100,0 100,100"></polygon>
+        </svg>
+      )}
 
-      {
-        (isCollapsed || folds?.topRight?.perma) && folds?.topRight && (
-          <svg
-            className="toprightcorner"
-            style={{
-              position: "absolute",
-              width: folds.topRight.horPercent + "%",
-              height: folds.topRight.vertPercent + "%",
-              top: "0",
-              right: "0",
-              scale: "-1 1",
-              rotate: `${getCornerAngle("topRight", width, height, folds.topRight)}deg`,
-              transformOrigin: "",
-              fill: foldColor || "#386638",
-              zIndex: "2",
-            }}
-            viewBox="0 0 100 100"
-            preserveAspectRatio="none"
-          >
-            <polygon points="0,0 100,0 100,100"></polygon>
-          </svg>
-        )
-      }
-
-      {
-        (isCollapsed || folds?.bottomRight?.perma) && folds?.bottomRight && (
-          <svg
-            className="bottomrightcorner"
-            style={{
-              position: "absolute",
-              width: folds.bottomRight.horPercent + "%",
-              height: folds.bottomRight.vertPercent + "%",
-              bottom: "0",
-              right: "0",
-              scale: "-1 1",
-              rotate: `${getCornerAngle("bottomRight", width, height, folds.bottomRight)}deg`,
-              transformOrigin: "",
-              fill: foldColor || "#386638",
-              zIndex: "2",
-            }}
-            viewBox="0 0 100 100"
-            preserveAspectRatio="none"
-          >
-            <polygon points="100,0 100,100 0,100"></polygon>
-          </svg>
-        )
-      }
-      {
-        (isCollapsed || folds?.bottomLeft?.perma) && folds?.bottomLeft && (
-          <svg
-            className="bottomleftcorner"
-            style={{
-              position: "absolute",
-              width: folds.bottomLeft.horPercent + "%",
-              height: folds.bottomLeft.vertPercent + "%",
-              bottom: "0",
-              left: "0",
-              scale: "-1 1",
-              rotate: `${getCornerAngle("bottomLeft", width, height, folds.bottomLeft)}deg`,
-              fill: foldColor || "#386638",
-              zIndex: "2",
-            }}
-            viewBox="0 0 100 100"
-            preserveAspectRatio="none"
-          >
-            <polygon points="0,0 100,100 0,100"></polygon>
-          </svg>
-        )
-      }
-    </div >
+      {(isCollapsed || folds?.bottomRight?.perma) && folds?.bottomRight && (
+        <svg
+          className="bottomrightcorner"
+          style={{
+            position: "absolute",
+            width: folds.bottomRight.horPercent + "%",
+            height: folds.bottomRight.vertPercent + "%",
+            bottom: "0",
+            right: "0",
+            scale: "-1 1",
+            rotate: `${getCornerAngle("bottomRight", width, height, folds.bottomRight)}deg`,
+            transformOrigin: "",
+            fill: foldColor || "#386638",
+            zIndex: "2",
+          }}
+          viewBox="0 0 100 100"
+          preserveAspectRatio="none"
+        >
+          <polygon points="100,0 100,100 0,100"></polygon>
+        </svg>
+      )}
+      {(isCollapsed || folds?.bottomLeft?.perma) && folds?.bottomLeft && (
+        <svg
+          className="bottomleftcorner"
+          style={{
+            position: "absolute",
+            width: folds.bottomLeft.horPercent + "%",
+            height: folds.bottomLeft.vertPercent + "%",
+            bottom: "0",
+            left: "0",
+            scale: "-1 1",
+            rotate: `${getCornerAngle("bottomLeft", width, height, folds.bottomLeft)}deg`,
+            fill: foldColor || "#386638",
+            zIndex: "2",
+          }}
+          viewBox="0 0 100 100"
+          preserveAspectRatio="none"
+        >
+          <polygon points="0,0 100,100 0,100"></polygon>
+        </svg>
+      )}
+    </div>
   );
 };
 
-const generatePolyonString = (folds: Partial<Record<Corner, CornerData>>, isCollapsed: boolean) => {
+const generatePolyonString = (
+  folds: Partial<Record<Corner, CornerData>>,
+  isCollapsed: boolean,
+) => {
   let polygonString = "polygon(";
 
   folds.topLeft && (isCollapsed || folds.topLeft.perma)
@@ -271,7 +261,7 @@ const getCornerAngle = (
 
   // 1. Winkel zw. oberer Rand und cutaxis berechnen.
 
-  console.log("cornerangle calculations hee hee");
+  //console.log("cornerangle calculations hee hee");
   const dx = (cornerData.horPercent / 100) * width;
   const dy = (cornerData.vertPercent / 100) * height;
   const angleRad = Math.atan2(dy, dx);

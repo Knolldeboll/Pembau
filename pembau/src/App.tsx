@@ -23,71 +23,52 @@ import { useMainStore } from "./stores/MainStore";
 import Foot from "./menu/Foot";
 import AboutAktuell from "./AboutAktuell";
 
-
-
 // TODO: Footmenu hier auch?
 
 export const App = () => {
-
-
-
   const menuOpen = useMainStore((state) => state.menuOpen);
 
   // nur zum testen, remove
-  menuOpen ? console.log("menu opened") : console.log("menu closed")
+  //menuOpen ? console.log("menu opened") : console.log("menu closed")
 
   //const route = useLocation();
   //console.log("current route: ", route.pathname)
 
-  return <>
+  return (
+    <>
+      <BrowserRouter>
+        <Head currentPage="_HOME"></Head>
 
-    <BrowserRouter>
-
-
-
-      <Head currentPage="_HOME"></Head>
-
-
-
-      {/**TODO wegen dem Menü: Das sollte ggf. UNTER dem head platziert werden, so vielleicht flex column mäßig ohne flex? 
-       * und dann von dem teil aus den margin haben, und nicht vom viewport!
-       */}
-
-      {menuOpen && <Menu></Menu>}
-
-
-      {/**TODO: Routing hierrum */}
-
-
-      {/**Kann man den Foot auch hier in den Flow mit reingeben? 
-         * Header heht ja auch, liegt halt an Positon fixed. 
+        {/**TODO wegen dem Menü: Das sollte ggf. UNTER dem head platziert werden, so vielleicht flex column mäßig ohne flex?
+         * und dann von dem teil aus den margin haben, und nicht vom viewport!
          */}
 
-      <div id="pageswrapper" style={{
+        {menuOpen && <Menu></Menu>}
 
-        display: "flex",
-        flexDirection: "column",
-        background: "#FFFFFF",
-        gap: "2vw",
-        overflow: "hidden",
-      }}>
-        <Routes>
+        {/**TODO: Routing hierrum */}
 
-          <Route path="/" element={<LandingPage></LandingPage>} />
-          <Route path="/About/" element={<AboutAktuell></AboutAktuell>} />
+        {/**Kann man den Foot auch hier in den Flow mit reingeben?
+         * Header heht ja auch, liegt halt an Positon fixed.
+         */}
 
-        </Routes>
+        <div
+          id="pageswrapper"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            background: "#FFFFFF",
+            gap: "2vw",
+            overflow: "hidden",
+          }}
+        >
+          <Routes>
+            <Route path="/" element={<LandingPage></LandingPage>} />
+            <Route path="/About/" element={<AboutAktuell></AboutAktuell>} />
+          </Routes>
 
-
-        <Foot></Foot>
-
-      </div>
-
-
-
-    </BrowserRouter>
-  </>
-
-
-
+          <Foot></Foot>
+        </div>
+      </BrowserRouter>
+    </>
+  );
 };
