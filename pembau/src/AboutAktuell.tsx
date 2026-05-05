@@ -19,13 +19,9 @@ import PermaImg from "./assets/about/perma.webp";
 import PermaCollapsedImg from "./assets/about/permatrbl.webp";
 import TeamImg from "./assets/about/team.webp";
 import TeamCollapsedImg from "./assets/about/teambrtl.webp";
-import TeamDream from "./assets/about/teamdream.webp";
-import GrundstückImg from "./assets/about/grundstück.webp";
 
 import ImageFrameJPG from "./Components/ImageFrameJPG";
 
-
-import TestRectImg from "./assets/bg-2.jpg";
 
 
 //md texts
@@ -38,7 +34,7 @@ import { ImageFrameJPGWithCollapseText } from "./Components/ImageFrameJPGWithCol
 import { Carousel } from "./Components/Carousel";
 import { CollapseFrame } from "./Components/CollapseFrame";
 import React, { useEffect, useRef } from "react";
-import TextButton from "./Components/TextButton";
+
 //import TextButton from "./Components/TextButton";
 //import TextFrameGeschichte from "./Customframes/TextFrameGeschichte";
 
@@ -352,10 +348,12 @@ const AboutAktuell = () => {
         </div>
 
         {/**Textsize ist responsive! */}
+        {/**Die srces sind jetzt phne "Pembau", da die base auch ohne ist. */}
+        {/**die base ist jetzt der inhalt des dist ordners! */}
         <div id="geschichtetextwrapper" style={{ flex: "1 1 550px", marginTop: "14vw" }} >
           <CollapseText
-            alwaysSrc="/Pembau/content/aboutGeschichteAlways.md"
-            expandSrc="/Pembau/content/aboutGeschichteExpand.md"
+            alwaysSrc="/content/aboutGeschichteAlways.md"
+            expandSrc="/content/aboutGeschichteExpand.md"
           ></CollapseText>
         </div>
       </div>
@@ -412,8 +410,8 @@ const AboutAktuell = () => {
 
 
             textColor="#ffffff"
-            alwaysSrc="/Pembau/content/aboutGrundstuckAlways.md"
-            expandSrc="/Pembau/content/aboutGrundstuckExpand.md"
+            alwaysSrc="/content/aboutGrundstuckAlways.md"
+            expandSrc="/content/aboutGrundstuckExpand.md"
           ></CollapseText>
         </div>
 
@@ -493,7 +491,7 @@ const AboutAktuell = () => {
         <div id="technoxpunschtextwrapper" style={{ marginTop: "2vw", flex: "1 1 550px" }} >
           <CollapseText
             marginTopProp="0vw"
-            alwaysSrc="/Pembau/content/aboutTxPAlways.md"
+            alwaysSrc="/content/aboutTxPAlways.md"
           ></CollapseText>
 
           {/**Insta und Innsbruck Extraflex. */}
@@ -560,8 +558,8 @@ const AboutAktuell = () => {
           style={{ flex: "1 1 550px" }}
         >
           <CollapseText
-            alwaysSrc="/Pembau/content/aboutKulturAlways.md"
-            expandSrc="/Pembau/content/aboutKulturExpand.md"
+            alwaysSrc="/content/aboutKulturAlways.md"
+            expandSrc="/content/aboutKulturExpand.md"
           ></CollapseText>
         </div>
 
@@ -600,8 +598,8 @@ const AboutAktuell = () => {
         <div id="helpingtextwrapper" style={{ flex: "1 1 550px", marginTop: "14vw" }} >
           <CollapseText
             marginTopProp="0vw"
-            alwaysSrc="/Pembau/content/aboutHelpingAlways.md"
-            expandSrc="/Pembau/content/aboutHelpingExpand.md"
+            alwaysSrc="/content/aboutHelpingAlways.md"
+            expandSrc="/content/aboutHelpingExpand.md"
           ></CollapseText></div>
 
       </div>
@@ -621,8 +619,8 @@ const AboutAktuell = () => {
       {/**Container City - hier passt das neue Component ja. */}
 
       <ImageFrameJPGWithCollapseText
-        alwaysTextSrc="/Pembau/content/aboutContainerAlways.md"
-        expandTextSrc="/Pembau/content/aboutContainerExpand.md"
+        alwaysTextSrc="/content/aboutContainerAlways.md"
+        expandTextSrc="/content/aboutContainerExpand.md"
         collapsedImg={ContainerCollapsedImg} uncollapsedImg={ContainerImg} >
       </ImageFrameJPGWithCollapseText>
 
@@ -686,7 +684,7 @@ const AboutAktuell = () => {
 
           <CollapseText
             marginTopProp="14vw"
-            alwaysSrc="/Pembau/content/aboutPermaAlways.md"
+            alwaysSrc="/content/aboutPermaAlways.md"
           ></CollapseText>
         </div>
 

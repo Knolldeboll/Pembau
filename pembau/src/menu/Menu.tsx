@@ -36,11 +36,11 @@ const Menu = () => {
         }}
       >
 
-        <Link className="h4 hoverable" to={"/Pembau/About/#leitbild"} onClick={toggleMenuOpen}>
+        <Link className="h4 hoverable" to={"/About/"} onClick={toggleMenuOpen}>
           _ABOUT
         </Link>
         {/**TODO: Toggle Contacts open, no to={}*/}
-        <Link className="h4 hoverable" to={""} onClick={toggleMenuOpen}>
+        <Link className="h4 hoverable" to={"/About/"} onClick={toggleMenuOpen}>
           _KONTAKT
         </Link>
 
@@ -52,7 +52,7 @@ const Menu = () => {
           _INFRASTRUKTUR
         </Link>*/}
         {/**TODO:  to={../#Programm} falls es das gibt!*/}
-        <Link className="h4 hoverable" to={""} onClick={toggleMenuOpen}>
+        <Link className="h4 hoverable" to={"/About/"} onClick={toggleMenuOpen}>
           _PROGRAMM
         </Link>
         {/*

@@ -128,7 +128,7 @@ const LandingPage = () => {
                 <span>Eine_Spielwiese</span> auf der Kultur neu gedacht wird.<br /><br />
                 Alles über den aktuellen Stand des Pembaus und bereits laufende Aktionen findest du hier.
               </p>
-              <TextButton text="MEHR ERFAHREN" onClick={() => { navigate("/Pembau/About") }}></TextButton>
+              <TextButton text="MEHR ERFAHREN" onClick={() => { navigate("/About/") }}></TextButton>
             </div>
           </div>
         </CollapseFrame >
@@ -146,7 +146,7 @@ const LandingPage = () => {
                 <span>Eine_Spielwiese auf der Kultur neu gedacht wird.</span> <br />
                 Alles über den aktuellen Stand des Pembaus und bereits laufende Aktionen findest du hier.
               </p>
-              <TextButton text="MEHR ERFAHREN" onClick={() => { navigate("/Pembau/About") }}></TextButton>
+              <TextButton text="MEHR ERFAHREN" onClick={() => { navigate("/About/") }}></TextButton>
             </div>
           </div>
         </CollapseFrame >
@@ -167,9 +167,9 @@ const LandingPage = () => {
       </div >
 
       <div id="endbuttons" style={{ display: "flex", flexDirection: "column", gap: "1vw", marginTop: "10vh", width: "40vw", height: "auto", transform: "translateX(10vw)" }} >
-        <TextButton text="ABOUT" onClick={() => { navigate("/Pembau/About") }}></TextButton>
+        <TextButton text="ABOUT" onClick={() => { navigate("/About/") }}></TextButton>
         <TextButton text="INSTAGRAM" onClick={() => { console.log("TODO: Isnta ocnlick") }}></TextButton>
-        <TextButton text="ZURÜCK_ZUM_ANFANG" onClick={() => { console.log("TODO: Zurück ocnlick") }}></TextButton>
+        <TextButton text="ZURÜCK_ZUM_ANFANG" onClick={() => { navigate("/") }}></TextButton>
       </div>
 
     </>

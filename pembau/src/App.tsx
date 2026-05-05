@@ -73,8 +73,8 @@ export const App = () => {
       }}>
         <Routes>
 
-          <Route path="/Pembau/" element={<LandingPage></LandingPage>} />
-          <Route path="/Pembau/About/" element={<AboutAktuell></AboutAktuell>} />
+          <Route path="/" element={<LandingPage></LandingPage>} />
+          <Route path="/About/" element={<AboutAktuell></AboutAktuell>} />
 
         </Routes>
 

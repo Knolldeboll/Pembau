@@ -22,7 +22,7 @@ const Foot = () => {
     <div className="footcontainer">
       {isPopupOpen && (
         <div className="footpopup">
-          <div
+          <div id="footinternal"
             style={{
 
               display: "grid",

@@ -319,12 +319,14 @@ a {
 
 }
 
+
+/* ACHTUNG: Ab jetzt ist immer nur infobutton aktiv, links gar nciht mehr*/
 #links {
-  display: block !important;
+  display: none !important;
 }
 
 #info-button {
-  display: none !important;
+  display: block !important;
   height: max(1.9rem, 40%);
   width: auto;
 
@@ -335,6 +337,18 @@ a {
 }
 
 
+
+/* Mobile & Tablet: Hide desktop links, show info button - Da nix mehr, immer info
+@media (max-width: 824px) {
+  #links {
+    display: none !important;
+  }
+
+  #info-button {
+    display: inline-block !important;
+  }
+}
+ */
 /*FOOTER ENDE*/
 
 
@@ -653,17 +667,6 @@ body {
   overflow-x: hidden;
 }
 
-
-/* Mobile & Tablet: Hide desktop links, show info button */
-@media (max-width: 824px) {
-  #links {
-    display: none !important;
-  }
-
-  #info-button {
-    display: inline-block !important;
-  }
-}
 
 
 
