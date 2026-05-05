@@ -1,0 +1,1 @@
+Der Pembau ist ein Kulturprojekt im Aufbau. Unsere Mission ist, den Innsbrucker*innen einen neuen Ort des kulturellen und individuellen Austauschs und Wachstums zur Verfügung zu stellen. Dabei soll Raum für Kreativität, Handwerk, Lernen, Gemeinschaft und eine Bühne für junge Kunst entstehen.

@@ -1,0 +1,3 @@
+## Pembau_Kultursommer
+
+Mit dem Kultursommer 2025 startet der Pembau in eine neue Phase: Von Mai bis Oktober entsteht auf 650 m² Veranstaltungsfläche ein temporärer Kulturraum für bis zu 300 Besucher*innen. Ziel ist es, einen vielseitigen Veranstaltungsbetrieb zu etablieren, der die kulturelle Vielfalt Innsbrucks sichtbar macht und erlebbar werden lässt. Das Programm ist breit gefächert und gliedert sich in vier Veranstaltungsformate. 
