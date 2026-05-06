@@ -527,7 +527,7 @@ const AboutAktuell = () => {
 
       </div>
 
-      {/**Kultursommer - ok wrapped!*/}
+      {/** AKTUELL DRAUßEN: Kultursommer - ok wrapped!
       <div
         id="kultursommer"
         style={{
@@ -564,7 +564,7 @@ const AboutAktuell = () => {
         </div>
 
       </div>
-
+*/}
 
 
 
@@ -616,14 +616,14 @@ const AboutAktuell = () => {
       </ImageFrameJPGWithCollapseText>
 */}
 
-      {/**Container City - hier passt das neue Component ja. */}
+      {/** AKTUELL DRAUßEN: Container City - hier passt das neue Component ja.
 
       <ImageFrameJPGWithCollapseText
         alwaysTextSrc="/content/aboutContainerAlways.md"
         expandTextSrc="/content/aboutContainerExpand.md"
         collapsedImg={ContainerCollapsedImg} uncollapsedImg={ContainerImg} >
       </ImageFrameJPGWithCollapseText>
-
+ */}
 
 
 
