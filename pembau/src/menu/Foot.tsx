@@ -8,7 +8,7 @@ const Foot = () => {
 
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [isImpOpen, setImpOpen] = useState(false);
-  //const [isKontOpen, setKontOpen] = useState(false);
+  const [isKontOpen, setKontOpen] = useState(false);
 
 
   /*
@@ -56,7 +56,10 @@ const Foot = () => {
           ></FootLink>
           <FootLink
             text="KONTAKT"
-            onClick={() => console.log("implement")}
+            onClick={() => {
+              setKontOpen(!isKontOpen);
+              setIsPopupOpen(false);
+            }}
           ></FootLink>
 
         </div>
@@ -70,6 +73,20 @@ const Foot = () => {
             Frühschicht - Verein zur kulturellen Vereinigung<br />
             Viller Berg 4<br />
             6020 Innsbruck
+          </p>
+
+        </div>
+      )}
+
+      {isKontOpen && (
+        <div id="impwrapper" style={{ position: "absolute", right: "0%", bottom: "100%", width: "fit-content", height: "fit-content", backgroundColor: "#C3D9FF", padding: "3rem" }}
+          onClick={() => setKontOpen(false)}>
+          <p className="dmsans400regularresponsive">
+            E-Mail:<br />
+            office@pembau.art <br />
+            <br />
+            Instagram:<br />
+            @pembau.art
           </p>
 
         </div>
@@ -172,26 +189,13 @@ const Foot = () => {
             ></FootLink>
             <FootLink
               text="KONTAKT"
-              onClick={() => console.log("implement")}
+              onClick={() => {
+                setKontOpen(!isKontOpen);
+                setIsPopupOpen(false);
+              }}
             ></FootLink>
 
-            {/** 
-            <FootLink
-              text="NEWSLETTER"
-              onClick={() => console.log("implement")}
-            ></FootLink>
-            <FootLink
-              text="URHEBERRECHT"
-              onClick={() => console.log("implement")}
-            ></FootLink>
-            <FootLink
-              text="HAFTUNG"
-              onClick={() => console.log("implement")}
-            ></FootLink>
-            <FootLink
-              text="AGBS"
-              onClick={() => console.log("implement")}
-            ></FootLink>*/}
+
           </div>
         </div>
 
@@ -201,6 +205,7 @@ const Foot = () => {
 
             setIsPopupOpen(!isPopupOpen)
             setImpOpen(false)
+            setKontOpen(false)
           }
           }
           viewBox="0 0 70 70"
