@@ -42,8 +42,9 @@ const LandingPage = () => {
       <div
         id="nicetryjpg"
         style={{
-          width: "110vw",
-          transform: "translateX(-5%) rotate(1.44deg)",
+          width: "min(150vw,1920px)",
+          transform: " rotate(1.44deg)",
+          alignSelf: "center",
           zIndex: "2",
         }}
       >
