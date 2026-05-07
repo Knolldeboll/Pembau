@@ -4,12 +4,12 @@ import GeschichteCollapsedImg from "./assets/about/geschichtecollapsed.webp";
 
 import StartCollapsedImg from "./assets/about/neu für start br.webp";
 
-import KulturImg from "./assets/about/kultur.webp";
-import KulturCollapsedImg from "./assets/about/kulturbrtl.webp";
+//import KulturImg from "./assets/about/kultur.webp";
+//import KulturCollapsedImg from "./assets/about/kulturbrtl.webp";
 import HelpingHandsImg from "./assets/about/helpinghands.webp";
 import HelpingHandsCollapsedImg from "./assets/about/helpinghandstrbl.webp";
-import ContainerImg from "./assets/about/container.webp";
-import ContainerCollapsedImg from "./assets/about/containerbltr.webp";
+//import ContainerImg from "./assets/about/container.webp";
+//import ContainerCollapsedImg from "./assets/about/containerbltr.webp";
 import InnsbruckLogo from "./assets/about/logoinnsbruck.webp";
 
 
@@ -30,7 +30,7 @@ import ImageFrameJPG from "./Components/ImageFrameJPG";
 
 import { CollapseText } from "./Components/CollapseText";
 
-import { ImageFrameJPGWithCollapseText } from "./Components/ImageFrameJPGWithCollapseText";
+//import { ImageFrameJPGWithCollapseText } from "./Components/ImageFrameJPGWithCollapseText";
 import { Carousel } from "./Components/Carousel";
 import { CollapseFrame } from "./Components/CollapseFrame";
 import React, { useEffect, useRef } from "react";

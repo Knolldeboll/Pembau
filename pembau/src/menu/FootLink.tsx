@@ -12,7 +12,7 @@ const FootLink = ({ text, onClick }: FootLinkParams) => {
 
     return (
 
-        <p className="paragraph-white-line"
+        <p className="dmsans400footlinkresponsive paragraph-white-line"
             onClick={onClick}>{text}</p>
     )
 

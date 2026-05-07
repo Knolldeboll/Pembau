@@ -1,11 +1,15 @@
 import { useState } from "react";
 import FootLink from "./FootLink";
+import Impressum from "./Impressum";
 //import { useNavigate } from "react-router";
 
 const Foot = () => {
   //const navigate = useNavigate();
 
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [isImpOpen, setImpOpen] = useState(false);
+  //const [isKontOpen, setKontOpen] = useState(false);
+
 
   /*
     useEffect(() => {
@@ -21,52 +25,59 @@ const Foot = () => {
   return (
     <div className="footcontainer">
       {isPopupOpen && (
-        <div className="footpopup">
-          <div id="footinternal"
-            style={{
 
-              display: "grid",
-              width: "fit-content",
-              height: "8vw",
-              margin: "auto",
-              gridTemplateColumns: "16vw 16vw ",
-              gridTemplateRows: "2vw",
-              rowGap: "max(0.9rem,1.5vw)",
-              columnGap: "max(3.5rem,1.5vw)",
-              zIndex: "5",
-              justifyItems: "center",
+        <div id="footpopup"
+          style={{
+
+            position: "absolute",
+
+            bottom: "100%",
+            right: "0%",
+
+            height: "fit-content",
+            width: "fit-content",
+
+            display: "flex",
+            flexDirection: "row",
+            justifyItems: "center",
+            alignItems: "center",
+
+            zIndex: "5",
+
+            backgroundColor: "#000000",
+          }}
+        >
+          <FootLink
+            text="IMPRESSUM"
+            onClick={() => {
+              setImpOpen(!isImpOpen);
+              setIsPopupOpen(false);
             }}
-          >
-            <FootLink
-              text="IMPRESSUM"
-              onClick={() => console.log("implement")}
-            ></FootLink>
-            <FootLink
-              text="KONTAKT"
-              onClick={() => console.log("implement")}
-            ></FootLink>
-            {/*<FootLink
-              text="NEWSLETTER"
-              onClick={() => console.log("implement")}
-            ></FootLink>
-            <FootLink
-              text="URHEBERRECHT"
-              onClick={() => console.log("implement")}
-            ></FootLink>
+          ></FootLink>
+          <FootLink
+            text="KONTAKT"
+            onClick={() => console.log("implement")}
+          ></FootLink>
 
+        </div>
 
-            <FootLink
-              text="HAFTUNG"
-              onClick={() => console.log("implement")}
-            ></FootLink>
-            <FootLink
-              text="AGBS"
-              onClick={() => console.log("implement")}
-            ></FootLink>*/}
-          </div>
+      )}
+
+      {isImpOpen && (
+        <div id="impwrapper" style={{ position: "absolute", right: "0%", bottom: "100%", width: "fit-content", height: "fit-content", backgroundColor: "#C3D9FF", padding: "3rem" }}
+          onClick={() => setImpOpen(false)}>
+          <p className="dmsans400regularresponsive">
+            Frühschicht - Verein zur kulturellen Vereinigung<br />
+            Viller Berg 4<br />
+            6020 Innsbruck
+          </p>
+
         </div>
       )}
 
+
+
+      {/**normales Menü mit logo, sm, links */}
       <div className="footmenu">
         <div className="footlogodiv">
           <svg
@@ -138,6 +149,8 @@ const Foot = () => {
            */}
         </div>
 
+
+        {/**Normale Links ohne popup...  */}
         <div id="links" style={{ width: "27%", height: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
           <div
             style={{
@@ -152,7 +165,10 @@ const Foot = () => {
           >
             <FootLink
               text="IMPRESSUM"
-              onClick={() => console.log("implement")}
+              onClick={() => {
+                setImpOpen(!isImpOpen);
+                setIsPopupOpen(false);
+              }}
             ></FootLink>
             <FootLink
               text="KONTAKT"
@@ -181,7 +197,12 @@ const Foot = () => {
 
         <svg
           id="info-button"
-          onClick={() => setIsPopupOpen(!isPopupOpen)}
+          onClick={() => {
+
+            setIsPopupOpen(!isPopupOpen)
+            setImpOpen(false)
+          }
+          }
           viewBox="0 0 70 70"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"

@@ -314,6 +314,14 @@ a {
 
 }
 
+.footimpressum {
+  position: absolute;
+
+  bottom: max(10vw, 4.6rem);
+  right: 40%;
+
+}
+
 .footpopup .paragraph-white-line {
   font-size: clamp(0.9rem, 2vw, 1.5rem);
 
@@ -356,12 +364,8 @@ a {
 
 
 .paragraph-white-line {
-  font-family: "DM Sans";
-  width: fit-content;
-  height: fit-content;
+
   color: #ffffff;
-  font-weight: 400;
-  font-size: 1.4vw;
   text-decoration-line: underline;
 }
 
@@ -376,7 +380,14 @@ a {
 
 
 
-
+.dmsans400footlinkresponsive {
+  font-family: "DM Sans";
+  font-weight: 400;
+  font-size: clamp(1rem, 1.0vw, 1.2rem);
+  margin-block: min(1rem, 3vw);
+  margin-inline: min(2rem, 4vw);
+  text-align: center;
+}
 
 .dmsans400regularresponsive {
   font-family: "DM Sans";
