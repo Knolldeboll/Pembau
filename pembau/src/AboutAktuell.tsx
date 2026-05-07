@@ -58,6 +58,8 @@ const AboutAktuell = () => {
   const aktuellRef = useRef<HTMLDivElement | null>(null);
   const teamRef = useRef<HTMLDivElement | null>(null);
 
+  const startRef = useRef<HTMLDivElement | null>(null);
+  const endeRef = useRef<HTMLDivElement | null>(null);
 
   const scrollToRef = (ref: React.RefObject<HTMLDivElement | null>) => {
     // if type ? element, use scrollIntoView.
@@ -67,9 +69,12 @@ const AboutAktuell = () => {
   }
 
 
-  // upon URL ending with #leitbild, execute scrollToLeitbild
+  // upon URL ending with #leitbild, execute scrollToLeitbild#
+
+  // Das ist nur für zugriff auf Seite via /About/#xyxy gedacht -> falls man z.b. von der Landingpage auf aktuell will. 
   useEffect(() => {
     switch (window.location.hash) {
+
       case "#leitbild":
         scrollToRef(leitBildRef)
         break;
@@ -82,6 +87,14 @@ const AboutAktuell = () => {
       case "#team":
         scrollToRef(teamRef);
         break;
+      case "#ende":
+        // Achtung: nur aktuell auf teamref, weil das das letze ist, aber schon ne andere ref at
+        //scrollToRef(teamRef)
+        console.log("scroll ans ende")
+        break;
+
+      default:
+        scrollToRef(startRef);
     }
 
   }, []);
@@ -93,6 +106,7 @@ const AboutAktuell = () => {
     <>
       <div
         id="start_about"
+        ref={startRef}
         style={{
           display: "flex",
           flexDirection: "row",

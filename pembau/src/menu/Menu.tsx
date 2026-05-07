@@ -7,6 +7,14 @@ const Menu = () => {
 
   const toggleMenuOpen = useMainStore((state) => (state.toggleMenuOpen));
 
+  const setStoreContactsOpen = useMainStore((state) => state.setContactsOpen)
+
+  const scrollToEnd = () => {
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: "smooth",
+    });
+  }
 
   return (
     <div
@@ -40,9 +48,9 @@ const Menu = () => {
           _ABOUT
         </Link>
         {/**TODO: Toggle Contacts open, no to={}*/}
-        <Link className="h4 hoverable" to={"/About/"} onClick={toggleMenuOpen}>
+        <a className="h4 hoverable" onClick={() => { toggleMenuOpen(); setStoreContactsOpen(true); scrollToEnd(); }}>
           _KONTAKT
-        </Link>
+        </a>
 
         {/*
         <Link className="h4 hoverable" to={""}>
@@ -51,10 +59,11 @@ const Menu = () => {
         <Link className="h4 hoverable" to={""}>
           _INFRASTRUKTUR
         </Link>*/}
-        {/**TODO:  to={../#Programm} falls es das gibt!*/}
-        <Link className="h4 hoverable" to={"/About/"} onClick={toggleMenuOpen}>
+        {/**TODO:  to={../#Programm} falls es das gibt!
+        <Link className="h4 hoverable" to={"/About/#programm"} onClick={toggleMenuOpen}>
           _PROGRAMM
-        </Link>
+        </Link>*/}
+
         {/*
         <Link className="h4 hoverable" to={""}>
           _MITWIRKEN

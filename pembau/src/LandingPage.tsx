@@ -21,9 +21,34 @@ import TextButton from "./Components/TextButton";
 //import Foot from "./menu/Foot";
 import { useNavigate } from "react-router";
 import { CollapseFrame } from "./Components/CollapseFrame";
+import { useEffect, useRef } from "react";
 
 const LandingPage = () => {
   const navigate = useNavigate();
+  const endeRef = useRef<HTMLDivElement | null>(null);
+
+
+  const scrollToRef = (ref: React.RefObject<HTMLDivElement | null>) => {
+    // if type ? element, use scrollIntoView.
+    ref.current?.scrollIntoView({ behavior: "smooth" })
+
+
+  }
+
+
+  // useeffect auf window location hash, dann kann man auch unabhängig vom mount zum ref scrollen
+  useEffect(() => {
+    switch (window.location.hash) {
+
+      case "#ende":
+        scrollToRef(endeRef)
+        break;
+
+    }
+
+  }, [window.location.hash]);
+
+
 
   return (
     <>
@@ -42,7 +67,7 @@ const LandingPage = () => {
       <div
         id="nicetryjpg"
         style={{
-          width: "min(150vw,1920px)",
+          width: "min(150vw,2000px)",
           transform: " rotate(1.44deg)",
           alignSelf: "center",
           zIndex: "2",
@@ -257,6 +282,7 @@ const LandingPage = () => {
       </div>
 
       <div
+        ref={endeRef}
         id="endbuttons"
         style={{
           display: "flex",

@@ -9,6 +9,8 @@ interface MainStore {
     // currentPage: ((params:any)=>JSX.Element)
 
     menuOpen: boolean;
+    contactsOpen: boolean;
+    setContactsOpen: (value: boolean) => void;
     setMenuOpen: (value: boolean) => void;
     toggleMenuOpen: () => void;
 
@@ -18,6 +20,8 @@ interface MainStore {
 export const useMainStore = create<MainStore>((set) => ({
 
     menuOpen: false,
+    contactsOpen: false,
+    setContactsOpen: (value: boolean) => set({ contactsOpen: value }),
     setMenuOpen: (value: boolean) => set({ menuOpen: value }),
     toggleMenuOpen: () => set((state) => ({ menuOpen: !state.menuOpen }))
 

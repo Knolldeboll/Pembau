@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useMainStore } from "../stores/MainStore";
 import FootLink from "./FootLink";
-import Impressum from "./Impressum";
-//import { useNavigate } from "react-router";
+
 
 const Foot = () => {
   //const navigate = useNavigate();
@@ -9,6 +9,16 @@ const Foot = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [isImpOpen, setImpOpen] = useState(false);
   const [isKontOpen, setKontOpen] = useState(false);
+
+
+  const storeContactsOpen = useMainStore((state) => state.contactsOpen);
+  const setStoreContactsOpen = useMainStore(state => state.setContactsOpen)
+
+
+
+
+  // nicht ganz ideal: rerender passiert auch beim wieder schließen
+  useEffect(() => { }, [storeContactsOpen])
 
 
   /*
@@ -58,6 +68,7 @@ const Foot = () => {
             text="KONTAKT"
             onClick={() => {
               setKontOpen(!isKontOpen);
+              setStoreContactsOpen(!storeContactsOpen)
               setIsPopupOpen(false);
             }}
           ></FootLink>
@@ -66,8 +77,10 @@ const Foot = () => {
 
       )}
 
+
+      {/**impo div */}
       {isImpOpen && (
-        <div id="impwrapper" style={{ position: "absolute", right: "0%", bottom: "100%", width: "fit-content", height: "fit-content", backgroundColor: "#C3D9FF", padding: "3rem" }}
+        <div id="impwrapper" style={{ position: "absolute", right: "0%", bottom: "100%", width: "fit-content", height: "fit-content", backgroundColor: "#C3D9FF", padding: "3rem", zIndex: "5" }}
           onClick={() => setImpOpen(false)}>
           <p className="dmsans400regularresponsive">
             Frühschicht - Verein zur kulturellen Vereinigung<br />
@@ -78,9 +91,11 @@ const Foot = () => {
         </div>
       )}
 
-      {isKontOpen && (
-        <div id="impwrapper" style={{ position: "absolute", right: "0%", bottom: "100%", width: "fit-content", height: "fit-content", backgroundColor: "#C3D9FF", padding: "3rem" }}
-          onClick={() => setKontOpen(false)}>
+
+      {/**Kont div */}
+      {(isKontOpen || storeContactsOpen) && (
+        <div id="impwrapper" style={{ position: "absolute", right: "0%", bottom: "100%", width: "fit-content", height: "fit-content", backgroundColor: "#C3D9FF", padding: "3rem", zIndex: "5" }}
+          onClick={() => { setKontOpen(false); setStoreContactsOpen(false); }}>
           <p className="dmsans400regularresponsive">
             E-Mail:<br />
             office@pembau.art <br />
@@ -90,7 +105,8 @@ const Foot = () => {
           </p>
 
         </div>
-      )}
+      )
+      }
 
 
 
@@ -191,6 +207,7 @@ const Foot = () => {
               text="KONTAKT"
               onClick={() => {
                 setKontOpen(!isKontOpen);
+                setStoreContactsOpen(!storeContactsOpen)
                 setIsPopupOpen(false);
               }}
             ></FootLink>
@@ -205,6 +222,7 @@ const Foot = () => {
 
             setIsPopupOpen(!isPopupOpen)
             setImpOpen(false)
+            setStoreContactsOpen(false)
             setKontOpen(false)
           }
           }
@@ -218,7 +236,7 @@ const Foot = () => {
           />
         </svg>
       </div>
-    </div>
+    </div >
   );
 };
 
