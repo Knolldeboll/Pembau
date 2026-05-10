@@ -12,7 +12,6 @@ import HelpingHandsCollapsedImg from "./assets/about/helpinghandstrbl.webp";
 //import ContainerCollapsedImg from "./assets/about/containerbltr.webp";
 import InnsbruckLogo from "./assets/about/logoinnsbruck.webp";
 
-
 import TxPImg from "./assets/about/txp.webp";
 import PermaImg from "./assets/about/perma.webp";
 
@@ -21,8 +20,6 @@ import TeamImg from "./assets/about/team.webp";
 import TeamCollapsedImg from "./assets/about/teambrtl.webp";
 
 import ImageFrameJPG from "./Components/ImageFrameJPG";
-
-
 
 //md texts
 
@@ -39,15 +36,12 @@ import React, { useEffect, useRef } from "react";
 //import TextFrameGeschichte from "./Customframes/TextFrameGeschichte";
 
 const AboutAktuell = () => {
-
-
-
-
-  const imageModules = import.meta.glob<string>('./assets/about/carousel/*.webp', { eager: true, import: 'default' })
+  const imageModules = import.meta.glob<string>(
+    "./assets/about/carousel/*.webp",
+    { eager: true, import: "default" },
+  );
   const carouselImages: string[] = Object.values(imageModules);
   //console.log("image paths: ", carouselImages)
-
-
 
   //Scrollables - refs
 
@@ -59,27 +53,23 @@ const AboutAktuell = () => {
   const teamRef = useRef<HTMLDivElement | null>(null);
 
   const startRef = useRef<HTMLDivElement | null>(null);
-  const endeRef = useRef<HTMLDivElement | null>(null);
+  //const endeRef = useRef<HTMLDivElement | null>(null);
 
   const scrollToRef = (ref: React.RefObject<HTMLDivElement | null>) => {
     // if type ? element, use scrollIntoView.
-    ref.current?.scrollIntoView({ behavior: "smooth" })
-
-
-  }
-
+    ref.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
   // upon URL ending with #leitbild, execute scrollToLeitbild#
 
-  // Das ist nur für zugriff auf Seite via /About/#xyxy gedacht -> falls man z.b. von der Landingpage auf aktuell will. 
+  // Das ist nur für zugriff auf Seite via /About/#xyxy gedacht -> falls man z.b. von der Landingpage auf aktuell will.
   useEffect(() => {
     switch (window.location.hash) {
-
       case "#leitbild":
-        scrollToRef(leitBildRef)
+        scrollToRef(leitBildRef);
         break;
       case "#geschichte":
-        scrollToRef(geschichteRef)
+        scrollToRef(geschichteRef);
         break;
       case "#aktuell":
         scrollToRef(aktuellRef);
@@ -90,17 +80,13 @@ const AboutAktuell = () => {
       case "#ende":
         // Achtung: nur aktuell auf teamref, weil das das letze ist, aber schon ne andere ref at
         //scrollToRef(teamRef)
-        console.log("scroll ans ende")
+        console.log("scroll ans ende");
         break;
 
       default:
         scrollToRef(startRef);
     }
-
   }, []);
-
-
-
 
   return (
     <>
@@ -112,19 +98,24 @@ const AboutAktuell = () => {
           flexDirection: "row",
           justifyContent: "flex-end",
           width: "100vw",
-          overflow: "hidden",  // Clip overflow
+          overflow: "hidden", // Clip overflow
           zIndex: "1",
           height: " fit-content",
           marginBlockEnd: "-8vw",
         }}
       >
-        <div style={{
-          flex: "1 1 60%",
-          minWidth: "550px",
-          transform: " translateX(-17vw) translateY(-8vw)",
-          zIndex: "1"
-        }}>
-          <img src={StartCollapsedImg} style={{ width: "100%", height: "auto" }}></img>
+        <div
+          style={{
+            flex: "1 1 60%",
+            minWidth: "550px",
+            transform: " translateX(-17vw) translateY(-8vw)",
+            zIndex: "1",
+          }}
+        >
+          <img
+            src={StartCollapsedImg}
+            style={{ width: "100%", height: "auto" }}
+          ></img>
         </div>
 
         <div
@@ -138,20 +129,27 @@ const AboutAktuell = () => {
             zIndex: "2",
             alignSelf: "center",
             transform: " translateY(-5vw) translateX(-25vw) rotate(10deg)   ",
-
           }}
         >
           <a className="h2 hoverable" onClick={() => scrollToRef(leitBildRef)}>
             _Leitbild_und_Werte
           </a>
-          <a className="h2 hoverable" onClick={() => scrollToRef(geschichteRef)}>_Geschichte</a>
+          <a
+            className="h2 hoverable"
+            onClick={() => scrollToRef(geschichteRef)}
+          >
+            _Geschichte
+          </a>
           {/** <a className="h2 hoverable">_Vision</a> */}
 
-          <a className="h2 hoverable" onClick={() => scrollToRef(aktuellRef)}>_Aktuell</a>
-          <a className="h2 hoverable" onClick={() => scrollToRef(teamRef)}>_Team</a>
+          <a className="h2 hoverable" onClick={() => scrollToRef(aktuellRef)}>
+            _Aktuell
+          </a>
+          <a className="h2 hoverable" onClick={() => scrollToRef(teamRef)}>
+            _Team
+          </a>
         </div>
       </div>
-
 
       {/** Raus_ altes lbwt 
       <div
@@ -166,143 +164,350 @@ const AboutAktuell = () => {
         ></ImageFrameJPG>
       </div>*/}
 
-
       {/*Leitbild neu/skalierbar DONE */}
-      <div ref={leitBildRef} className="leitbild leitbildSmall" style={{ display: "flex", justifyContent: "center", marginTop: "5vw" }}>
-        <CollapseFrame width={80} height={100} rotation={0} folds={{ topLeft: { horPercent: 60, vertPercent: 25, perma: true }, bottomRight: { horPercent: 25, vertPercent: 25, perma: false } }} foldColor="#30196C">
-          <h2 style={{ rotate: "32deg", position: "absolute", left: "12%", top: "33%", zIndex: "3" }}>Leitbild</h2>
-          <h2 style={{ rotate: "-55deg", position: "absolute", left: "30%", top: "30%", zIndex: "3" }}>_UND</h2>
-          <div id="leitbildtextcontainer" style={{ width: "100%", height: "100%", backgroundColor: "#C3D9FF" }}>
-
-            <div id="lowerlefttext" style={{ position: "absolute", top: "40%", left: "5%", width: "45%", }}>
-              <p>Der Pembau lebt von Menschen. Von ihren Ideen, ihrer Vielfalt und ihrem gemeinsamen Wunsch nach Ausdruck.
-                Wir sind überzeugt davon, dass echte Entwicklung dort entsteht, wo Menschen sich ausprobieren dürfen - in einem sicheren, inspirierenden, respektvollen Umfeld. Wir wollen Räume schaffen, in denen Menschen sich entfalten, begegnen, wachsen, ausprobieren und mitgestalten können - als Individuum und als Gemeinschaft.
-                Pembau mehr als ein Ort - er ist eine Haltung und ein Wunsch nach Wandel und Veränderung.
-                Wir tragen gemeinsame Werte, die unser Miteinander und unser Tun prägen. Sie sind nicht starr, sondern wachsen mit uns, genauso wie der Ort selbst.
-                Er soll als Raum dienen, Kultur neu zu denken und auszuprobieren - die eigenen Grenzen zu sprengen und die eines bestehenden Systems.
-                Kultur nicht als etwas, das wir nur konsumieren, sondern das wir aktiv gestalten und entwickeln - und wo jeder Selbstwirksamkeit erfahren kann.
+      <div
+        ref={leitBildRef}
+        className="leitbild leitbildSmall"
+        style={{ display: "flex", justifyContent: "center", marginTop: "5vw" }}
+      >
+        <CollapseFrame
+          width={80}
+          height={100}
+          rotation={0}
+          folds={{
+            topLeft: { horPercent: 60, vertPercent: 25, perma: true },
+            bottomRight: { horPercent: 25, vertPercent: 25, perma: false },
+          }}
+          foldColor="#30196C"
+        >
+          <h2
+            style={{
+              rotate: "32deg",
+              position: "absolute",
+              left: "12%",
+              top: "33%",
+              zIndex: "3",
+            }}
+          >
+            Leitbild
+          </h2>
+          <h2
+            style={{
+              rotate: "-55deg",
+              position: "absolute",
+              left: "30%",
+              top: "30%",
+              zIndex: "3",
+            }}
+          >
+            _UND
+          </h2>
+          <div
+            id="leitbildtextcontainer"
+            style={{
+              width: "100%",
+              height: "100%",
+              backgroundColor: "#C3D9FF",
+            }}
+          >
+            <div
+              id="lowerlefttext"
+              style={{
+                position: "absolute",
+                top: "40%",
+                left: "5%",
+                width: "45%",
+              }}
+            >
+              <p>
+                Der Pembau lebt von Menschen. Von ihren Ideen, ihrer Vielfalt
+                und ihrem gemeinsamen Wunsch nach Ausdruck. Wir sind überzeugt
+                davon, dass echte Entwicklung dort entsteht, wo Menschen sich
+                ausprobieren dürfen - in einem sicheren, inspirierenden,
+                respektvollen Umfeld. Wir wollen Räume schaffen, in denen
+                Menschen sich entfalten, begegnen, wachsen, ausprobieren und
+                mitgestalten können - als Individuum und als Gemeinschaft. Der
+                Pembau ist mehr als ein Ort - er ist eine Haltung und ein Wunsch
+                nach Wandel und Veränderung. Wir tragen gemeinsame Werte, die
+                unser Miteinander und unser Tun prägen. Sie sind nicht starr,
+                sondern wachsen mit uns, genauso wie der Ort selbst. Er soll als
+                Raum dienen, Kultur neu zu denken und auszuprobieren - die
+                eigenen Grenzen zu sprengen und die eines bestehenden Systems.
+                Kultur nicht als etwas, das wir nur konsumieren, sondern das wir
+                aktiv gestalten und entwickeln - und wo jeder Selbstwirksamkeit
+                erfahren kann.
               </p>
             </div>
 
-            <div id="upperrighttext" className="hide-scrollbar-blue" style={{ position: "absolute", top: "7%", right: "1%", width: "45%", overflowY: "scroll", height: "90%" }}>
+            <div
+              id="upperrighttext"
+              className="hide-scrollbar-blue"
+              style={{
+                position: "absolute",
+                top: "7%",
+                right: "1%",
+                width: "45%",
+                overflowY: "scroll",
+                height: "90%",
+              }}
+            >
               <h2>Werte</h2>
 
               <h3>GEMEINSCHAFT_IM ZENTRUM</h3>
-              <p>Wir schaffen Räume in denen Menschen sich<wbr />
-                verbinden können. Mit sich selbst, mit anderen und<wbr />
-                mit einer gemeinsamen Vision. </p>
+              <p>
+                Wir schaffen Räume in denen Menschen sich <wbr />
+                verbinden können. Mit sich selbst, mit anderen und <wbr />
+                mit einer gemeinsamen Vision.{" "}
+              </p>
 
               <h3>VERANTWORTUNG_HEIßt ACHTSAM ZU HANDELN</h3>
-              <p>Im Umgang miteinander, mit der Umwelt, mit uns<wbr />
-                selbst und dem Raum den wir gestalten.</p>
+              <p>
+                Im Umgang miteinander, mit der Umwelt, mit uns <wbr />
+                selbst und dem Raum den wir gestalten.
+              </p>
 
               <h3>EMPOWERMENT_ALS ANTRIEB</h3>
-              <p>Wir glauben daran, dass jede*r etwas beitragen kann <wbr />
-                wenn es Raum zum Ausprobieren, Lernen und<wbr />
-                Wachsen gibt. Den Mut, das Selbstvertrauen und die<wbr />
-                Lust, Dinge selbst in die Hand zu nehmen wollen wir<wbr />
-                fördern.</p>
+              <p>
+                Wir glauben daran, dass jede*r etwas beitragen kann <wbr />
+                wenn es Raum zum Ausprobieren, Lernen und <wbr />
+                Wachsen gibt. Den Mut, das Selbstvertrauen und die <wbr />
+                Lust, Dinge selbst in die Hand zu nehmen wollen wir <wbr />
+                fördern.
+              </p>
 
               <h3>FREIHEIT_ALS MÖGLICHKEIT ZUR ENTFALTUNG</h3>
-              <p>Sowohl persönlich, kreativ und gesellschaftlich. Dabei<wbr />
+              <p>
+                Sowohl persönlich, kreativ und gesellschaftlich. Dabei <wbr />
                 endet die eigene Freiheit dort, wo die des <wbr />
-                Gegenübers beginnt.</p>
+                Gegenübers beginnt.
+              </p>
 
               <h3>KREATIVE VERSPIELTHEIT_EINE EINLADUNG</h3>
-              <p>Wir wollen neugierig bleiben. Wie auf einem Spielplatz<wbr />
-                wollen wir ausprobieren, scheitern, weiterdenken -<wbr />
-                gemeinsam, spontan und mit Freude am Prozess.</p>
+              <p>
+                Wir wollen neugierig bleiben. Wie auf einem Spielplatz <wbr />
+                wollen wir ausprobieren, scheitern, weiterdenken - <wbr />
+                gemeinsam, spontan und mit Freude am Prozess.
+              </p>
 
               <h3>AUTHENTIZITÄT_IST WICHTIGER ALS PERFEKTION</h3>
-              <p>Was zählt ist Raum für echten Ausdruck, ein ehrliches<wbr />
-                Miteinander und Offenheit - auch gegenüber<wbr />
-                Unsicherheiten, Zweifeln oder Ungewohnten.</p>
+              <p>
+                Was zählt ist Raum für echten Ausdruck, ein ehrliches <wbr />
+                Miteinander und Offenheit - auch gegenüber <wbr />
+                Unsicherheiten, Zweifeln oder Ungewohnten.
+              </p>
 
               <h3>NACHHALTIGKEIT_ALS ALLUMASSENDER BEGRIFF</h3>
-              <p>Ökologisch, sozial, kulturell und wirtschaftlich. Was wir<wbr />
-                hier schaffen, soll nicht nur für den Moment bestehen,<wbr />
-                sondern auch langfristig tragfähig und sinnvoll sein.</p>
-
+              <p>
+                Ökologisch, sozial, kulturell und wirtschaftlich. Was wir&nbsp;
+                <wbr />
+                hier schaffen, soll nicht nur für den Moment bestehen, <wbr />
+                sondern auch langfristig tragfähig und sinnvoll sein.
+              </p>
             </div>
           </div>
-        </CollapseFrame >
+        </CollapseFrame>
       </div>
 
-
       {/*Leitbild neu/skalierbar DONE */}
-      <div ref={leitBildRef} className="leitbild leitbildBig" style={{ display: "flex", justifyContent: "center", marginRight: "10vw", marginTop: "5vw" }}>
-        <CollapseFrame width={80} height={250} rotation={0} folds={{ topLeft: { horPercent: 50, vertPercent: 10, perma: true }, bottomRight: { horPercent: 30, vertPercent: 12, perma: false } }} foldColor="#30196C">
-          <h2 style={{ rotate: "28deg", position: "absolute", left: "0%", top: "10.5%", zIndex: "3" }}>Leitbild</h2>
-          <h2 style={{ rotate: "-62deg", position: "absolute", left: "28%", top: "8.5%", zIndex: "3" }}>_UND</h2>
-          <div id="leitbildtextcontainer" style={{ position: "relative", width: "100%", height: "100%", backgroundColor: "#C3D9FF" }}>
-
-            <div id="lowerlefttext" className="hide-scrollbar-blue" style={{ position: "absolute", top: "18%", left: "5%", width: "45%", overflowY: "scroll", height: "79%" }}>
-              <p>Der Pembau lebt von Menschen. Von ihren Ideen, ihrer Vielfalt und ihrem gemeinsamen Wunsch nach Ausdruck.
-                Wir sind überzeugt davon, dass echte Entwicklung dort entsteht, wo Menschen sich ausprobieren dürfen - in einem sicheren, inspirierenden, respektvollen Umfeld. Wir wollen Räume schaffen, in denen Menschen sich entfalten, begegnen, wachsen, ausprobieren und mitgestalten können - als Individuum und als Gemeinschaft.
-                Pembau mehr als ein Ort - er ist eine Haltung und ein Wunsch nach Wandel und Veränderung.
-                Wir tragen gemeinsame Werte, die unser Miteinander und unser Tun prägen. Sie sind nicht starr, sondern wachsen mit uns, genauso wie der Ort selbst.
-                Er soll als Raum dienen, Kultur neu zu denken und auszuprobieren - die eigenen Grenzen zu sprengen und die eines bestehenden Systems.
-                Kultur nicht als etwas, das wir nur konsumieren, sondern das wir aktiv gestalten und entwickeln - und wo jeder Selbstwirksamkeit erfahren kann.
+      <div
+        ref={leitBildRef}
+        className="leitbild leitbildBig"
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          marginRight: "10vw",
+          marginTop: "5vw",
+        }}
+      >
+        <CollapseFrame
+          width={80}
+          height={250}
+          rotation={0}
+          folds={{
+            topLeft: { horPercent: 50, vertPercent: 10, perma: true },
+            bottomRight: { horPercent: 30, vertPercent: 12, perma: false },
+          }}
+          foldColor="#30196C"
+        >
+          <h2
+            style={{
+              rotate: "28deg",
+              position: "absolute",
+              left: "0%",
+              top: "10.5%",
+              zIndex: "3",
+            }}
+          >
+            Leitbild
+          </h2>
+          <h2
+            style={{
+              rotate: "-62deg",
+              position: "absolute",
+              left: "28%",
+              top: "8.5%",
+              zIndex: "3",
+            }}
+          >
+            _UND
+          </h2>
+          <div
+            id="leitbildtextcontainer"
+            style={{
+              position: "relative",
+              width: "100%",
+              height: "100%",
+              backgroundColor: "#C3D9FF",
+            }}
+          >
+            <div
+              id="lowerlefttext"
+              className="hide-scrollbar-blue"
+              style={{
+                position: "absolute",
+                top: "18%",
+                left: "5%",
+                width: "45%",
+                overflowY: "scroll",
+                height: "79%",
+              }}
+            >
+              <p>
+                Der Pembau lebt von Menschen. Von ihren Ideen, ihrer Vielfalt
+                und ihrem gemeinsamen Wunsch nach Ausdruck. Wir sind überzeugt
+                davon, dass echte Entwicklung dort entsteht, wo Menschen sich
+                ausprobieren dürfen - in einem sicheren, inspirierenden,
+                respektvollen Umfeld. Wir wollen Räume schaffen, in denen
+                Menschen sich entfalten, begegnen, wachsen, ausprobieren und
+                mitgestalten können - als Individuum und als Gemeinschaft.
+                Pembau mehr als ein Ort - er ist eine Haltung und ein Wunsch
+                nach Wandel und Veränderung. Wir tragen gemeinsame Werte, die
+                unser Miteinander und unser Tun prägen. Sie sind nicht starr,
+                sondern wachsen mit uns, genauso wie der Ort selbst. Er soll als
+                Raum dienen, Kultur neu zu denken und auszuprobieren - die
+                eigenen Grenzen zu sprengen und die eines bestehenden Systems.
+                Kultur nicht als etwas, das wir nur konsumieren, sondern das wir
+                aktiv gestalten und entwickeln - und wo jeder Selbstwirksamkeit
+                erfahren kann.
               </p>
             </div>
 
-            <div id="werteh2placer" style={{ display: "flex", flexDirection: "column", flex: "none", position: "absolute", top: "7%", right: "1%", width: "45%", height: "90%" }}>
+            <div
+              id="werteh2placer"
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                flex: "none",
+                position: "absolute",
+                top: "7%",
+                right: "1%",
+                width: "45%",
+                height: "90%",
+              }}
+            >
               <h2>Werte</h2>
 
-              <div id="upperrighttext" className="hide-scrollbar-blue" style={{ overflowY: "scroll", overflowX: "hidden", }}>
+              <div
+                id="upperrighttext"
+                className="hide-scrollbar-blue"
+                style={{ overflowY: "scroll", overflowX: "hidden" }}
+              >
+                <h3>
+                  GEMEINSCHAFT_
+                  <wbr />
+                  IM ZENTRUM
+                </h3>
+                <p>
+                  Wir schaffen Räume in denen Menschen sich
+                  <wbr />
+                  verbinden können. Mit sich selbst, mit anderen und
+                  <wbr />
+                  mit einer gemeinsamen Vision.{" "}
+                </p>
 
-                <h3>GEMEINSCHAFT_<wbr />IM ZENTRUM</h3>
-                <p>Wir schaffen Räume in denen Menschen sich<wbr />
-                  verbinden können. Mit sich selbst, mit anderen und<wbr />
-                  mit einer gemeinsamen Vision. </p>
+                <h3>
+                  VERANTWORTUNG_
+                  <wbr />
+                  HEIßt ACHTSAM ZU HANDELN
+                </h3>
+                <p>
+                  Im Umgang miteinander, mit der Umwelt, mit uns
+                  <wbr />
+                  selbst und dem Raum den wir gestalten.
+                </p>
 
-                <h3>VERANTWORTUNG_<wbr />HEIßt ACHTSAM ZU HANDELN</h3>
-                <p>Im Umgang miteinander, mit der Umwelt, mit uns<wbr />
-                  selbst und dem Raum den wir gestalten.</p>
+                <h3>
+                  EMPOWERMENT_
+                  <wbr />
+                  ALS ANTRIEB
+                </h3>
+                <p>
+                  Wir glauben daran, dass jede*r etwas beitragen kann <wbr />
+                  wenn es Raum zum Ausprobieren, Lernen und
+                  <wbr />
+                  Wachsen gibt. Den Mut, das Selbstvertrauen und die
+                  <wbr />
+                  Lust, Dinge selbst in die Hand zu nehmen wollen wir
+                  <wbr />
+                  fördern.
+                </p>
 
-                <h3>EMPOWERMENT_<wbr />ALS ANTRIEB</h3>
-                <p>Wir glauben daran, dass jede*r etwas beitragen kann <wbr />
-                  wenn es Raum zum Ausprobieren, Lernen und<wbr />
-                  Wachsen gibt. Den Mut, das Selbstvertrauen und die<wbr />
-                  Lust, Dinge selbst in die Hand zu nehmen wollen wir<wbr />
-                  fördern.</p>
-
-                <h3>FREIHEIT_<wbr />ALS MÖGLICHKEIT ZUR ENTFALTUNG</h3>
-                <p>Sowohl persönlich, kreativ und gesellschaftlich. Dabei<wbr />
+                <h3>
+                  FREIHEIT_
+                  <wbr />
+                  ALS MÖGLICHKEIT ZUR ENTFALTUNG
+                </h3>
+                <p>
+                  Sowohl persönlich, kreativ und gesellschaftlich. Dabei
+                  <wbr />
                   endet die eigene Freiheit dort, wo die des <wbr />
-                  Gegenübers beginnt.</p>
+                  Gegenübers beginnt.
+                </p>
 
-                <h3>KREATIVE VERSPIELTHEIT_<wbr />EINE EINLADUNG</h3>
-                <p>Wir wollen neugierig bleiben. Wie auf einem Spielplatz<wbr />
+                <h3>
+                  KREATIVE VERSPIELTHEIT_
+                  <wbr />
+                  EINE EINLADUNG
+                </h3>
+                <p>
+                  Wir wollen neugierig bleiben. Wie auf einem Spielplatz
+                  <wbr />
                   wollen wir ausprobieren, scheitern, weiterdenken -<wbr />
-                  gemeinsam, spontan und mit Freude am Prozess.</p>
+                  gemeinsam, spontan und mit Freude am Prozess.
+                </p>
 
-                <h3>AUTHENTIZITÄT_<wbr />IST WICHTIGER ALS PERFEKTION</h3>
-                <p>Was zählt ist Raum für echten Ausdruck, ein ehrliches<wbr />
-                  Miteinander und Offenheit - auch gegenüber<wbr />
-                  Unsicherheiten, Zweifeln oder Ungewohnten.</p>
+                <h3>
+                  AUTHENTIZITÄT_
+                  <wbr />
+                  IST WICHTIGER ALS PERFEKTION
+                </h3>
+                <p>
+                  Was zählt ist Raum für echten Ausdruck, ein ehrliches
+                  <wbr />
+                  Miteinander und Offenheit - auch gegenüber
+                  <wbr />
+                  Unsicherheiten, Zweifeln oder Ungewohnten.
+                </p>
 
-                <h3>NACHHALTIGKEIT_<wbr />ALS ALLUMASSENDER BEGRIFF</h3>
-                <p>Ökologisch, sozial, kulturell und wirtschaftlich. Was wir<wbr />
-                  hier schaffen, soll nicht nur für den Moment bestehen,<wbr />
-                  sondern auch langfristig tragfähig und sinnvoll sein.</p>
-
+                <h3>
+                  NACHHALTIGKEIT_
+                  <wbr />
+                  ALS ALLUMASSENDER BEGRIFF
+                </h3>
+                <p>
+                  Ökologisch, sozial, kulturell und wirtschaftlich. Was wir
+                  <wbr />
+                  hier schaffen, soll nicht nur für den Moment bestehen,
+                  <wbr />
+                  sondern auch langfristig tragfähig und sinnvoll sein.
+                </p>
               </div>
-
             </div>
           </div>
-        </CollapseFrame >
+        </CollapseFrame>
       </div>
 
-
-
-
-
-
-
-
       {/*geschichte OKAY ist scalable */}
-
 
       <div
         id="geschichte"
@@ -325,7 +530,9 @@ const AboutAktuell = () => {
             transform: "translateX(-3vw)",
             zIndex: "1",
           }}
-        >       {/**nicht mehr gebraucht: ist jetzt image. 
+        >
+          {" "}
+          {/**nicht mehr gebraucht: ist jetzt image. 
           <p
             className="h1serif"
             style={{
@@ -357,14 +564,15 @@ const AboutAktuell = () => {
             collapsedImg={GeschichteCollapsedImg}
             uncollapsedImg={GeschichteImg}
           ></ImageFrameJPG>
-
-
         </div>
 
         {/**Textsize ist responsive! */}
         {/**Die srces sind jetzt phne "Pembau", da die base auch ohne ist. */}
         {/**die base ist jetzt der inhalt des dist ordners! */}
-        <div id="geschichtetextwrapper" style={{ flex: "1 1 550px", marginTop: "14vw" }} >
+        <div
+          id="geschichtetextwrapper"
+          style={{ flex: "1 1 550px", marginTop: "14vw" }}
+        >
           <CollapseText
             alwaysSrc="/content/aboutGeschichteAlways.md"
             expandSrc="/content/aboutGeschichteExpand.md"
@@ -372,13 +580,7 @@ const AboutAktuell = () => {
         </div>
       </div>
 
-
-
-
-
       {/**Grundstück TODO: Mit CollapseFrame nochmal ein Großes machen.  */}
-
-
 
       {/**Nochmal MQ umschalten auf ein FETTERES/Längeres Außerdem enable. 
 
@@ -433,12 +635,9 @@ const AboutAktuell = () => {
 
       </div > */}
 
-
-
-
       {/**Aktuelles Text Section */}
 
-      < div
+      <div
         id="aktuelles"
         ref={aktuellRef}
         style={{
@@ -446,35 +645,48 @@ const AboutAktuell = () => {
           marginLeft: "5vw",
           marginTop: "15vw",
           color: "#000000",
-        }
-        }
+        }}
       >
         <div className="aktuell">
-          <h2 >PEMBAU<span >_aktuell</span></h2>
-          <p >Der Pembau ist derzeit ein Ort im Aufbau. Mögliche Konzepte für den Ort werden erforscht und getestet. Menschen kommen zusammen, tauschen sich aus, bauen auf, füllen die Räume mit Leben – und eine lebendige Gemeinschaft entsteht. Da sich das Gelände aktuell im rechtlichen Übergang befindet, finden die Aktivitäten bisher im Rahmen privater Veranstaltungen statt – doch das soll sich bald ändern! Aktuell arbeiten wir daran, die Infrastruktur auszubauen und rechtliche Grundlagen zu schaffen, um das Gelände Stück für Stück für mehr Menschen nutzbar und zugänglich zu machen.</p>
-
+          <h2>
+            PEMBAU<span>_aktuell</span>
+          </h2>
+          <p>
+            Der Pembau ist derzeit ein Ort im Aufbau. Mögliche Konzepte für den
+            Ort werden erforscht und getestet. Menschen kommen zusammen,
+            tauschen sich aus, bauen auf, füllen die Räume mit Leben – und eine
+            lebendige Gemeinschaft entsteht. Da sich das Gelände aktuell im
+            rechtlichen Übergang befindet, finden die Aktivitäten bisher im
+            Rahmen privater Veranstaltungen statt – doch das soll sich bald
+            ändern! Aktuell arbeiten wir daran, die Infrastruktur auszubauen und
+            rechtliche Grundlagen zu schaffen, um das Gelände Stück für Stück
+            für mehr Menschen nutzbar und zugänglich zu machen.
+          </p>
         </div>
-      </div >
-
+      </div>
 
       {/** Carousel: Hier Slideshow*/}
 
-      < div id="carouselwrapper" style={{ alignSelf: "center", width: "95vw", height: "max(45vw, 300px)" }}>
+      <div
+        id="carouselwrapper"
+        style={{
+          alignSelf: "center",
+          width: "95vw",
+          height: "max(45vw, 300px)",
+        }}
+      >
         <Carousel images={carouselImages}></Carousel>
-      </div >
-
+      </div>
 
       {/**Aktuelles einfach in nem p */}
-      <div className="aktuell" style={{ width: "65vw", marginLeft: "5vw", }}>
+      <div className="aktuell" style={{ width: "65vw", marginLeft: "5vw" }}>
         <p>
           Alles was bisher schon am Pembau entsteht, entstanden ist und
           entstehen soll, dass erfährst du hier:
         </p>
-      </div >
+      </div>
 
       {/*Ab hier die Bilder mit Collapsetext nebenan    transform: "translateX(25vw )translateY(-70vw) rotate(20deg)", transform: "translateX(25vw )translateY(-70vw) rotate(20deg)",*/}
-
-
 
       {/**Techno x Punsch */}
       <div
@@ -488,37 +700,57 @@ const AboutAktuell = () => {
           zIndex: "2",
         }}
       >
-
         <div
           id="technoxpunschimagewrapper"
           style={{
             position: "relative",
             transform: "translateX(-3vw)",
             zIndex: "1",
-            flex: "1 1 60vw"
-          }}>
-
+            flex: "1 1 60vw",
+          }}
+        >
           {/**Normal kommt hier imgFrameJpg */}
           <img width="100%" src={TxPImg}></img>
         </div>
 
-        <div id="technoxpunschtextwrapper" style={{ marginTop: "2vw", flex: "1 1 550px" }} >
+        <div
+          id="technoxpunschtextwrapper"
+          style={{ marginTop: "2vw", flex: "1 1 550px" }}
+        >
           <CollapseText
             marginTopProp="0vw"
             alwaysSrc="/content/aboutTxPAlways.md"
           ></CollapseText>
 
           {/**Insta und Innsbruck Extraflex. */}
-          <div style={{ display: "flex", flexDirection: "row", flex: "none", marginTop: "8vw", justifyContent: "center", gap: "3vw" }}>
-            <div id="instatxp" style={{
-              display: "flex", flexDirection: "column", flex: "none", alignItems: "center"
-            }} >
-              <p className="dmsans400regularresponsive">Folge Techno x Punsch</p>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              flex: "none",
+              marginTop: "8vw",
+              justifyContent: "center",
+              gap: "3vw",
+            }}
+          >
+            <div
+              id="instatxp"
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                flex: "none",
+                alignItems: "center",
+              }}
+            >
+              <p className="dmsans400regularresponsive">
+                Folge Techno x Punsch
+              </p>
               <a
                 className="socialmedialinkwrapper"
                 href="https://www.instagram.com/technoxpunsch/"
               >
-                <svg style={{ width: "5vw" }}
+                <svg
+                  style={{ width: "5vw" }}
                   className="blackicon socialmediaicon"
                   viewBox="0 0 38 38"
                   fill="none"
@@ -530,15 +762,20 @@ const AboutAktuell = () => {
                 </svg>
               </a>
             </div>
-            <div id="innsbruck" style={{
-              display: "flex", flexDirection: "column", flex: "none", alignItems: "center"
-            }} >
+            <div
+              id="innsbruck"
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                flex: "none",
+                alignItems: "center",
+              }}
+            >
               <p className="dmsans400regularresponsive">Gefördert von</p>
               <img width="100vw" src={InnsbruckLogo}></img>
             </div>
           </div>
         </div>
-
       </div>
 
       {/** AKTUELL DRAUßEN: Kultursommer - ok wrapped!
@@ -580,8 +817,6 @@ const AboutAktuell = () => {
       </div>
 */}
 
-
-
       {/**helpinghands  - ok wrapped!*/}
       <div
         id="helpinghands"
@@ -609,17 +844,17 @@ const AboutAktuell = () => {
           ></ImageFrameJPG>
         </div>
 
-        <div id="helpingtextwrapper" style={{ flex: "1 1 550px", marginTop: "14vw" }} >
+        <div
+          id="helpingtextwrapper"
+          style={{ flex: "1 1 550px", marginTop: "14vw" }}
+        >
           <CollapseText
             marginTopProp="0vw"
             alwaysSrc="/content/aboutHelpingAlways.md"
             expandSrc="/content/aboutHelpingExpand.md"
-          ></CollapseText></div>
-
+          ></CollapseText>
+        </div>
       </div>
-
-
-
 
       {/** gut gedacht das auszutauschen, aber das originale hat eben auch custom styling drinnen, bzgl. translate, margins & percentage! 
 
@@ -638,10 +873,6 @@ const AboutAktuell = () => {
         collapsedImg={ContainerCollapsedImg} uncollapsedImg={ContainerImg} >
       </ImageFrameJPGWithCollapseText>
  */}
-
-
-
-
 
       {/**unnötige testkacke bzgl collapseFrame mit nem collapsetext zusammen, die nicht funktioniert hat.. */}
       {/**Test: neue component mit image und collapsetext gemeinsam  */}
@@ -665,7 +896,6 @@ const AboutAktuell = () => {
       </CollapseFrame>
 */}
       {/** TODO: Für TXP am Besten manuell was machen, eig so wie oben bei ContainerCity -> Denn da kommt noch Custom Shit wie Buttons etc. dazu. */}
-
 
       <div
         id="perma"
@@ -693,15 +923,12 @@ const AboutAktuell = () => {
           ></ImageFrameJPG>
         </div>
 
-        <div id="permatextwrapper"
-          style={{ flex: "1 1 550px" }}>
-
+        <div id="permatextwrapper" style={{ flex: "1 1 550px" }}>
           <CollapseText
             marginTopProp="14vw"
             alwaysSrc="/content/aboutPermaAlways.md"
           ></CollapseText>
         </div>
-
       </div>
 
       {/**
@@ -733,10 +960,6 @@ const AboutAktuell = () => {
           uncollapsedImg={TeamImg}
         ></ImageFrameJPG>
       </div>
-
-
-
-
 
       {/*
       <div
@@ -786,8 +1009,6 @@ const AboutAktuell = () => {
 
       </div >
 *TEAMDREAM ENDE */}
-
-
     </>
 
     //Futti Futti
