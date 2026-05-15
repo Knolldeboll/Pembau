@@ -67,7 +67,7 @@ const LandingPage = () => {
       <div
         id="nicetryjpg"
         style={{
-          width: "min(150vw,2000px)",
+          width: "min(150%,2000px)",
           transform: " rotate(1.44deg)",
           alignSelf: "center",
           zIndex: "2",
@@ -83,7 +83,7 @@ const LandingPage = () => {
         className="textframe"
         id="textframeaussicht"
         style={{
-          width: "80vw",
+          width: "80%",
           marginTop: "5vw",
           zIndex: "1",
         }}
@@ -94,7 +94,7 @@ const LandingPage = () => {
       <div
         id="aussicht"
         style={{
-          width: "120vw",
+          width: "120%",
           marginTop: "0vw",
           transform: "translateX(-9%)rotate(3deg)",
           zIndex: "2",
@@ -113,14 +113,14 @@ const LandingPage = () => {
           flexDirection: "row",
 
           marginTop: "0vw",
-          width: "100vw",
+          width: "100%",
         }}
       >
         <div
           className="textframe"
           style={{
             flex: "none",
-            width: "min(600px,70vw)",
+            width: "min(600px,70%)",
             marginLeft: "5vw",
             zIndex: "1",
           }}
@@ -134,7 +134,7 @@ const LandingPage = () => {
             zIndex: "2",
             transform: "   rotate(-15deg)",
             marginTop: "-15vw",
-            marginLeft: "max(-200px, -28vw)",
+            marginLeft: "max(-200px, -28%)",
           }}
         >
           <ImageFrameJPG

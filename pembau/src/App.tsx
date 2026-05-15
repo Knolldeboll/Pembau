@@ -58,6 +58,8 @@ export const App = () => {
             flexDirection: "column",
             background: "#FFFFFF",
             gap: "2vw",
+            maxWidth: "1920px",
+            marginInline: "auto",
             overflow: "hidden",
           }}
         >
