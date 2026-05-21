@@ -14,7 +14,7 @@ interface HeadProps {
 // TODO: CurrentPage nicht per Props, sondern aus dem Store ziehen.
 // Vorteil ist, dass der shit dann von überall aus gesetzt werden kann, und nicht nur aus der Parent-Component!
 // Machts ggf. einfacher bei den ganzen Links
-export const Head = ({}: HeadProps) => {
+export const Head = ({ }: HeadProps) => {
   const route = useLocation();
   //console.log("current route: ", route.pathname)
 

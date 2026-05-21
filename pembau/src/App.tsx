@@ -37,7 +37,7 @@ export const App = () => {
   return (
     <>
       <BrowserRouter>
-        <Head currentPage="_HOME"></Head>
+
 
         {/**TODO wegen dem Menü: Das sollte ggf. UNTER dem head platziert werden, so vielleicht flex column mäßig ohne flex?
          * und dann von dem teil aus den margin haben, und nicht vom viewport!
@@ -52,6 +52,9 @@ export const App = () => {
          */}
 
         <div
+
+
+
           id="pageswrapper"
           style={{
             display: "flex",
@@ -63,6 +66,7 @@ export const App = () => {
             overflow: "hidden",
           }}
         >
+          <Head currentPage="_HOME"></Head>
           <Routes>
             <Route path="/" element={<LandingPage></LandingPage>} />
             <Route path="/About/" element={<AboutAktuell></AboutAktuell>} />
