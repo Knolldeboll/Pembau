@@ -8,11 +8,11 @@ export type CornerData = {
   perma?: boolean;
 };
 
-interface CollapseFrameProps {
+interface CollapseFramePercentProps {
   children: ReactNode;
-  /** Width in vw units */
+  /** Width in % units */
   width: number;
-  /** Height in vw units */
+  /** Height in % units */
   height: number;
   // partial: 0-alle elemente aus ner Auswahl.
   // die Auswahl ist hier die Kombinationsmöglichkeiten aus Strings im Typ "Corner" und zugehöriger Data
@@ -31,7 +31,7 @@ interface CollapseFrameProps {
 // TODO: Manche Objekte aus den Children sollen erst beim Anklicken des CollapseFrames angezeigt werden -
 // Dieser State muss also irgendwie zugänglich sein.
 
-export const CollapseFrame = ({
+export const CollapseFramePercent = ({
   children,
   width,
   height,
@@ -41,7 +41,7 @@ export const CollapseFrame = ({
   foldColor,
   initiallyCollapsed = true,
   toggleOnce = false,
-}: CollapseFrameProps) => {
+}: CollapseFramePercentProps) => {
   //Existenz von Folds prüfen: wenn nicht da, dann undefined. Dann auch kein dreieck oder Mask rendern!
   // console.log("Collapse Folds: ", folds);
 
@@ -76,13 +76,26 @@ export const CollapseFrame = ({
     setCollapsed(!isCollapsed);
   };
 
+  console.log("CollapseFramePercent:")
+  console.log("w/h in percent:", width, height)
+
+
+  // TODO: ggf. muss ar je anders berechnet werden, je nach (width < height)?
+  // aber aktuell egal, da CollapseFramePercent nur im fall width> height verwendet wird. Sonst ist umschalt mit mediaquery auf normales collapsframe. 
+  const ar = width / height;
+
+  // Problem mit Height: % geht nicht, weil der Parent keine fixe height hat. 
+  // der orientiert sich nämlich an den enthaltenen Frames.
+
+  // Was wir wollen ist eig., dass height = xy% of width.
+  // -> Apsect Ratio festlegen? Aber klappt dann noch die Berechnung der Ecken richtig? 
   return (
     <div
       className="collapseFrameOuter"
       style={{
         position: "relative",
-        width: `${width}vw`,
-        height: `${height}vw`,
+        width: `${width}%`,
+        height: ` `,
         rotate: `${rotation}deg`,
         zIndex: "1",
       }}
@@ -92,7 +105,8 @@ export const CollapseFrame = ({
         className="collapseFrameInner"
         style={{
           width: "100%",
-          height: "100%",
+
+          aspectRatio: ar,
           display: "block",
           clipPath: polygonString,
           overflow: "hidden",

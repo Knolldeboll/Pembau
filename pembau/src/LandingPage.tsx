@@ -22,6 +22,7 @@ import TextButton from "./Components/TextButton";
 import { useNavigate } from "react-router";
 import { CollapseFrame } from "./Components/CollapseFrame";
 import { useEffect, useRef } from "react";
+import { CollapseFramePercent } from "./Components/CollapseFramePercent";
 
 const LandingPage = () => {
   const navigate = useNavigate();
@@ -211,15 +212,18 @@ const LandingPage = () => {
         </CollapseFrame>
       </div>
 
+      {/*Hier Percent-Based CollapseFrame verwendet, um gut an den PageWrapper anzupassen!
+      Achtung: in solchen Fällen muss ein ggf. umfassendes div auch die width des pagewrappers haben (100%) */}
       <div
         className="keinprogramm keinprogrammBig"
         style={{
-          marginTop: "15vw",
+          marginTop: "15%",
           alignSelf: "center",
+          width: "100%",
           transform: "translateX(-4vw)",
         }}
       >
-        <CollapseFrame
+        <CollapseFramePercent
           width={110}
           height={50}
           rotation={-3}
@@ -230,7 +234,7 @@ const LandingPage = () => {
           foldColor="#000000"
         >
           <div
-            id="kpkpbg"
+            id="kpkpbgPERC"
             style={{
               width: "100%",
               height: "100%",
@@ -262,8 +266,10 @@ const LandingPage = () => {
               ></TextButton>
             </div>
           </div>
-        </CollapseFrame>
+        </CollapseFramePercent>
       </div>
+
+
 
       {/**Mithelfen raus, da steht quasi eh nix drin, außerdem keine Links für Newsletter, Crowdfunding, "teil sein" 
       <div id="mithelfen" style={{ width: "140vw", height: "70vw", marginTop: "13vw", transform: "rotate(-4deg) translateX(-10vw)" }}>
@@ -272,15 +278,12 @@ const LandingPage = () => {
 
 */}
 
-      {/**TEST: Collapseframe mit gut lesbaren Werten, test für skalierbarkeit auf % statt vw */}
-
-
       <div
         className="textframe"
         id="ende"
         style={{
-          width: "75vw",
-          marginTop: "5vw",
+          width: "75%",
+          marginTop: "5%",
           marginLeft: "2%",
           transform: "rotate(-3deg) ",
         }}
