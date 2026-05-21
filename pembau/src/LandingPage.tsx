@@ -85,6 +85,7 @@ const LandingPage = () => {
         style={{
           width: "80%",
           marginTop: "5vw",
+          marginLeft: "2%",
           zIndex: "1",
         }}
       >
@@ -268,13 +269,19 @@ const LandingPage = () => {
       <div id="mithelfen" style={{ width: "140vw", height: "70vw", marginTop: "13vw", transform: "rotate(-4deg) translateX(-10vw)" }}>
         <MithelfenFrame uncollapsedImg={MithelfenImg} collapsedImg={MithelfenCollapsedImage}></MithelfenFrame>
       </div>
+
 */}
+
+      {/**TEST: Collapseframe mit gut lesbaren Werten, test für skalierbarkeit auf % statt vw */}
+
+
       <div
         className="textframe"
         id="ende"
         style={{
           width: "75vw",
           marginTop: "5vw",
+          marginLeft: "2%",
           transform: "rotate(-3deg) ",
         }}
       >
