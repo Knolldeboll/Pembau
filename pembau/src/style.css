@@ -193,7 +193,7 @@ a {
 .headmenu {
   position: fixed;
   width: min(1920px, 100%);
-  height: max(7vw, 4.6rem);
+  height: clamp(4.6rem, 7vw, 10rem);
   top: 0%;
 
   z-index: 4;
@@ -228,7 +228,7 @@ a {
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: max(10vw, 4.6rem);
+  height: clamp(4.6rem, 7vw, 10rem);
   z-index: 4;
   justify-content: space-between;
   background-color: #000000;
