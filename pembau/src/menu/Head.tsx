@@ -62,7 +62,7 @@ export const Head = ({ }: HeadProps) => {
             style={{
               flex: "none",
               color: "#ffffff",
-              fontSize: "max(0.9rem,2vw)",
+              fontSize: "clamp(0.9rem,2vw, 2.7rem)",
               margin: "0",
               height: "fit-content",
               alignSelf: "end",
