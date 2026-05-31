@@ -21,11 +21,10 @@ const Menu = () => {
       id="sidemenu"
       style={{
         position: "fixed",
-        width: "fit-content",
-        paddingRight: "25vw",
-        height: "100vh",
+        width: "clamp(150px,30%, 576px)",
+        height: "120vh",
         top: "0%",
-        right: "-25%",
+        right: "max(0px, calc((100vw - 1920px) / 2))",
         zIndex: "3",
         backgroundColor: "#ffffff",
         transform: "rotate(-5deg)",

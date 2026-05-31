@@ -31,6 +31,7 @@ import { CollapseText } from "./Components/CollapseText";
 import { Carousel } from "./Components/Carousel";
 import { CollapseFrame } from "./Components/CollapseFrame";
 import React, { useEffect, useRef } from "react";
+import { CollapseFramePercent } from "./Components/CollapseFramePercent";
 
 //import TextButton from "./Components/TextButton";
 //import TextFrameGeschichte from "./Customframes/TextFrameGeschichte";
@@ -97,18 +98,19 @@ const AboutAktuell = () => {
           display: "flex",
           flexDirection: "row",
           justifyContent: "flex-end",
-          width: "100vw",
-          overflow: "hidden", // Clip overflow
+          width: "100%",
+          //overflow: "hidden", // Clip overflow
           zIndex: "1",
           height: " fit-content",
           marginBlockEnd: "-8vw",
+          marginLeft: "-20%",
         }}
       >
         <div
           style={{
             flex: "1 1 60%",
             minWidth: "550px",
-            transform: " translateX(-17vw) translateY(-8vw)",
+            //transform: " translateX(-17vw) translateY(-8vw)",
             zIndex: "1",
           }}
         >
@@ -123,12 +125,13 @@ const AboutAktuell = () => {
           style={{
             display: "flex",
             flexDirection: "column",
-            gap: "1vw",
+            flex: "1 1 40%",
+            gap: "10%",
             height: "fit-content",
             minWidth: "170px",
             zIndex: "2",
             alignSelf: "center",
-            transform: " translateY(-5vw) translateX(-25vw) rotate(10deg)   ",
+            transform: "  rotate(10deg)   ",
           }}
         >
           <a className="h2 hoverable" onClick={() => scrollToRef(leitBildRef)}>
@@ -167,11 +170,11 @@ const AboutAktuell = () => {
       {/*Leitbild neu/skalierbar DONE */}
       <div
         ref={leitBildRef}
-        className="leitbild leitbildSmall"
-        style={{ display: "flex", justifyContent: "center", marginTop: "5vw" }}
+        className="leitbild leitbildBig"
+        style={{ display: "flex", justifyContent: "center", marginTop: "5vw", width: "100%" }}
       >
-        <CollapseFrame
-          width={80}
+        <CollapseFramePercent
+          width={90}
           height={100}
           rotation={0}
           folds={{
@@ -305,13 +308,13 @@ const AboutAktuell = () => {
               </p>
             </div>
           </div>
-        </CollapseFrame>
+        </CollapseFramePercent>
       </div>
 
       {/*Leitbild neu/skalierbar DONE */}
       <div
         ref={leitBildRef}
-        className="leitbild leitbildBig"
+        className="leitbild leitbildSmall"
         style={{
           display: "flex",
           justifyContent: "center",

@@ -43,8 +43,6 @@ export const App = () => {
          * und dann von dem teil aus den margin haben, und nicht vom viewport!
          */}
 
-        {menuOpen && <Menu></Menu>}
-
         {/**TODO: Routing hierrum */}
 
         {/**Kann man den Foot auch hier in den Flow mit reingeben?
@@ -58,6 +56,7 @@ export const App = () => {
           id="pageswrapper"
           style={{
             display: "flex",
+            position: "relative",
             flexDirection: "column",
             background: "#FFFFFF",
             gap: "2vw",
@@ -66,6 +65,10 @@ export const App = () => {
             overflow: "hidden",
           }}
         >
+
+
+          {menuOpen && <Menu></Menu>}
+
           <Head currentPage="_HOME"></Head>
           <Routes>
             <Route path="/" element={<LandingPage></LandingPage>} />

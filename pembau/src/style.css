@@ -73,9 +73,6 @@ a {
 
 
 
-
-
-
 .h4 {
   font-family: "DM Sans";
   font-weight: 700;
@@ -217,7 +214,7 @@ a {
   .h4 {
     font-family: "DM Sans";
     font-weight: 700;
-    font-size: max(1rem, 2.7vw);
+    font-size: clamp(1rem, 2.7vw, 50px);
     color: black;
   }
 }
@@ -706,21 +703,21 @@ body {
 nur outerdiv hat class. innere sind immer flex. */
 
 
-.leitbildSmall {
+.leitbildBig {
   display: flex !important
 }
 
-.leitbildBig {
+.leitbildSmall {
   display: none !important
 }
 
 
 @media (max-width: 900px) {
-  .leitbildSmall {
+  .leitbildBig {
     display: none !important
   }
 
-  .leitbildBig {
+  .leitbildSmall {
     display: flex !important
   }
 }

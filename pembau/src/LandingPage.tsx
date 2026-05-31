@@ -212,7 +212,8 @@ const LandingPage = () => {
         </CollapseFrame>
       </div>
 
-      {/*Hier Percent-Based CollapseFrame verwendet, um gut an den PageWrapper anzupassen!
+      {/*Hier Percent-Based CollapseFrame verwendet, um gut an den PageWrapper anzupassen, statt wie bisher an vw.
+      Denn genau bei big kommts zu Problemen, sobald der width-cap des PageWrappers greift, da dann die festen vw Maße des CollapseFrames nicht mehr zum kleineren Wrapper passen.
       Achtung: in solchen Fällen muss ein ggf. umfassendes div auch die width des pagewrappers haben (100%) */}
       <div
         className="keinprogramm keinprogrammBig"

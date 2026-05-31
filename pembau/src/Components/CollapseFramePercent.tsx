@@ -42,8 +42,8 @@ export const CollapseFramePercent = ({
   initiallyCollapsed = true,
   toggleOnce = false,
 }: CollapseFramePercentProps) => {
-  //Existenz von Folds prüfen: wenn nicht da, dann undefined. Dann auch kein dreieck oder Mask rendern!
-  // console.log("Collapse Folds: ", folds);
+
+
 
   const [isCollapsed, setCollapsed] = useState(initiallyCollapsed ?? false);
   let polygonString = ``;
