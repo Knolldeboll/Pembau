@@ -19,6 +19,8 @@ import PermaCollapsedImg from "./assets/about/permatrbl.webp";
 import TeamImg from "./assets/about/team.webp";
 import TeamCollapsedImg from "./assets/about/teambrtl.webp";
 
+//import TeamDream from "./assets/about/teamdream.webp";
+
 import ImageFrameJPG from "./Components/ImageFrameJPG";
 
 //md texts
@@ -681,8 +683,10 @@ const AboutAktuell = () => {
         <Carousel images={carouselImages}></Carousel>
       </div>
 
+
+
       {/**Aktuelles einfach in nem p */}
-      <div className="aktuell" style={{ width: "65vw", marginLeft: "5vw" }}>
+      <div className="aktuell" style={{ width: "65%", marginLeft: "5%" }}>
         <p>
           Alles was bisher schon am Pembau entsteht, entstanden ist und
           entstehen soll, dass erfährst du hier:
@@ -699,7 +703,7 @@ const AboutAktuell = () => {
           alignItems: "stretch",
           flexWrap: "wrap",
           flexDirection: "row",
-          marginTop: "10vw",
+          marginTop: "10%",
           zIndex: "2",
         }}
       >
@@ -707,9 +711,9 @@ const AboutAktuell = () => {
           id="technoxpunschimagewrapper"
           style={{
             position: "relative",
-            transform: "translateX(-3vw)",
+            transform: "translateX(-3%)",
             zIndex: "1",
-            flex: "1 1 60vw",
+            flex: "1 1 60%",
           }}
         >
           {/**Normal kommt hier imgFrameJpg */}
@@ -718,7 +722,7 @@ const AboutAktuell = () => {
 
         <div
           id="technoxpunschtextwrapper"
-          style={{ marginTop: "2vw", flex: "1 1 550px" }}
+          style={{ marginTop: "2%", flex: "1 1 550px" }}
         >
           <CollapseText
             marginTopProp="0vw"
@@ -731,9 +735,9 @@ const AboutAktuell = () => {
               display: "flex",
               flexDirection: "row",
               flex: "none",
-              marginTop: "8vw",
+              marginTop: "8%",
               justifyContent: "center",
-              gap: "3vw",
+              gap: "3%",
             }}
           >
             <div
@@ -749,11 +753,13 @@ const AboutAktuell = () => {
                 Folge Techno x Punsch
               </p>
               <a
-                className="socialmedialinkwrapper"
+                style={{ width: "max(2.0rem, 40%)" }}
+
+
                 href="https://www.instagram.com/technoxpunsch/"
               >
                 <svg
-                  style={{ width: "5vw" }}
+                  style={{ width: "auto" }}
                   className="blackicon socialmediaicon"
                   viewBox="0 0 38 38"
                   fill="none"
@@ -828,7 +834,7 @@ const AboutAktuell = () => {
           alignItems: "stretch",
           flexWrap: "wrap",
           flexDirection: "row",
-          marginTop: "10vw",
+          marginTop: "10%",
           zIndex: "2",
         }}
       >
@@ -836,8 +842,8 @@ const AboutAktuell = () => {
           id="helpingimgwrapper"
           style={{
             position: "relative",
-            flex: "1 1 60vw",
-            transform: "translateX(-3vw)",
+            flex: "1 1 60%",
+            transform: "translateX(-3%)",
             zIndex: "1",
           }}
         >
@@ -849,7 +855,7 @@ const AboutAktuell = () => {
 
         <div
           id="helpingtextwrapper"
-          style={{ flex: "1 1 550px", marginTop: "14vw" }}
+          style={{ flex: "1 1 550px", marginTop: "14%" }}
         >
           <CollapseText
             marginTopProp="0vw"
@@ -907,7 +913,7 @@ const AboutAktuell = () => {
           flex: "none",
           flexWrap: "wrap",
           flexDirection: "row",
-          marginTop: "10vw",
+          marginTop: "10%",
           zIndex: "2",
         }}
       >
@@ -915,8 +921,8 @@ const AboutAktuell = () => {
           id="permaimgwrapper"
           style={{
             position: "relative",
-            flex: "1 1 60vw",
-            transform: "translateX(-3vw)",
+            flex: "1 1 60%",
+            transform: "translateX(-3%)",
             zIndex: "1",
           }}
         >
@@ -926,9 +932,9 @@ const AboutAktuell = () => {
           ></ImageFrameJPG>
         </div>
 
-        <div id="permatextwrapper" style={{ flex: "1 1 550px" }}>
+        <div id="permatextwrapper" style={{ flex: "1 1 550px", marginTop: "14%" }}>
           <CollapseText
-            marginTopProp="14vw"
+            marginTopProp="0%"
             alwaysSrc="/content/aboutPermaAlways.md"
           ></CollapseText>
         </div>
@@ -952,8 +958,8 @@ const AboutAktuell = () => {
         ref={teamRef}
         id="team"
         style={{
-          width: "120vw",
-          marginTop: "15vw",
+          width: "120%",
+          marginTop: "15%",
           alignSelf: "center",
           zIndex: "2",
         }}
@@ -964,13 +970,17 @@ const AboutAktuell = () => {
         ></ImageFrameJPG>
       </div>
 
-      {/*
+
+
+      {/**TODO: Hier noch ne small variante machen. Das ist ansonsten echt gut noch! */}
+
+      {/** 
       <div
         id="teamdream"
         style={{
           position: "relative",
-          width: "95vw",
-          marginTop: "15vw",
+          width: "95%",
+          marginTop: "15%",
           alignSelf: "flex-end",
 
         }}
@@ -1011,10 +1021,9 @@ const AboutAktuell = () => {
 
 
       </div >
-*TEAMDREAM ENDE */}
+*/}
     </>
 
-    //Futti Futti
   );
 };
 

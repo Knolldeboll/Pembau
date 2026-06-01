@@ -28,9 +28,9 @@ const Menu = () => {
         style={{
           display: "flex",
           flexDirection: "column",
-          gap: "max(3vh,3.5vw)",
-          marginTop: " max(15vh,9.5vw)",
-          marginLeft: "5vw",
+          gap: "max(3vh,3.5%)",
+          marginTop: " max(15vh,9.5%)",
+          marginLeft: "15%",
         }}
       >
 
