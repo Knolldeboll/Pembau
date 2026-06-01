@@ -19,16 +19,7 @@ const Menu = () => {
   return (
     <div
       id="sidemenu"
-      style={{
-        position: "fixed",
-        width: "clamp(150px,30%, 576px)",
-        height: "120vh",
-        top: "0%",
-        right: "max(0px, calc((100vw - 1920px) / 2))",
-        zIndex: "3",
-        backgroundColor: "#ffffff",
-        transform: "rotate(-5deg)",
-      }}
+
     >
 
       {/**Voll smart auch: max (vh vs vw) - das eine trägt bei h>w mehr effekt, das andere bei h<w - Screens! Dient zum Umschalten und adäquaten Spacing entlang der mental Axis! */}

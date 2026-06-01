@@ -217,6 +217,24 @@ a {
     font-size: clamp(1rem, 2.7vw, 50px);
     color: black;
   }
+
+  right: max(-8%, calc((100vw - 1920px) / 2));
+  transform: rotate(0deg);
+
+  position: fixed;
+  width: clamp(150px, 30%, 576px);
+  height: 120vh;
+  top: 0;
+  z-index: 3;
+  background-color: #ffffff;
+
+}
+
+
+@media (max-width: 1920px) {
+  #sidemenu {
+    transform: rotate(-5deg);
+  }
 }
 
 /*FOOTER*/
