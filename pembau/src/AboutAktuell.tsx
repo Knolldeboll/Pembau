@@ -102,7 +102,7 @@ const AboutAktuell = () => {
           //overflow: "hidden", // Clip overflow
           zIndex: "1",
           height: " fit-content",
-          marginBlockEnd: "-8vw",
+          marginBlockEnd: "-10%",
           marginLeft: "-20%",
         }}
       >
@@ -171,7 +171,7 @@ const AboutAktuell = () => {
       <div
         ref={leitBildRef}
         className="leitbild leitbildBig"
-        style={{ display: "flex", justifyContent: "center", marginTop: "5vw", width: "100%" }}
+        style={{ display: "flex", justifyContent: "center", marginTop: "5%", width: "100%" }}
       >
         <CollapseFramePercent
           width={90}
@@ -520,7 +520,7 @@ const AboutAktuell = () => {
           flex: "none",
           flexWrap: "wrap",
           flexDirection: "row",
-          marginTop: "15vw",
+          marginTop: "10%",
           zIndex: "2",
         }}
       >
@@ -574,7 +574,7 @@ const AboutAktuell = () => {
         {/**die base ist jetzt der inhalt des dist ordners! */}
         <div
           id="geschichtetextwrapper"
-          style={{ flex: "1 1 550px", marginTop: "14vw" }}
+          style={{ flex: "1 1 550px", marginTop: "14vw", paddingInline: "5%" }}
         >
           <CollapseText
             alwaysSrc="/content/aboutGeschichteAlways.md"
@@ -644,13 +644,13 @@ const AboutAktuell = () => {
         id="aktuelles"
         ref={aktuellRef}
         style={{
-          width: "80vw",
-          marginLeft: "5vw",
-          marginTop: "15vw",
+          width: "80%",
+          padding: " 5%",
+          marginTop: "15%",
           color: "#000000",
         }}
       >
-        <div className="aktuell">
+        <div className="aktuell" >
           <h2>
             PEMBAU<span>_aktuell</span>
           </h2>
@@ -674,8 +674,8 @@ const AboutAktuell = () => {
         id="carouselwrapper"
         style={{
           alignSelf: "center",
-          width: "95vw",
-          height: "max(45vw, 300px)",
+          width: "95%",
+          height: "max(45vh, 300px)",
         }}
       >
         <Carousel images={carouselImages}></Carousel>
