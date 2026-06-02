@@ -170,10 +170,17 @@ const AboutAktuell = () => {
       </div>*/}
 
       {/*Leitbild neu/skalierbar DONE */}
+
+      {/**Die zwei h2 wurden um die Ecke gemacht, weil absolute platzierte Sachen unabhängig vom zindex sind und immer hinter der Ecke waren. */}
       <div
         ref={leitBildRef}
         className="leitbild leitbildBig"
-        style={{ display: "flex", justifyContent: "center", marginTop: "5%", width: "100%" }}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          marginTop: "5%",
+          width: "100%",
+        }}
       >
         <CollapseFramePercent
           width={90}
@@ -187,9 +194,9 @@ const AboutAktuell = () => {
         >
           <h2
             style={{
-              rotate: "32deg",
+              rotate: "41deg",
               position: "absolute",
-              left: "12%",
+              left: "8%",
               top: "33%",
               zIndex: "3",
             }}
@@ -198,10 +205,10 @@ const AboutAktuell = () => {
           </h2>
           <h2
             style={{
-              rotate: "-55deg",
+              rotate: "-51deg",
               position: "absolute",
-              left: "30%",
-              top: "30%",
+              left: "24%",
+              top: "33%",
               zIndex: "3",
             }}
           >
@@ -338,8 +345,8 @@ const AboutAktuell = () => {
             style={{
               rotate: "28deg",
               position: "absolute",
-              left: "0%",
-              top: "10.5%",
+              left: "7%",
+              top: "11.3%",
               zIndex: "3",
             }}
           >
@@ -349,7 +356,7 @@ const AboutAktuell = () => {
             style={{
               rotate: "-62deg",
               position: "absolute",
-              left: "28%",
+              left: "30%",
               top: "8.5%",
               zIndex: "3",
             }}
@@ -652,7 +659,7 @@ const AboutAktuell = () => {
           color: "#000000",
         }}
       >
-        <div className="aktuell" >
+        <div className="aktuell">
           <h2>
             PEMBAU<span>_aktuell</span>
           </h2>
@@ -682,8 +689,6 @@ const AboutAktuell = () => {
       >
         <Carousel images={carouselImages}></Carousel>
       </div>
-
-
 
       {/**Aktuelles einfach in nem p */}
       <div className="aktuell" style={{ width: "65%", marginLeft: "5%" }}>
@@ -754,8 +759,6 @@ const AboutAktuell = () => {
               </p>
               <a
                 style={{ width: "max(2.0rem, 40%)" }}
-
-
                 href="https://www.instagram.com/technoxpunsch/"
               >
                 <svg
@@ -932,7 +935,10 @@ const AboutAktuell = () => {
           ></ImageFrameJPG>
         </div>
 
-        <div id="permatextwrapper" style={{ flex: "1 1 550px", marginTop: "14%" }}>
+        <div
+          id="permatextwrapper"
+          style={{ flex: "1 1 550px", marginTop: "14%" }}
+        >
           <CollapseText
             marginTopProp="0%"
             alwaysSrc="/content/aboutPermaAlways.md"
@@ -969,8 +975,6 @@ const AboutAktuell = () => {
           uncollapsedImg={TeamImg}
         ></ImageFrameJPG>
       </div>
-
-
 
       {/**TODO: Hier noch ne small variante machen. Das ist ansonsten echt gut noch! */}
 
@@ -1023,7 +1027,6 @@ const AboutAktuell = () => {
       </div >
 */}
     </>
-
   );
 };
 
