@@ -1,6 +1,7 @@
 //Images, alle hier importen für Übersicht!
-import NiceTryImg from "./assets/NiceTry.webp";
+import NiceTryImg from "./assets/lp1.webp";
 import NiceTryCollapsedImg from "./assets/NiceTryTrBljpg.webp";
+
 import AussichtImg from "./assets/Aussicht.webp";
 import AussichtCollapsedImg from "./assets/AussichtBrTl.webp";
 import GestaltenImg from "./assets/Gestalten.webp";
@@ -28,28 +29,19 @@ const LandingPage = () => {
   const navigate = useNavigate();
   const endeRef = useRef<HTMLDivElement | null>(null);
 
-
   const scrollToRef = (ref: React.RefObject<HTMLDivElement | null>) => {
     // if type ? element, use scrollIntoView.
-    ref.current?.scrollIntoView({ behavior: "smooth" })
-
-
-  }
-
+    ref.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
   // useeffect auf window location hash, dann kann man auch unabhängig vom mount zum ref scrollen
   useEffect(() => {
     switch (window.location.hash) {
-
       case "#ende":
-        scrollToRef(endeRef)
+        scrollToRef(endeRef);
         break;
-
     }
-
   }, [window.location.hash]);
-
-
 
   return (
     <>
@@ -65,6 +57,8 @@ const LandingPage = () => {
               - horizontal translateX
               - vertikal mit margin */}
 
+      {/**NiceTry alt: (mit zwei webps und baked text
+ ) 
       <div
         id="nicetryjpg"
         style={{
@@ -80,12 +74,63 @@ const LandingPage = () => {
         ></ImageFrameJPG>
       </div>
 
+
+*/}
+      <div
+        id="nicetryjpg"
+        style={{
+          width: "min(150%,2000px)",
+          transform: " rotate(-1.44deg)",
+          marginLeft: "-40%",
+          marginTop: "5%",
+          alignSelf: "center",
+          zIndex: "2",
+        }}
+      >
+        {" "}
+        <CollapseFramePercent
+          width={120}
+          height={85}
+          rotation={0}
+          folds={{
+            bottomRight: { horPercent: 43, vertPercent: 60, perma: false },
+            topRight: { horPercent: 15, vertPercent: 30, perma: true },
+          }}
+          foldColor="#000000"
+        >
+          <div
+            style={{
+              position: "relative",
+              width: "100%",
+              height: "100%",
+              backgroundImage: `url(${NiceTryImg})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          >
+            {" "}
+            <p
+              style={{
+                position: "absolute",
+                scale: "8",
+                top: "50%",
+                left: "55%",
+                color: "white",
+                zIndex: "1",
+              }}
+            >
+              Pup
+            </p>
+          </div>
+        </CollapseFramePercent>{" "}
+      </div>
+
       <div
         className="textframe"
         id="textframeaussicht"
         style={{
           width: "80%",
-          marginTop: "5vw",
+          marginTop: "5%",
           marginLeft: "2%",
           zIndex: "1",
         }}
@@ -269,8 +314,6 @@ const LandingPage = () => {
           </div>
         </CollapseFramePercent>
       </div>
-
-
 
       {/**Mithelfen raus, da steht quasi eh nix drin, außerdem keine Links für Newsletter, Crowdfunding, "teil sein" 
       <div id="mithelfen" style={{ width: "140vw", height: "70vw", marginTop: "13vw", transform: "rotate(-4deg) translateX(-10vw)" }}>

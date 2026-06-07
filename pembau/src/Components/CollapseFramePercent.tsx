@@ -30,6 +30,8 @@ interface CollapseFramePercentProps {
 
 // TODO: Manche Objekte aus den Children sollen erst beim Anklicken des CollapseFrames angezeigt werden -
 // Dieser State muss also irgendwie zugänglich sein.
+// -> Was denn zum Beispiel? Zeug, dass unter den Ecken versteckt ist? Das wird ja eh nicht angezeigt, weil verdeckt, und auch
+// clickevents werden von denen abgefangen
 
 export const CollapseFramePercent = ({
   children,
@@ -42,9 +44,6 @@ export const CollapseFramePercent = ({
   initiallyCollapsed = true,
   toggleOnce = false,
 }: CollapseFramePercentProps) => {
-
-
-
   const [isCollapsed, setCollapsed] = useState(initiallyCollapsed ?? false);
   let polygonString = ``;
   if (folds) polygonString = generatePolyonString(folds, isCollapsed);
@@ -76,19 +75,15 @@ export const CollapseFramePercent = ({
     setCollapsed(!isCollapsed);
   };
 
-  console.log("CollapseFramePercent:")
-  console.log("w/h in percent:", width, height)
-
-
   // TODO: ggf. muss ar je anders berechnet werden, je nach (width < height)?
-  // aber aktuell egal, da CollapseFramePercent nur im fall width> height verwendet wird. Sonst ist umschalt mit mediaquery auf normales collapsframe. 
+  // aber aktuell egal, da CollapseFramePercent nur im fall width> height verwendet wird. Sonst ist umschalt mit mediaquery auf normales collapsframe.
   const ar = width / height;
 
-  // Problem mit Height: % geht nicht, weil der Parent keine fixe height hat. 
+  // Problem mit Height: % geht nicht, weil der Parent keine fixe height hat.
   // der orientiert sich nämlich an den enthaltenen Frames.
 
   // Was wir wollen ist eig., dass height = xy% of width.
-  // -> Apsect Ratio festlegen? Aber klappt dann noch die Berechnung der Ecken richtig? 
+  // -> Apsect Ratio festlegen? Aber klappt dann noch die Berechnung der Ecken richtig?
   return (
     <div
       className="collapseFrameOuter"
@@ -97,13 +92,14 @@ export const CollapseFramePercent = ({
         width: `${width}%`,
         height: ` `,
         rotate: `${rotation}deg`,
-        zIndex: "1",
+        zIndex: "2",
       }}
       onClick={toggleCollapsed}
     >
       <div
         className="collapseFrameInner"
         style={{
+          position: "relative",
           width: "100%",
 
           aspectRatio: ar,
@@ -111,6 +107,7 @@ export const CollapseFramePercent = ({
           clipPath: polygonString,
           overflow: "hidden",
           backgroundColor: bgColor ? bgColor : "transparent",
+          zIndex: "1",
         }}
       >
         {children}
