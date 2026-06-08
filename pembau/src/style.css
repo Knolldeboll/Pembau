@@ -65,13 +65,19 @@ a {
 .h1serif {
   font-family: "Noto Serif";
   font-weight: 700;
-  font-style: italic;
-  font-size: 2.5vw;
-  color: #FF6400;
+  font-size: clamp(1.5rem,2.5vw,1.8rem);
 
 }
 
+.h1dmsans{
+  font-family: "DM Sans";
+  font-weight: 700;
+   font-size: clamp(1.5rem,2.5vw,1.8rem);
+}
 
+.lineheight100{
+line-height: 105%;
+}
 
 .h4 {
   font-family: "DM Sans";
@@ -572,6 +578,24 @@ die Höhe wird von den Responsiven Elementen vorgegeben, die dann übereinanderg
 }
 
 
+
+
+/** Random Text shit:*/
+
+.orange{
+  color:#FF6400
+}
+.black{
+  color: #000000;
+}
+
+.italic{
+  font-style: italic;
+}
+
+.normal{
+  font-style: normal;
+}
 
 /**About*/
 

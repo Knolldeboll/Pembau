@@ -109,18 +109,34 @@ const LandingPage = () => {
             }}
           >
             {" "}
-            <p
+            <div
               style={{
                 position: "absolute",
-                scale: "8",
-                top: "50%",
-                left: "55%",
+                scale: "2",
+                rotate: "17deg",
+                top: "29.5%",
+                left: "60%",
                 color: "white",
                 zIndex: "1",
               }}
             >
-              Pup
-            </p>
+              <h1 className="h1dmsans black normal lineheight100">
+                <span className="h1serif italic">Kreativität?</span>
+                <br />
+                LIEBEN WIR!
+                <br />
+                <span className="h1serif italic">Kultur?</span>
+                <br />
+                BRAUCHEN WIR!
+                <br />
+                <span className="orange">
+                  <span className="h1serif italic">Pembau?</span>
+                  <br />
+                  SIND WIR!
+                  <br />
+                </span>
+              </h1>
+            </div>
           </div>
         </CollapseFramePercent>{" "}
       </div>
