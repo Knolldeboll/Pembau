@@ -4,7 +4,7 @@ import NiceTryCollapsedImg from "./assets/NiceTryTrBljpg.webp";
 
 import AussichtImg from "./assets/lp2.webp";
 import AussichtCollapsedImg from "./assets/AussichtBrTl.webp";
-import GestaltenImg from "./assets/Gestalten.webp";
+import GestaltenImg from "./assets/lp3.webp";
 import GestaltenCollapsedImg from "./assets/GestaltenBrTl.webp";
 //import KPKPCollapsedImage from "./assets/KPKPBl.webp";
 //import KPKPImg from "./assets/KPKP.webp";
@@ -114,7 +114,7 @@ const LandingPage = () => {
                 position: "absolute",
                 scale: "2",
                 rotate: "17deg",
-                top: "29.5%",
+                top: "29%",
                 left: "60%",
                 color: "white",
                 zIndex: "1",
@@ -191,7 +191,6 @@ const LandingPage = () => {
           display: "flex",
           flexDirection: "row",
 
-          marginTop: "0vw",
           width: "100%",
         }}
       >
@@ -199,8 +198,9 @@ const LandingPage = () => {
           className="textframe"
           style={{
             flex: "none",
-            width: "min(600px,70%)",
-            marginLeft: "5vw",
+            width: "45%",
+            minWidth: "210px",
+            marginLeft: "5%",
             zIndex: "1",
           }}
         >
@@ -208,18 +208,34 @@ const LandingPage = () => {
         </div>
 
         <div
+          id="gestaltenimg"
           style={{
-            flex: "0 0 max(500px,85%)",
+            flex: "none",
+            width: "70%",
+            minWidth: "320px",
+
             zIndex: "2",
-            transform: "   rotate(-15deg)",
-            marginTop: "-15vw",
-            marginLeft: "max(-200px, -28%)",
+            marginTop: "-8%",
           }}
         >
-          <ImageFrameJPG
-            collapsedImg={GestaltenCollapsedImg}
-            uncollapsedImg={GestaltenImg}
-          ></ImageFrameJPG>
+          <CollapseFramePercent
+            width={100}
+            height={150}
+            rotation={-5}
+            folds={{ topLeft: { vertPercent: 60, horPercent: 80 } }}
+            initiallyCollapsed={true}
+          >
+            <div
+              style={{
+                position: "relative",
+                width: "100%",
+                height: "100%",
+                backgroundImage: `url(${GestaltenImg})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            ></div>
+          </CollapseFramePercent>
         </div>
       </div>
 

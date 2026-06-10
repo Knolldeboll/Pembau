@@ -65,14 +65,14 @@ a {
 .h1serif {
   font-family: "Noto Serif";
   font-weight: 700;
-  font-size: clamp(1.5rem,2.5vw,1.8rem);
+  font-size: clamp(0.3rem,2.5vw,1.8rem);
 
 }
 
 .h1dmsans{
   font-family: "DM Sans";
   font-weight: 700;
-   font-size: clamp(1.5rem,2.5vw,1.8rem);
+   font-size: clamp(0.3rem,2.5vw,1.8rem);
 }
 
 .lineheight100{
@@ -577,7 +577,14 @@ die Höhe wird von den Responsiven Elementen vorgegeben, die dann übereinanderg
   color: #000000;
 }
 
-
+#gestaltenimg{
+  margin-left:-10%
+}
+@media (max-width:670px){
+  #gestaltenimg{
+    margin-left: 0%;
+  }
+}
 
 
 /** Random Text shit:*/
