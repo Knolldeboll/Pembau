@@ -2,7 +2,7 @@
 import NiceTryImg from "./assets/lp1.webp";
 import NiceTryCollapsedImg from "./assets/NiceTryTrBljpg.webp";
 
-import AussichtImg from "./assets/Aussicht.webp";
+import AussichtImg from "./assets/lp2.webp";
 import AussichtCollapsedImg from "./assets/AussichtBrTl.webp";
 import GestaltenImg from "./assets/Gestalten.webp";
 import GestaltenCollapsedImg from "./assets/GestaltenBrTl.webp";
@@ -138,7 +138,7 @@ const LandingPage = () => {
               </h1>
             </div>
           </div>
-        </CollapseFramePercent>{" "}
+        </CollapseFramePercent>
       </div>
 
       <div
@@ -157,16 +157,32 @@ const LandingPage = () => {
       <div
         id="aussicht"
         style={{
-          width: "120%",
-          marginTop: "0vw",
-          transform: "translateX(-9%)rotate(3deg)",
+          marginTop: "5%",
+          transform: "translateX(-5%)",
           zIndex: "2",
         }}
       >
-        <ImageFrameJPG
-          collapsedImg={AussichtCollapsedImg}
-          uncollapsedImg={AussichtImg}
-        ></ImageFrameJPG>
+        <CollapseFramePercent
+          width={110}
+          height={75}
+          rotation={1}
+          folds={{
+            bottomRight: { horPercent: 55, vertPercent: 65, perma: false },
+            topLeft: { horPercent: 15, vertPercent: 30, perma: true },
+          }}
+          foldColor="#7B7B7C"
+        >
+          <div
+            style={{
+              position: "relative",
+              width: "100%",
+              height: "100%",
+              backgroundImage: `url(${AussichtImg})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          ></div>
+        </CollapseFramePercent>
       </div>
 
       <div
