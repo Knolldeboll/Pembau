@@ -1003,8 +1003,8 @@ const AboutAktuell = () => {
         >
           <h2 style={{ marginBottom: "10%" }}>Ohne Team </h2>
           <p>
-            Mehr als 100 Vereinsmitglieder im Verein Frühschicht aus den
-            vielfältigsten Lebensrealitäten sind heute schon ehrenamtlich tätig,
+            Mehr als 100 Vereinsmitglieder aus den vielfältigsten
+            Lebensrealitäten sind heute schon ehrenamtlich tätig,
             um mit dem Pembau einen neuen Ort für Innsbruck zu erschaffen.
             <br></br> <br></br>
             Unser Projekt richtet sich an Menschen aller Art und jeden Alters,
