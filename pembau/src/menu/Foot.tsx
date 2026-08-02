@@ -83,7 +83,8 @@ const Foot = () => {
         <div id="impwrapper" style={{ position: "absolute", right: "0%", bottom: "100%", width: "fit-content", height: "fit-content", backgroundColor: "#C3D9FF", padding: "3rem", zIndex: "5" }}
           onClick={() => setImpOpen(false)}>
           <p className="dmsans400regularresponsive">
-            Frühschicht - Verein zur kulturellen Vereinigung<br />
+            Pembau Kulturplattform<br />
+            ZVR: 1257583859<br />
             Viller Berg 4<br />
             6020 Innsbruck
           </p>
